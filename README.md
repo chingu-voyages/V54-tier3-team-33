@@ -36,6 +36,7 @@ coding!
 
 - Damilola Oshinowo #1: [GitHub](https://github.com/dami-boy)) / [LinkedIn](https://linkedin.com/in/damilola-oshinowo)
 - Andrés R. Bucheli #2: [GitHub](https://github.com/ARBUCHELI) / [LinkedIn](https://www.linkedin.com/in/andresregaladobucheli/)
+- Chinedu Olekah    #3: [GitHub](https://github.com/kenako0127) / [LinkedIn](www.linkedin.com/in/chinedu-olekah)
 
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
