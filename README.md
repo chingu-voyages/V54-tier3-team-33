@@ -38,5 +38,5 @@ coding!
 - Andrés R. Bucheli #2: [GitHub](https://github.com/ARBUCHELI) / [LinkedIn](https://www.linkedin.com/in/andresregaladobucheli/)
 - Chinedu Olekah    #3: [GitHub](https://github.com/kenako0127) / [LinkedIn](www.linkedin.com/in/chinedu-olekah)
 - R. Ed Masawi      #4: [GitHub](https://github.com/Masawi68) / [LinkedIn](https://www.linkedin.com/in/ed-masawi-97345a29/)
-   ...
+- Ismail Marghich   #5: [GitHub](https://github.com/IsmailMarghich) / [LinkedIn](https://www.linkedin.com/in/ismail-marghich-9174111aa/)
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
