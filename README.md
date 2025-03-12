@@ -41,3 +41,4 @@ coding!
 - Ismail Marghich   #5: [GitHub](https://github.com/IsmailMarghich) / [LinkedIn](https://www.linkedin.com/in/ismail-marghich-9174111aa/)
 - Tonia Gbuji       #6: [GitHub](https://github.com/Tgee78) / [LinkedIn](https://www.linkedin.com/in/toniagbuji/)
 - Predrag Jandric   #7: [GitHub](https://github.com/Predrag-Jandric) / [LinkedIn](https://www.linkedin.com/in/predrag-jandric/)
+- Riry Nomenjanahary #8: [GitHub](https://github.com/TiaDev7474) / [LinkedIn](https://www.linkedin.com/in/riry-nomenjanahary/)
