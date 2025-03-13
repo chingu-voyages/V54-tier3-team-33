@@ -4,7 +4,8 @@ const Nav = () => {
   const categories = [
     "Electronics",
     "Clothing",
-    "Home",
+    "Music",
+    "Home Appliances",
     "Toys",
     "Sporting Goods",
     "Jewelry & Watches",
