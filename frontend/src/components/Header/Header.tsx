@@ -1,23 +1,21 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Menu, Transition, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import { ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/20/solid"; 
 import logo from "../../assets/logo.png";
 import { searchProducts, loadProducts } from "../../store/slices/productSlice"; 
-import { RootState, AppDispatch } from "../../store/store"; 
+import { AppDispatch } from "../../store/store"; 
 import Nav from "../Nav/Nav";
-import AdvertisingCarousel from "../AdvertisingCarousel/AdvertisingCarousel";
 
 interface HeaderProps {
   showAdvertising?: boolean; 
 }
 
-const Header: React.FC<HeaderProps> = ({ showAdvertising = false }) => {
-  const categories = ["Electronics", "Clothing", "Home", "Toys", "Sporting Goods", "Jewelry & Watches"];
+const Header: React.FC<HeaderProps> = () => {
+  const categories = ["Electronics", "Clothing", "Music", "Home Appliances", "Toys", "Sporting Goods", "Jewelry & Watches"];
   const [searchQuery, setSearchQuery] = useState(""); 
   const [selectedCategory, setSelectedCategory] = useState("");
   const dispatch: AppDispatch = useDispatch(); 
-  const { searchResults, loading, error } = useSelector((state: RootState) => state.products);
 
   useEffect(() => {
     dispatch(loadProducts()); 
@@ -41,12 +39,6 @@ const Header: React.FC<HeaderProps> = ({ showAdvertising = false }) => {
     setSelectedCategory(category);
     dispatch(searchProducts({ query: searchQuery, category }));
   };
-
-  const trendingLaptops = selectedCategory === ""
-    ? searchResults.filter(product => 
-        product.category === "Electronics" && product.name.toLowerCase().includes("laptop")
-      )
-    : [];
 
   return (
     <>
@@ -116,7 +108,8 @@ const Header: React.FC<HeaderProps> = ({ showAdvertising = false }) => {
               <option value="">All Categories</option>
               <option value="Electronics">Electronics</option>
               <option value="Clothing">Clothing</option>
-              <option value="Clothing">Home</option>
+              <option value="Clothing">Music</option>
+              <option value="Clothing">Home Appliances</option>
               <option value="Clothing">Toys</option>
               <option value="Clothing">Sporting Goods</option>
               <option value="Clothing">Jewelry & Watches</option>
@@ -133,54 +126,6 @@ const Header: React.FC<HeaderProps> = ({ showAdvertising = false }) => {
       </header>
       <div className="mt-2 pt-1 pr-10 pl-10">
         <Nav />
-        {showAdvertising && ( 
-          <div className="mb-4">
-            <AdvertisingCarousel />
-            {selectedCategory === "" && trendingLaptops.length > 0 && (
-              <div className="mt-6">
-                <h2 className="text-2xl font-bold mb-4">Trending Laptops</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {trendingLaptops.map((product) => ( 
-                    <div key={product.id} className="bg-white shadow-md rounded-lg p-4">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-auto rounded-lg"
-                      />
-                      <h3 className="text-purple-400 text-xl font-semibold">{product.name}</h3>
-                      <p className="text-gray-700">Price: ${product.price}</p>
-                      <p className="text-gray-700">Delivery Cost: ${product.deliveryCost}</p>
-                      <p className="text-gray-700">Country: {product.country}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-        {loading ? ( 
-          <p className="text-center text-gray-500">Loading products...</p>
-        ) : error ? ( 
-          <p className="text-center text-red-500">{error}</p>
-        ) : searchResults.length > 0 ? ( 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {searchResults.map((product) => ( 
-              <div key={product.id} className="bg-white shadow-md rounded-lg p-4">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-auto rounded-lg"
-                />
-                <h3 className="text-purple-400 text-xl font-semibold">{product.name}</h3>
-                <p className="text-gray-700">Price: ${product.price}</p>
-                <p className="text-gray-700">Delivery Cost: ${product.deliveryCost}</p>
-                <p className="text-gray-700">Country: {product.country}</p>
-              </div>
-            ))}
-          </div>
-        ) : ( 
-          <p className="text-center text-gray-500">No products found. Try searching for something!</p>
-        )}
       </div>
     </>
   );
