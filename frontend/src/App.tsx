@@ -1,11 +1,16 @@
-import "./index.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CategoryPage from "./pages/CategoryPage"; 
 
-function App() {
+const App = () => {
   return (
-    <h1 className="h-screen bg-gray-700 pt-20 text-center text-5xl text-red-500">
-      hello react vite+TS
-    </h1>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
