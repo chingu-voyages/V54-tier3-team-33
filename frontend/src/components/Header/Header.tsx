@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { Menu, Transition, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import { ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/20/solid"; 
 import logo from "../../assets/logo.png";
@@ -12,7 +13,36 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = () => {
-  const categories = ["Electronics", "Clothing", "Music", "Home Appliances", "Toys", "Sporting Goods", "Jewelry & Watches"];
+  const categories = [
+    {
+      name: "Electronics",
+      subcategories: ["Smartphones", "Laptops", "Televisions"],
+    },
+    {
+      name: "Clothing",
+      subcategories: ["Jeans", "Sneakers", "Jackets"],
+    },
+    {
+      name: "Music",
+      subcategories: ["Guitars", "Keyboards", "Drums"],
+    },
+    {
+      name: "Home Appliances",
+      subcategories: ["Refrigerators", "Air Conditioners", "Washing Machines"],
+    },
+    {
+      name: "Toys",
+      subcategories: ["Dolls", "Action Figures", "Board Games"],
+    },
+    {
+      name: "Sporting Goods",
+      subcategories: ["Bicycles", "Skateboards", "Football"],
+    },
+    {
+      name: "Jewelry & Watches",
+      subcategories: ["Rings", "Necklaces", "Watches"],
+    }
+  ];
   const [searchQuery, setSearchQuery] = useState(""); 
   const [selectedCategory, setSelectedCategory] = useState("");
   const dispatch: AppDispatch = useDispatch(); 
@@ -62,27 +92,44 @@ const Header: React.FC<HeaderProps> = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <MenuItems className="absolute left-0 mt-2 w-48 origin-top-left bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                <div className="py-1">
+              <MenuItems className="absolute left-0 mt-2 w-[600px] origin-top-left bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                <div className="grid grid-cols-3 gap-4 p-4">
                   {categories.map((category) => (
-                    <MenuItem key={category}>
-                      {({ focus }) => (
-                        <a
-                          href="#"
-                          className={`${
-                            focus ? "bg-gray-100" : ""
-                          } block px-4 py-2 text-sm text-gray-700`}
-                        >
-                          {category}
-                        </a>
-                      )}
-                    </MenuItem>
+                    <div key={category.name} className="space-y-2">
+                      <MenuItem>
+                        {({ focus }) => (
+                          <Link
+                            to={`/category/${category.name.toLowerCase().replace(/ & /g, "-").replace(/\s+/g, "-")}`}
+                            className={`${
+                              focus ? "bg-gray-100" : ""
+                            } block px-4 py-2 text-sm text-gray-700 font-semibold rounded-md`}
+                          >
+                            {category.name}
+                          </Link>
+                        )}
+                      </MenuItem>
+                      <div className="space-y-1">
+                        {category.subcategories.map((subcategory) => (
+                          <MenuItem key={subcategory}>
+                            {({ focus }) => (
+                              <Link
+                                to={`/category/${category.name.toLowerCase().replace(/ & /g, "-").replace(/\s+/g, "-")}/${subcategory.toLowerCase().replace(/\s+/g, "-")}`}
+                                className={`${
+                                  focus ? "bg-gray-100" : ""
+                                } block px-6 py-2 text-sm text-gray-500 rounded-md`}
+                              >
+                                {subcategory}
+                              </Link>
+                            )}
+                          </MenuItem>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </MenuItems>
             </Transition>
           </Menu>
-
           <div className="flex items-center bg-white border border-gray-700 rounded-md overflow-hidden flex-1 ml-4">
             <MagnifyingGlassIcon className="h-5 w-5 text-gray-500 ml-3" />
             <input
@@ -116,7 +163,6 @@ const Header: React.FC<HeaderProps> = () => {
             </select>
           </div>
         </div>
-
         <button
           className="bg-[#3b82f6] text-white px-6 py-3 rounded-md hover:bg-[#2563eb] transition-colors cursor-pointer"
           onClick={handleSearch} 
