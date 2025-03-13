@@ -44,7 +44,7 @@ const AdvertisingCarousel: React.FC = () => {
 
   useEffect(() => {
     if (!isPaused) {
-      const interval = setInterval(nextSlide, 3000);
+      const interval = setInterval(nextSlide, 6000);
       return () => clearInterval(interval);
     }
   }, [isPaused, nextSlide]);
