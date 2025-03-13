@@ -1,0 +1,11 @@
+GET http://localhost:3000
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+    "name": "apples",
+    "price": 10,
+    "category": "fruit",
+    "description": "an apple a day keeps the doctor away"
+}
