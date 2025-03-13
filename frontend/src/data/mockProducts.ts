@@ -1,14 +1,14 @@
-import laptop1 from "../assets/products/laptop1.jpeg";
-import laptop2 from "../assets/products/laptop2.jpeg";
-import laptop3 from "../assets/products/laptop3.jpeg";
-import laptop4 from "../assets/products/laptop4.jpeg";
-import laptop5 from "../assets/products/laptop5.jpeg";
-import sneaker1 from "../assets/products/sneaker1.jpeg";
-import leatherJacket from "../assets/products/leatherJacket.jpeg";
-import runningSneakers from "../assets/products/runningSneakers.jpeg";
-import cottonTShirt from "../assets/products/cottonTShirt.jpeg";
-import denimJeans from "../assets/products/denimJeans.jpeg";
-import smartPhone1 from "../assets/products/smartPhone1.jpeg";
+import laptop1 from "../assets/products/laptop1.jpg";
+import laptop2 from "../assets/products/laptop2.jpg";
+import laptop3 from "../assets/products/laptop3.jpg";
+import laptop4 from "../assets/products/laptop4.jpg";
+import laptop5 from "../assets/products/laptop5.jpg";
+import sneaker1 from "../assets/products/sneaker1.jpg";
+import leatherJacket from "../assets/products/leatherJacket.jpg";
+import runningSneakers from "../assets/products/runningSneakers.jpg";
+import cottonTShirt from "../assets/products/cottonTShirt.jpg";
+import denimJeans from "../assets/products/denimJeans.jpg";
+import smartPhone1 from "../assets/products/smartPhone1.jpg";
 
 const mockProducts = [
   {

@@ -16,6 +16,12 @@ const Nav = () => {
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-10">
         <div className="flex justify-center py-1"> 
           <div className="flex space-x-18"> 
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+            >
+              Main Page
+            </Link>
             {categories.map((category) => (
               <Link
                 key={category}
