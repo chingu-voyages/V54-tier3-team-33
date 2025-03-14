@@ -7,7 +7,7 @@ function Grid() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("https://ecommerce-chingu-backend.fly.dev");
+        const res = await fetch("/api/products");
         const data = await res.json();
         setData(data);
       } catch (error) {
