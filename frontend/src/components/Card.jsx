@@ -5,11 +5,11 @@ function Card({ item }) {
       className="rounded-custom border-grayOne/70 shadow-custom flex flex-col border bg-white p-5 transition-all hover:shadow-xl"
     >
       {/* Product Image */}
-      {/* <img
-          src={item.imageSrc}
-          alt={item.name}
-          className="mb-4 h-52 w-full object-contain"
-        /> */}
+      <img
+        src={item.image}
+        alt={item.name}
+        className="mb-4 h-52 w-full object-contain"
+      />
 
       {/* Product Info */}
       <h2

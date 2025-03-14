@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 
 function Grid() {
-const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    async function fetchData(){
+    async function fetchData() {
       try {
         const res = await fetch("https://ecommerce-chingu-backend.fly.dev");
         const data = await res.json();
@@ -13,7 +13,7 @@ const [data, setData] = useState([]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
-    };
+    }
 
     fetchData();
   }, []);
@@ -22,12 +22,7 @@ const [data, setData] = useState([]);
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
         {/* dynamic product grid */}
-        <div
-          className="grid w-full gap-6"
-          style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          }}
-        >
+        <div className="grid w-full gap-6 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
           {data.map((element, index) => (
             <Card key={index} item={element} />
           ))}
