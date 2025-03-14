@@ -1,4 +1,5 @@
 import "./index.css";
+// @ts-expect-error fix later
 import Grid from "./components/Grid.jsx";
 
 function App() {
