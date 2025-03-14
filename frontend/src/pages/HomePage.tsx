@@ -8,11 +8,13 @@ import AdvertisingCarousel from "../../src/components/AdvertisingCarousel/Advert
 
 const HomePage: React.FC = () => {
     const dispatch: AppDispatch = useDispatch(); 
-    const { searchResults, loading, error } = useSelector((state: RootState) => state.products);
+    const { products, searchResults, loading, error } = useSelector((state: RootState) => state.products);
 
     useEffect(() => {
       dispatch(loadProducts()); 
     }, [dispatch]);
+
+    const productsToDisplay = searchResults.length > 0 ? searchResults : products;
  
     return (
       <>
@@ -20,7 +22,7 @@ const HomePage: React.FC = () => {
         <div className="mb-4 pr-10 pl-10">
           <AdvertisingCarousel />
         </div>
-        <ProductList loading={loading} error={error} searchResults={searchResults} />
+        <ProductList loading={loading} error={error} searchResults={productsToDisplay} />
       </>
     );
 };

@@ -5,7 +5,7 @@ const fetchProducts = async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockProducts); // Simulate a delay for realism
-    }, 5000); // 5-seconds delay (for simulation purposes)
+    }, 3000); // 3-seconds delay (for simulation purposes)
   });
 };
 
