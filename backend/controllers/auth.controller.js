@@ -1,14 +1,14 @@
-import User  from '../models/user.model';
-import Otp  from  '../models/opt.model';
-import CustomError from "../utils/error";
-import jwt from "jsonwebtoken";
-import {generateOtp} from "../services/otp/opt.service";
+const User =  require('../models/user.model');
+const  Opt = require('../models/opt.model');
+const  CustomError= require("../utils/error");
+const jwt = require("jsonwebtoken");
+
+const { generateOtp } = require("../services/otp/opt.service");
 
 
 module.exports = {
     login: async (req, res, next) => {
         const { email, password } = req.body;
-
         try{
             const foundUser = await User.findOne({ email });
             if(!foundUser){

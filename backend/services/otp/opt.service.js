@@ -1,19 +1,16 @@
-const {
-    generateSecret,
-    totp
-} = require("speakeasy");
+const speakeasy = require("speakeasy");
 
-const secret = generateSecret({length:20});
+const secret = speakeasy.generateSecret({length:20});
 module.exports = {
     generateOtp: async() => {
         //generate a password using the secret
-        return await totp({
+        return await speakeasy.totp({
             secret: secret.base32,
             encoding: 'base32'
         })
     },
     verifyOtp:(otp) => {
-        return totp.verify({
+        return speakeasy.totp.verify({
             secret:secret.base32,
             encoding:'base32',
             token:otp.passcode,

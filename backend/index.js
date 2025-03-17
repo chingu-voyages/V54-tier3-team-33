@@ -15,10 +15,11 @@ app.use(globalErrorHandler);
 
 
 //connexion à mongoDb
-connectToDatabase();
+connectToDatabase()
 
 //Routes
-app.use('/auth', require('./routes/auth.routes'))
+app.use('/api/auth', require('./routes/auth.routes'))
+
 
 app.get('/', async (req, res) => {
     const products = await Product.find({})

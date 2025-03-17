@@ -2,7 +2,7 @@ const {connect} = require("mongoose");
 module.exports= {
     connectToDatabase :async () => {
         try{
-            await  connect(process.env.MONGODB_URL,
+            await  connect(process.env.MONGODB_URI,
                 {
                     useNewUrlParser:true,
                     useUnifiedTopology:true
@@ -12,6 +12,5 @@ module.exports= {
         }catch(err){
             console.log(`MongoDb connexion failed , ${err}`)
         }
-
     }
 }
