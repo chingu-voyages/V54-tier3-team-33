@@ -29,6 +29,7 @@ const RegisterForm: React.FC = () => {
     // form submission logic here
     alert("Form submitted");
     console.log("Form submitted", formData);
+    // clear form
     setFormData({
       username: "",
       email: "",
@@ -46,7 +47,7 @@ const RegisterForm: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+    <div className="flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-sm rounded bg-white p-6 shadow-md"
