@@ -1,5 +1,6 @@
 import Button from "../utils/Button";
 import { Link } from "react-router-dom";
+import RegisterForm from "../utils/RegisterForm";
 
 export default function ShoppingCartPage() {
   return (
@@ -18,6 +19,8 @@ export default function ShoppingCartPage() {
           <Button>Sign in</Button>
         </span>
       </div>
+
+      <RegisterForm />
     </div>
   );
 }
