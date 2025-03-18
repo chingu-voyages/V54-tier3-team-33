@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = () => {
       name: "Music",
       subcategories: ["Guitars", "Keyboards", "Drums"],
     },
-    {
+    /*{
       name: "Home Appliances",
       subcategories: ["Refrigerators", "Air Conditioners", "Washing Machines"],
     },
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = () => {
     {
       name: "Jewelry & Watches",
       subcategories: ["Rings", "Necklaces", "Watches"],
-    }
+    }*/
   ];
   const [searchQuery, setSearchQuery] = useState(""); 
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -156,10 +156,10 @@ const Header: React.FC<HeaderProps> = () => {
               <option value="Electronics">Electronics</option>
               <option value="Clothing">Clothing</option>
               <option value="Clothing">Music</option>
-              <option value="Clothing">Home Appliances</option>
+              {/*<option value="Clothing">Home Appliances</option>
               <option value="Clothing">Toys</option>
               <option value="Clothing">Sporting Goods</option>
-              <option value="Clothing">Jewelry & Watches</option>
+              <option value="Clothing">Jewelry & Watches</option>*/}
             </select>
           </div>
         </div>
