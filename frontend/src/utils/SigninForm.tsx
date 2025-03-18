@@ -34,9 +34,9 @@ const SigninForm: React.FC = () => {
     <div className="flex min-h-screen items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-sm rounded bg-white p-6 shadow-md"
+        className="w-full rounded bg-white p-10 px-16 shadow-md"
       >
-        <h2 className="mb-6 text-center text-2xl font-bold">Sign In</h2>
+        <h2 className="mb-6 text-center text-3xl font-semibold">Sign In</h2>
         <div className="flex flex-col gap-6">
           <div className="relative flex items-center">
             <EnvelopeIcon className="h-5 w-5 text-gray-400 mr-3" />
@@ -76,7 +76,7 @@ const SigninForm: React.FC = () => {
         </div>
         <Button
           type="submit"
-          className="mt-4 w-full rounded bg-blue-500 py-2 text-white transition-colors hover:bg-blue-600"
+          className="mt-10 mx-auto block"
         >
           Sign In
         </Button>

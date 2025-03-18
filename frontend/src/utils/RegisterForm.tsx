@@ -50,9 +50,9 @@ const RegisterForm: React.FC = () => {
     <div className="flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-sm rounded bg-white p-6 shadow-md"
+        className=" w-full rounded bg-white p-10 px-16 shadow-md"
       >
-        <h2 className="mb-6 text-center text-2xl font-bold">Register</h2>
+        <h2 className="mb-6 text-center text-3xl font-semibold">Register</h2>
         <div className="flex flex-col gap-6">
           <div className="relative flex items-center">
             <UserIcon className="mr-3 h-5 w-5 text-gray-400" />
@@ -150,10 +150,7 @@ const RegisterForm: React.FC = () => {
             </label>
           </div>
         </div>
-        <Button
-          type="submit"
-          className="mt-4 w-full rounded bg-blue-500 py-2 text-white transition-colors hover:bg-blue-600"
-        >
+        <Button type="submit" className="mt-10 mx-auto block">
           Register
         </Button>
       </form>
