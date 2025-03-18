@@ -15,7 +15,7 @@ module.exports = {
                 const error = new CustomError('User not found',404);
                 next(error)
             }
-            const validity = await foundUser.comparedPassword(password);
+            const validity = await foundUser.comparePassword(password);
             if(!validity){
                 const error = new CustomError('Pair identifiant/password not correct',401);
                 next(error)
@@ -27,7 +27,7 @@ module.exports = {
                 },
                 process.env.JWT_STRONG_SECRET,
                 {
-                    expiresIn: process.env.JWT_EXPIRES_TIME
+                    expiresIn: process.env.JWT_EXPIRE_TIME
                 }
             )
             res.status(201).json({
