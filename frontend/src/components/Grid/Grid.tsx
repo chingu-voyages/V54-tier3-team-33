@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import tempData from "../../utils/tempData.json";
 
 function Grid() {
   const [data, setData] = useState([]);
@@ -7,9 +8,10 @@ function Grid() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("https://ecommerce-chingu-backend.fly.dev/api/products");
-        const data = await res.json();
-        setData(data);
+        // const res = await fetch("https://ecommerce-chingu-backend.fly.dev/api/products");
+        // const data = await res.json();
+        // setData(data);
+        setData(tempData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

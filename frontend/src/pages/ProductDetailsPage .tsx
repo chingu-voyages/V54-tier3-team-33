@@ -1,34 +1,55 @@
 import { useLocation } from "react-router-dom";
+import Button from "../utils/Button";
 
 interface Product {
   id: number;
   name: string;
-  image: string;
+  image: string | string[];
   price: number;
   description: string;
 }
 
 const ProductDetailsPage = () => {
-    const location = useLocation();
-    const product = location.state?.product as Product;
-  
-    if (!product) {
-      return <div>Product not found</div>;
-    }
-  
-    return (
-      <div>
+  const location = useLocation();
+  const product = location.state?.product as Product;
 
-        <div className="container mx-auto p-6">
-          <div className="flex flex-col items-center">
-            <img src={product.image} alt={product.name} className="w-full h-64 object-cover rounded-md mb-4" />
-            <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
-            <p className="text-xl text-gray-700 mb-4">${product.price}</p>
-            <p className="text-gray-700 mb-4">{product.description}</p>
-          </div>
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
+  const images = Array.isArray(product.image) ? product.image : [product.image];
+
+  return (
+    <div className="container mx-auto p-6">
+      <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
+        <div className="flex w-20 flex-col gap-4">
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`${product.name} ${index + 1}`}
+              className="cursor-pointer rounded-md border border-red-600 object-cover"
+            />
+          ))}
+        </div>
+        <div className="w-full md:w-1/2">
+          <img
+            src={images[0]}
+            alt={product.name}
+            className="h-auto w-full rounded-md border border-red-500 object-cover"
+          />
+        </div>
+        <div className="flex w-full flex-col gap-4 md:w-1/4">
+          <h1 className="text-3xl font-bold">{product.name}</h1>
+          <p className="text-2xl text-gray-700">${product.price}</p>
+          <p className="text-gray-700">{product.description}</p>
+          <Button className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 md:w-auto">
+            Buy Now
+          </Button>
         </div>
       </div>
-    );
-  };
-  
-  export default ProductDetailsPage;
+    </div>
+  );
+};
+
+export default ProductDetailsPage;
