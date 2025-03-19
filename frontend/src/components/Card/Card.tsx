@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../utils/Button";
 
 interface Item {
@@ -10,7 +11,7 @@ interface Item {
 
 function Card({ item }: { item: Item }) {
   return (
-    <div className="flex flex-col items-center rounded-custom bg-white p-6 shadow-lg">
+    <div className="rounded-custom flex flex-col items-center bg-white p-6 shadow-lg">
       <img
         src={item.image}
         alt={item.name}
@@ -18,12 +19,9 @@ function Card({ item }: { item: Item }) {
       />
       <h3 className="mb-2 text-xl font-semibold">{item.name}</h3>
       <p className="mb-4 text-gray-700">{item.description}</p>
-      <Button
-        className="mt-auto"
-        onClick={() => alert(`Viewing details for ${item.name}`)}
-      >
-        View Details
-      </Button>
+      <Link to={`/product/${item.id}`} state={{ product: item }}>
+        <Button className="mt-auto">View Details</Button>
+      </Link>
     </div>
   );
 }
