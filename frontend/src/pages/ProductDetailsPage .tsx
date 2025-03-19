@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import Button from "../utils/Button";
+import { useState } from "react";
+import ZoomImage from "../utils/ZoomImage";
 
 interface Product {
   id: number;
@@ -13,31 +15,29 @@ const ProductDetailsPage = () => {
   const location = useLocation();
   const product = location.state?.product as Product;
 
-  if (!product) {
-    return <div>Product not found</div>;
-  }
-
   const images = Array.isArray(product.image) ? product.image : [product.image];
+  const [mainImage, setMainImage] = useState(images[0]);
+
+  const handleImageClick = (img: string) => {
+    setMainImage(img);
+  };
 
   return (
     <div className="container mx-auto p-6">
       <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
-        <div className="flex w-20 flex-col gap-4">
+        <div className="flex w-20 flex-col gap-2">
           {images.map((img, index) => (
             <img
               key={index}
               src={img}
               alt={`${product.name} ${index + 1}`}
               className="cursor-pointer rounded-md border border-red-600 object-cover"
+              onClick={() => handleImageClick(img)}
             />
           ))}
         </div>
-        <div className="w-full md:w-1/2">
-          <img
-            src={images[0]}
-            alt={product.name}
-            className="h-auto w-full rounded-md border border-red-500 object-cover"
-          />
+        <div className="flex-1">
+          <ZoomImage src={mainImage} alt={product.name} />
         </div>
         <div className="flex w-full flex-col gap-4 md:w-1/4">
           <h1 className="text-3xl font-bold">{product.name}</h1>
