@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = () => {
         </Link>
       </div>
       <header className="flex flex-wrap items-center justify-between gap-4 bg-white p-4 shadow-sm md:flex-nowrap">
-        <div className="flex-shrink-0 overflow-hidden">
+        <div className="flex-shrink-0 overflow-visible">
           <img
             src={logo}
             alt="Logo"
@@ -97,8 +97,8 @@ const Header: React.FC<HeaderProps> = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <MenuItems className="ring-opacity-5 absolute left-0 z-50 mt-2 w-[600px] origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none">
-                <div className="grid grid-cols-3 gap-4 p-4">
+              <MenuItems className="ring-opacity-5 absolute left-0 z-50 mt-2 w-full md:w-[600px] origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none overflow-y-auto max-h-[80vh]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
                   {categories.map((category) => (
                     <div key={category.name} className="space-y-2">
                       <MenuItem>
