@@ -1,4 +1,5 @@
 import Header from "../components/Header/Header";
+//import HeaderRefactored from "../components/Header/HeaderRefactored";
 import AdvertisingCarousel from "../../src/components/AdvertisingCarousel/AdvertisingCarousel";
 import Grid from "../components/Grid/Grid";
 const HomePage: React.FC = () => {

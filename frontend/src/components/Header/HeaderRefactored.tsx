@@ -69,12 +69,17 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <>
-      <div className="flex items-center justify-end px-5 py-2">
+      {/* Top Bar with Shopping Cart Icon */}
+      <div className="flex items-center justify-end bg-gray-100 px-4 py-2">
         <Link to="/shoppingCart" className="flex items-center gap-2">
-          <ShoppingCartIcon className="h-6 w-6 text-gray-500" />
+          <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
+          <span className="text-sm font-medium text-gray-700">Cart</span>
         </Link>
       </div>
+
+      {/* Main Header */}
       <header className="flex flex-wrap items-center justify-between gap-4 bg-white p-4 shadow-sm md:flex-nowrap">
+        {/* Logo */}
         <div className="flex-shrink-0 overflow-hidden">
           <img
             src={logo}
@@ -82,11 +87,13 @@ const Header: React.FC<HeaderProps> = () => {
             className="h-10 w-auto sm:h-14 md:h-18 lg:h-22"
           />
         </div>
+
+        {/* Search Bar and Category Dropdown */}
         <div className="mx-4 flex flex-1 flex-wrap items-center gap-4 md:flex-nowrap">
           <Menu as="div" className="relative">
-            <MenuButton className="flex cursor-pointer items-center space-x-2 bg-white px-2 py-1 text-sm text-gray-700 transition-colors hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-base">
-              <span>Shop by Category</span>
-              <ChevronDownIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
+            <MenuButton className="flex cursor-pointer items-center space-x-2 bg-white px-4 py-2 transition-colors hover:bg-gray-50">
+              <span className="text-gray-700">Shop by Category</span>
+              <ChevronDownIcon className="h-5 w-5 text-gray-500" />
             </MenuButton>
             <Transition
               as={Fragment}
@@ -135,13 +142,12 @@ const Header: React.FC<HeaderProps> = () => {
               </MenuItems>
             </Transition>
           </Menu>
-
           <div className="ml-4 flex flex-1 items-center overflow-hidden rounded-md border border-gray-700 bg-white">
             <MagnifyingGlassIcon className="ml-3 h-5 w-5 text-gray-500" />
             <input
               type="text"
               placeholder="Search for anything"
-              className="flex-1 min-w-0 px-4 py-2 text-sm outline-none sm:text-base placeholder:text-transparent sm:placeholder:text-gray-400"
+              className="flex-1 px-4 py-2 outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -153,9 +159,8 @@ const Header: React.FC<HeaderProps> = () => {
                 <XMarkIcon className="h-5 w-5" />
               </button>
             )}
-      
             <select
-              className="hidden border-l border-gray-200 bg-transparent py-2 pr-6 pl-1 text-gray-500 focus:outline-none sm:block"
+              className="border-l border-gray-200 bg-transparent py-2 pr-6 pl-1 text-gray-500 focus:outline-none"
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
@@ -164,26 +169,23 @@ const Header: React.FC<HeaderProps> = () => {
               <option value="Clothing">Clothing</option>
               <option value="Music">Music</option>
             </select>
-
-            <button
-              className="flex items-center justify-center rounded-r-md bg-[#3b82f6] p-2 text-white sm:hidden"
-              onClick={handleSearch}
-            >
-              <MagnifyingGlassIcon className="h-5 w-5" />
-            </button>
           </div>
         </div>
 
+        {/* Search Button */}
         <button
-          className="hidden flex-shrink cursor-pointer rounded-md bg-[#3b82f6] px-4 py-2 text-sm text-white transition-colors hover:bg-[#2563eb] sm:block md:px-6 md:py-3 md:text-base"
+          className="flex-shrink-0 cursor-pointer rounded-md bg-[#3b82f6] px-4 py-2 text-sm text-white transition-colors hover:bg-[#2563eb] md:px-6 md:py-3 md:text-base"
           onClick={handleSearch}
         >
           Search
         </button>
       </header>
 
-      <div className="mt-2 pt-1 pr-10 pl-10">
-        <Nav />
+      {/* Navigation Bar */}
+      <div className="mt-2 bg-gray-100 py-2">
+        <div className="container mx-auto flex justify-between">
+          <Nav />
+        </div>
       </div>
     </>
   );
