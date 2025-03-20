@@ -37,22 +37,6 @@ const Header: React.FC<HeaderProps> = () => {
       name: "Music",
       subcategories: ["Guitars", "Keyboards", "Drums"],
     },
-    /*{
-      name: "Home Appliances",
-      subcategories: ["Refrigerators", "Air Conditioners", "Washing Machines"],
-    },
-    {
-      name: "Toys",
-      subcategories: ["Dolls", "Action Figures", "Board Games"],
-    },
-    {
-      name: "Sporting Goods",
-      subcategories: ["Bicycles", "Skateboards", "Football"],
-    },
-    {
-      name: "Jewelry & Watches",
-      subcategories: ["Rings", "Necklaces", "Watches"],
-    }*/
   ];
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -86,10 +70,13 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <>
       <header className="flex items-center justify-between bg-white pt-4 pr-10 pb-4 pl-10 shadow-sm">
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-30" />
-        </div>
-
+        <div className="flex-shrink-0 overflow-hidden">
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-10 w-auto sm:h-14 md:h-18 lg:h-22"
+          />
+        </div>  
         <div className="mx-4 flex flex-1 items-center">
           <Menu as="div" className="relative">
             <MenuButton className="flex cursor-pointer items-center space-x-2 bg-white px-4 py-2 transition-colors hover:bg-gray-50">
@@ -169,10 +156,6 @@ const Header: React.FC<HeaderProps> = () => {
               <option value="Electronics">Electronics</option>
               <option value="Clothing">Clothing</option>
               <option value="Clothing">Music</option>
-              {/*<option value="Clothing">Home Appliances</option>
-              <option value="Clothing">Toys</option>
-              <option value="Clothing">Sporting Goods</option>
-              <option value="Clothing">Jewelry & Watches</option>*/}
             </select>
           </div>
         </div>
