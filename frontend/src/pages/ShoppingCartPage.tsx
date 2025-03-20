@@ -4,6 +4,7 @@ import Button from "../utils/Button";
 import RegisterForm from "../utils/RegisterForm";
 import SigninForm from "../utils/SigninForm";
 import { useNavigate } from "react-router-dom";
+import ProductInCart from "../components/ProductList/ProductInCart";
 
 export default function ShoppingCartPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -12,6 +13,9 @@ export default function ShoppingCartPage() {
   return (
     <div className="h-screen bg-red-50">
       <div className="flex h-[70vh] flex-col items-center justify-center gap-5 bg-red-100">
+        <Button onClick={() => navigate("/")} className="">
+          Go back
+        </Button>
         {cartItems.length === 0 ? (
           <>
             <h5 className="text-2xl font-semibold">
@@ -24,29 +28,7 @@ export default function ShoppingCartPage() {
             </span>
           </>
         ) : (
-          <div className="w-full max-w-4xl rounded-lg bg-white p-4 shadow-md">
-            <h2 className="mb-4 text-2xl font-bold">Shopping Cart</h2>
-            <ul>
-              {cartItems.map((item) => (
-                <li
-                  key={item.id}
-                  className="mb-4 flex items-center justify-between"
-                >
-                  <div className="flex items-center">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="mr-4 h-16 w-16 rounded-md object-cover"
-                    />
-                    <div>
-                      <h3 className="text-lg font-semibold">{item.name}</h3>
-                      <p className="text-gray-700">${item.price}</p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ProductInCart cartItems={cartItems} />
         )}
       </div>
       <div className="flex items-center justify-center gap-20 bg-gray-200">
