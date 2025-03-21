@@ -2,6 +2,7 @@ const  transporter  = require('../../config/nodemailer')
 
 module.exports = {
     sendVerificationCode: async (code, user) => {
+         console.log(JSON.stringify(user), code)
          const emailData = {
               from: process.env.EMAIL_FROM,
               to: user.email,

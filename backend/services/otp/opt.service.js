@@ -9,7 +9,7 @@ module.exports = {
             encoding: 'base32'
         })
     },
-    verifyOtp:(otp) => {
+    verifyTotp:(otp) => {
         return speakeasy.totp.verify({
             secret:secret.base32,
             encoding:'base32',

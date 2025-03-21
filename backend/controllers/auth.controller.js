@@ -3,8 +3,9 @@ const   Otp   = require('../models/opt.model');
 const  CustomError= require("../utils/error");
 const jwt = require("jsonwebtoken");
 
-const { generateOtp } = require("../services/otp/opt.service");
+const { generateOtp,  verifyTotp} = require("../services/otp/opt.service");
 const {sendVerificationCode} = require("../services/nodemailer/mailing.service");
+const {verify} = require("jsonwebtoken");
 
 
 module.exports = {
@@ -83,6 +84,21 @@ module.exports = {
             const code =  otpDoc.passcode;
 
             await sendVerificationCode(code,userInfo)
+            const token = jwt.sign(
+                {
+                    userId: userDoc._id,
+                },
+                process.env.JWT_STRONG_SECRET,
+                {
+                    expiresIn: process.env.JWT_EXPIRE_TIME
+                }
+            )
+
+            res.cookie("access_token", token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "None",
+            });
             res.status(201).json({
                 status:'succes',
                 message:"Account created sucessfully"
@@ -113,6 +129,29 @@ module.exports = {
                 message: err.message,
             })
         }
-
+    },
+    verifyOtp: async (res, req, next) => {
+        try{
+            const otp = await Otp.findOne({ author:req.userId })
+            if(!otp){
+                const error = new CustomError(`Otp with id : ${ req.userId }not found or expired`,404);
+                next(error)
+            }
+            const isValid = verifyTotp(otp)
+            if(!isValid){
+                const error = new CustomError(`Not valid Otp `,401);
+                next(error)
+            }
+            const user = await  User.findOneAndUpdate({_id:req.userId},{account_verify:true},{ new: true})
+            res.status(201).json({
+                status:'succes',
+                message:'Account verified successfully'
+            })
+        }catch(err){
+            res.status(500).json({
+                status:'error',
+                message: err.message
+            })
+        }
     }
 }
