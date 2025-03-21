@@ -1,21 +1,11 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  Menu,
-  Transition,
-  MenuButton,
-  MenuItems,
-  MenuItem,
-} from "@headlessui/react";
-import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-  XMarkIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/20/solid";
+import { Menu, Transition, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
+import { ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
-import { searchProducts, loadProducts } from "../../store/slices/productSlice";
+import { searchProducts } from "../../store/slices/localProductSlice";
+//import { searchProducts } from "../../store/slices/productSlice";
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
 
@@ -25,34 +15,18 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = () => {
   const categories = [
-    {
-      name: "Electronics",
-      subcategories: ["Smartphones", "Laptops", "Televisions"],
-    },
-    {
-      name: "Clothing",
-      subcategories: ["Jeans", "Sneakers", "Jackets"],
-    },
-    {
-      name: "Music",
-      subcategories: ["Guitars", "Keyboards", "Drums"],
-    },
+    { name: "Electronics", subcategories: ["Smartphones", "Laptops", "Televisions"] },
+    { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
+    { name: "Music", subcategories: ["Guitars", "Keyboards", "Drums"] },
   ];
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const dispatch: AppDispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(loadProducts());
-  }, [dispatch]);
-
   const handleSearch = () => {
-    if (searchQuery.trim() === "") {
-      return;
-    }
-    dispatch(
-      searchProducts({ query: searchQuery, category: selectedCategory }),
-    );
+    if (searchQuery.trim() === "") return;
+    dispatch(searchProducts({ query: searchQuery, category: selectedCategory }));
   };
 
   const handleClearResults = () => {
@@ -76,11 +50,7 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
       <header className="flex flex-wrap items-center justify-between gap-4 bg-white p-4 shadow-sm md:flex-nowrap">
         <div className="flex-shrink-0 overflow-visible">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-10 w-auto sm:h-14 md:h-18 lg:h-22"
-          />
+          <img src={logo} alt="Logo" className="h-10 w-auto sm:h-14 md:h-18 lg:h-22" />
         </div>
         <div className="mx-4 flex flex-1 flex-wrap items-center gap-4 md:flex-nowrap">
           <Menu as="div" className="relative">
@@ -153,7 +123,6 @@ const Header: React.FC<HeaderProps> = () => {
                 <XMarkIcon className="h-5 w-5" />
               </button>
             )}
-      
             <select
               className="hidden border-l border-gray-200 bg-transparent py-2 pr-6 pl-1 text-gray-500 focus:outline-none sm:block"
               value={selectedCategory}
