@@ -87,42 +87,42 @@
     "name": "Stratocaster Electric Guitar",
     "price": 699.99,
     "description": "The Stratocaster Electric Guitar is a classic instrument known for its versatile sound and iconic design. Perfect for rock, blues, and jazz.",
-    "category": "Guitars",
+    "category": "Music",
     "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/stratocaster.jpg"
   },
   {
     "name": "Acoustic Folk Guitar",
     "price": 299.99,
     "description": "The Acoustic Folk Guitar delivers rich, warm tones and is ideal for singer-songwriters and casual players. Made with solid spruce and mahogany.",
-    "category": "Guitars",
+    "category": "Music",
     "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/folkGuitar.jpg"
   },
   {
     "name": "Digital Piano 88 Keys",
     "price": 899.99,
     "description": "The Digital Piano 88 Keys offers a realistic playing experience with weighted keys and high-quality sound samples. Perfect for beginners and professionals alike.",
-    "category": "Keyboards",
+    "category": "Music",
     "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/digitalPiano.jpg"
   },
   {
     "name": "Portable MIDI Keyboard",
     "price": 149.99,
     "description": "The Portable MIDI Keyboard is compact and lightweight, making it ideal for music production on the go. Features 25 velocity-sensitive keys and USB connectivity.",
-    "category": "Keyboards",
+    "category": "Music",
     "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/midiKeyboard.jpg"
   },
   {
     "name": "5-Piece Drum Kit",
     "price": 799.99,
     "description": "The 5-Piece Drum Kit is perfect for drummers of all levels. Includes a bass drum, snare, toms, and cymbals for a complete setup.",
-    "category": "Drums",
+    "category": "Music",
     "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumKit.jpg"
   },
   {
     "name": "Electronic Drum Pad",
     "price": 349.99,
     "description": "The Electronic Drum Pad is a compact and versatile option for practicing and performing. Features 8 pads with customizable sounds and built-in speakers.",
-    "category": "Drums",
+    "category": "Music",
     "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumPad.jpg"
   }
 ]
