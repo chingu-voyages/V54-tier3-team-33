@@ -16,5 +16,4 @@ Content-Type: application/json
     "email": "example@gmail.com",
     "password": "test"
 }
-###
 
