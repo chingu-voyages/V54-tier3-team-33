@@ -1,87 +1,128 @@
 [
   {
-    "name": "App",
-    "price": 5,
-    "description": "A juicy red apple, rich in fiber and vitamins.",
-    "category": "Fruits",
-    "image": "https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*"
+    "name": "Laptop UltraBook Pro X1",
+    "price": 800,
+    "description": "The UltraBook Pro X1 is the perfect blend of portability and performance.",
+    "category": "Electronics",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop1.jpg"
   },
   {
-    "name": "Banana",
-    "price": 4,
-    "description": "A ripe yellow banana, perfect for a healthy snack.",
-    "category": "Fruits",
-    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bunch-of-bananas-67e91d5.jpg"
+    "name": "Laptop Gaming Beast GX900",
+    "price": 900,
+    "description": "Built for gamers and creators, the Gaming Beast GX900 is a powerhouse laptop designed to handle the most demanding tasks.",
+    "category": "Electronics",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop2.jpg"
   },
   {
-    "name": "Mango",
-    "price": 7,
-    "description": "A sweet and tropical mango, loved for its juicy taste.",
-    "category": "Fruits",
-    "image": "https://organico.rs/wp-content/uploads/2021/08/mango-1.jpg"
+    "name": "Laptop EduBook Lite S3",
+    "price": 1000,
+    "description": "The EduBook Lite S3 is a budget-friendly laptop designed specifically for students.",
+    "category": "Electronics",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop3.jpg"
   },
   {
-    "name": "Strawberry",
-    "price": 4,
-    "description": "Fresh, bright red strawberries with a sweet and tangy flavor.",
-    "category": "Fruits",
-    "image": "https://allmanhall.co.uk/wp-content/uploads/2019/06/Strawberries-on-white-background.jpg"
+    "name": "Laptop WorkStation Elite Z5",
+    "price": 850,
+    "description": "The WorkStation Elite Z5 is a professional-grade laptop designed for business users and developers",
+    "category": "Electronics",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop4.jpg"
   },
   {
-    "name": "Orange",
-    "price": 8,
-    "description": "A citrus fruit packed with Vitamin C and refreshing taste.",
-    "category": "Fruits",
-    "image": "https://fruitique.in/cdn/shop/products/Mandarin-orange_750x810.jpg?v=1625786754"
-  },
-
-  {
-    "name": "Tesla Model S",
-    "price": 79999,
-    "description": "A high-performance electric sedan with cutting-edge technology.",
-    "category": "Cars",
-    "image": "https://hips.hearstapps.com/hmg-prod/images/2025-tesla-model-s-1-672d42e172407.jpg?crop=0.465xw:0.466xh;0.285xw,0.361xh&resize=2048:*"
-  },
-  {
-    "name": "Ford Mustang",
-    "price": 55999,
-    "description": "An American muscle car known for its speed and power.",
-    "category": "Cars",
-    "image": "https://hips.hearstapps.com/hmg-prod/images/2025-ford-mustang-60th-anniversary-exterior-66227932bb88e.jpg?crop=0.793xw:1.00xh;0.106xw,0&resize=1200:*"
-  },
-  {
-    "name": "Lamborghini Huracan",
-    "price": 230000,
-    "description": "A luxury sports car with an aerodynamic design and V10 engine.",
-    "category": "Cars",
-    "image": "https://i.ytimg.com/vi/MG4AAcV9Pc0/maxresdefault.jpg"
+    "name": "Laptop Chromebook Flex 2-in-1",
+    "price": 950,
+    "description": "The Chromebook Flex 2-in-1 is a versatile and affordable laptop that combines the simplicity of Chrome OS with the flexibility of a 2-in-1 design.",
+    "category": "Electronics",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop5.jpg"
   },
   {
     "name": "Denim Jacket",
     "price": 59.99,
     "description": "A stylish and durable denim jacket for casual wear.",
-    "category": "Clothes",
+    "category": "Clothing",
     "image": "https://thursdayboots.com/cdn/shop/products/1024x1024-Mens-Jackets-Denim-Trucker-WashedIndigo-010423-1_1024x1024.jpg?v=1673282143"
   },
   {
     "name": "Sneakers",
     "price": 89.99,
     "description": "Comfortable and trendy sneakers, perfect for daily wear.",
-    "category": "Clothes",
+    "category": "Clothing",
     "image": "https://cdn.thewirecutter.com/wp-content/media/2024/05/white-sneaker-2048px-9320.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"
   },
   {
     "name": "Hoodie",
     "price": 49.99,
     "description": "A cozy hoodie made from high-quality cotton fabric.",
-    "category": "Clothes",
+    "category": "Clothing",
     "image": "https://anothercottonlab.com/cdn/shop/files/ACL-SRC-Hoodie-VB-Front-Neu2.jpg?v=1729687178&width=1080"
   },
   {
     "name": "Formal Suit",
     "price": 199.99,
     "description": "A well-tailored formal suit for business and special occasions.",
-    "category": "Clothes",
+    "category": "Clothing",
     "image": "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/27748182/2024/2/21/f7c1aabb-1505-4630-bd25-53eb15a153711708492338173TwoPieceNavyTexturedFormalSuits-Waves1.jpg"
+  },
+  {
+    "name": "Smartphone UltraMini S2",
+    "price": 499.99,
+    "description": "The UltraMini S2 is a compact and powerful smartphone designed for users who prefer smaller devices.",
+    "category": "Electronics",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/smartPhone1.jpg"
+  },
+  {
+    "name": "Jacket Classic Rider Jacket",
+    "price": 199.99,
+    "description": "The Classic Rider Jacket is a timeless piece that combines rugged durability with sleek style. Made from premium full-grain leather.",
+    "category": "Clothing",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/leatherJacket.jpg"
+  },
+  {
+    "name": "Jeans Ripped Skinny Jeans",
+    "price": 59.99,
+    "description": "The Black Ripped Skinny Jeans are a bold and edgy addition to any wardrobe.",
+    "category": "Clothing",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/denimJeans.jpg"
+  },
+  {
+    "name": "Stratocaster Electric Guitar",
+    "price": 699.99,
+    "description": "The Stratocaster Electric Guitar is a classic instrument known for its versatile sound and iconic design. Perfect for rock, blues, and jazz.",
+    "category": "Guitars",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/stratocaster.jpg"
+  },
+  {
+    "name": "Acoustic Folk Guitar",
+    "price": 299.99,
+    "description": "The Acoustic Folk Guitar delivers rich, warm tones and is ideal for singer-songwriters and casual players. Made with solid spruce and mahogany.",
+    "category": "Guitars",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/folkGuitar.jpg"
+  },
+  {
+    "name": "Digital Piano 88 Keys",
+    "price": 899.99,
+    "description": "The Digital Piano 88 Keys offers a realistic playing experience with weighted keys and high-quality sound samples. Perfect for beginners and professionals alike.",
+    "category": "Keyboards",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/digitalPiano.jpg"
+  },
+  {
+    "name": "Portable MIDI Keyboard",
+    "price": 149.99,
+    "description": "The Portable MIDI Keyboard is compact and lightweight, making it ideal for music production on the go. Features 25 velocity-sensitive keys and USB connectivity.",
+    "category": "Keyboards",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/midiKeyboard.jpg"
+  },
+  {
+    "name": "5-Piece Drum Kit",
+    "price": 799.99,
+    "description": "The 5-Piece Drum Kit is perfect for drummers of all levels. Includes a bass drum, snare, toms, and cymbals for a complete setup.",
+    "category": "Drums",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumKit.jpg"
+  },
+  {
+    "name": "Electronic Drum Pad",
+    "price": 349.99,
+    "description": "The Electronic Drum Pad is a compact and versatile option for practicing and performing. Features 8 pads with customizable sounds and built-in speakers.",
+    "category": "Drums",
+    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumPad.jpg"
   }
 ]
