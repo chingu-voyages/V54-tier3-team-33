@@ -63,13 +63,11 @@ const AdvertisingCarousel: React.FC = () => {
           leaveTo="opacity-0"
         >
           <div className="absolute inset-0 flex flex-col md:flex-row items-center bg-[#36486b] justify-between px-4 md:px-8">
-            {/* Text Content */}
             <div className="w-full md:w-1/2 flex flex-col justify-center text-white z-10 text-center md:text-left mb-4 md:mb-0">
               <h2 className="text-2xl md:text-4xl font-bold md:ml-10">{slide.title}</h2>
               <p className="text-lg md:text-xl mt-2 md:mt-4 md:ml-10">{slide.description}</p>
             </div>
 
-            {/* Image */}
             <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end h-48 md:h-64 relative">
               <img
                 src={slide.image}
@@ -86,7 +84,6 @@ const AdvertisingCarousel: React.FC = () => {
         </Transition>
       ))}
 
-      {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
         className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
@@ -100,7 +97,6 @@ const AdvertisingCarousel: React.FC = () => {
         <ChevronRightIcon className="h-6 w-6 text-gray-800" />
       </button>
 
-      {/* Pause/Play Button */}
       <button
         onClick={togglePause}
         className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
