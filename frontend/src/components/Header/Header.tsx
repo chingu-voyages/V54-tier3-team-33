@@ -18,6 +18,8 @@ import logo from "../../assets/logo.png";
 import { searchProducts, loadProducts } from "../../store/slices/productSlice";
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 interface HeaderProps {
   showAdvertising?: boolean;
@@ -54,6 +56,9 @@ const Header: React.FC<HeaderProps> = () => {
       subcategories: ["Rings", "Necklaces", "Watches"],
     }*/
   ];
+
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const dispatch: AppDispatch = useDispatch();
@@ -182,9 +187,17 @@ const Header: React.FC<HeaderProps> = () => {
         >
           Search
         </button>
-        <Link to="/shoppingCart">
-          <ShoppingCartIcon className="ml-3 h-6 w-6 text-gray-500" />
-        </Link>
+        <Link
+            to="/shoppingCart"
+            className="ml-3 size-7 text-gray-500 relative"
+          >
+            <ShoppingCartIcon />
+            {cartItems.length > 0 && (
+              <span className="absolute -top-3 right-0 flex size-5 animate-bounce items-center justify-center rounded-full bg-red-500 text-sm font-bold text-white">
+                {cartItems.length}
+              </span>
+            )}
+          </Link>
       </header>
       <div className="mt-2 pt-1 pr-10 pl-10">
         <Nav />
