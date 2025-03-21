@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Transition } from "@headlessui/react";
 import { ChevronLeftIcon, ChevronRightIcon, PauseIcon, PlayIcon } from "@heroicons/react/20/solid";
-import comicBooks from '../../assets/advertising/comicBooks.jpg';
-import toys from '../../assets/advertising/toys.jpg';
-import baseballCards from '../../assets/advertising/baseballCards.jpg';
+import sneakers from '../../assets/advertising/sneakers.jpg';
+import electronicDevices from '../../assets/advertising/electronicDevices.jpg';
+import vintageGuitars from '../../assets/advertising/vintageGuitars.jpg';
 
 const AdvertisingCarousel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,21 +12,21 @@ const AdvertisingCarousel: React.FC = () => {
   const slides = [
     {
       id: 1,
-      title: "Vintage Baseball Cards",
-      description: "Discover rare and collectible baseball cards!",
-      image: baseballCards,
+      title: "Vintage Electric Guitars",
+      description: "Discover rare and collectible electric guitars!",
+      image: vintageGuitars,
     },
     {
       id: 2,
-      title: "Toys",
-      description: "Explore the latest and greatest toys for all ages!",
-      image: toys,
+      title: "Electronic Devices",
+      description: "Explore the latest and greatest electronic devices for all ages!",
+      image: electronicDevices,
     },
     {
       id: 3,
-      title: "Comic Books",
-      description: "Dive into the world of superheroes and graphic novels!",
-      image: comicBooks,
+      title: "Sneakers",
+      description: "Classic and cools sneakers for all ages!",
+      image: sneakers,
     },
   ];
 

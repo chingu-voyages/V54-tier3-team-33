@@ -114,6 +114,11 @@ const Header: React.FC<HeaderProps> = () => {
               className="flex-1 min-w-0 px-4 py-2 text-sm outline-none sm:text-base placeholder:text-transparent sm:placeholder:text-gray-400"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch(); 
+                }
+              }}
             />
             {searchQuery && (
               <button
