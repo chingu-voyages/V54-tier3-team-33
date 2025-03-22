@@ -18,8 +18,9 @@ const productSchema = new Schema({
     name: String,
     price: Number,
     category: String,
+    subcategory: String,
     description: String,
-    image: String
+    images: [String]
 })
 productSchema.set('toJSON', {
     transform: (document, returnedObject) => {
