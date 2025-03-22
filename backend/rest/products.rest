@@ -1,0 +1,14 @@
+GET http://localhost:3000/api/products
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+  {
+    "name": "Formal Suit",
+    "price": 199.99,
+    "description": "A well-tailored formal suit for business and special occasions.",
+    "category": "Clothes",
+    "subcategory": "Suites",
+    "images": ["https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/27748182/2024/2/21/f7c1aabb-1505-4630-bd25-53eb15a153711708492338173TwoPieceNavyTexturedFormalSuits-Waves1.jpg"]
+  }
+  

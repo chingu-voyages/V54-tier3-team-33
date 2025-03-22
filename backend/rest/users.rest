@@ -1,0 +1,19 @@
+
+@auth_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q5ZDJhZmQzMTE2ZjZlNTA2NGVlZWMiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQyMzI4Njg4LCJleHAiOjE3NDIzMjg2ODh9.t0J94VvKlMrPIoza-Pcj1wm237r5YTiv2Q0LxuykFoU
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+    "password": "test"
+}
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+    "password": "test"
+}
+
