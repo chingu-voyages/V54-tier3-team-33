@@ -7,7 +7,6 @@ export default {
         // primaries and secondaries to be changed later
         primary: "#68A4CA",
         primaryHover: "#4A92BF",
-
         secondary: "#FFCB47",
         secondaryHover: "#F5AF00",
 
