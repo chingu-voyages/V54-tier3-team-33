@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const  bcrypt = require("bcrypt");
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
         firstname:{ type:String },
         lastname: { type: String},
         email: { type:String ,},
@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
         timestamps: true,
     })
 
-UserSchema.pre('save',async function(next){
+userSchema.pre('save',async function(next){
     let user = this;
     // only hash password if it has modified or new
     if(!(user.isModified('password')) || !(user.isNew) ) {
@@ -38,8 +38,14 @@ UserSchema.pre('save',async function(next){
         next(err)
     }
 });
-
-UserSchema.methods.comparePassword =  function(candidatePassword){
+userSchema.set('toJSON', {
+    transform: (document, returnedObject) => {
+      returnedObject.id = returnedObject._id.toString()
+      delete returnedObject._id
+      delete returnedObject.__v
+    },
+  })
+userSchema.methods.comparePassword =  function(candidatePassword){
     return new Promise((resolve, reject) => {
         bcrypt.compare(candidatePassword, this.password, (err , isMatch)=>{
             if(err) return reject(err)
@@ -47,4 +53,4 @@ UserSchema.methods.comparePassword =  function(candidatePassword){
         })
     })
 }
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", userSchema);

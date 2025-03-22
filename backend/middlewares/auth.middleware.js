@@ -3,7 +3,7 @@ const {verify} = require("jsonwebtoken");
 
 module.exports = {
     authMiddleware: async (req , res , next) =>{
-        const token = req.cookies.token;
+        const token = req.cookies.access_token;
         if(!token) return  res.status(401).json({
             status: 'failed',
             message: 'Access denied. No token provided.',

@@ -14,13 +14,15 @@ module.exports = {
         try{
             const foundUser = await User.findOne({ email });
             if(!foundUser){
-                const error = new CustomError('User not found',404);
-                next(error)
+                return res.status(404).json({
+                    message: 'User not found with this email'
+                }).end()
             }
             const validity = await foundUser.comparePassword(password);
             if(!validity){
-                const error = new CustomError('Pair identifiant/password not correct',401);
-                next(error)
+                return res.status(404).json({
+                    message: 'Password is incorrect'
+                })
             }
             const token = jwt.sign(
                 {
@@ -29,7 +31,7 @@ module.exports = {
                 },
                 process.env.JWT_STRONG_SECRET,
                 {
-                    expiresIn: process.env.JWT_EXPIRE_TIME
+                    expiresIn: 7*24*60*60
                 }
             )
 
@@ -37,8 +39,9 @@ module.exports = {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === "production",
                 sameSite: "None",
+                maxAge: 7*24*60*60*1000
             });
-            res.status(201).json({
+            return res.status(201).json({
                 status: "sucess",
                 message:'logged in successfully'
             });
@@ -68,29 +71,29 @@ module.exports = {
                 next(mongodbError)
             }
 
-            const otp = await generateOtp()
+            // const otp = await generateOtp()
 
-            const newOtp = new Otp({
-                passcode: otp,
-                author:userDoc._id
-            })
+            // const newOtp = new Otp({
+            //     passcode: otp,
+            //     author:userDoc._id
+            // })
 
-            const otpDoc = await newOtp.save()
-            if(!otpDoc){
-                const mongodbError = new CustomError('Unexpected error occured from mongodb', 500)
-                next(mongodbError)
-            }
-            const userInfo = userDoc._doc;
-            const code =  otpDoc.passcode;
+            // const otpDoc = await newOtp.save()
+            // if(!otpDoc){
+            //     const mongodbError = new CustomError('Unexpected error occured from mongodb', 500)
+            //     next(mongodbError)
+            // }
+            // const userInfo = userDoc._doc;
+            // const code =  otpDoc.passcode;
 
-            await sendVerificationCode(code,userInfo)
+            // await sendVerificationCode(code,userInfo)
             const token = jwt.sign(
                 {
                     userId: userDoc._id,
                 },
                 process.env.JWT_STRONG_SECRET,
                 {
-                    expiresIn: process.env.JWT_EXPIRE_TIME
+                    expiresIn: 7*24*60*60
                 }
             )
 
@@ -98,33 +101,33 @@ module.exports = {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === "production",
                 sameSite: "None",
+                maxAge: 7*24*60*60*1000
             });
             res.status(201).json({
                 status:'succes',
                 message:"Account created sucessfully"
             })
         }catch(err){
-            return  res.status(500).json({
+            res.status(500).json({
                 status:'error',
                 message: err.message,
             })
         }
     },
-    getMe: async (res, req, next) => {
+    getMe: async (req, res, next) => {
         const { userId } = req;
         try{
-            const foundUser = await User.findById(userId).exec()
+            const foundUser = await User.findById(userId)
             if(!foundUser){
                 const error = new CustomError('User not found',404);
                 next(error)
             }
-            const { password , ...data} = foundUser;
+            const { password , ...userData} = foundUser.toJSON();
             res.status(200).json({
-                status:'success',
-                message: "User fetched successfully"
+                data: userData
             })
-        }catch (e) {
-            return  res.status(500).json({
+        }catch (err) {
+            res.status(500).json({
                 status:'error',
                 message: err.message,
             })
@@ -143,7 +146,7 @@ module.exports = {
                 next(error)
             }
             const user = await  User.findOneAndUpdate({_id:req.userId},{account_verify:true},{ new: true})
-            res.status(201).json({
+            return res.status(201).json({
                 status:'succes',
                 message:'Account verified successfully'
             })

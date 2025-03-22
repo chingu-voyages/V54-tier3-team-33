@@ -23,7 +23,6 @@ app.use(express.static('dist'))
 app.use(globalErrorHandler);
 
 
-//connexion à mongoDb
 connectToDatabase()
 
 //Routes
