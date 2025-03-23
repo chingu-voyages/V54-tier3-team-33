@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Menu, Transition, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import { ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
-import { searchProducts } from "../../store/slices/localProductSlice";
-//import { searchProducts } from "../../store/slices/productSlice";
+//import { searchProducts } from "../../store/slices/localProductSlice";
+import { searchProducts } from "../../store/slices/productSlice";
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
 
