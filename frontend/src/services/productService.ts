@@ -1,12 +1,17 @@
-import mockProducts from "../data/mockProducts";
-
-// Simulate an API call to fetch products for now (Until we have a real database and a real backend)
 const fetchProducts = async () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockProducts); // Simulate a delay for realism
-    }, 3000); // 3-seconds delay (for simulation purposes)
-  });
+  try {
+    const response = await fetch("https://ecommerce-chingu-backend.fly.dev/api/products");
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch products: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data; 
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error; 
+  }
 };
 
 export default fetchProducts;
