@@ -1,0 +1,164 @@
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 130
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RkN2UzMzE3NmQ1NDM1Yzc4NzM5YzciLCJpYXQiOjE3NDI1NjkwMTIsImV4cCI6MTc0MjU2OTA5OH0.g4mESjPVjvjIS8E12hs6PGowXW3jhR2R2JKVugPOlmo
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "tolotratolotra981@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T180036.401.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 130
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RkN2Q5YjE3NmQ1NDM1Yzc4NzM5YzIiLCJpYXQiOjE3NDI1Njg4NjQsImV4cCI6MTc0MjU2ODk1MH0.gXJ_u5PMu0aaRpztB9LCrGK8GieNEHk6HvizPn7qUto
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "tolotratolotra981@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T175652.201.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 125
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "wellaemeraud@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T175424.201.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 126
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "wellaemeraude@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T172717.201.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 130
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "rirynomenjanahary@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T172529.500.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 130
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "nomenjanaharyriry@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T172428.401.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 130
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "nomenjanaharyriry@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T172347.500.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 127
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "education.riry@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T172108.401.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 127
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Riry",
+  "lastname": "Nomenjanahary",
+  "email": "education.riry@gmail.com",
+  "password": "securepassword"
+}
+
+<> 2025-03-21T172038.500.json
+
+###
+
