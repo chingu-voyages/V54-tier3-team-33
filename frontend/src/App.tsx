@@ -4,6 +4,7 @@ import CategoryPage from "./pages/CategoryPage";
 import "./index.css";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage "
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
         <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/shoppingCart" element={<ShoppingCartPage />} />
         <Route path="/product/:productId" element={<ProductDetailsPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+
       </Routes>
     </Router>
   );
