@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import Button from "../../utils/Button";
+
 interface Item {
   id: number;
   name: string;
@@ -8,46 +11,17 @@ interface Item {
 
 function Card({ item }: { item: Item }) {
   return (
-    <div
-      key={item.id}
-      className="rounded-custom border-grayOne/70 shadow-custom flex flex-col border bg-white p-5 transition-all hover:shadow-xl"
-    >
-      {/* Product Image */}
+    <div className="rounded-custom flex flex-col items-center bg-white p-6 shadow-lg">
       <img
         src={item.image}
         alt={item.name}
-        className="mb-4 h-52 w-full object-contain"
+        className="mb-4 h-48 w-full rounded-md object-cover"
       />
-
-      {/* Product Info */}
-      <h2
-        className={`text-dark/85 font-titles mb-3 text-2xl font-light tracking-wider`}
-      >
-        {item.name}
-      </h2>
-      <p className="mb-1">
-        Price: <span className="text-primary font-semibold">${item.price}</span>
-      </p>
-      <p className="mb-3">
-        Description: <span>{item.description}</span>
-      </p>
-
-      {/* Add to Cart Button */}
-      {/* <Button
-          onClick={() => handleAddToCart(item)}
-          disabled={item.inStock === 0 || isInCart}
-          className={`mt-auto ${
-            item.inStock === 0 || isInCart
-              ? "cursor-not-allowed !bg-gray-300 hover:bg-gray-300"
-              : "hover:bg-primaryHover"
-          }`}
-        >
-          {item.inStock === 0
-            ? "Out of Stock"
-            : isInCart
-              ? "In Cart"
-              : "Add to Cart"}
-        </Button> */}
+      <h3 className="mb-2 text-xl font-semibold">{item.name}</h3>
+      <p className="mb-4 text-gray-700">{item.description}</p>
+      <Link to={`/product/${item.id}`} state={{ product: item }}>
+        <Button className="mt-auto">View Details</Button>
+      </Link>
     </div>
   );
 }

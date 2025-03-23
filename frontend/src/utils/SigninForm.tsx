@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { EnvelopeIcon, LockClosedIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const SigninForm: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,21 +16,39 @@ const SigninForm: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // form submission logic here
-    alert("Form submitted");
-    console.log("Form submitted", formData);
-    // clear form
-    setFormData({
-      email: "",
-      password: "",
-    });
+
+    try {
+      const response = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const data = await response.json();
+      console.log("Login successful", data);
+
+      // Navigate to profile page
+      navigate("/profile");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+
+// "http://localhost:3000/api/auth/me"
+// profile page
 
   return (
     <div className="flex min-h-screen items-center justify-center">

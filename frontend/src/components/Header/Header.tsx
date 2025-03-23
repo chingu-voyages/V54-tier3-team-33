@@ -8,6 +8,8 @@ import logo from "../../assets/logo.png";
 import { searchProducts } from "../../store/slices/productSlice";
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
+// import { useSelector } from "react-redux";
+// import { RootState } from "../../store/store";
 
 interface HeaderProps {
   showAdvertising?: boolean;
