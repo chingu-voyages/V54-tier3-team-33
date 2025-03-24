@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 interface Product {
   id: number;
   name: string;
-  image: string;
+  image: string | string[];
   price: number;
   description: string;
 }
