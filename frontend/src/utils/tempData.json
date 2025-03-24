@@ -18,7 +18,19 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
-        
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/s-l1600.jpg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/s-l1601.jpg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/s-l1602.jpg"
     ]
-}
+  },
+  {
+    "name": "Dell XPS 15 (2024)",
+    "price": 1799,
+    "description": "Premium ultrabook with 4K OLED display, Intel Core i9, and NVIDIA RTX 4050 for creators.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
+        ""
+    ]
+  }
 ]
