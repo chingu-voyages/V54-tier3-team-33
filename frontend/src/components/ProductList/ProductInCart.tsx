@@ -13,7 +13,7 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
     dispatch(removeItemFromCart(id));
   };
   return (
-    <div className="w-full max-w-4xl rounded-lg bg-white p-4 shadow-md">
+    <div className="w-full max-w-4xl rounded-custom bg-white p-4 ">
       <h2 className="mb-4 text-2xl font-bold">Shopping Cart</h2>
       <ul>
         {cartItems.map((item) => (

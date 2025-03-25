@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const ProfilePage: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
@@ -48,7 +51,7 @@ const ProfilePage: React.FC = () => {
   }, []);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div className="text-5xl">Loading... open cosnole F12</div>;
   }
 };
 
