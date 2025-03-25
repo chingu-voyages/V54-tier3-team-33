@@ -106,5 +106,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Samsung%20Galaxy%20Book3%20Ultra/samsung2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Samsung%20Galaxy%20Book3%20Ultra/samsung3.jpeg"
     ]
+  },
+  {
+    "name": "iPhone 15 Pro Max",
+    "price": 1199,
+    "description": "Apple's flagship with A17 Pro chip, 6.7-inch Super Retina XDR display, and 48MP camera.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
