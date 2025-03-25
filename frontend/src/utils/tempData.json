@@ -202,5 +202,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/ASUS%20ROG%20Phone%207%20Ultimate/asus-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/ASUS%20ROG%20Phone%207%20Ultimate/asus-3.jpeg"
     ]
+  },
+  {
+    "name": "Motorola Edge 40 Ultra",
+    "price": 899,
+    "description": "200MP camera, 165Hz pOLED display, and Snapdragon 8 Gen 2 for smooth performance.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }  
 ]
