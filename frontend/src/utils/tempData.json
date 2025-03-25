@@ -90,9 +90,21 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/MSI%20Stealth%2017%20Studio/msi1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/MSI%20Stealth%2017%20Studio/msi2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/MSI%20Stealth%2017%20Studio/msi3.jpeg"
+    ]
+  },
+  {
+    "name": "Samsung Galaxy Book3 Ultra",
+    "price": 2199,
+    "description": "Premium lightweight laptop with AMOLED display, Intel i7-13700H, and RTX 4070.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
         "",
         "",
         ""
     ]
-}
+  }
 ]
