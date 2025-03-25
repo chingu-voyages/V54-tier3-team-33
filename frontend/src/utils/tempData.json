@@ -178,5 +178,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Sony%20Xperia%201%20V/sonyxperia-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Sony%20Xperia%201%20V/sonyxperia-3.jpeg"
     ]
-  } 
+  },
+  {
+    "name": "Nothing Phone (2)",
+    "price": 599,
+    "description": "Unique Glyph LED design, Snapdragon 8+ Gen 1, and clean Android experience.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
+  }  
 ]
