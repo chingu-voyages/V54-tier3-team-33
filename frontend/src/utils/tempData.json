@@ -126,9 +126,9 @@
     "category": "Electronics",
     "subcategory": "Smartphones",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-3.jpeg"
     ]
   }
 ]
