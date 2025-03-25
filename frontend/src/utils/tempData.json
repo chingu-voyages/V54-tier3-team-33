@@ -154,5 +154,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/OnePlus%2012/onplus-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/OnePlus%2012/onplus-3.jpeg"
     ]
+  },
+  {
+    "name": "Xiaomi 14 Pro",
+    "price": 899,
+    "description": "Premium Android phone with Leica cameras, Snapdragon 8 Gen 3, and 120W HyperCharge.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   } 
 ]
