@@ -1,136 +1,26 @@
 [
   {
-    "name": "Laptop UltraBook Pro X1",
-    "price": 800,
-    "description": "The UltraBook Pro X1 is the perfect blend of portability and performance.",
+    "name": "ASUS ROG Zephyrus G14",
+    "price": 1299,
+    "description": "Ultra-slim gaming laptop with AMD Ryzen 9 and NVIDIA RTX 3060 for high-performance gaming.",
     "category": "Electronics",
     "subcategory": "Laptops",
-    "image": ["https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop1.jpg",
-     "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l961.jpg",
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l962.jpg"
-  ]
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus3.jpeg"
+    ]
   },
   {
-    "name": "Laptop Gaming Beast GX900",
-    "price": 900,
-    "description": "Built for gamers and creators, the Gaming Beast GX900 is a powerhouse laptop designed to handle the most demanding tasks.",
-    "category": "Electronics",
-    "image": ["https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop2.jpg",
-    "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l961.jpg",
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l962.jpg"
-  ]
-  },
-  {
-    "name": "Laptop EduBook Lite S3",
-    "price": 1000,
-    "description": "The EduBook Lite S3 is a budget-friendly laptop designed specifically for students.",
+    "name": "Apple MacBook Pro 14-inch (M3 Pro)",
+    "price": 1999,
+    "description": "Powerful MacBook Pro with M3 Pro chip, Liquid Retina XDR display, and 18-hour battery life.",
     "category": "Electronics",
     "subcategory": "Laptops",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop3.jpg"
-  },
-  {
-    "name": "Laptop WorkStation Elite Z5",
-    "price": 850,
-    "description": "The WorkStation Elite Z5 is a professional-grade laptop designed for business users and developers",
-    "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop4.jpg"
-  },
-  {
-    "name": "Laptop Chromebook Flex 2-in-1",
-    "price": 950,
-    "description": "The Chromebook Flex 2-in-1 is a versatile and affordable laptop that combines the simplicity of Chrome OS with the flexibility of a 2-in-1 design.",
-    "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop5.jpg"
-  },
-  {
-    "name": "Denim Jacket",
-    "price": 59.99,
-    "description": "A stylish and durable denim jacket for casual wear.",
-    "category": "Clothing",
-    "image": "https://thursdayboots.com/cdn/shop/products/1024x1024-Mens-Jackets-Denim-Trucker-WashedIndigo-010423-1_1024x1024.jpg?v=1673282143"
-  },
-  {
-    "name": "Sneakers",
-    "price": 89.99,
-    "description": "Comfortable and trendy sneakers, perfect for daily wear.",
-    "category": "Clothing",
-    "image": "https://cdn.thewirecutter.com/wp-content/media/2024/05/white-sneaker-2048px-9320.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"
-  },
-  {
-    "name": "Hoodie",
-    "price": 49.99,
-    "description": "A cozy hoodie made from high-quality cotton fabric.",
-    "category": "Clothing",
-    "image": "https://anothercottonlab.com/cdn/shop/files/ACL-SRC-Hoodie-VB-Front-Neu2.jpg?v=1729687178&width=1080"
-  },
-  {
-    "name": "Formal Suit",
-    "price": 199.99,
-    "description": "A well-tailored formal suit for business and special occasions.",
-    "category": "Clothing",
-    "image": "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/27748182/2024/2/21/f7c1aabb-1505-4630-bd25-53eb15a153711708492338173TwoPieceNavyTexturedFormalSuits-Waves1.jpg"
-  },
-  {
-    "name": "Smartphone UltraMini S2",
-    "price": 499.99,
-    "description": "The UltraMini S2 is a compact and powerful smartphone designed for users who prefer smaller devices.",
-    "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/smartPhone1.jpg"
-  },
-  {
-    "name": "Jacket Classic Rider Jacket",
-    "price": 199.99,
-    "description": "The Classic Rider Jacket is a timeless piece that combines rugged durability with sleek style. Made from premium full-grain leather.",
-    "category": "Clothing",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/leatherJacket.jpg"
-  },
-  {
-    "name": "Jeans Ripped Skinny Jeans",
-    "price": 59.99,
-    "description": "The Black Ripped Skinny Jeans are a bold and edgy addition to any wardrobe.",
-    "category": "Clothing",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/denimJeans.jpg"
-  },
-  {
-    "name": "Stratocaster Electric Guitar",
-    "price": 699.99,
-    "description": "The Stratocaster Electric Guitar is a classic instrument known for its versatile sound and iconic design. Perfect for rock, blues, and jazz.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/stratocaster.jpg"
-  },
-  {
-    "name": "Acoustic Folk Guitar",
-    "price": 299.99,
-    "description": "The Acoustic Folk Guitar delivers rich, warm tones and is ideal for singer-songwriters and casual players. Made with solid spruce and mahogany.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/folkGuitar.jpg"
-  },
-  {
-    "name": "Digital Piano 88 Keys",
-    "price": 899.99,
-    "description": "The Digital Piano 88 Keys offers a realistic playing experience with weighted keys and high-quality sound samples. Perfect for beginners and professionals alike.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/digitalPiano.jpg"
-  },
-  {
-    "name": "Portable MIDI Keyboard",
-    "price": 149.99,
-    "description": "The Portable MIDI Keyboard is compact and lightweight, making it ideal for music production on the go. Features 25 velocity-sensitive keys and USB connectivity.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/midiKeyboard.jpg"
-  },
-  {
-    "name": "5-Piece Drum Kit",
-    "price": 799.99,
-    "description": "The 5-Piece Drum Kit is perfect for drummers of all levels. Includes a bass drum, snare, toms, and cymbals for a complete setup.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumKit.jpg"
-  },
-  {
-    "name": "Electronic Drum Pad",
-    "price": 349.99,
-    "description": "The Electronic Drum Pad is a compact and versatile option for practicing and performing. Features 8 pads with customizable sounds and built-in speakers.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumPad.jpg"
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus3.jpeg"
+    ]
   }
 ]
