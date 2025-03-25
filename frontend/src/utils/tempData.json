@@ -226,5 +226,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung3.jpeg"
     ]
+  },
+  {
+    "name": "LG C3 OLED 4K Smart TV (55-inch)",
+    "price": 1299,
+    "description": "Perfect blacks with OLED tech, α9 Gen6 AI Processor, and Dolby Vision IQ for cinema-like quality.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-3.jpeg"
+    ]
   }  
 ]
