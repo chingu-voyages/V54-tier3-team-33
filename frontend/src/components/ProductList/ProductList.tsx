@@ -14,7 +14,7 @@ const ProductList: React.FC<ProductListProps> = ({ loading, error, searchResults
           {searchResults.map((product) => (
             <div key={product.id} className="bg-white shadow-md rounded-lg p-4">
               <img
-                src={product.image}
+                src={Array.isArray(product.image) ? product.image[0] : product.image}
                 alt={product.name}
                 className="w-full h-auto rounded-lg mb-10"
               />
