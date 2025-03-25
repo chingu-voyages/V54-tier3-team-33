@@ -54,9 +54,21 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/HP%20Spectre%20x360%2014/hp1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/HP%20Spectre%20x360%2014/hp2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/HP%20Spectre%20x360%2014/hp3.jpeg"
+    ]
+  },
+  {
+    "name": "Acer Predator Helios 16",
+    "price": 1699,
+    "description": "Gaming beast with Intel i7-13700HX, RTX 4070, and a 16-inch 240Hz display.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
         "",
         "",
         ""
     ]
-  }
+}
 ]
