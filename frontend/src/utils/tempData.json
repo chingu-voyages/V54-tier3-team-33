@@ -166,5 +166,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Xiaomi%2014%20Pro/xiaomi14-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Xiaomi%2014%20Pro/xiaomi14-3.jpeg"
     ]
+  },
+  {
+    "name": "Sony Xperia 1 V",
+    "price": 1399,
+    "description": "Cinematic 4K OLED display, pro-grade cameras, and Snapdragon 8 Gen 2 for creators.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   } 
 ]
