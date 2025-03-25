@@ -7,7 +7,6 @@ export default {
         // primaries and secondaries to be changed later
         primary: "#68A4CA",
         primaryHover: "#4A92BF",
-
         secondary: "#FFCB47",
         secondaryHover: "#F5AF00",
 
@@ -27,6 +26,7 @@ export default {
       fontSize: {
         sizeprimary: "4rem",
         sizesecondary: "2rem",
+        xs: "0.1px"
       },
       borderRadius: {
         custom: "99rem", // circle, for consistency testing

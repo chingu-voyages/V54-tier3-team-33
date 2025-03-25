@@ -1,42 +1,29 @@
-require('dotenv').config()
-const express = require('express')
-const globalErrorHandler = require('./controllers/err.controller')
-const Product = require('./models/product')
+require("dotenv").config();
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const globalErrorHandler = require("./controllers/err.controller");
+const Product = require("./models/product.models");
 
-const app = express()
+const app = express();
 const cors = require("cors");
 const { connectToDatabase } = require("./config/db");
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 //midlleware
 app.use(cors());
-app.use(express.json())
+// Parse JSON and cookies
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.static("dist"));
 app.use(globalErrorHandler);
 
-
-//connexion à mongoDb
-connectToDatabase()
+connectToDatabase();
 
 //Routes
-app.use('/api/auth', require('./routes/auth.routes'))
+app.use("/api/auth", require("./routes/auth.routes"));
+app.use("/api/products", require("./routes/product.routes"));
 app.use('/api/orders', require('./routes/order.routes'));
 
-
-
-app.get('/', async (req, res) => {
-    const products = await Product.find({})
-    console.log(products)
-    res.send(products)
-})
-
-app.post('/', async (req, res) => {
-    const newProduct = new Product(req.body)
-    await newProduct.save();
-    res.send(newProduct)
-})
-
-
 app.listen(port, () => {
-    console.log(`application started and listening on port ${port}`)
-})
-
+  console.log(`application started and listening on port ${port}`);
+});
