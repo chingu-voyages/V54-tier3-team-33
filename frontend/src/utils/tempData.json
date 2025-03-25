@@ -42,6 +42,18 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Lenovo%20Legion%20Pro/lenovo1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Lenovo%20Legion%20Pro/lenovo2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Lenovo%20Legion%20Pro/lenovo3.jpeg"
+    ]
+  },
+  {
+    "name": "HP Spectre x360 14",
+    "price": 1499,
+    "description": "Convertible 2-in-1 laptop with 13.5-inch 3K OLED touchscreen and Intel Evo platform.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
         "",
         "",
         ""
