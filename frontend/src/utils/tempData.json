@@ -66,9 +66,21 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Acer%20Predator%20Helios%2016/predator1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Acer%20Predator%20Helios%2016/predator2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Acer%20Predator%20Helios%2016/predator3.jpeg"
+    ]
+  },
+  {
+    "name": "Microsoft Surface Laptop 5",
+    "price": 1299,
+    "description": "Sleek Windows laptop with 13.5-inch PixelSense touchscreen and 12th Gen Intel Core i7.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
         "",
         "",
         ""
     ]
-}
+  }
 ]
