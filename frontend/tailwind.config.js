@@ -5,14 +5,14 @@ export default {
     extend: {
       colors: {
         // primaries and secondaries to be changed later
-        primary: "#68A4CA",
-        primaryHover: "#4A92BF",
+        primary: "#3665F3",
+        primaryHover: "#184EF2",
         secondary: "#FFCB47",
         secondaryHover: "#F5AF00",
 
         // custom colors that dont really fit any category but we still need them for consistency, maybe border color or generic names allow us to use them for any purpose
-        customcolorone: "", 
-        customcolortwo: "",
+        customcolorone: "",
+        customcolortwo: "#F7F7F7",
         customcolorthree: "",
       },
 
@@ -26,7 +26,7 @@ export default {
       fontSize: {
         sizeprimary: "4rem",
         sizesecondary: "2rem",
-        xs: "0.1px"
+        xs: "0.1px",
       },
       borderRadius: {
         custom: "99rem", // circle, for consistency testing
