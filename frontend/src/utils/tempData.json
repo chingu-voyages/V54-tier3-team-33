@@ -190,5 +190,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Nothing%20Phone%20(2)/nothingphone-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Nothing%20Phone%20(2)/nothingphone-3.jpeg"
     ]
+  },
+  {
+    "name": "ASUS ROG Phone 7 Ultimate",
+    "price": 1299,
+    "description": "Gaming beast with 165Hz AMOLED, Snapdragon 8 Gen 2, and AirTrigger controls.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }  
 ]
