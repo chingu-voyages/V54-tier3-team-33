@@ -6,9 +6,9 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l960.jpg",
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l961.jpg",
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/s-l962.jpg"
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus3.jpeg"
     ]
   },
   {
@@ -18,9 +18,9 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/s-l1600.jpg",
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/s-l1601.jpg",
-        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/s-l1602.jpg"
+        "",
+        "",
+        ""
     ]
   }
 ]
