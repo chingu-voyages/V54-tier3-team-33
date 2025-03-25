@@ -142,5 +142,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Google%20Pixel%208%20Pro/google2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Google%20Pixel%208%20Pro/google3.jpeg"
     ]
+  },
+  {
+    "name": "OnePlus 12",
+    "price": 799,
+    "description": "Flagship killer with Snapdragon 8 Gen 3, 120Hz LTPO display, and 100W fast charging.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   } 
 ]
