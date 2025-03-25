@@ -78,9 +78,21 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Microsoft%20Surface%20Laptop%205/microsoft1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Microsoft%20Surface%20Laptop%205/microsoft2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Microsoft%20Surface%20Laptop%205/microsoft3.jpeg"
+    ]
+  },
+  {
+    "name": "MSI Stealth 17 Studio",
+    "price": 2499,
+    "description": "Ultra-thin gaming laptop with Intel i9-13900H, RTX 4090, and 17-inch 4K 120Hz display.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
         "",
         "",
         ""
     ]
-  }
+}
 ]
