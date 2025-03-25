@@ -114,6 +114,18 @@
     "category": "Electronics",
     "subcategory": "Smartphones",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/iPhone%2015%20Pro%20Max/iphone15-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/iPhone%2015%20Pro%20Max/iphone15-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/iPhone%2015%20Pro%20Max/iphone15-3.jpeg"
+    ]
+  },
+  {
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": 1299,
+    "description": "Powerful Android phone with Snapdragon 8 Gen 3, 200MP camera, and S Pen support.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
         "",
         "",
         ""
