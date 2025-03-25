@@ -214,5 +214,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Motorola%20Edge%2040%20Ultra/motorola2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Motorola%20Edge%2040%20Ultra/motorola3.jpeg"
     ]
+  },
+  {
+    "name": "Samsung QN90C Neo QLED 4K Smart TV (65-inch)",
+    "price": 1599,
+    "description": "Quantum HDR 32x, Neo Quantum Processor 4K, and Anti-Glare technology for vibrant colors.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }  
 ]
