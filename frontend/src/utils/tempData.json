@@ -30,9 +30,21 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Dell%20XPS%2015%20(2024)/del1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Dell%20XPS%2015%20(2024)/del2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/LAPTOPS/Dell%20XPS%2015%20(2024)/del3.jpeg"
+    ]
+  },
+  {
+    "name": "Lenovo Legion Pro 7i",
+    "price": 1899,
+    "description": "High-end gaming laptop with Intel i9-13900HX, RTX 4080, and a 240Hz display.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
         "",
         "",
         ""
     ]
-}
+  }
 ]
