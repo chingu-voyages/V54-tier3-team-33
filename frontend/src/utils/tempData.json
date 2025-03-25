@@ -130,5 +130,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-3.jpeg"
     ]
-  }
+  },
+  {
+    "name": "Google Pixel 8 Pro",
+    "price": 999,
+    "description": "AI-powered phone with Tensor G3 chip, 50MP camera, and 7 years of updates.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+        "",
+        "",
+        ""
+    ]
+  } 
 ]
