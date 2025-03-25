@@ -222,9 +222,9 @@
     "category": "Electronics",
     "subcategory": "Televisions",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung3.jpeg"
     ]
   }  
 ]
