@@ -358,5 +358,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-3.jpeg"
     ]
+  },
+  {
+    "name": "Calvin Klein Women's High Rise Skinny Jeans",
+    "price": 79.95,
+    "description": "Flattering high-rise skinny fit with stretch for comfort and a sleek silhouette.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
