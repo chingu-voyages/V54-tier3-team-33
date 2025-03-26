@@ -406,5 +406,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-3.jpeg"
     ]
+  },
+  {
+    "name": "Hollister Super Skinny Jeans",
+    "price": 49.95,
+    "description": "Trendy super skinny fit with stretch fabric and distressed detailing for a casual look.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
