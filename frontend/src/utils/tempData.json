@@ -322,5 +322,15 @@
       "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-1.jpeg",
       "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-2.jpeg"
     ]
-  }
+  },
+  {
+    "name": "Levi's 501 Original Fit Jeans",
+    "price": 69.99,
+    "description": "Iconic straight-leg jeans with button fly, 100% cotton, and timeless Levi's quality.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "
+    ]
+}
 ]
