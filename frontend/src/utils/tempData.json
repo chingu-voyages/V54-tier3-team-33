@@ -310,5 +310,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20G3%20OLED%204K%20TV%20(77-inch)/lg77inches-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20G3%20OLED%204K%20TV%20(77-inch)/lg77inches-3.jpeg"
     ]
+  },
+  {
+    "name": "Sony X90L 4K LED TV (75-inch)",
+    "price": 1699,
+    "description": "Full Array LED with Cognitive Processor XR, XR Motion Clarity, and Google TV.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
