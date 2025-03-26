@@ -366,9 +366,9 @@
     "category": "Clothing",
     "subcategory": "Jeans",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-3.jpeg"
     ]
   }
 ]
