@@ -402,9 +402,9 @@
     "category": "Clothing",
     "subcategory": "Jeans",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-3.jpeg"
     ]
   }
 ]
