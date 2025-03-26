@@ -298,5 +298,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-3.jpeg"
     ]
+  },
+  {
+    "name": "LG G3 OLED 4K TV (77-inch)",
+    "price": 3499,
+    "description": "Gallery Design with MLA OLED for 70% brighter highlights, α9 Gen6 AI, and Dolby Vision.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
