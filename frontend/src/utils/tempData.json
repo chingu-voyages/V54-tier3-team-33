@@ -430,5 +430,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/7%20For%20All%20Mankind%20Women's%20Dojo%20Bootcut%20Jeans/7-for-all-mankind-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/7%20For%20All%20Mankind%20Women's%20Dojo%20Bootcut%20Jeans/7-for-all-mankind-3.jpeg"
     ]
+  },
+  {
+    "name": "Nike Air Jordan 1 Retro High OG",
+    "price": 180.00,
+    "description": "Iconic high-top sneakers with original 1985 design, leather upper, and Air cushioning.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
