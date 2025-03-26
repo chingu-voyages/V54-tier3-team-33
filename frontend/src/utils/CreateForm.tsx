@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  UserIcon,
-  EnvelopeIcon,
-  LockClosedIcon,
-  KeyIcon,
-  EyeIcon,
-  EyeSlashIcon,
-} from "@heroicons/react/20/solid";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
 
 const CreateForm: React.FC = () => {
@@ -61,14 +54,13 @@ const CreateForm: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full rounded p-10 px-16">
-        <h2 className="mb-6 text-center text-3xl font-semibold">Create</h2>
-        <div className="flex flex-col gap-6">
+    <div className="flex mt-10 items-center justify-center">
+      <form onSubmit={handleSubmit} className="w-full px-3">
+        <h2 className="mb-6 text-3xl font-semibold">Create an Account</h2>
+        <div className="flex w-96 flex-col gap-4">
           {/* first name */}
-          <div className="relative flex items-center">
-            <UserIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
+          <div className="flex gap-4">
+            <div className="relative flex items-center">
               <input
                 type="text"
                 id="firstname"
@@ -76,15 +68,12 @@ const CreateForm: React.FC = () => {
                 value={formData.firstname}
                 onChange={handleChange}
                 placeholder="First Name"
-                className="w-full rounded border px-3 py-2"
+                className="formInput"
                 required
               />
             </div>
-          </div>
-          {/* last name */}
-          <div className="relative flex items-center">
-            <UserIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
+            {/* last name */}
+            <div className="relative flex items-center">
               <input
                 type="text"
                 id="lastname"
@@ -92,79 +81,68 @@ const CreateForm: React.FC = () => {
                 value={formData.lastname}
                 onChange={handleChange}
                 placeholder="Last Name"
-                className="w-full rounded border px-3 py-2"
+                className="formInput"
                 required
               />
             </div>
           </div>
-          {/* /////////// */}
+          {/* email */}
           <div className="relative flex items-center">
-            <EnvelopeIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                className="w-full rounded border px-3 py-2"
-                required
-              />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="formInput"
+              required
+            />
+          </div>
+          {/* password */}
+          <div className="relative flex items-center">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="formInput"
+              required
+            />
+            <div
+              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? (
+                <EyeSlashIcon className="h-5 w-5" />
+              ) : (
+                <EyeIcon className="h-5 w-5" />
+              )}
             </div>
           </div>
+          {/* confirm password */}
           <div className="relative flex items-center">
-            <LockClosedIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  placeholder="Password"
-                  className="w-full rounded border px-3 py-2"
-                  required
-                />
-                <div
-                  className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
-                  onClick={togglePasswordVisibility}
-                >
-                  {showPassword ? (
-                    <EyeSlashIcon className="h-5 w-5" />
-                  ) : (
-                    <EyeIcon className="h-5 w-5" />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="relative flex items-center">
-            <KeyIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
-              <div className="relative">
-                <input
-                  type={showConfirmPassword ? "text" : "password"}
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  placeholder="Confirm Password"
-                  className="w-full rounded border px-3 py-2"
-                  required
-                />
-                <div
-                  className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
-                  onClick={toggleConfirmPasswordVisibility}
-                >
-                  {showConfirmPassword ? (
-                    <EyeSlashIcon className="h-5 w-5" />
-                  ) : (
-                    <EyeIcon className="h-5 w-5" />
-                  )}
-                </div>
-              </div>
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Confirm Password"
+              className="formInput"
+              required
+            />
+            <div
+              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
+              onClick={toggleConfirmPasswordVisibility}
+            >
+              {showConfirmPassword ? (
+                <EyeSlashIcon className="h-5 w-5" />
+              ) : (
+                <EyeIcon className="h-5 w-5" />
+              )}
             </div>
           </div>
           <div className="flex items-center">
@@ -179,8 +157,8 @@ const CreateForm: React.FC = () => {
             </label>
           </div>
         </div>
-        <Button type="submit" className="mx-auto mt-10 block">
-          Create
+        <Button type="submit" className="mt-5 w-full">
+          Create an Account
         </Button>
       </form>
     </div>

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  EnvelopeIcon,
-  LockClosedIcon,
   EyeIcon,
   EyeSlashIcon,
 } from "@heroicons/react/20/solid";
@@ -52,59 +50,56 @@ const SigninForm: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full rounded p-10 px-16">
-        <h2 className="mb-3 text-center text-3xl font-semibold">
+    <div className="flex mt-20 items-center justify-center">
+      <form onSubmit={handleSubmit} className="w-full px-3">
+        <h2 className="mb-3 text-center text-2xl font-bold">
           Sign in to your account
         </h2>
         <p className="mb-6 text-center">
-          New to eBay? <Link to="/createacc" className="underline">Create account</Link>{" "}
+          New to eBay?{" "}
+          <Link to="/createacc" className="underline">
+            Create account
+          </Link>{" "}
         </p>
-        <div className="flex flex-col gap-6">
+        <div className="flex w-96 flex-col gap-4">
           <div className="relative flex items-center">
-            <EnvelopeIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                className="w-full rounded border px-3 py-2"
-                required
-              />
-            </div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="formInput"
+              required
+            />
           </div>
           <div className="relative flex items-center">
-            <LockClosedIcon className="mr-3 h-5 w-5 text-gray-400" />
-            <div className="w-full">
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  placeholder="Password"
-                  className="w-full rounded border px-3 py-2"
-                  required
-                />
-                <div
-                  className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
-                  onClick={togglePasswordVisibility}
-                >
-                  {showPassword ? (
-                    <EyeSlashIcon className="h-5 w-5" />
-                  ) : (
-                    <EyeIcon className="h-5 w-5" />
-                  )}
-                </div>
+            <div className="relative w-full">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Password"
+                className="formInput"
+                required
+              />
+              <div
+                className="absolute top-1/2 right-1 -translate-y-1/2 transform cursor-pointer text-gray-400"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? (
+                  <EyeSlashIcon className="size-9 p-2" />
+                ) : (
+                  <EyeIcon className="size-9 p-2" />
+                )}
               </div>
             </div>
           </div>
         </div>
-        <Button type="submit" className="mx-auto mt-10 block">
+        <Button type="submit" className="mt-5 w-full">
           Sign In
         </Button>
       </form>
