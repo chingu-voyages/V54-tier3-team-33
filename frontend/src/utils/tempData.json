@@ -334,5 +334,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Levi's%20501%20Original%20Fit%20Jeans/levis501-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Levi's%20501%20Original%20Fit%20Jeans/levis501-3.jpeg"
     ]
+  },
+  {
+    "name": "Wrangler Authentics Men's Classic 5-Pocket Jeans",
+    "price": 29.99,
+    "description": "Classic relaxed fit with durable cotton construction and reinforced stitching.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
