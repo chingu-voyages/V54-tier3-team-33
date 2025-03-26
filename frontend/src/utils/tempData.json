@@ -250,5 +250,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Sony%20A95L%20QD-OLED%204K%20TV%20(65-inch)/sonya95-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Sony%20A95L%20QD-OLED%204K%20TV%20(65-inch)/sonya95-3.jpeg"
     ]
+  },
+  {
+    "name": "TCL QM8 Mini-LED 4K TV (75-inch)",
+    "price": 1299,
+    "description": "2000+ local dimming zones, 144Hz refresh rate, and Google TV built-in for gaming and streaming.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }  
 ]
