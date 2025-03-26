@@ -258,9 +258,9 @@
     "category": "Electronics",
     "subcategory": "Televisions",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-3.jpeg"
     ]
   }  
 ]
