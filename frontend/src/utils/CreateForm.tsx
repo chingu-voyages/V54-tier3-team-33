@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Button from "./Button";
 
-const RegisterForm: React.FC = () => {
+const CreateForm: React.FC = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -62,11 +62,8 @@ const RegisterForm: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full rounded bg-white p-10 px-16 shadow-md"
-      >
-        <h2 className="mb-6 text-center text-3xl font-semibold">Register</h2>
+      <form onSubmit={handleSubmit} className="w-full rounded p-10 px-16">
+        <h2 className="mb-6 text-center text-3xl font-semibold">Create</h2>
         <div className="flex flex-col gap-6">
           {/* first name */}
           <div className="relative flex items-center">
@@ -183,11 +180,11 @@ const RegisterForm: React.FC = () => {
           </div>
         </div>
         <Button type="submit" className="mx-auto mt-10 block">
-          Register
+          Create
         </Button>
       </form>
     </div>
   );
 };
 
-export default RegisterForm;
+export default CreateForm;

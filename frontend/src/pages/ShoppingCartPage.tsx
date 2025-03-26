@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import Button from "../utils/Button";
-import RegisterForm from "../utils/RegisterForm";
-import SigninForm from "../utils/SigninForm";
+import RegisterForm from "../utils/CreateForm";
 import { useNavigate } from "react-router-dom";
 import ProductInCart from "../components/ProductList/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";

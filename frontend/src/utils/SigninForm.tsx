@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { EnvelopeIcon, LockClosedIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
+import {
+  EnvelopeIcon,
+  LockClosedIcon,
+  EyeIcon,
+  EyeSlashIcon,
+} from "@heroicons/react/20/solid";
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SigninForm: React.FC = () => {
   const navigate = useNavigate();
@@ -46,20 +51,18 @@ const SigninForm: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-
-// "http://localhost:3000/api/auth/me"
-// profile page
-
   return (
     <div className="flex items-center justify-center">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full rounded bg-white p-10 px-16 shadow-md"
-      >
-        <h2 className="mb-6 text-center text-3xl font-semibold">Sign In</h2>
+      <form onSubmit={handleSubmit} className="w-full rounded p-10 px-16">
+        <h2 className="mb-3 text-center text-3xl font-semibold">
+          Sign in to your account
+        </h2>
+        <p className="mb-6 text-center">
+          New to eBay? <Link to="/createacc" className="underline">Create account</Link>{" "}
+        </p>
         <div className="flex flex-col gap-6">
           <div className="relative flex items-center">
-            <EnvelopeIcon className="h-5 w-5 text-gray-400 mr-3" />
+            <EnvelopeIcon className="mr-3 h-5 w-5 text-gray-400" />
             <div className="w-full">
               <input
                 type="email"
@@ -74,7 +77,7 @@ const SigninForm: React.FC = () => {
             </div>
           </div>
           <div className="relative flex items-center">
-            <LockClosedIcon className="h-5 w-5 text-gray-400 mr-3" />
+            <LockClosedIcon className="mr-3 h-5 w-5 text-gray-400" />
             <div className="w-full">
               <div className="relative">
                 <input
@@ -87,17 +90,21 @@ const SigninForm: React.FC = () => {
                   className="w-full rounded border px-3 py-2"
                   required
                 />
-                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400" onClick={togglePasswordVisibility}>
-                  {showPassword ? <EyeSlashIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                <div
+                  className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? (
+                    <EyeSlashIcon className="h-5 w-5" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5" />
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <Button
-          type="submit"
-          className="mt-10 mx-auto block"
-        >
+        <Button type="submit" className="mx-auto mt-10 block">
           Sign In
         </Button>
       </form>

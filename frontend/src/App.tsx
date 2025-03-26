@@ -8,23 +8,22 @@ import ProfilePage from "./pages/ProfilePage";
 import CheckoutPage from "./pages/CheckoutPage";
 import Layout from "./pages/Layout";
 import SignInPage from "./pages/SignInPage";
+import CreateAccPage from "./pages/CreateAccPage";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path={"/"} element={<Layout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/category/:categoryName" element={<CategoryPage />} />
-        <Route path="/shoppingCart" element={<ShoppingCartPage />} />
-        <Route path="/product/:productId" element={<ProductDetailsPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path={"/"} element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/shoppingCart" element={<ShoppingCartPage />} />
+          <Route path="/product/:productId" element={<ProductDetailsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/signinpage" element={<SignInPage />} />
-
-
-        
+        <Route path="/createacc" element={<CreateAccPage />} />
       </Routes>
     </Router>
   );
