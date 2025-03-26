@@ -286,5 +286,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-3.jpeg"
     ]
+  },
+  {
+    "name": "Samsung The Frame QLED 4K TV (55-inch)",
+    "price": 1499,
+    "description": "Art Mode transforms it into a digital painting when off. Matte display to reduce glare.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
