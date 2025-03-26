@@ -294,9 +294,9 @@
     "category": "Electronics",
     "subcategory": "Televisions",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-3.jpeg"
     ]
   }
 ]
