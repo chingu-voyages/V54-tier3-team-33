@@ -342,9 +342,9 @@
     "category": "Clothing",
     "subcategory": "Jeans",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Wrangler%20Authentics%20Men's%20Classic%205-Pocket%20Jeans/wrangler-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Wrangler%20Authentics%20Men's%20Classic%205-Pocket%20Jeans/wrangler-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Wrangler%20Authentics%20Men's%20Classic%205-Pocket%20Jeans/wrangler-3.jpeg"
     ]
   }
 ]
