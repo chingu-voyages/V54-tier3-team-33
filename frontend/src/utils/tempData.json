@@ -382,5 +382,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Lee%20Women's%20Relaxed%20Fit%20Straight%20Leg%20Jeans/lee-womens-relaxed-fit-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Lee%20Women's%20Relaxed%20Fit%20Straight%20Leg%20Jeans/lee-womens-relaxed-fit-3.jpeg"
     ]
+  },
+  {
+    "name": "G-Star Raw 3301 Slim Tapered Jeans",
+    "price": 149.00,
+    "description": "Raw denim with slim tapered fit, selvage detailing, and rugged durability.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
