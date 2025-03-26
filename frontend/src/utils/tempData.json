@@ -390,9 +390,9 @@
     "category": "Clothing",
     "subcategory": "Jeans",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-3.jpeg"
     ]
   }
 ]
