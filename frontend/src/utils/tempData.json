@@ -454,5 +454,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-3.jpeg"
     ]
+  },
+  {
+    "name": "New Balance 574 Core",
+    "price": 89.99,
+    "description": "Classic lifestyle sneakers with ENCAP midsole, suede/mesh upper, and retro styling.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
