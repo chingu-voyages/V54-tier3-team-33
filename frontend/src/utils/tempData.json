@@ -442,5 +442,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Nike%20Air%20Jordan%201%20Retro%20High%20OG/nike-air-jordan-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Nike%20Air%20Jordan%201%20Retro%20High%20OG/nike-air-jordan-3.jpeg"
     ]
+  },
+  {
+    "name": "Adidas Ultraboost 22",
+    "price": 190.00,
+    "description": "Boost midsole for energy return, Primeknit+ adaptive fit, and Continental rubber outsole.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
