@@ -1,8 +1,19 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Menu, Transition, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
-import { ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
+import {
+  Menu,
+  Transition,
+  MenuButton,
+  MenuItems,
+  MenuItem,
+} from "@headlessui/react";
+import {
+  ChevronDownIcon,
+  MagnifyingGlassIcon,
+  XMarkIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
 //import { searchProducts } from "../../store/slices/localProductSlice";
 import { searchProducts } from "../../store/slices/productSlice";
@@ -17,7 +28,10 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = () => {
   const categories = [
-    { name: "Electronics", subcategories: ["Smartphones", "Laptops", "Televisions"] },
+    {
+      name: "Electronics",
+      subcategories: ["Smartphones", "Laptops", "Televisions"],
+    },
     { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
     { name: "Music", subcategories: ["Guitars", "Keyboards", "Drums"] },
   ];
@@ -28,7 +42,9 @@ const Header: React.FC<HeaderProps> = () => {
 
   const handleSearch = () => {
     if (searchQuery.trim() === "") return;
-    dispatch(searchProducts({ query: searchQuery, category: selectedCategory }));
+    dispatch(
+      searchProducts({ query: searchQuery, category: selectedCategory }),
+    );
   };
 
   const handleClearResults = () => {
@@ -52,13 +68,19 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
       <header className="flex flex-wrap items-center justify-between gap-4 bg-white p-4 shadow-sm md:flex-nowrap">
         <div className="flex-shrink-0 overflow-visible">
-          <img src={logo} alt="Logo" className="h-10 w-auto sm:h-14 md:h-18 lg:h-22" />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-10 w-auto sm:h-14 md:h-18 lg:h-22"
+            />
+          </Link>
         </div>
         <div className="mx-4 flex flex-1 flex-wrap items-center gap-4 md:flex-nowrap">
           <Menu as="div" className="relative">
             <MenuButton className="flex cursor-pointer items-center space-x-2 bg-white px-2 py-1 text-sm text-gray-700 transition-colors hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-base">
               <span>Shop by Category</span>
-              <ChevronDownIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
+              <ChevronDownIcon className="h-4 w-4 text-gray-500 sm:h-5 sm:w-5" />
             </MenuButton>
             <Transition
               as={Fragment}
@@ -69,8 +91,8 @@ const Header: React.FC<HeaderProps> = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <MenuItems className="ring-opacity-5 absolute left-0 z-50 mt-2 w-full md:w-[600px] origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none overflow-y-auto max-h-[80vh]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+              <MenuItems className="ring-opacity-5 absolute left-0 z-50 mt-2 max-h-[80vh] w-full origin-top-left overflow-y-auto rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none md:w-[600px]">
+                <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
                   {categories.map((category) => (
                     <div key={category.name} className="space-y-2">
                       <MenuItem>
@@ -113,12 +135,12 @@ const Header: React.FC<HeaderProps> = () => {
             <input
               type="text"
               placeholder="Search for anything"
-              className="flex-1 min-w-0 px-4 py-2 text-sm outline-none sm:text-base placeholder:text-transparent sm:placeholder:text-gray-400"
+              className="min-w-0 flex-1 px-4 py-2 text-sm outline-none placeholder:text-transparent sm:text-base sm:placeholder:text-gray-400"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  handleSearch(); 
+                  handleSearch();
                 }
               }}
             />
