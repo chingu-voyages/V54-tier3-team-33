@@ -54,7 +54,7 @@ const CreateForm: React.FC = () => {
   };
 
   return (
-    <div className="flex mt-10 items-center justify-center">
+    <div className="mt-10 flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full px-3">
         <h2 className="mb-6 text-3xl font-semibold">Create an Account</h2>
         <div className="flex w-96 flex-col gap-4">

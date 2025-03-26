@@ -3,7 +3,6 @@ import Button from "./Button";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
-
 export default function SummaryCard() {
   const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -11,7 +10,7 @@ export default function SummaryCard() {
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
   return (
-    <div className="flex w-96 flex-col gap-4 bg-red-300 p-4 rounded-custom">
+    <div className="rounded-custom flex w-96 flex-col gap-4 bg-stone-100 p-4">
       <span className="flex items-center justify-between">
         <p>Item {cartItems.length}</p>
         <p>US ${totalPrice}</p>

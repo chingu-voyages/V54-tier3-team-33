@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  EyeIcon,
-  EyeSlashIcon,
-} from "@heroicons/react/20/solid";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -50,7 +47,7 @@ const SigninForm: React.FC = () => {
   };
 
   return (
-    <div className="flex mt-20 items-center justify-center">
+    <div className="mt-20 flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full px-3">
         <h2 className="mb-3 text-center text-2xl font-bold">
           Sign in to your account
