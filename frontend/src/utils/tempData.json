@@ -394,5 +394,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-3.jpeg"
     ]
+  },
+  {
+    "name": "AGOLDE Parker High Rise Straight Jeans",
+    "price": 198.00,
+    "description": "Vintage-inspired straight-leg jeans with high rise and 100% cotton construction.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
