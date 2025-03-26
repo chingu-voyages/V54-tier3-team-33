@@ -414,9 +414,9 @@
     "category": "Clothing",
     "subcategory": "Jeans",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Hollister%20Super%20Skinny%20Jeans/hollister-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Hollister%20Super%20Skinny%20Jeans/hollister-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Hollister%20Super%20Skinny%20Jeans/hollister-3.jpeg"
     ]
   }
 ]
