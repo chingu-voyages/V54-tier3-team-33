@@ -370,5 +370,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-3.jpeg"
     ]
+  },
+  {
+    "name": "Lee Women's Relaxed Fit Straight Leg Jeans",
+    "price": 39.99,
+    "description": "Comfortable straight-leg jeans with a relaxed fit and classic 5-pocket styling.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
