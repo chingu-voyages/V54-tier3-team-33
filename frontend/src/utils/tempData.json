@@ -354,9 +354,9 @@
     "category": "Clothing",
     "subcategory": "Jeans",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-3.jpeg"
     ]
   }
 ]
