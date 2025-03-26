@@ -7,6 +7,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage ";
 import ProfilePage from "./pages/ProfilePage";
 import CheckoutPage from "./pages/CheckoutPage";
 import Layout from "./pages/Layout";
+import SignInPage from "./pages/SignInPage";
 
 const App = () => {
   return (
@@ -20,6 +21,10 @@ const App = () => {
         <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/signinpage" element={<SignInPage />} />
+
+
+        
       </Routes>
     </Router>
   );

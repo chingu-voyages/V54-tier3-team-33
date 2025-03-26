@@ -51,7 +51,7 @@ const SigninForm: React.FC = () => {
 // profile page
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
         className="w-full rounded bg-white p-10 px-16 shadow-md"
