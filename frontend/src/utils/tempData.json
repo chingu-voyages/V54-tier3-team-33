@@ -318,9 +318,9 @@
     "category": "Electronics",
     "subcategory": "Televisions",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-3.jpeg"
     ]
   }
 ]
