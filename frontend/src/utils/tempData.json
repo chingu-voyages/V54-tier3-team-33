@@ -238,5 +238,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-3.jpeg"
     ]
+  },
+  {
+    "name": "Sony A95L QD-OLED 4K TV (65-inch)",
+    "price": 2799,
+    "description": "Quantum Dot OLED with Cognitive Processor XR, Netflix Calibrated Mode, and Acoustic Surface Audio+.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }  
 ]
