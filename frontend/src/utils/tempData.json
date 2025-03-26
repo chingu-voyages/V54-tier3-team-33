@@ -262,5 +262,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-3.jpeg"
     ]
+  },
+  {
+    "name": "Hisense U8K Mini-LED 4K TV (65-inch)",
+    "price": 1099,
+    "description": "1500+ nits brightness, Dolby Vision/Atmos, and IMAX Enhanced for budget-friendly premium quality.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }  
 ]
