@@ -282,9 +282,9 @@
     "category": "Electronics",
     "subcategory": "Televisions",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-3.jpeg"
     ]
   }
 ]
