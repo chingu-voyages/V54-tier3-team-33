@@ -450,9 +450,9 @@
     "category": "Clothing",
     "subcategory": "Sneakers",
     "image": [
-        "",
-        "",
-        ""
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-3.jpeg"
     ]
   }
 ]
