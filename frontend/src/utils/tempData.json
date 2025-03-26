@@ -466,5 +466,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/New%20Balance%20574%20Core/new-balance-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/New%20Balance%20574%20Core/new-balance-3.jpeg"
     ]
+  },
+  {
+    "name": "Puma RS-X Reinvention",
+    "price": 110.00,
+    "description": "Chunky sneaker trend with RS (Running System) cushioning and bold color-blocking.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
