@@ -11,7 +11,8 @@ import Button from "./Button";
 
 const RegisterForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -24,18 +25,31 @@ const RegisterForm: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // form submission logic here
-    alert("Form submitted");
-    console.log("Form submitted", formData);
-    // clear form
-    setFormData({
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
+
+    if (formData.password !== formData.confirmPassword) {
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Registration failed");
+      }
+
+      const data = await response.json();
+      console.log("Registration successful", data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -50,25 +64,43 @@ const RegisterForm: React.FC = () => {
     <div className="flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className=" w-full rounded bg-white p-10 px-16 shadow-md"
+        className="w-full rounded bg-white p-10 px-16 shadow-md"
       >
         <h2 className="mb-6 text-center text-3xl font-semibold">Register</h2>
         <div className="flex flex-col gap-6">
+          {/* first name */}
           <div className="relative flex items-center">
             <UserIcon className="mr-3 h-5 w-5 text-gray-400" />
             <div className="w-full">
               <input
                 type="text"
-                id="username"
-                name="username"
-                value={formData.username}
+                id="firstname"
+                name="firstname"
+                value={formData.firstname}
                 onChange={handleChange}
-                placeholder="Username"
+                placeholder="First Name"
                 className="w-full rounded border px-3 py-2"
                 required
               />
             </div>
           </div>
+          {/* last name */}
+          <div className="relative flex items-center">
+            <UserIcon className="mr-3 h-5 w-5 text-gray-400" />
+            <div className="w-full">
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                value={formData.lastname}
+                onChange={handleChange}
+                placeholder="Last Name"
+                className="w-full rounded border px-3 py-2"
+                required
+              />
+            </div>
+          </div>
+          {/* /////////// */}
           <div className="relative flex items-center">
             <EnvelopeIcon className="mr-3 h-5 w-5 text-gray-400" />
             <div className="w-full">
@@ -150,7 +182,7 @@ const RegisterForm: React.FC = () => {
             </label>
           </div>
         </div>
-        <Button type="submit" className="mt-10 mx-auto block">
+        <Button type="submit" className="mx-auto mt-10 block">
           Register
         </Button>
       </form>

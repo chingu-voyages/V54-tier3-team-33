@@ -26,6 +26,7 @@ export default {
       fontSize: {
         sizeprimary: "4rem",
         sizesecondary: "2rem",
+        xs: "0.1px"
       },
       borderRadius: {
         custom: "99rem", // circle, for consistency testing

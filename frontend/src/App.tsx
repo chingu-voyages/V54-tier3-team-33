@@ -3,15 +3,16 @@ import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage"; 
 import "./index.css";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage "
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
         <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/shoppingCart" element={<ShoppingCartPage />} />
-
+        <Route path="/product/:productId" element={<ProductDetailsPage />} />
       </Routes>
     </Router>
   );

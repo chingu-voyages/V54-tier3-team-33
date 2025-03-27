@@ -72,10 +72,12 @@ Everyone on your team should add their name along with a link to their GitHub
 your repo access and to practice PR'ing with your team _before_ you start
 coding!
 
-- Damilola Oshinowo - Scrum master: [GitHub](https://github.com/dami-boy) / [LinkedIn](https://linkedin.com/in/damilola-oshinowo)
-- Tonia Gbuji - Product Owner (shadow): [GitHub](https://github.com/Tgee78) / [LinkedIn](https://www.linkedin.com/in/toniagbuji/)
-- Andrés R. Bucheli - Developer: [GitHub](https://github.com/ARBUCHELI) / [LinkedIn](https://www.linkedin.com/in/andresregaladobucheli/)
-- Chinedu Olekah #3: [GitHub](https://github.com/kenako0127) / [LinkedIn](www.linkedin.com/in/chinedu-olekah)
-- R. Ed Masawi #4: [GitHub](https://github.com/Masawi68) / [LinkedIn](https://www.linkedin.com/in/ed-masawi-97345a29/)
-- Ismail Marghich #5: [GitHub](https://github.com/IsmailMarghich) / [LinkedIn](https://www.linkedin.com/in/ismail-marghich-9174111aa/)
-- Predrag Jandric - Developer: [GitHub](https://github.com/Predrag-Jandric) / [LinkedIn](https://www.linkedin.com/in/predrag-jandric/)
+- Damilola Oshinowo #1: [GitHub](https://github.com/dami-boy)) / [LinkedIn](https://linkedin.com/in/damilola-oshinowo)
+- Andrés R. Bucheli #2: [GitHub](https://github.com/ARBUCHELI) / [LinkedIn](https://www.linkedin.com/in/andresregaladobucheli/)
+- Chinedu Olekah    #3: [GitHub](https://github.com/kenako0127) / [LinkedIn](www.linkedin.com/in/chinedu-olekah)
+- R. Ed Masawi      #4: [GitHub](https://github.com/Masawi68) / [LinkedIn](https://www.linkedin.com/in/ed-masawi-97345a29/)
+- Ismail Marghich   #5: [GitHub](https://github.com/IsmailMarghich) / [LinkedIn](https://www.linkedin.com/in/ismail-marghich-9174111aa/)
+- Tonia Gbuji       #6: [GitHub](https://github.com/Tgee78) / [LinkedIn](https://www.linkedin.com/in/toniagbuji/)
+- Predrag Jandric   #7: [GitHub](https://github.com/Predrag-Jandric) / [LinkedIn](https://www.linkedin.com/in/predrag-jandric/)
+- Riry Nomenjanahary #8: [GitHub](https://github.com/TiaDev7474) / [LinkedIn](https://www.linkedin.com/in/riry-nomenjanahary/)
+
