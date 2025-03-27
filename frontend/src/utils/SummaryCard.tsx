@@ -1,4 +1,4 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
@@ -6,7 +6,7 @@ import Modal from "../utils/Modal";
 import { useState } from "react";
 
 export default function SummaryCard() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,9 +31,12 @@ export default function SummaryCard() {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Example Modal"
+        title=""
       >
-        <p>This is the content of the modal.</p>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <Button onClick={()=> navigate("/signinpage")} className="w-full">Continue to sign in</Button>
+          <Button onClick={()=> navigate("/checkout")} className="w-full">Continue as guest</Button>
+        </div>
       </Modal>
     </div>
   );
