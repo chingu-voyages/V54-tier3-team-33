@@ -1,128 +1,494 @@
 [
   {
-    "name": "Laptop UltraBook Pro X1",
-    "price": 800,
-    "description": "The UltraBook Pro X1 is the perfect blend of portability and performance.",
+    "name": "Dell XPS 15 (2024)",
+    "price": 1799,
+    "description": "Premium ultrabook with 4K OLED display, Intel Core i9, and NVIDIA RTX 4050 for creators.",
     "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop1.jpg"
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Dell%20XPS%2015%20(2024)/del1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Dell%20XPS%2015%20(2024)/del2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Dell%20XPS%2015%20(2024)/del3.jpeg"  
+    ]
   },
   {
-    "name": "Laptop Gaming Beast GX900",
-    "price": 900,
-    "description": "Built for gamers and creators, the Gaming Beast GX900 is a powerhouse laptop designed to handle the most demanding tasks.",
+    "name": "ASUS ROG Zephyrus G14",
+    "price": 1299,
+    "description": "Ultra-slim gaming laptop with AMD Ryzen 9 and NVIDIA RTX 3060 for high-performance gaming.",
     "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop2.jpg"
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/ASUS%20ROG%20Zephyrus%20G14/asus3.jpeg"
+    ]
   },
   {
-    "name": "Laptop EduBook Lite S3",
-    "price": 1000,
-    "description": "The EduBook Lite S3 is a budget-friendly laptop designed specifically for students.",
+    "name": "Apple MacBook Pro 14-inch (M3 Pro)",
+    "price": 1999,
+    "description": "Powerful MacBook Pro with M3 Pro chip, Liquid Retina XDR display, and 18-hour battery life.",
     "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop3.jpg"
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/mac1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/mac2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Apple%20MacBook%20Pro%2014-inch%20(M3%20Pro)/mac3.jpeg"
+    ]
   },
   {
-    "name": "Laptop WorkStation Elite Z5",
-    "price": 850,
-    "description": "The WorkStation Elite Z5 is a professional-grade laptop designed for business users and developers",
+    "name": "Lenovo Legion Pro 7i",
+    "price": 1899,
+    "description": "High-end gaming laptop with Intel i9-13900HX, RTX 4080, and a 240Hz display.",
     "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop4.jpg"
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Lenovo%20Legion%20Pro/lenovo1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Lenovo%20Legion%20Pro/lenovo2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Lenovo%20Legion%20Pro/lenovo3.jpeg"
+    ]
   },
   {
-    "name": "Laptop Chromebook Flex 2-in-1",
-    "price": 950,
-    "description": "The Chromebook Flex 2-in-1 is a versatile and affordable laptop that combines the simplicity of Chrome OS with the flexibility of a 2-in-1 design.",
+    "name": "HP Spectre x360 14",
+    "price": 1499,
+    "description": "Convertible 2-in-1 laptop with 13.5-inch 3K OLED touchscreen and Intel Evo platform.",
     "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/laptop5.jpg"
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/HP%20Spectre%20x360%2014/hp1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/HP%20Spectre%20x360%2014/hp2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/HP%20Spectre%20x360%2014/hp3.jpeg"  
+    ]
   },
   {
-    "name": "Denim Jacket",
-    "price": 59.99,
-    "description": "A stylish and durable denim jacket for casual wear.",
+    "name": "Acer Predator Helios 16",
+    "price": 1699,
+    "description": "Gaming beast with Intel i7-13700HX, RTX 4070, and a 16-inch 240Hz display.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Acer%20Predator%20Helios%2016/predator1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Acer%20Predator%20Helios%2016/predator2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Acer%20Predator%20Helios%2016/predator3.jpeg"
+    ]
+  },
+  {
+    "name": "Microsoft Surface Laptop 5",
+    "price": 1299,
+    "description": "Sleek Windows laptop with 13.5-inch PixelSense touchscreen and 12th Gen Intel Core i7.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Microsoft%20Surface%20Laptop%205/microsoft1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Microsoft%20Surface%20Laptop%205/microsoft2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Microsoft%20Surface%20Laptop%205/microsoft3.jpeg"  
+    ]
+  },
+  {
+    "name": "MSI Stealth 17 Studio",
+    "price": 2499,
+    "description": "Ultra-thin gaming laptop with Intel i9-13900H, RTX 4090, and 17-inch 4K 120Hz display.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/MSI%20Stealth%2017%20Studio/msi1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/MSI%20Stealth%2017%20Studio/msi2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/MSI%20Stealth%2017%20Studio/msi3.jpeg"
+    ]
+  },
+  {
+    "name": "Samsung Galaxy Book3 Ultra",
+    "price": 2199,
+    "description": "Premium lightweight laptop with AMOLED display, Intel i7-13700H, and RTX 4070.",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Samsung%20Galaxy%20Book3%20Ultra/samsung1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Samsung%20Galaxy%20Book3%20Ultra/samsung2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/LAPTOPS/Samsung%20Galaxy%20Book3%20Ultra/samsung3.jpeg"  
+    ]
+  },
+  {
+    "name": "iPhone 15 Pro Max",
+    "price": 1199,
+    "description": "Apple's flagship with A17 Pro chip, 6.7-inch Super Retina XDR display, and 48MP camera.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/iPhone%2015%20Pro%20Max/iphone15-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/iPhone%2015%20Pro%20Max/iphone15-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/iPhone%2015%20Pro%20Max/iphone15-3.jpeg"   
+    ]
+  },
+  {
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": 1299,
+    "description": "Powerful Android phone with Snapdragon 8 Gen 3, 200MP camera, and S Pen support.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Samsung%20Galaxy%20S24%20Ultra/samsungs24-3.jpeg"
+    ]
+  },
+  {
+    "name": "Google Pixel 8 Pro",
+    "price": 999,
+    "description": "AI-powered phone with Tensor G3 chip, 50MP camera, and 7 years of updates.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Google%20Pixel%208%20Pro/google1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Google%20Pixel%208%20Pro/google2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Google%20Pixel%208%20Pro/google3.jpeg"
+    ]
+  },
+  {
+    "name": "OnePlus 12",
+    "price": 799,
+    "description": "Flagship killer with Snapdragon 8 Gen 3, 120Hz LTPO display, and 100W fast charging.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/OnePlus%2012/onplus-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/OnePlus%2012/onplus-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/OnePlus%2012/onplus-3.jpeg"
+    ]
+  },
+  {
+    "name": "Xiaomi 14 Pro",
+    "price": 899,
+    "description": "Premium Android phone with Leica cameras, Snapdragon 8 Gen 3, and 120W HyperCharge.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Xiaomi%2014%20Pro/xiaomi14-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Xiaomi%2014%20Pro/xiaomi14-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Xiaomi%2014%20Pro/xiaomi14-3.jpeg"
+    ]
+  },
+  {
+    "name": "Sony Xperia 1 V",
+    "price": 1399,
+    "description": "Cinematic 4K OLED display, pro-grade cameras, and Snapdragon 8 Gen 2 for creators.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Sony%20Xperia%201%20V/sonyxperia-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Sony%20Xperia%201%20V/sonyxperia-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Sony%20Xperia%201%20V/sonyxperia-3.jpeg"  
+    ]
+  },
+  {
+    "name": "Nothing Phone (2)",
+    "price": 599,
+    "description": "Unique Glyph LED design, Snapdragon 8+ Gen 1, and clean Android experience.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Nothing%20Phone%20(2)/nothingphone-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Nothing%20Phone%20(2)/nothingphone-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Nothing%20Phone%20(2)/nothingphone-3.jpeg"
+    ]
+  },
+  {
+    "name": "ASUS ROG Phone 7 Ultimate",
+    "price": 1299,
+    "description": "Gaming beast with 165Hz AMOLED, Snapdragon 8 Gen 2, and AirTrigger controls.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/ASUS%20ROG%20Phone%207%20Ultimate/asus-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/ASUS%20ROG%20Phone%207%20Ultimate/asus-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/ASUS%20ROG%20Phone%207%20Ultimate/asus-3.jpeg"
+    ]
+  },
+  {
+    "name": "Motorola Edge 40 Ultra",
+    "price": 899,
+    "description": "200MP camera, 165Hz pOLED display, and Snapdragon 8 Gen 2 for smooth performance.",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Motorola%20Edge%2040%20Ultra/motorola1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Motorola%20Edge%2040%20Ultra/motorola2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/SMARTPHONES/Motorola%20Edge%2040%20Ultra/motorola3.jpeg"  
+    ]
+  },
+  {
+    "name": "Samsung QN90C Neo QLED 4K Smart TV (65-inch)",
+    "price": 1599,
+    "description": "Quantum HDR 32x, Neo Quantum Processor 4K, and Anti-Glare technology for vibrant colors.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Samsung%20QN90C%20Neo%20QLED%204K%20Smart%20TV/samsung3.jpeg"
+    ]
+  },
+  {
+    "name": "LG C3 OLED 4K Smart TV (55-inch)",
+    "price": 1299,
+    "description": "Perfect blacks with OLED tech, α9 Gen6 AI Processor, and Dolby Vision IQ for cinema-like quality.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/LG%20C3%20OLED%204K%20Smart%20TV%20(55-inch)/lgoled-3.jpeg"
+    ]
+  },
+  {
+    "name": "Sony A95L QD-OLED 4K TV (65-inch)",
+    "price": 2799,
+    "description": "Quantum Dot OLED with Cognitive Processor XR, Netflix Calibrated Mode, and Acoustic Surface Audio+.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20A95L%20QD-OLED%204K%20TV%20(65-inch)/sonya95-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20A95L%20QD-OLED%204K%20TV%20(65-inch)/sonya95-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20A95L%20QD-OLED%204K%20TV%20(65-inch)/sonya95-3.jpeg"
+    ]
+  },
+  {
+    "name": "TCL QM8 Mini-LED 4K TV (75-inch)",
+    "price": 1299,
+    "description": "2000+ local dimming zones, 144Hz refresh rate, and Google TV built-in for gaming and streaming.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-3.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/TCL%20QM8%20Mini-LED%204K%20TV%20(75-inch)/tcl-1.jpeg"   
+    ]
+  },
+  {
+    "name": "Hisense U8K Mini-LED 4K TV (65-inch)",
+    "price": 1099,
+    "description": "1500+ nits brightness, Dolby Vision/Atmos, and IMAX Enhanced for budget-friendly premium quality.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Hisense%20U8K%20Mini-LED%204K%20TV%20(65-inch)/hisenses-1.jpg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Hisense%20U8K%20Mini-LED%204K%20TV%20(65-inch)/hisenses-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Hisense%20U8K%20Mini-LED%204K%20TV%20(65-inch)/hisenses-3.jpeg"
+    ]
+  },
+  {
+    "name": "Vizio MQX Series 4K TV (70-inch)",
+    "price": 699,
+    "description": "Quantum Color, Active Full Array backlight, and AMD FreeSync for smooth gaming.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Vizio%20MQX%20Series%204K%20TV%20(70-inch)/vizio-3.jpeg"
+    ]
+  },
+  {
+    "name": "Samsung The Frame QLED 4K TV (55-inch)",
+    "price": 1499,
+    "description": "Art Mode transforms it into a digital painting when off. Matte display to reduce glare.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Samsung%20The%20Frame%20QLED%204K%20TV%20(55-inch)/theframe-3.jpeg"  
+    ]
+  },
+  {
+    "name": "LG G3 OLED 4K TV (77-inch)",
+    "price": 3499,
+    "description": "Gallery Design with MLA OLED for 70% brighter highlights, α9 Gen6 AI, and Dolby Vision.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/LG%20G3%20OLED%204K%20TV%20(77-inch)/lg77inches-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/LG%20G3%20OLED%204K%20TV%20(77-inch)/lg77inches-2.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/LG%20G3%20OLED%204K%20TV%20(77-inch)/lg77inches-3.jpeg"
+    ]
+  },
+  {
+    "name": "Sony X90L 4K LED TV (75-inch)",
+    "price": 1699,
+    "description": "Full Array LED with Cognitive Processor XR, XR Motion Clarity, and Google TV.",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "image": [
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-3.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-1.jpeg",
+      "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/ELECTRONICS/TELEVISIONS/Sony%20X90L%204K%20LED%20TV%20(75-inch)/sonybravia-2.jpeg"
+    ]
+  },
+  {
+    "name": "Levi's 501 Original Fit Jeans",
+    "price": 69.99,
+    "description": "Iconic straight-leg jeans with button fly, 100% cotton, and timeless Levi's quality.",
     "category": "Clothing",
-    "image": "https://thursdayboots.com/cdn/shop/products/1024x1024-Mens-Jackets-Denim-Trucker-WashedIndigo-010423-1_1024x1024.jpg?v=1673282143"
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Levi's%20501%20Original%20Fit%20Jeans/levis501-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Levi's%20501%20Original%20Fit%20Jeans/levis501-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Levi's%20501%20Original%20Fit%20Jeans/levis501-3.jpeg"
+    ]
   },
   {
-    "name": "Sneakers",
+    "name": "Wrangler Authentics Men's Classic 5-Pocket Jeans",
+    "price": 29.99,
+    "description": "Classic relaxed fit with durable cotton construction and reinforced stitching.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Wrangler%20Authentics%20Men's%20Classic%205-Pocket%20Jeans/wrangler-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Wrangler%20Authentics%20Men's%20Classic%205-Pocket%20Jeans/wrangler-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Wrangler%20Authentics%20Men's%20Classic%205-Pocket%20Jeans/wrangler-3.jpeg"
+    ]
+  },
+  {
+    "name": "Diesel JoggJeans Slim Fit Stretch Denim",
+    "price": 199.00,
+    "description": "Premium stretch denim with slim fit, tapered leg, and signature Diesel distressing.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Diesel%20JoggJeans%20Slim%20Fit%20Stretch%20Denim/diesel-joggjeans-3.jpeg"
+    ]
+  },
+  {
+    "name": "Calvin Klein Women's High Rise Skinny Jeans",
+    "price": 79.95,
+    "description": "Flattering high-rise skinny fit with stretch for comfort and a sleek silhouette.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Calvin%20Klein%20Women's%20High%20Rise%20Skinny%20Jeans/calvin-klein-women-3.jpeg"
+    ]
+  },
+  {
+    "name": "Lee Women's Relaxed Fit Straight Leg Jeans",
+    "price": 39.99,
+    "description": "Comfortable straight-leg jeans with a relaxed fit and classic 5-pocket styling.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Lee%20Women's%20Relaxed%20Fit%20Straight%20Leg%20Jeans/lee-womens-relaxed-fit-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Lee%20Women's%20Relaxed%20Fit%20Straight%20Leg%20Jeans/lee-womens-relaxed-fit-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Lee%20Women's%20Relaxed%20Fit%20Straight%20Leg%20Jeans/lee-womens-relaxed-fit-3.jpeg"
+    ]
+  },
+  {
+    "name": "G-Star Raw 3301 Slim Tapered Jeans",
+    "price": 149.00,
+    "description": "Raw denim with slim tapered fit, selvage detailing, and rugged durability.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/G-Star%20Raw%203301%20Slim%20Tapered%20Jeans/g-star-raw-3301-3.jpeg"
+    ]
+  },
+  {
+    "name": "AGOLDE Parker High Rise Straight Jeans",
+    "price": 198.00,
+    "description": "Vintage-inspired straight-leg jeans with high rise and 100% cotton construction.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/AGOLDE%20Parker%20High%20Rise%20Straight%20Jeans/agolde-parker-3.jpeg"
+    ]
+  },
+  {
+    "name": "Hollister Super Skinny Jeans",
+    "price": 49.95,
+    "description": "Trendy super skinny fit with stretch fabric and distressed detailing for a casual look.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Hollister%20Super%20Skinny%20Jeans/hollister-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Hollister%20Super%20Skinny%20Jeans/hollister-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/Hollister%20Super%20Skinny%20Jeans/hollister-3.jpeg"
+    ]
+  },
+  {
+    "name": "7 For All Mankind Women's Dojo Bootcut Jeans",
+    "price": 189.00,
+    "description": "Luxury bootcut jeans with contoured waistband and premium stretch denim.",
+    "category": "Clothing",
+    "subcategory": "Jeans",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/7%20For%20All%20Mankind%20Women's%20Dojo%20Bootcut%20Jeans/7-for-all-mankind-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/7%20For%20All%20Mankind%20Women's%20Dojo%20Bootcut%20Jeans/7-for-all-mankind-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/JEANS/7%20For%20All%20Mankind%20Women's%20Dojo%20Bootcut%20Jeans/7-for-all-mankind-3.jpeg"
+    ]
+  },
+  {
+    "name": "Nike Air Jordan 1 Retro High OG",
+    "price": 180.00,
+    "description": "Iconic high-top sneakers with original 1985 design, leather upper, and Air cushioning.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Nike%20Air%20Jordan%201%20Retro%20High%20OG/nike-air-jordan-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Nike%20Air%20Jordan%201%20Retro%20High%20OG/nike-air-jordan-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Nike%20Air%20Jordan%201%20Retro%20High%20OG/nike-air-jordan-3.jpeg"
+    ]
+  },
+  {
+    "name": "Adidas Ultraboost 22",
+    "price": 190.00,
+    "description": "Boost midsole for energy return, Primeknit+ adaptive fit, and Continental rubber outsole.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Adidas%20Ultraboost%2022/adidas-ultraboost-22-3.jpeg"
+    ]
+  },
+  {
+    "name": "New Balance 574 Core",
     "price": 89.99,
-    "description": "Comfortable and trendy sneakers, perfect for daily wear.",
+    "description": "Classic lifestyle sneakers with ENCAP midsole, suede/mesh upper, and retro styling.",
     "category": "Clothing",
-    "image": "https://cdn.thewirecutter.com/wp-content/media/2024/05/white-sneaker-2048px-9320.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/New%20Balance%20574%20Core/new-balance-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/New%20Balance%20574%20Core/new-balance-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/New%20Balance%20574%20Core/new-balance-3.jpeg"
+    ]
   },
   {
-    "name": "Hoodie",
-    "price": 49.99,
-    "description": "A cozy hoodie made from high-quality cotton fabric.",
+    "name": "Puma RS-X Reinvention",
+    "price": 110.00,
+    "description": "Chunky sneaker trend with RS (Running System) cushioning and bold color-blocking.",
     "category": "Clothing",
-    "image": "https://anothercottonlab.com/cdn/shop/files/ACL-SRC-Hoodie-VB-Front-Neu2.jpg?v=1729687178&width=1080"
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Puma%20RS-X%20Reinvention/puma-rx-1.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Puma%20RS-X%20Reinvention/puma-rx-2.jpeg",
+        "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Puma%20RS-X%20Reinvention/puma-rx-3.jpeg"
+    ]
   },
   {
-    "name": "Formal Suit",
-    "price": 199.99,
-    "description": "A well-tailored formal suit for business and special occasions.",
+    "name": "Converse Chuck Taylor All Star High Top",
+    "price": 65.00,
+    "description": "Timeless canvas sneakers with rubber toe cap and iconic ankle patch.",
     "category": "Clothing",
-    "image": "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/27748182/2024/2/21/f7c1aabb-1505-4630-bd25-53eb15a153711708492338173TwoPieceNavyTexturedFormalSuits-Waves1.jpg"
-  },
-  {
-    "name": "Smartphone UltraMini S2",
-    "price": 499.99,
-    "description": "The UltraMini S2 is a compact and powerful smartphone designed for users who prefer smaller devices.",
-    "category": "Electronics",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/smartPhone1.jpg"
-  },
-  {
-    "name": "Jacket Classic Rider Jacket",
-    "price": 199.99,
-    "description": "The Classic Rider Jacket is a timeless piece that combines rugged durability with sleek style. Made from premium full-grain leather.",
-    "category": "Clothing",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/leatherJacket.jpg"
-  },
-  {
-    "name": "Jeans Ripped Skinny Jeans",
-    "price": 59.99,
-    "description": "The Black Ripped Skinny Jeans are a bold and edgy addition to any wardrobe.",
-    "category": "Clothing",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/denimJeans.jpg"
-  },
-  {
-    "name": "Stratocaster Electric Guitar",
-    "price": 699.99,
-    "description": "The Stratocaster Electric Guitar is a classic instrument known for its versatile sound and iconic design. Perfect for rock, blues, and jazz.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/stratocaster.jpg"
-  },
-  {
-    "name": "Acoustic Folk Guitar",
-    "price": 299.99,
-    "description": "The Acoustic Folk Guitar delivers rich, warm tones and is ideal for singer-songwriters and casual players. Made with solid spruce and mahogany.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/folkGuitar.jpg"
-  },
-  {
-    "name": "Digital Piano 88 Keys",
-    "price": 899.99,
-    "description": "The Digital Piano 88 Keys offers a realistic playing experience with weighted keys and high-quality sound samples. Perfect for beginners and professionals alike.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/digitalPiano.jpg"
-  },
-  {
-    "name": "Portable MIDI Keyboard",
-    "price": 149.99,
-    "description": "The Portable MIDI Keyboard is compact and lightweight, making it ideal for music production on the go. Features 25 velocity-sensitive keys and USB connectivity.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/midiKeyboard.jpg"
-  },
-  {
-    "name": "5-Piece Drum Kit",
-    "price": 799.99,
-    "description": "The 5-Piece Drum Kit is perfect for drummers of all levels. Includes a bass drum, snare, toms, and cymbals for a complete setup.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumKit.jpg"
-  },
-  {
-    "name": "Electronic Drum Pad",
-    "price": 349.99,
-    "description": "The Electronic Drum Pad is a compact and versatile option for practicing and performing. Features 8 pads with customizable sounds and built-in speakers.",
-    "category": "Music",
-    "image": "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-responsive-design/frontend/src/assets/products/drumPad.jpg"
+    "subcategory": "Sneakers",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
