@@ -478,5 +478,17 @@
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Puma%20RS-X%20Reinvention/puma-rx-2.jpeg",
         "https://raw.githubusercontent.com/chingu-voyages/V54-tier3-team-33/refs/heads/feature-sprint-4/frontend/src/assets/products/CLOTHING/SNEAKERS/Puma%20RS-X%20Reinvention/puma-rx-3.jpeg"
     ]
+  },
+  {
+    "name": "Converse Chuck Taylor All Star High Top",
+    "price": 65.00,
+    "description": "Timeless canvas sneakers with rubber toe cap and iconic ankle patch.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "",
+        "",
+        ""
+    ]
   }
 ]
