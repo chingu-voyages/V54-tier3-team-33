@@ -4,22 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        // primaries and secondaries to be changed later
         primary: "#3665F3",
         primaryHover: "#184EF2",
         secondary: "#FFCB47",
         secondaryHover: "#F5AF00",
-
-        // custom colors that dont really fit any category but we still need them for consistency, maybe border color or generic names allow us to use them for any purpose
         customcolorone: "",
         customcolortwo: "#F7F7F7",
         customcolorthree: "",
       },
-
-      // Comic Sans MS and Papyrus for consistency testing
       fontFamily: {
         familyprimary: ["serif"],
         familysecondary: ["serif"],
+        // Uncomment the following lines if you want to use Comic Sans MS and Papyrus
         // familyprimary: ["Comic Sans MS", "serif"],
         // familysecondary: ["Papyrus", "serif"],
       },
@@ -29,15 +25,15 @@ export default {
         xs: "0.1px",
       },
       borderRadius: {
-        custom: "99rem", // circle, for consistency testing
+        custom: "99rem", // Circle for consistency testing
       },
       boxShadow: {
-        // custom: "0 7px 10px -2px rgb(0, 0, 0, 0.1)",
+        custom: "0 7px 10px -2px rgba(0, 0, 0, 0.1)",
       },
       screens: {
         xs: "480px",
       },
     },
-    plugins: [],
   },
+  plugins: [],
 };

@@ -5,3 +5,40 @@
     @apply w-full border px-3 py-2 border-stone-300 bg-stone-100;
   }
 }
+
+@theme {
+    /*  primaries and secondaries to be changed later */
+    --color-primary: "#3665F3";
+    --color-primaryHover: "#184EF2";
+    --color-secondary: "#FFCB47";
+    --color-secondaryHover: "#F5AF00";
+
+     /* custom colors that dont really fit any category but we still need them for consistency, maybe border color or generic names allow us to use them for any purpose */
+     --color-customcolorone: "";
+     --color-customcolortwo: "#F7F7F7";
+     --color-customcolorthree: "";
+     
+     --breakpoint-xs: "480px";
+
+  /* Comic Sans MS and Papyrus for consistency testing */
+  fontFamily: {
+    familyprimary: ["serif"],
+    familysecondary: ["serif"],
+    /* familyprimary: ["Comic Sans MS", "serif"], */
+    /* familysecondary: ["Papyrus", "serif"], */
+  },
+  fontSize: {
+    sizeprimary: "4rem",
+    sizesecondary: "2rem",
+    xs: "0.1px",
+  },
+  borderRadius: {
+     custom: "99rem",  /* circle, for consistency testing */
+  },
+  boxShadow: {
+   custom: "0 7px 10px -2px rgb(0, 0, 0, 0.1)",
+  },
+ 
+   
+  
+}
