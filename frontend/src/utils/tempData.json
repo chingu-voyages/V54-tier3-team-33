@@ -490,5 +490,485 @@
         "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Converse%20Chuck%20Taylor%20All%20Star%20High%20Top/converse-2.jpeg",
         "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Converse%20Chuck%20Taylor%20All%20Star%20High%20Top/converse-3.jpeg"
     ]
+  },
+  {
+    "name": "Vans Old Skool",
+    "price": 60.00,
+    "description": "Classic skate shoes with durable suede upper and signature side stripe.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Vans%20Old%20Skool/vans-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Vans%20Old%20Skool/vans-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Vans%20Old%20Skool/vans-3.jpeg"
+    ]
+  },
+  {
+    "name": "Reebok Club C 85 Vintage",
+    "price": 80.00,
+    "description": "Clean leather upper, padded collar, and retro tennis-inspired design.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "https://github.com/ARBUCHELI/owl-database/blob/master/products/CLOTHING/SNEAKERS/Reebok%20Club%20C%2085%20Vintage/reebok-1.jpeg?raw=true",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Reebok%20Club%20C%2085%20Vintage/reebok-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Reebok%20Club%20C%2085%20Vintage/reebok-3.jpeg"
+    ]
+  },
+  {
+    "name": "Asics Gel-Kayano 30",
+    "price": 160.00,
+    "description": "Premium running shoes with FF BLAST PLUS cushioning and 4D GUIDANCE SYSTEM.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Asics%20Gel-Kayano%2030/asics-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Asics%20Gel-Kayano%2030/asics-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Asics%20Gel-Kayano%2030/asics-3.jpeg"
+    ]
+  },
+  {
+    "name": "Hoka One One Bondi 8",
+    "price": 165.00,
+    "description": "Maximalist cushioned running shoes with meta-rocker geometry for smooth strides.",
+    "category": "Clothing",
+    "subcategory": "Sneakers",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Hoka%20One%20One%20Bondi%208/hoka-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Hoka%20One%20One%20Bondi%208/hoka-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/SNEAKERS/Hoka%20One%20One%20Bondi%208/hoka-3.jpeg"
+    ]
+  },
+  {
+    "name": "The North Face Nuptse Jacket",
+    "price": 270,
+    "description": "Iconic puffer jacket with 700-fill goose down, water-resistant shell, and quilted baffles for maximum warmth.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/The%20North%20Face%20Nuptse%20Jacket/northface-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/The%20North%20Face%20Nuptse%20Jacket/northface-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/The%20North%20Face%20Nuptse%20Jacket/northface-3.jpeg"
+    ]
+  },
+  {
+    "name": "Patagonia Nano Puff Jacket",
+    "price": 229,
+    "description": "Lightweight synthetic insulation with recycled materials, water-resistant, and highly packable for outdoor adventures.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Patagonia%20Nano%20Puff%20Jacket/patagonia-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Patagonia%20Nano%20Puff%20Jacket/patagonia-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Patagonia%20Nano%20Puff%20Jacket/patagonia-3.jpeg"
+    ]
+  },
+  {
+    "name": "Canada Goose Expedition Parka",
+    "price": 1495,
+    "description": "Arctic-grade protection with coyote fur trim, 625-fill white duck down, and extreme weather durability.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Canada%20Goose%20Expedition%20Parka/canada-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Canada%20Goose%20Expedition%20Parka/canada-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Canada%20Goose%20Expedition%20Parka/canada-3.jpeg"
+    ]
+  },
+  {
+    "name": "Columbia Arcadia II Rain Jacket",
+    "price": 69,
+    "description": "Waterproof breathable shell with Omni-Tech technology, adjustable hood, and pit-zip vents.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Columbia%20Arcadia%20II%20Rain%20Jacket/columbia-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Columbia%20Arcadia%20II%20Rain%20Jacket/columbia-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Columbia%20Arcadia%20II%20Rain%20Jacket/columbia-3.jpeg"
+    ]
+  },
+  {
+    "name": "Carhartt Duck Active Jacket",
+    "price": 89,
+    "description": "Rugged 12-ounce cotton duck shell with insulated lining, rib-knit storm cuffs, and tool pockets.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Carhartt%20Duck%20Active%20Jacket/carhartt-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Carhartt%20Duck%20Active%20Jacket/carhartt-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Carhartt%20Duck%20Active%20Jacket/carhartt-3.jpeg"
+    ]
+  },
+  {
+    "name": "Moncler Maya Puffer Jacket",
+    "price": 1590,
+    "description": "Luxury quilted down jacket with signature Moncler logo, fur-trimmed hood, and lightweight warmth.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Moncler%20Maya%20Puffer%20Jacket/moncler-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Moncler%20Maya%20Puffer%20Jacket/moncler-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Moncler%20Maya%20Puffer%20Jacket/moncler-3.jpeg"
+    ]
+  },
+  {
+    "name": "Arc'teryx Beta AR Jacket",
+    "price": 499,
+    "description": "Technical Gore-Tex Pro shell with helmet-compatible hood, waterproof zippers, and alpine climbing design.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Arc'teryx%20Beta%20AR%20Jacket/arcteryx-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Arc'teryx%20Beta%20AR%20Jacket/arcteryx-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Arc'teryx%20Beta%20AR%20Jacket/arcteryx-3.jpeg"
+    ]
+  },
+  {
+    "name": "Levi's Trucker Jacket",
+    "price": 79,
+    "description": "Classic denim jacket with slim fit, corduroy-lined collar, and signature Levi's red tab.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Levi's%20Trucker%20Jacket/levis-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Levi's%20Trucker%20Jacket/levis-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Levi's%20Trucker%20Jacket/levis-3.jpeg"
+    ]
+  },
+  {
+    "name": "Alpha Industries MA-1 Bomber Flight Jacket",
+    "price": 120,
+    "description": "Military-inspired bomber with water-resistant nylon shell, orange lining, and ribbed knit cuffs.",
+    "category": "Clothing",
+    "subcategory": "Jackets",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Bomber%20Flight%20Jacket/bomber-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Bomber%20Flight%20Jacket/bomber-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/CLOTHING/JACKETS/Bomber%20Flight%20Jacket/bomber-3.jpeg"
+    ]
+  },
+  {
+    "name": "Fender Stratocaster American Professional II",
+    "price": 1699,
+    "description": "Iconic electric guitar with V-Mod II pickups, deep C neck profile, and timeless tone for all genres.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Fender%20Stratocaster%20American%20Professional%20II/fender-strat-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Fender%20Stratocaster%20American%20Professional%20II/fender-strat-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Fender%20Stratocaster%20American%20Professional%20II/fender-strat-3.jpeg"
+    ]
+  },
+  {
+    "name": "Gibson Les Paul Standard '50s",
+    "price": 2499,
+    "description": "Classic solid-body electric with Burstbucker pickups, mahogany body, and vintage sunburst finish.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Gibson%20Les%20Paul%20Standard%20'50s/lespaul-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Gibson%20Les%20Paul%20Standard%20'50s/lespaul-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Gibson%20Les%20Paul%20Standard%20'50s/lespaul-3.jpeg"
+    ]
+  },
+  {
+    "name": "Taylor 214ce Grand Auditorium",
+    "price": 999,
+    "description": "Acoustic-electric guitar with layered rosewood back/sides, ES2 pickup, and cutaway for upper fret access.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Taylor%20214ce%20Grand%20Auditorium/taylor-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Taylor%20214ce%20Grand%20Auditorium/taylor-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Taylor%20214ce%20Grand%20Auditorium/taylor-3.jpeg"
+    ]
+  },
+  {
+    "name": "PRS SE Custom 24",
+    "price": 849,
+    "description": "Versatile electric guitar with PRS 85/15 pickups, 24 frets, and flame maple veneer top.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/PRS%20SE%20Custom%2024/prs-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/PRS%20SE%20Custom%2024/prs-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/PRS%20SE%20Custom%2024/prs-3.jpeg"
+    ]
+  },
+  {
+    "name": "Martin D-28 Standard",
+    "price": 2799,
+    "description": "Legendary dreadnought acoustic with solid Sitka spruce top and East Indian rosewood back/sides.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Martin%20D-28%20Standard/martin-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Martin%20D-28%20Standard/martin-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Martin%20D-28%20Standard/martin-3.jpeg"
+    ]
+  },
+  {
+    "name": "Ibanez RG550 Genesis",
+    "price": 999,
+    "description": "Shred-ready electric guitar with original Edge tremolo, HSH pickup configuration, and ultra-thin Wizard neck.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Ibanez%20RG550%20Genesis/ibanez-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Ibanez%20RG550%20Genesis/ibanez-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Ibanez%20RG550%20Genesis/ibanez-3.jpeg"
+    ]
+  },
+  {
+    "name": "Gretsch G2622 Streamliner",
+    "price": 699,
+    "description": "Hollow-body electric with Broad'Tron pickups, Bigsby vibrato, and vintage-inspired aesthetics.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Gretsch%20G2622%20Streamliner/gretch-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Gretsch%20G2622%20Streamliner/gretch-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Gretsch%20G2622%20Streamliner/gretch-3.jpeg"
+    ]
+  },
+  {
+    "name": "Yamaha FG800 Solid Top",
+    "price": 229,
+    "description": "Affordable acoustic guitar with solid spruce top, nato/okume back/sides, and scalloped bracing.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Yamaha%20FG800%20Solid%20Top/yamaha-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Yamaha%20FG800%20Solid%20Top/yamaha-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Yamaha%20FG800%20Solid%20Top/yamaha-3.jpeg"
+    ]
+  },
+  {
+    "name": "Epiphone Hummingbird Studio",
+    "price": 499,
+    "description": "Acoustic-electric with solid spruce top, mahogany body, and iconic Hummingbird pickguard design.",
+    "category": "Music",
+    "subcategory": "Guitars",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Epiphone%20Hummingbird%20Studio/epiphone-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Epiphone%20Hummingbird%20Studio/epiphone-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/GUITARS/Epiphone%20Hummingbird%20Studio/epiphone-3.jpeg"
+    ]
+  },
+  {
+    "name": "Yamaha P-125A Digital Piano",
+    "price": 799,
+    "description": "88 weighted keys with GHS action, Pure CF Sound Engine, and built-in speakers for authentic piano feel.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Yamaha%20P-125A%20Digital%20Piano/yamaha-p125-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Yamaha%20P-125A%20Digital%20Piano/yamaha-p125-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Yamaha%20P-125A%20Digital%20Piano/yamaha-p125-3.jpeg"
+    ]
+  },
+  {
+    "name": "Roland GO:KEYS Music Creation Keyboard",
+    "price": 299,
+    "description": "61 lightweight keys with Bluetooth MIDI, loop mixing function, and battery-powered portability.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Roland%20GOKEYS%20Music%20Creation%20Keyboard/roland-gokeys-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Roland%20GOKEYS%20Music%20Creation%20Keyboard/roland-gokeys-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Roland%20GOKEYS%20Music%20Creation%20Keyboard/roland-gokeys-3.jpeg"
+    ]
+  },
+  {
+    "name": "Casio CT-S1 61-Key Portable Keyboard",
+    "price": 199,
+    "description": "Ultra-slim design with 61 touch-sensitive keys, 61 built-in tones, and battery operation.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Casio%20CT-S1%2061-Key%20Portable%20Keyboard/castio-ct-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Casio%20CT-S1%2061-Key%20Portable%20Keyboard/castio-ct-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Casio%20CT-S1%2061-Key%20Portable%20Keyboard/castio-ct-3.jpeg"
+    ]
+  },
+  {
+    "name": "Korg B2SP 88-Key Digital Piano",
+    "price": 649,
+    "description": "Natural Weighted Hammer Action keys, MFB speakers, and included stand/pedal unit.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Korg%20B2SP%2088-Key%20Digital%20Piano/korg-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Korg%20B2SP%2088-Key%20Digital%20Piano/korg-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Korg%20B2SP%2088-Key%20Digital%20Piano/korg-3.jpeg"
+    ]
+  },
+  {
+    "name": "Nord Stage 4 88-Key Synthesizer",
+    "price": 4999,
+    "description": "Professional performance keyboard with hammer action, virtual analog engine, and sample synth.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Nord%20Stage%204%2088-Key%20Synthesizer/nordstage-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Nord%20Stage%204%2088-Key%20Synthesizer/nordstage-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Nord%20Stage%204%2088-Key%20Synthesizer/nordstage-3.jpeg"
+    ]
+  },
+  {
+    "name": "Alesis Recital Pro 88-Key Digital Piano",
+    "price": 399,
+    "description": "Semi-weighted keys with adjustable touch response, 12 built-in voices, and lesson mode.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+      "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Alesis%20Recital%20Pro%2088-Key%20Digital%20Piano/alesis-3.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Alesis%20Recital%20Pro%2088-Key%20Digital%20Piano/alesis-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Alesis%20Recital%20Pro%2088-Key%20Digital%20Piano/alesis-2.jpeg"
+    ]
+  },
+  {
+    "name": "Roland Fantom-08 Workstation Keyboard",
+    "price": 1999,
+    "description": "61-key semi-weighted workstation with ZEN-Core synth, vocal effects, and DAW integration.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Roland%20Fantom-08%20Workstation%20Keyboard/roland-fantom-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Roland%20Fantom-08%20Workstation%20Keyboard/roland-fantom-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Roland%20Fantom-08%20Workstation%20Keyboard/roland-fantom-3.jpeg"
+    ]
+  },
+  {
+    "name": "Kawai ES920 Digital Piano",
+    "price": 2199,
+    "description": "Responsive Hammer Action III keys, SK-EX grand piano samples, and Bluetooth audio/MIDI.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Kawai%20ES920%20Digital%20Piano/kawai-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Kawai%20ES920%20Digital%20Piano/kawai-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Kawai%20ES920%20Digital%20Piano/kawai-3.jpeg"
+    ]
+  },
+  {
+    "name": "Arturia KeyLab Essential 61 MIDI Controller",
+    "price": 249,
+    "description": "61 semi-weighted keys with aftertouch, Analog Lab software, and DAW control integration.",
+    "category": "Music",
+    "subcategory": "Keyboards",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Arturia%20KeyLab%20Essential%2061%20MIDI%20Controller/arturia-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Arturia%20KeyLab%20Essential%2061%20MIDI%20Controller/arturia-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/KEYBOARDS/Arturia%20KeyLab%20Essential%2061%20MIDI%20Controller/arturia-3.jpeg"
+    ]
+  },
+  {
+    "name": "Pearl Export Series Drum Set",
+    "price": 899,
+    "description": "Professional 5-piece drum kit with poplar/mahogany shells, Remo heads, and hardware included. Perfect for gigging musicians.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Pearl%20Export%20Series%20Drum%20Set/pearl-export-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Pearl%20Export%20Series%20Drum%20Set/pearl-export-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Pearl%20Export%20Series%20Drum%20Set/pearl-export-3.jpeg"
+    ]
+  },
+  {
+    "name": "Tama Imperialstar Drum Set",
+    "price": 799,
+    "description": "6-piece drum kit with poplar shells, 100% birch reinforcement rings, and Meinl HCS cymbals. Includes all hardware.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Tama%20Imperialstar%20Drum%20Set/tama-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Tama%20Imperialstar%20Drum%20Set/tama-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Tama%20Imperialstar%20Drum%20Set/tama-3.jpeg"
+    ]
+  },
+  {
+    "name": "DW Design Series Acoustic Kit",
+    "price": 1999,
+    "description": "Premium 4-piece kit with North American maple shells, True Pitch tuning, and professional hardware. Made in USA.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/DW%20Design%20Series%20Acoustic%20Kit/dw-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/DW%20Design%20Series%20Acoustic%20Kit/dw-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/DW%20Design%20Series%20Acoustic%20Kit/dw-3.jpeg"
+    ]
+  },
+  {
+    "name": "Ludwig Breakbeats Questlove Kit",
+    "price": 499,
+    "description": "Compact 4-piece jazz kit with bass drum, poplar shells, and vintage-style hardware. Great for small spaces.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Ludwig%20Breakbeats%20Questlove%20Kit/ludwig-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Ludwig%20Breakbeats%20Questlove%20Kit/ludwig-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Ludwig%20Breakbeats%20Questlove%20Kit/ludwig-3.jpeg"
+    ]
+  },
+  {
+    "name": "Yamaha Stage Custom Birch",
+    "price": 899,
+    "description": "5-piece kit with 100% birch shells, YESS mounting system, and professional tuning stability. Includes hardware.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Yamaha%20Stage%20Custom%20Birch/custombirch-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Yamaha%20Stage%20Custom%20Birch/custombirch-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Yamaha%20Stage%20Custom%20Birch/custombirch-3.jpeg"
+    ]
+  },
+  {
+    "name": "Gretsch Catalina Club Jazz",
+    "price": 899,
+    "description": "Vintage-style 4-piece kit with mahogany shells, bass drum, and classic Gretsch hardware. Perfect for jazz.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Gretsch%20Catalina%20Club%20Jazz/catalina-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Gretsch%20Catalina%20Club%20Jazz/catalina-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Gretsch%20Catalina%20Club%20Jazz/catalina-3.jpeg"
+    ]
+  },
+  {
+    "name": "Mapex Mars Pro Drum Set",
+    "price": 1099,
+    "description": "6-piece hybrid kit with birch/basswood shells, SONIClear bearing edges, and professional hardware.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Mapex%20Mars%20Pro%20Drum%20Set/mapex-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Mapex%20Mars%20Pro%20Drum%20Set/mapex-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Mapex%20Mars%20Pro%20Drum%20Set/mapex-3.jpeg"
+    ]
+  },
+  {
+    "name": "Roland TD-17KVX Electronic Drum Set",
+    "price": 1999,
+    "description": "Professional electronic kit with mesh heads, Bluetooth connectivity, and SuperNATURAL sound engine.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Roland%20TD-17KVX%20Electronic%20Drum%20Set/roland-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Roland%20TD-17KVX%20Electronic%20Drum%20Set/roland-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Roland%20TD-17KVX%20Electronic%20Drum%20Set/roland-3.jpeg"
+    ]
+  },
+  {
+    "name": "Sonor AQX Jungle Kit",
+    "price": 699,
+    "description": "Compact 3-piece kit with linden wood shells, 16 inches bass drum, and lightweight hardware. Ideal for travel.",
+    "category": "Music",
+    "subcategory": "Drums",
+    "image": [
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Sonor%20AQX%20Jungle%20Kit/sonor-1.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Sonor%20AQX%20Jungle%20Kit/sonor-2.jpeg",
+        "https://raw.githubusercontent.com/ARBUCHELI/owl-database/refs/heads/master/products/MUSIC/DRUMS/Sonor%20AQX%20Jungle%20Kit/sonor-3.jpeg"
+    ]
   }
 ]
