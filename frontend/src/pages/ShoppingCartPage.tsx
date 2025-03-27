@@ -26,7 +26,7 @@ export default function ShoppingCartPage() {
       ) : (
         <div className="mt-10 flex gap-3">
           <ProductInCart cartItems={cartItems} />
-          <SummaryCard />
+          <SummaryCard total={"Subtotal"} buttonText={"Go to checkout"}  />
         </div>
       )}
     </div>
