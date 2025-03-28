@@ -8,6 +8,12 @@ import logo from "../assets/logo.png";
 export default function CheckoutPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
+  const handleConfirmAndPay = () => {
+    // Custom logic for the "Confirm and pay" button
+    alert("Order confirmed, payment completed!");
+    // Add additional logic here, such as API calls or navigation
+  };
+
   return (
     <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <div className="mb-10 flex items-center justify-start gap-5">
@@ -19,7 +25,12 @@ export default function CheckoutPage() {
 
       <div className="flex gap-3">
         {cartItems.length > 0 && <ProductInCart cartItems={cartItems} />}
-        <SummaryCard total={"Order total"} buttonText={"Confirm and pay"} />
+        <SummaryCard
+          total={"Order total"}
+          buttonText={"Confirm and pay"}
+          showModal={false}
+          buttonAction={handleConfirmAndPay}
+        />
       </div>
     </section>
   );
