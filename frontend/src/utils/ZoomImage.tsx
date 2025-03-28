@@ -1,42 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 
-function ZoomImage({ src, alt }) {
+interface ZoomImageProps {
+  src: string;
+  alt: string;
+}
+
+function ZoomImage({ src, alt }: ZoomImageProps) {
   const [zoom, setZoom] = useState(false);
   const [position, setPosition] = useState({ x: 50, y: 50 });
-  const zoomRef = useRef(null);
+  const zoomRef = useRef<HTMLDivElement>(null); 
 
-  // zoom position information based on cursor hover or tap
-  const updatePosition = (clientX, clientY, target) => {
+  const updatePosition = (clientX: number, clientY: number, target: HTMLElement) => {
     const { left, top, width, height } = target.getBoundingClientRect();
     const x = ((clientX - left) / width) * 100;
     const y = ((clientY - top) / height) * 100;
     setPosition({ x, y });
   };
 
-  // zoom in hover for desktop
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (zoom) {
       updatePosition(e.clientX, e.clientY, e.currentTarget);
     }
   };
 
-  // zoom in tap for mobile
-  const handleTap = (e) => {
+  const handleTap = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     setZoom(true);
-    updatePosition(
-      e.clientX || e.touches[0].clientX,
-      e.clientY || e.touches[0].clientY,
-      e.currentTarget,
-    );
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    updatePosition(clientX, clientY, e.currentTarget);
   };
 
-  // close zoom when clicked outside img, this is only for mobile
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (zoom && zoomRef.current && !zoomRef.current.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (zoom && zoomRef.current && e.target instanceof Node && !zoomRef.current.contains(e.target)) {
         setZoom(false);
       }
     };
+    
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, [zoom]);

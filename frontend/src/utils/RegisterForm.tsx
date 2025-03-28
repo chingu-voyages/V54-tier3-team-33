@@ -48,7 +48,7 @@ const RegisterForm: React.FC = () => {
       const data = await response.json();
       console.log("Registration successful", data);
     } catch (error) {
-      console.log(error.message);
+      console.log((error as Error).message);
     }
   };
 
