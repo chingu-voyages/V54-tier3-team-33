@@ -29,7 +29,7 @@ const Nav = () => {
 
   return (
     <nav className="bg-white">
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-10">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-4">
         <div className="flex justify-end p-4 md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

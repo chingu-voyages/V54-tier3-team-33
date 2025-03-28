@@ -1,24 +1,39 @@
 @import "tailwindcss";
 
-@theme {
-    /*colors*/
-    --color-primary: #68A4CA;
-    --color-primaryHover: #4A92BF;
-    --color-secondary: #FFCB47;
-    --color-secondaryHover: #F5AF00;
-
-    /*Fontsize*/
-    --text-sizeprimary: 4rem;
-    --text-sizesecondary: 2rem;
-
-    /*font*/
-    --font-poppins: Poppins, sans-serif;
-
-    /*Breakpoint*/
-    --breakpoint-xs: 480px;
-
-    /*BorderRadius*/
-    --radius-custom: 99rem;
+@layer components {
+  .formInput {
+    @apply w-full border border-stone-300 bg-stone-100 px-3 py-2;
+  }
 }
+@import "tailwindcss";
 
+@theme {
+  /*colors*/
+  --color-primary: #68a4ca;
+  --color-primaryHover: #4a92bf;
+  --color-secondary: #ffcb47;
+  --color-secondaryHover: #f5af00;
 
+  --color-customcolorone: ;
+  --color-customcolortwo: ;
+  --color-customcolorthree: ;
+
+  /*Fontsize*/
+  --text-sizeprimary: 6rem;
+  --text-sizesecondary: 2rem;
+
+  /* font same name classes for the purpose of commenting out a set of them for consistency testing */
+  --font-primary: Poppins, sans-serif;
+  --font-secondary: Poppins, sans-serif;
+  /* fonts for testing */
+  /* --font-primary: Comic Sans MS, serif; */
+  /* --font-secondary: Papyrus, serif; */
+
+  --shadow-custom: 0 0 10px rgba(0, 0, 0, 1);
+
+  /*Breakpoint*/
+  --breakpoint-xs: 480px;
+
+  /*BorderRadius*/
+  --radius-custom: 10px;
+}
