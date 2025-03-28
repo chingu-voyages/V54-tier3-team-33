@@ -8,14 +8,13 @@ import { searchProducts } from "../../store/slices/localProductSlice";
 //import { searchProducts } from "../../store/slices/productSlice";
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
-// import { useSelector } from "react-redux";
-// import { RootState } from "../../store/store";
 
 interface HeaderProps {
   showAdvertising?: boolean;
+  showNav?: boolean; 
 }
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ showNav = true }) => { 
   const categories = [
     { name: "Electronics", subcategories: ["Smartphones", "Laptops", "Televisions"] },
     { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
@@ -157,10 +156,12 @@ const Header: React.FC<HeaderProps> = () => {
           Search
         </button>
       </header>
-
+      
+      {showNav && (  
       <div className="mt-2 pt-1 pr-10 pl-10">
         <Nav />
       </div>
+    )}
     </>
   );
 };

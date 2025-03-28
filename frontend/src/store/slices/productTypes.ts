@@ -7,6 +7,7 @@ export type Product = {
   deliveryCost: number;
   country: string;
   category: string;
+  subcategory: string;
 };
 
 export interface ProductState {

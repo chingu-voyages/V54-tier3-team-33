@@ -1,5 +1,4 @@
 import Card from "../Card/Card";
-// import tempData from "../../utils/tempData.json";
 
 interface Product {
   id: number;
