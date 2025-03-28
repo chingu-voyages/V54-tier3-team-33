@@ -5,40 +5,35 @@
     @apply w-full border px-3 py-2 border-stone-300 bg-stone-100;
   }
 }
+@import "tailwindcss";
 
 @theme {
-    /*  primaries and secondaries to be changed later */
-    --color-primary: "#3665F3";
-    --color-primaryHover: "#184EF2";
-    --color-secondary: "#FFCB47";
-    --color-secondaryHover: "#F5AF00";
+  /*colors*/
+  --color-primary: #68a4ca;
+  --color-primaryHover: #4a92bf;
+  --color-secondary: #ffcb47;
+  --color-secondaryHover: #f5af00;
 
-     /* custom colors that dont really fit any category but we still need them for consistency, maybe border color or generic names allow us to use them for any purpose */
-     --color-customcolorone: "";
-     --color-customcolortwo: "#F7F7F7";
-     --color-customcolorthree: "";
-     
-     --breakpoint-xs: "480px";
+  --color-customcolorone: ;
+  --color-customcolortwo: ;
+  --color-customcolorthree: ;
 
-  /* Comic Sans MS and Papyrus for consistency testing */
-  fontFamily: {
-    familyprimary: ["serif"],
-    familysecondary: ["serif"],
-    /* familyprimary: ["Comic Sans MS", "serif"], */
-    /* familysecondary: ["Papyrus", "serif"], */
-  },
-  fontSize: {
-    sizeprimary: "4rem",
-    sizesecondary: "2rem",
-    xs: "0.1px",
-  },
-  borderRadius: {
-     custom: "99rem",  /* circle, for consistency testing */
-  },
-  boxShadow: {
-   custom: "0 7px 10px -2px rgb(0, 0, 0, 0.1)",
-  },
- 
-   
-  
+  /*Fontsize*/
+  --text-sizeprimary: 6rem;
+  --text-sizesecondary: 2rem;
+
+  /* font same name classes for the purpose of commenting out a set of them for consistency testing */
+  --font-primary: Poppins, sans-serif;
+  --font-secondary: Poppins, sans-serif;
+  /* fonts for testing */
+  /* --font-primary: Comic Sans MS, serif; */
+  /* --font-secondary: Papyrus, serif; */
+
+  --shadow-custom: 0 0 10px rgba(0, 0, 0, 1);
+
+  /*Breakpoint*/
+  --breakpoint-xs: 480px;
+
+  /*BorderRadius*/
+  --radius-custom: 10px;
 }

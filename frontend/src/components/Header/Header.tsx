@@ -15,18 +15,17 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
-//import { searchProducts } from "../../store/slices/localProductSlice";
-import { searchProducts } from "../../store/slices/productSlice";
+import { searchProducts } from "../../store/slices/localProductSlice";
+//import { searchProducts } from "../../store/slices/productSlice";
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
-// import { useSelector } from "react-redux";
-// import { RootState } from "../../store/store";
 
 interface HeaderProps {
   showAdvertising?: boolean;
+  showNav?: boolean; 
 }
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ showNav = true }) => { 
   const categories = [
     {
       name: "Electronics",
@@ -60,7 +59,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   return (
-    <>
+    <div className="">
       <div className="flex items-center justify-end px-5 py-2">
         <Link to="/shoppingCart" className="flex items-center gap-2">
           <ShoppingCartIcon className="h-6 w-6 text-gray-500" />
@@ -179,11 +178,13 @@ const Header: React.FC<HeaderProps> = () => {
           Search
         </button>
       </header>
-
+      
+      {showNav && (  
       <div className="mt-2 pt-1 pr-10 pl-10">
         <Nav />
       </div>
-    </>
+      )}
+    </div>
   );
 };
 

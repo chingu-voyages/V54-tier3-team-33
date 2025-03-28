@@ -38,7 +38,7 @@ const SigninForm: React.FC = () => {
       // Navigate to profile page
       navigate("/profile");
     } catch (error) {
-      console.log(error.message);
+      console.log((error as Error).message);
     }
   };
 
