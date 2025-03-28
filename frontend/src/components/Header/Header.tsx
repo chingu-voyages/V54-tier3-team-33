@@ -158,9 +158,10 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       </header>
       
       {showNav && (  
-      <div className="mt-2 pt-1 pr-10 pl-10">
-        <Nav />
-      </div>
+        <div className="mt-2 pt-1 pr-10 pl-10">
+          <Nav />
+        </div>
+      )}
     </div>
   );
 };
