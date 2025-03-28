@@ -1,3 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+    /*colors*/
+    --color-primary: #68A4CA;
+    --color-primaryHover: #4A92BF;
+    --color-secondary: #FFCB47;
+    --color-secondaryHover: #F5AF00;
+
+    /*Fontsize*/
+    --text-sizeprimary: 4rem;
+    --text-sizesecondary: 2rem;
+
+    /*font*/
+    --font-poppins: Poppins, sans-serif;
+
+    /*Breakpoint*/
+    --breakpoint-xs: 480px;
+
+    /*BorderRadius*/
+    --radius-custom: 99rem;
+}
+
 
