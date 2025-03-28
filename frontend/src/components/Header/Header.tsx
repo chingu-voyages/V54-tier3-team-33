@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   return (
-    <>
+    <div className="bg-primary">
       <div className="flex items-center justify-end px-5 py-2">
         <Link to="/shoppingCart" className="flex items-center gap-2">
           <ShoppingCartIcon className="h-6 w-6 text-gray-500" />
@@ -161,7 +161,7 @@ const Header: React.FC<HeaderProps> = () => {
       <div className="mt-2 pt-1 pr-10 pl-10">
         <Nav />
       </div>
-    </>
+    </div>
   );
 };
 
