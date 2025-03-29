@@ -49,7 +49,7 @@ const SigninForm: React.FC = () => {
   return (
     <div className="mt-20 flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full px-3">
-        <h2 className="mb-3 text-center text-2xl font-bold">
+        <h2 className="mb-6 text-3xl text-center font-semibold">
           Sign in to your account
         </h2>
         <p className="mb-6 text-center">

@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="mb-4 pr-10 pl-10">
+      <div className="mb-4 pr-10 pl-10 ">
         <AdvertisingCarousel />
       </div>
       <Grid products={productsToDisplay} loading={loading} error={error} />

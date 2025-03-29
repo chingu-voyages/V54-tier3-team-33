@@ -16,7 +16,7 @@ export default function CheckoutPage() {
 
   return (
     <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div className="mb-10 flex items-center justify-start gap-5">
+      <div className="mb-10 pt-5 flex items-center justify-start gap-5">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-30" />
         </Link>

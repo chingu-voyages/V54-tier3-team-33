@@ -45,18 +45,8 @@ const ProductDetailsPage = () => {
           <h1 className="text-3xl font-bold">{product.name}</h1>
           <p className="text-2xl text-gray-700">${product.price}</p>
           <p className="text-gray-700">{product.description}</p>
-          <Button
-            onClick={handleAddToCart}
-            className=""
-          >
-            Add to cart
-          </Button>
-          <Button
-            onClick={() => navigate("/")}
-            className=""
-          >
-            Go back
-          </Button>
+          <Button variant="secondary" onClick={handleAddToCart}>Add to cart</Button>
+          <Button onClick={() => navigate("/")}>Go back</Button>
         </div>
       </div>
     </div>
