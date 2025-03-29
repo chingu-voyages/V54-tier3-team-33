@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../../utils/Button";
+import { BsCartPlus } from "react-icons/bs";
 
 interface Item {
   id: number;
@@ -28,12 +29,24 @@ function Card({ item }: { item: Item }) {
     //     <Button className="mt-auto">View Details</Button>
     //   </Link>
     // </div>
-    <div className="flex w-56 p-2 border border-transparent hover:border-amber-600 transition-all text-darktext flex-col items-start gap-1 ">
+
+    // /////////////////////////
+
+    // <Link
+    //   className="text-darktext flex w-64 flex-col items-start gap-1 border border-transparent p-3 transition-all hover:border-gray-200 hover:shadow-lg"
+    //   to={`/product/${item.id}`}
+    //   state={{ product: item }}
+    // >
+    <div className="text-darktext flex w-64 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 transition-all hover:border-gray-200 hover:shadow-lg">
       <img
         src="https://helios-i.mashable.com/imagery/articles/05djrP5PjtVB7CcMtvrTOAP/images-4.fill.size_2000x1125.v1723100793.jpg"
         alt="Product Image"
         className="w-full object-contain"
       />
+
+      <span className="bg-red-300 rounded-full p-2">
+        <BsCartPlus size={25} />
+      </span>
 
       <h3 className="font-medium">HP laptop 15-fc0036nm | HP® 15-fc0036nm</h3>
       <span className="flex w-full items-center gap-1">
@@ -44,11 +57,8 @@ function Card({ item }: { item: Item }) {
         <p className="text-xl font-bold">Price: $86</p>
         <p>5 left</p>
       </span>
-
-      {/* <Link to={`/product/${item.id}`} state={{ product: item }}> */}
-
-      {/* </Link> */}
     </div>
+    // </Link>
   );
 }
 
