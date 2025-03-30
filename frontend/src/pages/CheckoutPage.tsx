@@ -16,7 +16,7 @@ export default function CheckoutPage() {
 
   return (
     <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div className="mb-10 pt-5 flex items-center justify-start gap-5">
+      <div className="mb-10 flex items-center justify-start gap-5 pt-5">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-30" />
         </Link>
@@ -30,8 +30,32 @@ export default function CheckoutPage() {
           buttonText={"Confirm and pay"}
           showModal={false}
           buttonAction={handleConfirmAndPay}
+          // make API req './routes/order.routes'
         />
       </div>
     </section>
+
+    // useEffect(() => {
+    //     const makeOrderCall = async () => {
+    //       try {
+    //         const response = await fetch('./routes/order.routes', {
+    //           method: "POST",
+    //           headers: {
+    //             "Content-Type": "application/json",
+    //           },
+    //           credentials: "include",
+    //         });
+
+    //         if (!response.ok) {
+    //           throw new Error("Failed");
+    //         }
+
+    //         // create slice for orders and use dispatch to update global state
+    //         const orders = await response.json();
+    //         setUser(data.data);
+    //       } catch (error) {
+    //         console.error("Error fetching user profile:", error);
+    //       }
+    //     };
   );
 }

@@ -25,10 +25,10 @@ function Grid({ products, loading, error }: GridProps) {
           <p className="text-center text-red-500">{error}</p>
         ) : products.length > 0 ? (
           <div className="grid w-full gap-6 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
-            {/* {products.map((item) => (
+            {products.map((item) => (
               <Card key={item.id} item={item} />
-            ))} */}
-              <Card />
+            ))}
+              {/* <Card /> */}
 
           </div>
         ) : (
