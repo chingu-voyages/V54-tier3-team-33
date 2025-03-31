@@ -1,0 +1,27 @@
+@cookie = token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RmMjQ0ZmY4N2I0NjJkNjA3ZTUxNDIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQzNDQ1NzA3LCJleHAiOjE3NDQwNTA1MDd9.Tq8v_Eok6ZuZQ3-u0SHGOFcSYJpv044ptGzkX338WQk; Max-Age=604800; Path=/; Expires=Mon, 07 Apr 2025 18:28:27 GMT; HttpOnly; SameSite=None
+
+# errors if there are no orders
+GET http://localhost:3000/api/orders
+Content-Type: application/json
+Cookie: {{cookie}}
+
+###
+# we can set the price without restriction
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+Cookie: {{cookie}}
+
+{
+    "products": [
+        {
+            "id": "67e6b8cb208ec2c6fb7112ed",
+            "quantity":2,
+            "price": 5
+        },
+        {
+            "id": "67e6b8cb208ec2c6fb7112fd",
+            "quantity":1,
+            "price": 10
+        }
+]
+}

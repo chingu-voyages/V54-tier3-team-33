@@ -1,6 +1,5 @@
 
-@cookie = access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RmMjQ0ZmY4N2I0NjJkNjA3ZTUxNDIiLCJpYXQiOjE3NDI2NzcwNzEsImV4cCI6MTc0MzI4MTg3MX0.nlUaWHirmFLGpr6SU6Y3EHAv8_rm1JyuplvvInkORL8; Max-Age=604800; Path=/; Expires=Sat, 29 Mar 2025 20:57:51 GMT; HttpOnly; SameSite=None
-POST http://localhost:3000/api/auth/register
+@cookie = token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RmMjQ0ZmY4N2I0NjJkNjA3ZTUxNDIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQzNDQ1NzA3LCJleHAiOjE3NDQwNTA1MDd9.Tq8v_Eok6ZuZQ3-u0SHGOFcSYJpv044ptGzkX338WQk; Max-Age=604800; Path=/; Expires=Mon, 07 Apr 2025 18:28:27 GMT; HttpOnly; SameSite=None
 Content-Type: application/json
 
 {
@@ -22,4 +21,4 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/auth/me
 Content-Type: application/json
-Cookie: {cookie}
+Cookie: {{cookie}}
