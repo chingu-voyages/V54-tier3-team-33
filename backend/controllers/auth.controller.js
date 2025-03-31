@@ -35,12 +35,14 @@ module.exports = {
                 }
             )
 
-            res.cookie("access_token", token, {
+            res.cookie("token", token, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-                sameSite: "None",
+                secure: false,
+                sameSite: "Lax",
                 maxAge: 7*24*60*60*1000
             });
+            console.log("Cookie set:");
+            console.log("Headers:", res.getHeaders());
             return res.status(201).json({
                 status: "sucess",
                 message:'logged in successfully'
@@ -97,12 +99,12 @@ module.exports = {
                 }
             )
 
-            res.cookie("access_token", token, {
+            res.cookie("token", token, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-                sameSite: "None",
+                secure: false,
+                sameSite: "Lax",
                 maxAge: 7*24*60*60*1000
-            });
+            })
             res.status(201).json({
                 status:'succes',
                 message:"Account created sucessfully"

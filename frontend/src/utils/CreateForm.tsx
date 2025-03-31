@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const CreateForm: React.FC = () => {
+    const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -31,6 +34,7 @@ const CreateForm: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(formData),
       });
 
@@ -40,6 +44,7 @@ const CreateForm: React.FC = () => {
 
       const data = await response.json();
       console.log("Registration successful", data);
+      navigate("/profile");
     } catch (error) {
       console.log((error as Error).message);
     }

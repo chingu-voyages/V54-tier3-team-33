@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   UserIcon,
   EnvelopeIcon,
@@ -10,6 +12,8 @@ import {
 import Button from "./Button";
 
 const RegisterForm: React.FC = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -38,6 +42,7 @@ const RegisterForm: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(formData),
       });
 
@@ -47,6 +52,7 @@ const RegisterForm: React.FC = () => {
 
       const data = await response.json();
       console.log("Registration successful", data);
+      navigate("/profile");
     } catch (error) {
       console.log((error as Error).message);
     }

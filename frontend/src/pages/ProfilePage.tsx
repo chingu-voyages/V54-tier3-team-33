@@ -52,6 +52,8 @@ const ProfilePage: React.FC = () => {
 
   if (!user) {
     return <div className="text-5xl">Loading... open cosnole F12</div>;
+  }else {
+    return <div>Hello {user.firstname} {user.lastname}!</div>
   }
 };
 

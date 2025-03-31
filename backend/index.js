@@ -10,10 +10,13 @@ const { connectToDatabase } = require("./config/db");
 const port = process.env.PORT || 3000;
 
 //midlleware
-app.use(cors());
 // Parse JSON and cookies
-app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+  origin: 'http://localhost:5173',   
+  credentials: true                  
+}));
+app.use(express.json());
 app.use(express.static("dist"));
 app.use(globalErrorHandler);
 
