@@ -117,7 +117,7 @@ const CreateForm: React.FC = () => {
               required
             />
             <div
-              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
+              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer"
               onClick={togglePasswordVisibility}
             >
               {showPassword ? (
@@ -140,7 +140,7 @@ const CreateForm: React.FC = () => {
               required
             />
             <div
-              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer text-gray-400"
+              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer"
               onClick={toggleConfirmPasswordVisibility}
             >
               {showConfirmPassword ? (
@@ -157,7 +157,7 @@ const CreateForm: React.FC = () => {
               className="mr-2"
               required
             />
-            <label htmlFor="agreeToTerms" className="text-gray-700">
+            <label htmlFor="agreeToTerms">
               I agree to the terms of service
             </label>
           </div>

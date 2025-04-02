@@ -6,6 +6,7 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
+  variant?: "primary" | "secondary"; 
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,11 +15,20 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   disabled = false,
   type = "button",
+  variant = "primary", // primary as default
 }) => {
+  
+  const baseStyles = "w-56 cursor-pointer rounded-full border border-primary px-4 py-2.5 text-lg font-semibold transition";
+  const primaryStyles = "bg-primary hover:bg-primaryHover text-white";
+  const secondaryStyles = "bg-transparent hover:bg-customcolortwo text-primary";
+
+  
+  const variantStyles = variant === "primary" ? primaryStyles : secondaryStyles;
+
   return (
     <button
       onClick={onClick}
-      className={`bg-primary hover:bg-primaryHover w-56 cursor-pointer rounded-full border border-black px-4 py-2.5 text-lg text-red-800 transition ${className}`}
+      className={`${baseStyles} ${variantStyles} ${className}`}
       disabled={disabled}
       type={type}
     >

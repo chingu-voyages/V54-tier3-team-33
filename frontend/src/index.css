@@ -2,20 +2,22 @@
 
 @layer components {
   .formInput {
-    @apply w-full border border-stone-300 bg-stone-100 px-3 py-2;
+    @apply rounded-custom border-customcolorone bg-customcolortwo w-full border px-3 py-2;
   }
 }
 @import "tailwindcss";
 
 @theme {
   /*colors*/
-  --color-primary: #68a4ca;
-  --color-primaryHover: #4a92bf;
-  --color-secondary: #ffcb47;
-  --color-secondaryHover: #f5af00;
+  --color-primary: #3461e9;
+  --color-primaryHover: #2354e7;
+  /* --color-secondary: #ffcb47;
+  --color-secondaryHover: #f5af00; */
 
-  --color-customcolorone: ;
-  --color-customcolortwo: ;
+  --color-darktext: #333333; /* dark black, used for general font color. change to #FF0000 to see the difference across the app */
+
+  --color-customcolorone: #a6a09b; /* border color stone-400 */
+  --color-customcolortwo: #f5f5f4; /* background color stone-100*/
   --color-customcolorthree: ;
 
   /*Fontsize*/
@@ -35,5 +37,5 @@
   --breakpoint-xs: 480px;
 
   /*BorderRadius*/
-  --radius-custom: 10px;
+  --radius-custom: 8px;
 }

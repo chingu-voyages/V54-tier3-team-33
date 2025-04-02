@@ -28,6 +28,8 @@ function Grid({ products, loading, error }: GridProps) {
             {products.map((item) => (
               <Card key={item.id} item={item} />
             ))}
+              {/* <Card /> */}
+
           </div>
         ) : (
           <p className="text-center text-gray-500">No products found. Try searching for something!</p>

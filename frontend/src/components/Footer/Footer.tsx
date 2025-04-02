@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#F7F7F7] py-10">
+    <footer className="bg-customcolortwo py-10 mt-10 text-darktext">
       <section className="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
         {/* Navigation Section */}
         <div>
@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
         </div>
       </section>
 
-      <div className="mt-8 border-t border-gray-300 pt-4 text-center text-sm">
+      <div className="mt-8 border-t border-customcolorone pt-4 text-center text-sm">
         © {new Date().getFullYear()} Chingu. All rights reserved.
       </div>
     </footer>
