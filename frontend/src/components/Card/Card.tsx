@@ -13,19 +13,19 @@ interface Item {
 }
 
 function Card({ item }: { item: Item }) {
-  const imageSrc =
-    typeof item.image === "string" ? item.image : item.image[0] || "";
+  // const imageSrc =
+  //   typeof item.image === "string" ? item.image : item.image[0] || "";
   const dispatch = useDispatch();
   return (
     <div className="text-darktext flex w-72 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
       <div className="relative w-full">
-        {imageSrc && (
+        {/* {imageSrc && ( */}
           <img
-            src={imageSrc}
-            alt={item.name}
+            src="https://www.digitaltrends.com/wp-content/uploads/2024/07/surface-laptop-7-02.jpg?resize=800%2C418&p=1"
+            alt="missing"
             className="w-full rounded-md object-contain"
           />
-        )}
+        {/* )} */}
 
         {/* add to cart function to be added */}
         <button

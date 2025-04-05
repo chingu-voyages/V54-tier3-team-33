@@ -3,8 +3,7 @@ import Grid from "../components/Grid/Grid";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../src/store/store";
 import { useEffect } from "react";
-import { loadProducts } from "../../src/store/slices/localProductSlice";
-//import { loadProducts } from "../../src/store/slices/productSlice";
+import { loadProducts } from "../../src/store/slices/productSlice";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -20,7 +19,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="mb-4 pr-10 pl-10 ">
+      <div className="mb-4 pr-10 pl-10">
         <AdvertisingCarousel />
       </div>
       <Grid products={productsToDisplay} loading={loading} error={error} />
