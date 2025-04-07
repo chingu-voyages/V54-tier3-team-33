@@ -15,7 +15,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
-import { searchProducts } from "../../store/slices/productSlice";
+
 import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
 import Button from "../../utils/Button";
@@ -39,23 +39,23 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const dispatch: AppDispatch = useDispatch();
 
-  const handleSearch = () => {
-    if (searchQuery.trim() === "") return;
-    dispatch(
-      searchProducts({ query: searchQuery, category: selectedCategory }),
-    );
-  };
+  // const handleSearch = () => {
+  //   if (searchQuery.trim() === "") return;
+  //   dispatch(
+  //     searchProducts({ query: searchQuery, category: selectedCategory }),
+  //   );
+  // };
 
   const handleClearResults = () => {
     setSearchQuery("");
     setSelectedCategory("");
-    dispatch(searchProducts({ query: "", category: "" }));
+    // dispatch(searchProducts({ query: "", category: "" }));
   };
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const category = e.target.value;
     setSelectedCategory(category);
-    dispatch(searchProducts({ query: searchQuery, category }));
+    // dispatch(searchProducts({ query: searchQuery, category }));
   };
 
   return (
@@ -139,7 +139,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  handleSearch();
+                  // handleSearch();
                 }
               }}
             />
@@ -164,7 +164,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
 
             <button
               className="rounded-custom flex items-center justify-center p-2 sm:hidden"
-              onClick={handleSearch}
+              // onClick={handleSearch}
             >
               <MagnifyingGlassIcon className="h-5 w-5" />
             </button>
@@ -174,7 +174,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
         <Button
           variant="primary"
           className="hidden !w-46 sm:block"
-          onClick={handleSearch}
+          // onClick={handleSearch}
         >
           Search
         </Button>

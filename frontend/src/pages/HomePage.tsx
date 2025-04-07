@@ -7,22 +7,27 @@ import { loadProducts } from "../../src/store/slices/productSlice";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { products, searchResults, loading, error } = useSelector(
-    (state: RootState) => state.products,
+  const { products, loading, error } = useSelector(
+    (state: RootState) => state.products
   );
 
   useEffect(() => {
-    dispatch(loadProducts());
+    console.log("HomePage: Dispatching loadProducts");
+    dispatch(loadProducts({ page: 1, limit: 20 }));
   }, [dispatch]);
 
-  const productsToDisplay = searchResults.length > 0 ? searchResults : products;
+  console.log("HomePage: Products:", products);
+  console.log("HomePage: Loading:", loading);
+  console.log("HomePage: Error:", error);
+
+  // const productsToDisplay = searchResults.length > 0 ? searchResults : products;
 
   return (
     <>
       <div className="mb-4 pr-10 pl-10">
         <AdvertisingCarousel />
       </div>
-      <Grid products={productsToDisplay} loading={loading} error={error} />
+      <Grid products={products} loading={loading} error={error} />;
     </>
   );
 };
