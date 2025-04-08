@@ -7,25 +7,25 @@ import { useDispatch } from "react-redux";
 interface Item {
   id: number;
   name: string;
-  image: string | string[];
+  // image: string | string[];
   price: number;
   description: string;
 }
 
 function Card({ item }: { item: Item }) {
-  const imageSrc =
-    typeof item.image === "string" ? item.image : item.image[0] || "";
+  // const imageSrc =
+  //   typeof item.image === "string" ? item.image : item.image[0] || "";
   const dispatch = useDispatch();
   return (
     <div className="text-darktext flex w-72 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
       <div className="relative w-full">
-        {imageSrc && (
+        {/* {imageSrc && (
           <img
             src={imageSrc}
-            alt={item.name}
+            alt="missing"
             className="w-full rounded-md object-contain"
           />
-        )}
+         )} */}
 
         {/* add to cart function to be added */}
         <button

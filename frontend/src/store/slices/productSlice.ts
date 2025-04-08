@@ -9,48 +9,38 @@ const initialState: ProductState = {
   error: null,
 };
 
-export const loadProducts = createAsyncThunk<Product[], void>(
-  "products/loadProducts",
-  async () => {
-    const products = await fetchProducts() as Product[]; 
-    return products;
-  }
-);
+export const loadProducts = createAsyncThunk<
+  { products: Product[]; totalPages: number; page: number },
+  { page: number; limit: number }
+>("products/loadProducts", async ({ page, limit }) => {
+  console.log("Thunk: Fetching products with:", { page, limit });
+  const data = await fetchProducts(page, limit);
+  console.log("Thunk: Data received from service:", data);
+  return data; // Ensure this returns { products, totalPages, page }
+});
 
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {
-    searchProducts: (state, action: PayloadAction<{ query: string; category: string }>) => {
-      const { query, category } = action.payload;
-      if (query === "" && category === "") {
-        state.searchResults = []; 
-      } else {
-        state.searchResults = state.products.filter((product) => {
-          const matchesQuery = query === "" || product.name.toLowerCase().includes(query.toLowerCase());
-          const matchesCategory = category === "" || product.category === category;
-          return matchesQuery && matchesCategory;
-        });
-      }
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
+        console.log("Reducer: loadProducts.pending");
         state.loading = true;
         state.error = null;
       })
       .addCase(loadProducts.fulfilled, (state, action) => {
-        state.products = action.payload;
+        console.log("Reducer: loadProducts.fulfilled", action.payload);
+        state.products = action.payload.products; // Use the wrapped `products` key
         state.loading = false;
       })
       .addCase(loadProducts.rejected, (state, action) => {
+        console.log("Reducer: loadProducts.rejected", action.error.message);
         state.loading = false;
         state.error = action.error.message || "Failed to load products";
       });
   },
 });
-
-export const { searchProducts } = productSlice.actions;
 
 export default productSlice.reducer;
