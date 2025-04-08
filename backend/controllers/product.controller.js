@@ -37,6 +37,11 @@ module.exports = {
         const newProduct = new Product(req.body)
         await newProduct.save();
         res.send(newProduct)
+    },
+    getOne: async (req, res, next) => {
+        const {id} = req.params
+        const product = await Product.findById(id)
+        res.send(product)
     }
 
 }
