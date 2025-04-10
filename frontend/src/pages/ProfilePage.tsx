@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
+import { ArrowPathIcon } from "@heroicons/react/20/solid";
 
 const ProfilePage: React.FC = () => {
-  
   // const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
   const [, setOrders] = useState<any[]>([]);
@@ -52,7 +52,11 @@ const ProfilePage: React.FC = () => {
   }, []);
 
   if (!user) {
-    return <div className="text-5xl">Loading... open cosnole F12</div>;
+    return (
+      <div className="flex h-56 w-full flex-col items-center justify-center gap-2 text-gray-500">
+        <ArrowPathIcon className="size-20 animate-spin" />
+      </div>
+    );
   } else {
     return (
       <div>

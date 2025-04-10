@@ -1,6 +1,8 @@
-const fetchProducts = async (page: number, limit: number) => {
+const fetchProducts = async (search: string, page: number, limit: number) => {
   try {
-    const response = await fetch(`/api/products?page=${page}&limit=${limit}`, {
+    console.log("Fetching products with:", { search, page, limit });
+
+    const response = await fetch(`/api/products?search=${search}&page=${page}&limit=${limit}`, {
       method: "GET",
       credentials: "include", // Include cookies if needed
     });
@@ -10,8 +12,8 @@ const fetchProducts = async (page: number, limit: number) => {
     }
 
     const data = await response.json();
-
-    return data;
+    console.log("API Response:", data); // Log the API response
+    return data; // Ensure this returns { products, totalPages, page }
   } catch (error) {
     console.error("Error fetching products:", error);
     throw error;

@@ -11,15 +11,6 @@ module.exports = {
       page = 1,
       limit = 20,
     } = req.query;
-    console.log("Query Parameters:", {
-      search,
-      minPrice,
-      maxPrice,
-      category,
-      subcategory,
-      page,
-      limit,
-    });
 
     let filter = {};
     if (search) {

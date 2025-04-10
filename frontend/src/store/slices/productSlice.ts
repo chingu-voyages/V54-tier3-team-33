@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import fetchProducts from "../../services/productService";
 import { Product, ProductState } from "./productTypes";
+import { RootState } from "../store";
 
 const initialState: ProductState = {
   products: [],
@@ -8,21 +9,29 @@ const initialState: ProductState = {
   totalPages: 0,
   loading: false,
   error: null,
+  searchQuery: "",
 };
 
 export const loadProducts = createAsyncThunk<
   { products: Product[]; totalPages: number; page: number },
-  { page: number; limit: number }
->("products/loadProducts", async ({ page, limit }) => {
-  const data = await fetchProducts(page, limit);
+  { page: number; limit: number },
+  { state: RootState } // Access the Redux state
+>("products/loadProducts", async ({ page, limit }, { getState }) => {
+  const state = getState();
+  const search = state.products.searchQuery; // Get the search query from the Redux state
 
+  const data = await fetchProducts(search, page, limit);
   return data;
 });
 
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload; // Update the search query in the state
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
@@ -44,4 +53,5 @@ const productSlice = createSlice({
   },
 });
 
+export const { setSearchQuery } = productSlice.actions; //
 export default productSlice.reducer;

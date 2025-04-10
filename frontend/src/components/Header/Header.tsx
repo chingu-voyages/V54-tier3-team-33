@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from "react";
-// import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { setSearchQuery, loadProducts } from "../../store/slices/productSlice";
+
 import {
   Menu,
   Transition,
@@ -16,46 +17,49 @@ import {
 } from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
 
-// import { AppDispatch } from "../../store/store";
+import { AppDispatch, RootState } from "../../store/store";
 import Nav from "../Nav/Nav";
 import Button from "../../utils/Button";
+import { useDispatch, useSelector } from "react-redux";
 
 interface HeaderProps {
   showAdvertising?: boolean;
   showNav?: boolean;
 }
 
+const categories = [
+  {
+    name: "Electronics",
+    subcategories: ["Smartphones", "Laptops", "Televisions"],
+  },
+  { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
+  { name: "Music", subcategories: ["Guitars", "Keyboards", "Drums"] },
+];
+
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
-  const categories = [
-    {
-      name: "Electronics",
-      subcategories: ["Smartphones", "Laptops", "Televisions"],
-    },
-    { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
-    { name: "Music", subcategories: ["Guitars", "Keyboards", "Drums"] },
-  ];
+  const dispatch: AppDispatch = useDispatch();
+  const searchQuery = useSelector(
+    (state: RootState) => state.products.searchQuery,
+  );
+  const [, setSearchParams] = useSearchParams(); // Only destructure setSearchParams since searchParams is unused
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
-  // const dispatch: AppDispatch = useDispatch();
+  const handleSearch = () => {
+    if (searchQuery.trim() === "") {
+      console.log("Search query is empty");
+      return;
+    }
 
-  // const handleSearch = () => {
-  //   if (searchQuery.trim() === "") return;
-  //   dispatch(
-  //     searchProducts({ query: searchQuery, category: selectedCategory }),
-  //   );
-  // };
+    // Update the URL with the search query
+    setSearchParams({ search: searchQuery, page: "1", limit: "10" });
 
-  const handleClearResults = () => {
-    setSearchQuery("");
-    setSelectedCategory("");
-    // dispatch(searchProducts({ query: "", category: "" }));
+    // Dispatch the loadProducts thunk with the current search query
+    dispatch(loadProducts({ page: 1, limit: 10 }));
   };
 
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const category = e.target.value;
-    setSelectedCategory(category);
-    // dispatch(searchProducts({ query: searchQuery, category }));
+  const handleClearResults = () => {
+    dispatch(setSearchQuery("")); // Clear the search query in Redux
+    setSearchParams({}); // Clear the search query from the URL
+    console.log("Search query cleared");
   };
 
   return (
@@ -97,7 +101,10 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                       <MenuItem>
                         {({ focus }) => (
                           <Link
-                            to={`/category/${category.name.toLowerCase().replace(/ & /g, "-").replace(/\s+/g, "-")}`}
+                            to={`/category/${category.name
+                              .toLowerCase()
+                              .replace(/ & /g, "-")
+                              .replace(/\s+/g, "-")}`}
                             className={`${
                               focus ? "bg-customcolortwo" : ""
                             } block rounded-md px-4 py-2 text-sm font-semibold`}
@@ -111,7 +118,12 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                           <MenuItem key={subcategory}>
                             {({ focus }) => (
                               <Link
-                                to={`/category/${category.name.toLowerCase().replace(/ & /g, "-").replace(/\s+/g, "-")}/${subcategory.toLowerCase().replace(/\s+/g, "-")}`}
+                                to={`/category/${category.name
+                                  .toLowerCase()
+                                  .replace(/ & /g, "-")
+                                  .replace(/\s+/g, "-")}/${subcategory
+                                  .toLowerCase()
+                                  .replace(/\s+/g, "-")}`}
                                 className={`${
                                   focus ? "bg-customcolortwo" : ""
                                 } block rounded-md px-6 py-2 text-sm`}
@@ -136,12 +148,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               placeholder="Search for anything"
               className="sm:placeholder:text-customcolorone min-w-0 flex-1 px-4 py-2 text-sm outline-none placeholder:text-transparent sm:text-base"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  // handleSearch();
-                }
-              }}
+              onChange={(e) => dispatch(setSearchQuery(e.target.value))}
             />
             {searchQuery && (
               <button
@@ -151,30 +158,13 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                 <XMarkIcon className="h-5 w-5" />
               </button>
             )}
-            <select
-              className="border-customcolorone hidden border-l bg-transparent py-2 pr-6 pl-1 focus:outline-none sm:block"
-              value={selectedCategory}
-              onChange={handleCategoryChange}
-            >
-              <option value="">All Categories</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Clothing">Clothing</option>
-              <option value="Music">Music</option>
-            </select>
-
-            <button
-              className="rounded-custom flex items-center justify-center p-2 sm:hidden"
-              // onClick={handleSearch}
-            >
-              <MagnifyingGlassIcon className="h-5 w-5" />
-            </button>
           </div>
         </div>
 
         <Button
           variant="primary"
           className="hidden !w-46 sm:block"
-          // onClick={handleSearch}
+          onClick={handleSearch} // Log search query only when this button is clicked
         >
           Search
         </Button>

@@ -3,7 +3,7 @@ import Grid from "../components/Grid/Grid";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../src/store/store";
 import { useEffect } from "react";
-import { loadProducts } from "../../src/store/slices/productSlice";
+import { loadProducts, setSearchQuery } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
 
 const HomePage: React.FC = () => {
@@ -16,13 +16,18 @@ const HomePage: React.FC = () => {
   const page = parseInt(searchParams.get("page") || "1", 10);
   // change item limit per page HERE
   const limit = parseInt(searchParams.get("limit") || "10", 10);
+  const search = searchParams.get("search") || "";
 
   useEffect(() => {
+    // Update the Redux searchQuery state from the URL
+    dispatch(setSearchQuery(search));
+
+    // Fetch products based on the search query, page, and limit
     dispatch(loadProducts({ page, limit }));
-  }, [dispatch, page, limit]);
+  }, [dispatch, search, page, limit]);
 
   const handlePageChange = (newPage: number) => {
-    setSearchParams({ page: newPage.toString(), limit: limit.toString() });
+    setSearchParams({ search, page: newPage.toString(), limit: limit.toString() });
   };
 
   return (
