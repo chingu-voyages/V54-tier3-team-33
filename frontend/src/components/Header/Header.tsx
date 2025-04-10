@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   Menu,
@@ -16,7 +16,7 @@ import {
 } from "@heroicons/react/20/solid";
 import logo from "../../assets/logo.png";
 
-import { AppDispatch } from "../../store/store";
+// import { AppDispatch } from "../../store/store";
 import Nav from "../Nav/Nav";
 import Button from "../../utils/Button";
 
@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const dispatch: AppDispatch = useDispatch();
+  // const dispatch: AppDispatch = useDispatch();
 
   // const handleSearch = () => {
   //   if (searchQuery.trim() === "") return;

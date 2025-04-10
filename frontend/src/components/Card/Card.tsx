@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 interface Item {
   id: number;
   name: string;
-  // image: string | string[];
+  image: string | string[];
   price: number;
   description: string;
 }
@@ -19,13 +19,13 @@ function Card({ item }: { item: Item }) {
   return (
     <div className="text-darktext flex w-72 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
       <div className="relative w-full">
-        {/* {imageSrc && (
-          <img
-            src={imageSrc}
-            alt="missing"
-            className="w-full rounded-md object-contain"
-          />
-         )} */}
+        {/* {imageSrc && ( */}
+        <img
+          src={item.image[0]}
+          alt="missing"
+          className="w-full rounded-md object-contain"
+        />
+        {/* )} */}
 
         {/* add to cart function to be added */}
         <button

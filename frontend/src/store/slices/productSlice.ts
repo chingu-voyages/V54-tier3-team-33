@@ -1,10 +1,11 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import fetchProducts from "../../services/productService"; 
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import fetchProducts from "../../services/productService";
 import { Product, ProductState } from "./productTypes";
 
 const initialState: ProductState = {
   products: [],
   searchResults: [],
+  totalPages: 0,
   loading: false,
   error: null,
 };
@@ -16,6 +17,9 @@ export const loadProducts = createAsyncThunk<
   console.log("Thunk: Fetching products with:", { page, limit });
   const data = await fetchProducts(page, limit);
   console.log("Thunk: Data received from service:", data);
+
+  console.log(`SPECIAL222222: ${data.totalPages}`);
+
   return data; // Ensure this returns { products, totalPages, page }
 });
 
@@ -32,7 +36,8 @@ const productSlice = createSlice({
       })
       .addCase(loadProducts.fulfilled, (state, action) => {
         console.log("Reducer: loadProducts.fulfilled", action.payload);
-        state.products = action.payload.products; // Use the wrapped `products` key
+        state.products = action.payload.products; // Update state with products for the current page
+        state.totalPages = action.payload.totalPages; 
         state.loading = false;
       })
       .addCase(loadProducts.rejected, (state, action) => {
