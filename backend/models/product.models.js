@@ -20,6 +20,9 @@ const productSchema = new Schema({
     category: String,
     subcategory: String,
     description: String,
+    rating: Number,
+    stock: Number,
+    sold: Number,
     image: [String]
 })
 productSchema.set('toJSON', {
