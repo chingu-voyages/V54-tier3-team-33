@@ -9,9 +9,7 @@ export default function CheckoutPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleConfirmAndPay = () => {
-    // Custom logic for the "Confirm and pay" button
     alert("Order confirmed, payment completed!");
-    // Add additional logic here, such as API calls or navigation
   };
 
   return (

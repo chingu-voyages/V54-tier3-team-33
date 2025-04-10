@@ -19,10 +19,7 @@ const HomePage: React.FC = () => {
   const search = searchParams.get("search") || "";
 
   useEffect(() => {
-    // Update the Redux searchQuery state from the URL
     dispatch(setSearchQuery(search));
-
-    // Fetch products based on the search query, page, and limit
     dispatch(loadProducts({ page, limit }));
   }, [dispatch, search, page, limit]);
 

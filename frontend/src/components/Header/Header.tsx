@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { setSearchQuery, loadProducts } from "../../store/slices/productSlice";
-
 import {
   Menu,
   Transition,
@@ -41,24 +40,21 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const searchQuery = useSelector(
     (state: RootState) => state.products.searchQuery,
   );
-  const [, setSearchParams] = useSearchParams(); // Only destructure setSearchParams since searchParams is unused
+  // destructure only setter function
+  const [, setSearchParams] = useSearchParams();
 
   const handleSearch = () => {
     if (searchQuery.trim() === "") {
       console.log("Search query is empty");
       return;
     }
-
-    // Update the URL with the search query
     setSearchParams({ search: searchQuery, page: "1", limit: "10" });
-
-    // Dispatch the loadProducts thunk with the current search query
     dispatch(loadProducts({ page: 1, limit: 10 }));
   };
 
   const handleClearResults = () => {
-    dispatch(setSearchQuery("")); // Clear the search query in Redux
-    setSearchParams({}); // Clear the search query from the URL
+    dispatch(setSearchQuery(""));
+    setSearchParams({});
     console.log("Search query cleared");
   };
 
@@ -164,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
         <Button
           variant="primary"
           className="hidden !w-46 sm:block"
-          onClick={handleSearch} // Log search query only when this button is clicked
+          onClick={handleSearch}
         >
           Search
         </Button>

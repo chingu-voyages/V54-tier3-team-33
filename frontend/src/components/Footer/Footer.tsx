@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Contact Information Section */}
+        {/* contact info */}
         <div>
           <h3 className="mb-6 text-lg font-semibold">Organisation</h3>
           <div className="flex flex-col gap-3">

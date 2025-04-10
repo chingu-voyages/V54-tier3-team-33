@@ -15,10 +15,10 @@ const initialState: ProductState = {
 export const loadProducts = createAsyncThunk<
   { products: Product[]; totalPages: number; page: number },
   { page: number; limit: number },
-  { state: RootState } // Access the Redux state
+  { state: RootState }
 >("products/loadProducts", async ({ page, limit }, { getState }) => {
   const state = getState();
-  const search = state.products.searchQuery; // Get the search query from the Redux state
+  const search = state.products.searchQuery;
 
   const data = await fetchProducts(search, page, limit);
   return data;
@@ -29,7 +29,7 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     setSearchQuery: (state, action) => {
-      state.searchQuery = action.payload; // Update the search query in the state
+      state.searchQuery = action.payload;
     },
   },
   extraReducers: (builder) => {
