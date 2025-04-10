@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { RootState } from "../../store/store";
-
+import { ArrowPathIcon } from "@heroicons/react/20/solid";
 
 interface Product {
   id: number;
@@ -20,19 +20,26 @@ interface GridProps {
   onPageChange: (page: number) => void;
 }
 
-
-function Grid({ products = [], loading, error, currentPage, onPageChange }: GridProps) {
+function Grid({
+  products = [],
+  loading,
+  error,
+  currentPage,
+  onPageChange,
+}: GridProps) {
   console.log("Grid: Products:", products); // Log the products array
   console.log("Grid: Loading:", loading); // Log the loading state
   console.log("Grid: Error:", error); // Log the error state
-  const totalPages = useSelector((state: RootState) => state.products.totalPages);
+  const totalPages = useSelector(
+    (state: RootState) => state.products.totalPages,
+  );
 
   return (
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
-      {loading ? (
-          <div className="flex items-center justify-center">
-            <div className="loader">ssssssssssssssssssssssssss</div> {/* Add a loader */}
+        {loading ? (
+          <div className="flex h-40 w-full flex-col items-center justify-center gap-2 text-gray-500">
+            <ArrowPathIcon className="size-20 animate-spin" />
           </div>
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
@@ -53,8 +60,10 @@ function Grid({ products = [], loading, error, currentPage, onPageChange }: Grid
             <button
               key={index + 1}
               onClick={() => onPageChange(index + 1)}
-              className={`text-sm px-3 py-1 rounded ${
-                currentPage === index + 1 ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"
+              className={`rounded px-3 py-1 text-sm ${
+                currentPage === index + 1
+                  ? "bg-gray-800 text-white"
+                  : "bg-gray-200 text-gray-800"
               }`}
             >
               {index + 1}
