@@ -137,7 +137,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             </Transition>
           </Menu>
 
-          <div className="border-customcolorone ml-4 flex flex-1 items-center overflow-hidden rounded-md border">
+          <div className="border-customcolorone ml-4 flex flex-1 items-center overflow-hidden rounded-full border">
             <MagnifyingGlassIcon className="ml-3 h-5 w-5" />
             <input
               type="text"

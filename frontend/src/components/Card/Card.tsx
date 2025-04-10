@@ -3,6 +3,7 @@
 import { BsCartPlus } from "react-icons/bs";
 import { addItemToCart } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
+import toast from 'react-hot-toast';
 
 interface Item {
   id: number;
@@ -28,8 +29,11 @@ function Card({ item }: { item: Item }) {
 
         {/* add to cart function to be added */}
         <button
-          // add toast that item is added to cart
-          onClick={() => dispatch(addItemToCart(item))}
+         
+         onClick={() => {
+          dispatch(addItemToCart(item));
+          toast.success('Added to cart!');
+        }}
           className="hover:bg-darktext absolute right-2 bottom-2 cursor-pointer rounded-full border border-stone-400 bg-white p-2 transition-all hover:text-white"
         >
           <BsCartPlus size={25} />

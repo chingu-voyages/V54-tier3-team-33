@@ -5,6 +5,7 @@ import { RootState, AppDispatch } from "../../src/store/store";
 import { useEffect } from "react";
 import { loadProducts, setSearchQuery } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -24,7 +25,11 @@ const HomePage: React.FC = () => {
   }, [dispatch, search, page, limit]);
 
   const handlePageChange = (newPage: number) => {
-    setSearchParams({ search, page: newPage.toString(), limit: limit.toString() });
+    setSearchParams({
+      search,
+      page: newPage.toString(),
+      limit: limit.toString(),
+    });
   };
 
   return (
@@ -40,6 +45,7 @@ const HomePage: React.FC = () => {
         loading={loading}
         error={error}
       />
+      <Toaster />
     </>
   );
 };
