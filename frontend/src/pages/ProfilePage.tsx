@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const ProfilePage: React.FC = () => {
-  const navigate = useNavigate();
+  
+  // const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
-  const [orders, setOrders] = useState<any[]>([]);
+  const [, setOrders] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/auth/me", {
+        const response = await fetch("/api/auth/me", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

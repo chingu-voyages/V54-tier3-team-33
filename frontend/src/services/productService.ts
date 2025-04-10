@@ -1,6 +1,6 @@
 const fetchProducts = async (page: number, limit: number) => {
   try {
-    const response = await fetch(`api/products?page=${page}&limit=${limit}`, {
+    const response = await fetch(`/api/products?page=${page}&limit=${limit}`, {
       method: "GET",
       credentials: "include", // Include cookies if needed
     });
