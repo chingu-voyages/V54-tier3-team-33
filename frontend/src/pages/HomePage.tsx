@@ -18,17 +18,12 @@ const HomePage: React.FC = () => {
   const limit = parseInt(searchParams.get("limit") || "10", 10);
 
   useEffect(() => {
-    console.log("HomePage: Dispatching loadProducts with", { page, limit });
     dispatch(loadProducts({ page, limit }));
   }, [dispatch, page, limit]);
 
   const handlePageChange = (newPage: number) => {
     setSearchParams({ page: newPage.toString(), limit: limit.toString() });
   };
-
-  console.log("HomePage: Products:", products);
-  console.log("HomePage: Loading:", loading);
-  console.log("HomePage: Error:", error);
 
   return (
     <>

@@ -27,9 +27,6 @@ function Grid({
   currentPage,
   onPageChange,
 }: GridProps) {
-  console.log("Grid: Products:", products); // Log the products array
-  console.log("Grid: Loading:", loading); // Log the loading state
-  console.log("Grid: Error:", error); // Log the error state
   const totalPages = useSelector(
     (state: RootState) => state.products.totalPages,
   );
