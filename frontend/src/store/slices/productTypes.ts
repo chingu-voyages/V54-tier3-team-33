@@ -14,6 +14,7 @@ export interface ProductState {
   products: Product[];
   searchResults: Product[];
   loading: boolean;
+  totalPages: number;
   error: string | null;
 }
 

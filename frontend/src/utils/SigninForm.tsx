@@ -20,7 +20,7 @@ const SigninForm: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const SigninForm: React.FC = () => {
   return (
     <div className="mt-20 flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full px-3">
-        <h2 className="mb-6 text-3xl text-center font-semibold">
+        <h2 className="mb-6 text-center text-3xl font-semibold">
           Sign in to your account
         </h2>
         <p className="mb-6 text-center">

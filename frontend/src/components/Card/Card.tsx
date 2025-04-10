@@ -7,9 +7,12 @@ import { useDispatch } from "react-redux";
 interface Item {
   id: number;
   name: string;
-  // image: string | string[];
+  image: string | string[];
   price: number;
   description: string;
+  rating: number;
+  stock: number;
+  sold: number;
 }
 
 function Card({ item }: { item: Item }) {
@@ -19,13 +22,13 @@ function Card({ item }: { item: Item }) {
   return (
     <div className="text-darktext flex w-72 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
       <div className="relative w-full">
-        {/* {imageSrc && (
-          <img
-            src={imageSrc}
-            alt="missing"
-            className="w-full rounded-md object-contain"
-          />
-         )} */}
+        {/* {imageSrc && ( */}
+        <img
+          src={item.image[0]}
+          alt="missing"
+          className="w-full rounded-md object-contain"
+        />
+        {/* )} */}
 
         {/* add to cart function to be added */}
         <button
@@ -37,13 +40,17 @@ function Card({ item }: { item: Item }) {
         </button>
       </div>
       <h3 className="font-medium">{item.name}</h3>
-      <span className="flex w-full items-center gap-1">
-        <p className="text-sm text-stone-600">Rating ⭐⭐⭐⭐⭐</p>
-        <p className="text-sm text-stone-600">| 445 Sold</p>
+      <span className="flex w-full items-center gap-1 text-stone-600">
+        <p className="text-sm text-stone-600">
+          Rating: {item.rating ? "⭐".repeat(item.rating) : "No rating yet"}{" "}
+          {/* fixed: removed extra {} */}
+        </p>
+
+        <p className="text-sm">| {item.sold} Sold</p>
       </span>
       <span className="flex w-full items-center justify-between">
-        <p className="text-xl font-bold">Price: $86</p>
-        <p>5 left</p>
+        <p className="text-xl font-bold">Price: ${item.price}</p>
+        <p>{item.stock} left</p>
       </span>
     </div>
   );
