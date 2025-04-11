@@ -2,17 +2,28 @@ import { useSelector } from "react-redux";
 import ProductInCart from "../components/ProductList/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";
 import { RootState } from "../store/store";
-import { Link } from "react-router-dom";
+import {Link , useNavigate} from "react-router-dom";
 import logo from "../assets/logo.png";
+import {usePostOrder} from "../hooks/usePostOrder.ts";
 
+
+//todo: show error or success toast && loading button
 export default function CheckoutPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
-
-  const handleConfirmAndPay = () => {
-    // Custom logic for the "Confirm and pay" button
-    alert("Order confirmed, payment completed!");
-    // Add additional logic here, such as API calls or navigation
-  };
+  const navigate = useNavigate()
+  const {
+      postOrder,
+      response,
+      loading: postOrderLoading,
+      error
+  } = usePostOrder();
+  const handleConfirmAndPay = async () => {
+      const orderPayload = cartItems.map(item =>({ id: item.id, price: item.price, quantity: 1}))
+      await postOrder(orderPayload);
+  }
+  if(response) {
+       return  navigate('/profile')
+  }
 
   return (
     <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -26,11 +37,11 @@ export default function CheckoutPage() {
       <div className="flex gap-3">
         {cartItems.length > 0 && <ProductInCart cartItems={cartItems} />}
         <SummaryCard
+          isLoading={postOrderLoading}
           total={"Order total"}
           buttonText={"Confirm and pay"}
           showModal={false}
-          buttonAction={handleConfirmAndPay}
-          // make API req './routes/order.routes'
+          handleAction={handleConfirmAndPay}
         />
       </div>
     </section>

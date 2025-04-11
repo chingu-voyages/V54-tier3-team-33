@@ -9,29 +9,21 @@ interface SummaryCardProps {
   total: string;
   buttonText: string;
   showModal?: boolean;
-  buttonAction?: () => void; // New prop for custom button action
+  handleAction: () => void;
+  isLoading?: boolean
 }
 
 export default function SummaryCard({
   total,
   buttonText,
-  showModal = true,
-  buttonAction, // Destructure the new prop
+  showModal,
+  handleAction,
+    isLoading = false
 }: SummaryCardProps) {
   const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
-
-  const handleButtonClick = () => {
-    if (buttonAction) {
-      buttonAction(); // Call the custom action if provided
-    } else {
-      navigate("/checkout"); // Default behavior
-    }
-  };
 
   return (
     <div className="rounded-custom flex h-fit w-96 flex-col gap-2 bg-stone-100 p-4">
@@ -74,7 +66,7 @@ export default function SummaryCard({
           </Modal>
         </>
       ) : (
-        <Button className="w-full" onClick={handleButtonClick}>
+        <Button className="w-full" onClick={handleAction} disabled={isLoading}>
           {buttonText}
         </Button>
       )}

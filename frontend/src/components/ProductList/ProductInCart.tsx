@@ -1,6 +1,7 @@
 import { Product } from "../../store/slices/productTypes";
 import { useDispatch } from "react-redux";
 import { removeItemFromCart } from "../../store/slices/cartSlice";
+import React from "react";
 
 interface ProductInCartProps {
   cartItems: Product[];
