@@ -3,7 +3,8 @@
 import { BsCartPlus } from "react-icons/bs";
 import { addItemToCart } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 interface Item {
   id: number;
@@ -19,7 +20,10 @@ interface Item {
 function Card({ item }: { item: Item }) {
   const dispatch = useDispatch();
   return (
-    <div className="text-darktext flex w-72 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
+    <Link
+      to={`/product/${item.id}`}
+      className="text-darktext flex w-72 cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg"
+    >
       <div className="relative w-full">
         <img
           src={item.image[0]}
@@ -27,12 +31,11 @@ function Card({ item }: { item: Item }) {
           className="w-full rounded-md object-contain"
         />
 
-        {/* add to cart function to be added */}
         <button
-         
-         onClick={() => {
+         onClick={(e) => {
+          e.stopPropagation(); // Prevent the click event from propagating to the parent Link
           dispatch(addItemToCart(item));
-          toast.success('Added to cart!');
+          toast.success("Added to cart!");
         }}
           className="hover:bg-darktext absolute right-2 bottom-2 cursor-pointer rounded-full border border-stone-400 bg-white p-2 transition-all hover:text-white"
         >
@@ -52,7 +55,7 @@ function Card({ item }: { item: Item }) {
         <p className="text-xl font-bold">Price: ${item.price}</p>
         <p>{item.stock} left</p>
       </span>
-    </div>
+    </Link>
   );
 }
 

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import fetchProducts from "../../services/productService";
+import productService from "../../services/productService";
 import { Product, ProductState } from "./productTypes";
 import { RootState } from "../store";
 
@@ -20,7 +20,7 @@ export const loadProducts = createAsyncThunk<
   const state = getState();
   const search = state.products.searchQuery;
 
-  const data = await fetchProducts(search, page, limit);
+  const data = await productService.fetchProducts(search, page, limit);
   return data;
 });
 
