@@ -10,6 +10,8 @@ function ZoomImage({ src, alt }: ZoomImageProps) {
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const zoomRef = useRef<HTMLDivElement>(null); 
 
+  const zoomLevel = 150;
+
   const updatePosition = (clientX: number, clientY: number, target: HTMLElement) => {
     const { left, top, width, height } = target.getBoundingClientRect();
     const x = ((clientX - left) / width) * 100;
@@ -61,6 +63,7 @@ function ZoomImage({ src, alt }: ZoomImageProps) {
           style={{
             backgroundImage: `url(${src})`,
             backgroundPosition: `${position.x}% ${position.y}%`,
+            backgroundSize: `${zoomLevel}%`,
           }}
         />
       )}

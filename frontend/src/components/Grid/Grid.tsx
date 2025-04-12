@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { RootState } from "../../store/store";
-import { ArrowPathIcon } from "@heroicons/react/20/solid";
+import Spinner from "../../utils/Spinner";
 
 interface Product {
   id: number;
@@ -35,9 +35,7 @@ function Grid({
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
         {loading ? (
-          <div className="flex h-40 w-full flex-col items-center justify-center gap-2 text-gray-500">
-            <ArrowPathIcon className="size-20 animate-spin" />
-          </div>
+          <Spinner />
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : products.length > 0 ? (

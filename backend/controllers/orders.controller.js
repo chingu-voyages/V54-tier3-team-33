@@ -11,11 +11,6 @@ module.exports = {
         .populate("customerId")
         .exec();
 
-      if (!orders || orders.length === 0) {
-        const error = new CustomError("No orders found", 404);
-        return next(error);
-      }
-
       const formattedOrders = orders.map((order) => {
         const safeItems = (order.products || [])
           .filter((p) => p && p.id)
@@ -42,7 +37,6 @@ module.exports = {
           items: safeItems,
         };
       });
-
 
       return res.status(200).json({
         status: "success",

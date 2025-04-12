@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import electronics from "../../assets/nav-images/electronics.jpg";
 import clothes from "../../assets/nav-images/clothes.jpg";
 import instruments from "../../assets/nav-images/instruments.jpg";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"; 
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const Nav = () => {
   const categories = [
@@ -25,11 +25,11 @@ const Nav = () => {
   ];
 
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <nav className="bg-white">
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-4">
+      <div className="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
         <div className="flex justify-end p-4 md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -46,12 +46,12 @@ const Nav = () => {
         <div
           className={`${
             isMobileMenuOpen ? "block" : "hidden"
-          } md:flex justify-center py-1 relative`}
+          } relative justify-center py-1 md:flex`}
         >
-          <div className="flex flex-col md:flex-row md:space-x-18 space-y-4 md:space-y-0">
+          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
             >
               Home
             </Link>
@@ -60,14 +60,18 @@ const Nav = () => {
                 key={category.name}
                 onMouseEnter={() => setHoveredCategory(category.name)}
                 onMouseLeave={() => setHoveredCategory(null)}
-                onClick={() => setHoveredCategory(hoveredCategory === category.name ? null : category.name)} // Toggle dropdown on mobile
+                onClick={() =>
+                  setHoveredCategory(
+                    hoveredCategory === category.name ? null : category.name,
+                  )
+                }
               >
                 <Link
                   to={`/category/${category.name
                     .toLowerCase()
                     .replace(/ & /g, "-")
                     .replace(/\s+/g, "-")}`}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
                 >
                   {category.name}
                 </Link>
@@ -76,9 +80,9 @@ const Nav = () => {
           </div>
 
           {hoveredCategory && (
-            <div className="absolute left-0 top-full w-full bg-white rounded-md border border-gray-200 shadow-lg z-50">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 h-full">
-                <div className="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="absolute top-full left-0 z-50 w-full rounded-md border border-gray-200 bg-white shadow-lg">
+              <div className="grid h-full grid-cols-1 gap-4 p-4 md:grid-cols-4">
+                <div className="col-span-3 grid grid-cols-1 gap-4 md:grid-cols-3">
                   {categories
                     .filter((category) => category.name === hoveredCategory)
                     .map((category) => (
@@ -88,7 +92,7 @@ const Nav = () => {
                             .toLowerCase()
                             .replace(/ & /g, "-")
                             .replace(/\s+/g, "-")}`}
-                          className="block px-4 py-2 text-sm text-gray-700 font-semibold rounded-md hover:bg-gray-100"
+                          className="block rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100"
                         >
                           {category.name}
                         </Link>
@@ -102,7 +106,7 @@ const Nav = () => {
                                 .replace(/\s+/g, "-")}/${subcategory
                                 .toLowerCase()
                                 .replace(/\s+/g, "-")}`}
-                              className="block px-6 py-2 text-sm text-gray-500 rounded-md hover:bg-gray-100"
+                              className="block rounded-md px-6 py-2 text-sm text-gray-500 hover:bg-gray-100"
                             >
                               {subcategory}
                             </Link>
@@ -111,7 +115,7 @@ const Nav = () => {
                       </div>
                     ))}
                 </div>
-                <div className="col-span-1 grid place-items-center h-full">
+                <div className="col-span-1 grid h-full place-items-center">
                   {categories
                     .filter((category) => category.name === hoveredCategory)
                     .map((category) => (
@@ -119,7 +123,7 @@ const Nav = () => {
                         key={category.name}
                         src={category.image}
                         alt={category.name}
-                        className="w-94 h-auto rounded-md"
+                        className="h-auto w-94 rounded-md"
                       />
                     ))}
                 </div>

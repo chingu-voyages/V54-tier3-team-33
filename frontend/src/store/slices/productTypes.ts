@@ -16,6 +16,7 @@ export interface ProductState {
   loading: boolean;
   totalPages: number;
   error: string | null;
+  searchQuery: string;
 }
 
 export interface ProductListProps {

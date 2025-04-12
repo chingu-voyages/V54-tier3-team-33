@@ -4,7 +4,7 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
 const CreateForm: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     firstname: "",

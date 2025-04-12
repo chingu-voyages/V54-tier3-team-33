@@ -1,12 +1,13 @@
 import AdvertisingCarousel from "../../src/components/AdvertisingCarousel/AdvertisingCarousel";
 import Grid from "../components/Grid/Grid";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "../store/store.ts";
-import {JSX , useEffect} from "react";
-import { loadProducts } from "../store/slices/productSlice.ts";
+import { RootState, AppDispatch } from "../../src/store/store";
+import { useEffect } from "react";
+import { loadProducts, setSearchQuery } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
-const HomePage: () => JSX.Element = () => {
+const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const { products, loading, error } = useSelector(
     (state: RootState) => state.products,
@@ -16,13 +17,19 @@ const HomePage: () => JSX.Element = () => {
   const page = parseInt(searchParams.get("page") || "1", 10);
   // change item limit per page HERE
   const limit = parseInt(searchParams.get("limit") || "10", 10);
+  const search = searchParams.get("search") || "";
 
   useEffect(() => {
+    dispatch(setSearchQuery(search));
     dispatch(loadProducts({ page, limit }));
-  }, [dispatch, page, limit]);
+  }, [dispatch, search, page, limit]);
 
   const handlePageChange = (newPage: number) => {
-    setSearchParams({ page: newPage.toString(), limit: limit.toString() });
+    setSearchParams({
+      search,
+      page: newPage.toString(),
+      limit: limit.toString(),
+    });
   };
 
   return (
@@ -38,6 +45,7 @@ const HomePage: () => JSX.Element = () => {
         loading={loading}
         error={error}
       />
+      <Toaster />
     </>
   );
 };
