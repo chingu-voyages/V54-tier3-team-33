@@ -11,7 +11,6 @@ export interface User {
   email: string;
   createdAt: string;
   updatedAt: string;
-  account_verify: boolean;
 }
 const ProfilePage: React.FC = () => {
   
@@ -51,14 +50,6 @@ const ProfilePage: React.FC = () => {
                 <span>{formatReadableDate(user.createdAt)}</span>
               </div>
               <div className="flex justify-between items-center text-sm text-gray-600">
-                <span className="font-medium">Verification:</span>
-                <span
-                    className={`font-semibold py-2 px-4 rounded-full ${
-                        user.account_verify ? "text-green-600 bg-green-200" : "text-red-500 bg-red-200"
-                    }`}
-                >
-                {user.account_verify ? "Verified" : "Not Verified"}
-              </span>
               </div>
             </div>
           </div>
