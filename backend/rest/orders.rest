@@ -1,4 +1,4 @@
-@cookie = token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RmMjQ0ZmY4N2I0NjJkNjA3ZTUxNDIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQzNDQ1NzA3LCJleHAiOjE3NDQwNTA1MDd9.Tq8v_Eok6ZuZQ3-u0SHGOFcSYJpv044ptGzkX338WQk; Max-Age=604800; Path=/; Expires=Mon, 07 Apr 2025 18:28:27 GMT; HttpOnly; SameSite=None
+@cookie = token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RmMjQ0ZmY4N2I0NjJkNjA3ZTUxNDIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQ0NDc4NDYzLCJleHAiOjE3NDUwODMyNjN9.ZrKGB5MJRvdwDD2XYLdiN5OKeIuK7hrTVSjotUPyaVc; Max-Age=604800; Path=/; Expires=Sat, 19 Apr 2025 17:21:03 GMT; HttpOnly; SameSite=Lax
 
 # errors if there are no orders
 GET http://localhost:3000/api/orders
