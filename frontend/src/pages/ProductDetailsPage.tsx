@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../store/slices/cartSlice";
 import { Product } from "../store/slices/productTypes";
 import productService from "../services/productService";
-import { ArrowPathIcon } from "@heroicons/react/20/solid";
+import Spinner from "../utils/Spinner.tsx";
 
 const ProductDetailsPage = () => {
   const { productId } = useParams();
@@ -48,11 +48,7 @@ const ProductDetailsPage = () => {
   };
 
   if (!product) {
-    return (
-      <div className="flex h-40 w-full flex-col items-center justify-center gap-2 text-gray-500">
-        <ArrowPathIcon className="size-20 animate-spin" />
-      </div>
-    );
+    return <Spinner />;
   }
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import useFetch from "../hooks/useFetch.ts";
 import { OrderHistory } from "../components/Order/OrderHistory.tsx";
-import { ArrowPathIcon } from "@heroicons/react/20/solid";
+import Spinner from "../utils/Spinner.tsx";
 
 export interface User {
   id: string;
@@ -19,9 +19,7 @@ const ProfilePage: React.FC = () => {
   } = useFetch<User>("/api/auth/me");
 
   return userLoading ? (
-    <div className="flex h-40 w-full flex-col items-center justify-center gap-2 text-gray-500">
-      <ArrowPathIcon className="size-20 animate-spin" />
-    </div>
+    <Spinner />
   ) : userError ? (
     <div className="flex h-[50vh] items-center justify-center">
       <div className="text-2xl font-semibold text-red-500">User not found</div>
