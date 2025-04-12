@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { RootState } from "../../store/store";
-import Spinner from "../utils/Spinner.tsx";
+import Spinner from "../../utils/Spinner";
 
 interface Product {
   id: number;
