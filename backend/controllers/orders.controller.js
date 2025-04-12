@@ -10,7 +10,6 @@ module.exports = {
         })
         .populate("customerId")
         .exec();
-      console.log(JSON.stringify(orders, null, 2));
 
       if (!orders || orders.length === 0) {
         const error = new CustomError("No orders found", 404);
@@ -43,6 +42,7 @@ module.exports = {
           items: safeItems,
         };
       });
+
 
       return res.status(200).json({
         status: "success",
