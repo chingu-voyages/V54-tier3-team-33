@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import CategoryPage from "./pages/CategoryPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -8,7 +7,6 @@ import CheckoutPage from "./pages/CheckoutPage";
 import Layout from "./pages/Layout";
 import SignInPage from "./pages/SignInPage";
 import CreateAccPage from "./pages/CreateAccPage";
-import SubcategoryPage from "./pages/SubcategoryPage";
 
 const App = () => {
   return (

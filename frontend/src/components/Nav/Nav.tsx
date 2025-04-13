@@ -48,7 +48,7 @@ const Nav = () => {
             isMobileMenuOpen ? "block" : "hidden"
           } relative justify-center py-1 md:flex`}
         >
-          {/* <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
+          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
             <Link
               to="/"
               className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
@@ -59,42 +59,36 @@ const Nav = () => {
               <div
                 key={category.name}
                 onMouseEnter={() => setHoveredCategory(category.name)}
-                onMouseLeave={() => setHoveredCategory(null)}
                 onClick={() =>
                   setHoveredCategory(
                     hoveredCategory === category.name ? null : category.name,
                   )
                 }
               >
-                
-                <button 
-                 
-                  onClick={console.log(category.name)}
-                  className="text-gray-700 bg-red-600 transition-colors duration-200 hover:text-blue-600"
+                <button
+                  onClick={() => console.log(category.name)}
+                  className="bg-red-600 text-gray-700 transition-colors duration-200 hover:text-blue-600"
                 >
                   {category.name}
                 </button>
               </div>
             ))}
-          </div> */}
+          </div>
 
           {hoveredCategory && (
-            <div className="absolute top-full left-0 z-50 w-full rounded-md border border-gray-200 bg-white shadow-lg">
+            <div
+              onMouseLeave={() => setHoveredCategory(null)}
+              className="absolute top-full left-0 z-50 w-full rounded-md border border-gray-200 bg-white shadow-lg"
+            >
               <div className="grid h-full grid-cols-1 gap-4 p-4 md:grid-cols-4">
                 <div className="col-span-3 grid grid-cols-1 gap-4 md:grid-cols-3">
                   {categories
                     .filter((category) => category.name === hoveredCategory)
                     .map((category) => (
                       <div key={category.name} className="space-y-2">
-                        <Link
-                          to={`/category/${category.name
-                            .toLowerCase()
-                            .replace(/ & /g, "-")
-                            .replace(/\s+/g, "-")}`}
-                          className="block rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100"
-                        >
+                        <button className="block rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">
                           {category.name}
-                        </Link>
+                        </button>
                         <div className="space-y-1">
                           {category.subcategories.map((subcategory) => (
                             <Link
