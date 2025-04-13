@@ -10,6 +10,8 @@ const initialState: ProductState = {
   loading: false,
   error: null,
   searchQuery: "",
+  category: "",
+  subcategory: "",
 };
 
 export const loadProducts = createAsyncThunk<
@@ -19,8 +21,10 @@ export const loadProducts = createAsyncThunk<
 >("products/loadProducts", async ({ page, limit }, { getState }) => {
   const state = getState();
   const search = state.products.searchQuery;
+  const category = state.products.category
+  const subcategory = state.products.subcategory
 
-  const data = await productService.fetchProducts(search, page, limit);
+  const data = await productService.fetchProducts(search, page, limit, category, subcategory); //pass category and subcategory
   return data;
 });
 
