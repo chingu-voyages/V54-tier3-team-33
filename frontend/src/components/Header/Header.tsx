@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { setSearchQuery, loadProducts } from "../../store/slices/productSlice";
 import {
   Menu,
@@ -36,6 +36,7 @@ const categories = [
 ];
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
+  const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
   const searchQuery = useSelector(
     (state: RootState) => state.products.searchQuery,

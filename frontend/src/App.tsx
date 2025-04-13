@@ -17,11 +17,11 @@ const App = () => {
         {/* Routes wrapped with Layout */}
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/category/:categoryName" element={<CategoryPage />} />
+          {/* <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route
             path="/category/:categoryName/:subcategoryName"
             element={<SubcategoryPage />}
-          />
+          /> */}
           <Route path="/shoppingCart" element={<ShoppingCartPage />} />
           <Route path="/product/:productId" element={<ProductDetailsPage />} />
           <Route path="/profile" element={<ProfilePage />} />

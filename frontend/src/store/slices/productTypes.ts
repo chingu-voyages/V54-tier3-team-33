@@ -17,6 +17,8 @@ export interface ProductState {
   totalPages: number;
   error: string | null;
   searchQuery: string;
+  category: string;
+  subcategory: string;
 }
 
 export interface ProductListProps {

@@ -15,7 +15,7 @@ const fetchProducts = async (search: string, page: number, limit: number) => {
     }
 
     const data = await response.json();
-    console.log("API Response:", data); // Log the API response
+    // console.log("API Response:", data); 
     return data; // Ensure this returns { products, totalPages, page }
   } catch (error) {
     console.error("Error fetching products:", error);
