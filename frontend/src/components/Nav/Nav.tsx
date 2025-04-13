@@ -48,7 +48,7 @@ const Nav = () => {
             isMobileMenuOpen ? "block" : "hidden"
           } relative justify-center py-1 md:flex`}
         >
-          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
+          {/* <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
             <Link
               to="/"
               className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
@@ -66,18 +66,17 @@ const Nav = () => {
                   )
                 }
               >
-                <Link
-                  to={`/category/${category.name
-                    .toLowerCase()
-                    .replace(/ & /g, "-")
-                    .replace(/\s+/g, "-")}`}
-                  className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                
+                <button 
+                 
+                  onClick={console.log(category.name)}
+                  className="text-gray-700 bg-red-600 transition-colors duration-200 hover:text-blue-600"
                 >
                   {category.name}
-                </Link>
+                </button>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {hoveredCategory && (
             <div className="absolute top-full left-0 z-50 w-full rounded-md border border-gray-200 bg-white shadow-lg">

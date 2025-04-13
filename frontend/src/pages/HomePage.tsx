@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { products, loading, error } = useSelector(
+  const { products, loading, error, category, subcategory } = useSelector(
     (state: RootState) => state.products,
   );
 
@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     dispatch(setSearchQuery(search));
     dispatch(loadProducts({ page, limit }));
-  }, [dispatch, search, page, limit]);
+  }, [dispatch, search, page, limit, category, subcategory]);
 
   const handlePageChange = (newPage: number) => {
     setSearchParams({

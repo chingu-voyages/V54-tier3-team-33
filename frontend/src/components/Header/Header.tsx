@@ -1,6 +1,11 @@
 import React, { Fragment } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { setSearchQuery, loadProducts } from "../../store/slices/productSlice";
+import {
+  setSearchQuery,
+  loadProducts,
+  setCategory,
+  setSubcategory,
+} from "../../store/slices/productSlice";
 import {
   Menu,
   Transition,
@@ -26,13 +31,13 @@ interface HeaderProps {
   showNav?: boolean;
 }
 
-const categories = [
+const categoriesMap = [
   {
     name: "Electronics",
-    subcategories: ["Smartphones", "Laptops", "Televisions"],
+    subcategoriesMap: ["Smartphones", "Laptops", "Televisions"],
   },
-  { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
-  { name: "Music", subcategories: ["Guitars", "Keyboards", "Drums"] },
+  { name: "Clothing", subcategoriesMap: ["Jeans", "Sneakers", "Jackets"] },
+  { name: "Music", subcategoriesMap: ["Guitars", "Keyboards", "Drums"] },
 ];
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
@@ -93,40 +98,40 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             >
               <MenuItems className="ring-opacity-5 absolute left-0 z-50 mt-2 max-h-[80vh] w-full origin-top-left overflow-y-auto rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none md:w-[600px]">
                 <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
-                  {categories.map((category) => (
+                  {categoriesMap.map((category) => (
                     <div key={category.name} className="space-y-2">
                       <MenuItem>
                         {({ focus }) => (
-                          <Link
-                            to={`/category/${category.name
-                              .toLowerCase()
-                              .replace(/ & /g, "-")
-                              .replace(/\s+/g, "-")}`}
+                          <button
+                            onClick={() => {
+                              dispatch(setCategory(category.name));
+                              dispatch(setSubcategory(""));
+                            }}
                             className={`${
                               focus ? "bg-customcolortwo" : ""
                             } block rounded-md px-4 py-2 text-sm font-semibold`}
                           >
                             {category.name}
-                          </Link>
+                          </button>
                         )}
                       </MenuItem>
                       <div className="space-y-1">
-                        {category.subcategories.map((subcategory) => (
+                        {category.subcategoriesMap.map((subcategory) => (
                           <MenuItem key={subcategory}>
                             {({ focus }) => (
-                              <Link
-                                to={`/category/${category.name
-                                  .toLowerCase()
-                                  .replace(/ & /g, "-")
-                                  .replace(/\s+/g, "-")}/${subcategory
-                                  .toLowerCase()
-                                  .replace(/\s+/g, "-")}`}
+                              <button
+                                onClick={() => {
+                                  dispatch(
+                                    setSubcategory(subcategory),
+                                    dispatch(setCategory(category.name)),
+                                  );
+                                }}
                                 className={`${
                                   focus ? "bg-customcolortwo" : ""
                                 } block rounded-md px-6 py-2 text-sm`}
                               >
                                 {subcategory}
-                              </Link>
+                              </button>
                             )}
                           </MenuItem>
                         ))}

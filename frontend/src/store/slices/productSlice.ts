@@ -21,10 +21,18 @@ export const loadProducts = createAsyncThunk<
 >("products/loadProducts", async ({ page, limit }, { getState }) => {
   const state = getState();
   const search = state.products.searchQuery;
-  const category = state.products.category
-  const subcategory = state.products.subcategory
+  const category = state.products.category;
+  const subcategory = state.products.subcategory;
 
-  const data = await productService.fetchProducts(search, page, limit, category, subcategory); //pass category and subcategory
+  const data = await productService.fetchProducts(
+    search,
+    page,
+    limit,
+    category,
+    subcategory,
+  );
+
+  console.log(category, subcategory);
   return data;
 });
 
@@ -34,6 +42,14 @@ const productSlice = createSlice({
   reducers: {
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
+    },
+    setCategory: (state, action) => {
+      state.category = action.payload;
+      console.log("Category set to:", action.payload);
+    },
+    setSubcategory: (state, action) => {
+      state.subcategory = action.payload;
+      console.log("Subcategory set to:", action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -57,5 +73,6 @@ const productSlice = createSlice({
   },
 });
 
-export const { setSearchQuery } = productSlice.actions; //
+export const { setSearchQuery, setCategory, setSubcategory } =
+  productSlice.actions; //
 export default productSlice.reducer;
