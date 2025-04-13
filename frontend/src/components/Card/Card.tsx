@@ -14,7 +14,9 @@ interface Item {
   description: string;
   rating: number;
   stock: number;
-  sold: number;
+  sold: number;    
+  category: string;     
+  subcategory: string; 
 }
 
 function Card({ item }: { item: Item }) {

@@ -4,10 +4,11 @@ export type Product = {
   image: string | string[];
   description: string;
   price: number;
-  deliveryCost: number;
-  country: string;
   category: string;
   subcategory: string;
+  rating: number;
+  stock: number;
+  sold: number;
 };
 
 export interface ProductState {
@@ -20,7 +21,7 @@ export interface ProductState {
   category: string;
   subcategory: string;
   minPrice: number;
-  maxPrice: number
+  maxPrice: number;
 }
 
 export interface ProductListProps {

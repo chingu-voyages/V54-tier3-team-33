@@ -10,6 +10,11 @@ interface Product {
   image: string | string[];
   price: number;
   description: string;
+  category: string;
+  subcategory: string;
+  rating: number;
+  stock: number;
+  sold: number;
 }
 
 interface GridProps {
@@ -28,7 +33,7 @@ function Grid({
   currentPage,
   onPageChange,
 }: GridProps) {
-  const { totalPages, category, subcategory} = useSelector(
+  const { totalPages, category, subcategory } = useSelector(
     (state: RootState) => state.products,
   );
 

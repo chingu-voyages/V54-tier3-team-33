@@ -7,7 +7,7 @@ import { RootState } from "../store/store";
 const PriceInput = () => {
 
   const dispatch = useDispatch();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const { searchQuery, category, subcategory } = useSelector(
     (state: RootState) => state.products
   );
