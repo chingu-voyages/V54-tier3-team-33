@@ -28,12 +28,8 @@ function Grid({
   currentPage,
   onPageChange,
 }: GridProps) {
-  const totalPages = useSelector(
-    (state: RootState) => state.products.totalPages,
-  );
-  const category = useSelector((state: RootState) => state.products.category);
-  const subcategory = useSelector(
-    (state: RootState) => state.products.subcategory,
+  const { totalPages, category, subcategory} = useSelector(
+    (state: RootState) => state.products,
   );
 
   return (
@@ -42,9 +38,7 @@ function Grid({
         <p className="text-3xl font-semibold">{category}</p>
         <p className="text-2xl font-semibold">{subcategory}</p>
       </div>
-      {/* ////////////////// */}
       <PriceInput />
-      {/* /////////////////////////////////// */}
 
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
         {loading ? (

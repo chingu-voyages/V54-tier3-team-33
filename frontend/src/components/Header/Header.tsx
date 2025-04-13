@@ -42,15 +42,9 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
-  const searchQuery = useSelector(
-    (state: RootState) => state.products.searchQuery,
-  );
-  const selectedCategory = useSelector(
-    (state: RootState) => state.products.category,
-  );
-  const selectedSubcategory = useSelector(
-    (state: RootState) => state.products.subcategory,
-  );
+
+  const { searchQuery, category, subcategory, minPrice, maxPrice } =
+    useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
 
@@ -60,14 +54,20 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       limit: "10",
     };
 
-    if (selectedCategory) {
-      params.category = selectedCategory;
+    if (category) {
+      params.category = category;
     }
-    if (selectedSubcategory) {
-      params.subcategory = selectedSubcategory;
+    if (subcategory) {
+      params.subcategory = subcategory;
     }
     if (searchQuery.trim()) {
       params.search = searchQuery;
+    }
+    if (minPrice) {
+      params.minPrice = minPrice.toString();
+    }
+    if (maxPrice) {
+      params.maxPrice = maxPrice.toString();
     }
 
     setSearchParams(params);

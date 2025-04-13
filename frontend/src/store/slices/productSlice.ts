@@ -12,6 +12,8 @@ const initialState: ProductState = {
   searchQuery: "",
   category: "",
   subcategory: "",
+  minPrice: 0,
+  maxPrice: 999999,
 };
 
 export const loadProducts = createAsyncThunk<
@@ -23,6 +25,8 @@ export const loadProducts = createAsyncThunk<
   const search = state.products.searchQuery;
   const category = state.products.category;
   const subcategory = state.products.subcategory;
+  const minPrice = state.products.minPrice;
+  const maxPrice = state.products.maxPrice;
 
   const data = await productService.fetchProducts(
     search,
@@ -30,6 +34,8 @@ export const loadProducts = createAsyncThunk<
     limit,
     category,
     subcategory,
+    minPrice,
+    maxPrice,
   );
 
   console.log(category, subcategory);
@@ -51,7 +57,16 @@ const productSlice = createSlice({
       state.subcategory = action.payload;
       console.log("Subcategory set to:", action.payload);
     },
+    setMinPrice: (state, action) => {
+      state.minPrice = action.payload;
+      console.log("minprice set to:", action.payload);
+    },
+    setMaxPrice: (state, action) => {
+      state.maxPrice = action.payload;
+      console.log("maxprice set to:", action.payload);
+    },
   },
+
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
@@ -73,6 +88,11 @@ const productSlice = createSlice({
   },
 });
 
-export const { setSearchQuery, setCategory, setSubcategory } =
-  productSlice.actions; //
+export const {
+  setSearchQuery,
+  setCategory,
+  setSubcategory,
+  setMinPrice,
+  setMaxPrice,
+} = productSlice.actions;
 export default productSlice.reducer;

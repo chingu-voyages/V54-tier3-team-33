@@ -19,6 +19,8 @@ export interface ProductState {
   searchQuery: string;
   category: string;
   subcategory: string;
+  minPrice: number;
+  maxPrice: number
 }
 
 export interface ProductListProps {

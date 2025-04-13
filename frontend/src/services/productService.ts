@@ -4,12 +4,14 @@ const fetchProducts = async (
   limit: number,
   category: string,
   subcategory: string,
+  minPrice: number,
+  maxPrice: number,
 ) => {
   try {
     console.log(category, subcategory);
-    
+
     const response = await fetch(
-      `/api/products?search=${search}&page=${page}&limit=${limit}&category=${category}&subcategory=${subcategory}`,
+      `/api/products?search=${search}&page=${page}&limit=${limit}&category=${category}&subcategory=${subcategory}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
       {
         method: "GET",
         credentials: "include", // Include cookies if needed

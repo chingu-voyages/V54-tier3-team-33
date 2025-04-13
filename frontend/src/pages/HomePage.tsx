@@ -3,13 +3,20 @@ import Grid from "../components/Grid/Grid";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../src/store/store";
 import { useEffect } from "react";
-import { loadProducts, setSearchQuery } from "../store/slices/productSlice";
+import {
+  loadProducts,
+  setCategory,
+  setMaxPrice,
+  setMinPrice,
+  setSearchQuery,
+  setSubcategory,
+} from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { products, loading, error, category, subcategory } = useSelector(
+  const { products, loading, error } = useSelector(
     (state: RootState) => state.products,
   );
 
@@ -18,11 +25,28 @@ const HomePage: React.FC = () => {
   // change item limit per page HERE
   const limit = parseInt(searchParams.get("limit") || "10", 10);
   const search = searchParams.get("search") || "";
+  const category = searchParams.get("category") || "";
+  const subcategory = searchParams.get("subcategory") || "";
+  const minPrice = searchParams.get("minPrice") || "";
+  const maxPrice = searchParams.get("maxPrice") || "";
 
   useEffect(() => {
     dispatch(setSearchQuery(search));
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(subcategory));
+    dispatch(setMinPrice(minPrice));
+    dispatch(setMaxPrice(maxPrice));
     dispatch(loadProducts({ page, limit }));
-  }, [dispatch, search, page, limit, category, subcategory]);
+  }, [
+    dispatch,
+    search,
+    page,
+    limit,
+    category,
+    subcategory,
+    minPrice,
+    maxPrice,
+  ]);
 
   const handlePageChange = (newPage: number) => {
     setSearchParams({
