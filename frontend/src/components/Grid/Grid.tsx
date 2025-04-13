@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { RootState } from "../../store/store";
 import Spinner from "../../utils/Spinner";
-import { useState } from "react";
-import PriceSlider from '../Priceslider.tsx'
+import PriceInput from "../PriceInput.tsx";
+
 interface Product {
   id: number;
   name: string;
@@ -43,10 +43,7 @@ function Grid({
         <p className="text-2xl font-semibold">{subcategory}</p>
       </div>
       {/* ////////////////// */}
-      
-      <PriceSlider />
-      
-      
+      <PriceInput />
       {/* /////////////////////////////////// */}
 
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
