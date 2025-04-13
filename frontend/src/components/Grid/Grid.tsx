@@ -30,9 +30,17 @@ function Grid({
   const totalPages = useSelector(
     (state: RootState) => state.products.totalPages,
   );
+  const category = useSelector((state: RootState) => state.products.category);
+  const subcategory = useSelector(
+    (state: RootState) => state.products.subcategory,
+  );
 
   return (
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
+      <div className="flex gap-4 items-center mr-auto">
+        <p className="text-3xl font-semibold">{category}</p>
+        <p className="text-2xl font-semibold">{subcategory}</p>
+      </div>
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
         {loading ? (
           <Spinner />

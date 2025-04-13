@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   setSearchQuery,
   loadProducts,
@@ -41,25 +41,76 @@ const categoriesMap = [
 ];
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
-  const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
   const searchQuery = useSelector(
     (state: RootState) => state.products.searchQuery,
+  );
+  const selectedCategory = useSelector(
+    (state: RootState) => state.products.category,
+  );
+  const selectedSubcategory = useSelector(
+    (state: RootState) => state.products.subcategory,
   );
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
 
   const handleSearch = () => {
-    if (searchQuery.trim() === "") {
-      console.log("Search query is empty");
-      return;
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+    };
+
+    if (selectedCategory) {
+      params.category = selectedCategory;
     }
-    setSearchParams({ search: searchQuery, page: "1", limit: "10" });
+    if (selectedSubcategory) {
+      params.subcategory = selectedSubcategory;
+    }
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
     dispatch(loadProducts({ page: 1, limit: 10 }));
+  };
+
+  const handleCategoryClick = (category: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(""));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
+  };
+
+  const handleSubcategoryClick = (category: string, subcategory: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(subcategory));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+      subcategory,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
   };
 
   const handleClearResults = () => {
     dispatch(setSearchQuery(""));
+    dispatch(setCategory(""));
+    dispatch(setSubcategory(""));
     setSearchParams({});
     console.log("Search query cleared");
   };
@@ -78,6 +129,10 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               src={logo}
               alt="Logo"
               className="h-10 w-auto sm:h-14 md:h-18 lg:h-22"
+              onClick={() => {
+                dispatch(setCategory(""));
+                dispatch(setSubcategory(""));
+              }}
             />
           </Link>
         </div>
@@ -103,10 +158,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                       <MenuItem>
                         {({ focus }) => (
                           <button
-                            onClick={() => {
-                              dispatch(setCategory(category.name));
-                              dispatch(setSubcategory(""));
-                            }}
+                            onClick={() => handleCategoryClick(category.name)}
                             className={`${
                               focus ? "bg-customcolortwo" : ""
                             } block rounded-md px-4 py-2 text-sm font-semibold`}
@@ -120,12 +172,12 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                           <MenuItem key={subcategory}>
                             {({ focus }) => (
                               <button
-                                onClick={() => {
-                                  dispatch(
-                                    setSubcategory(subcategory),
-                                    dispatch(setCategory(category.name)),
-                                  );
-                                }}
+                                onClick={() =>
+                                  handleSubcategoryClick(
+                                    category.name,
+                                    subcategory,
+                                  )
+                                }
                                 className={`${
                                   focus ? "bg-customcolortwo" : ""
                                 } block rounded-md px-6 py-2 text-sm`}
