@@ -45,13 +45,13 @@ function Grid({
       </div>
       <PriceInput />
 
-      <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
+      <section className="my-6 flex w-full flex-col items-center gap-6 px-6 md:max-w-6xl">
         {loading ? (
           <Spinner />
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : products.length > 0 ? (
-          <div className="grid w-full gap-6 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+          <div className="grid w-full gap-3 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
             {products.map((item) => (
               <Card key={item.id} item={item} />
             ))}
@@ -60,14 +60,15 @@ function Grid({
           <p className="text-center text-gray-500">No products found.</p>
         )}
       </section>
-      {/* Pagination */}
-      <section className="mt-8 flex w-full max-w-[65rem] items-center justify-center px-6 text-gray-500">
+
+      {/* pagination */}
+      <section className="flex w-full max-w-6xl items-center justify-center px-6 text-gray-500">
         <div className="flex items-center gap-2">
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index + 1}
               onClick={() => onPageChange(index + 1)}
-              className={`rounded px-3 py-1 text-sm ${
+              className={`cursor-pointer rounded border border-transparent px-3 py-1 font-semibold transition-all hover:border hover:border-gray-400 ${
                 currentPage === index + 1
                   ? "bg-gray-800 text-white"
                   : "bg-gray-200 text-gray-800"
