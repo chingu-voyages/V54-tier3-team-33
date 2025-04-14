@@ -22,7 +22,7 @@ interface Item {
 function Card({ item }: { item: Item }) {
   const dispatch = useDispatch();
   return (
-    <div className="text-darktext relative flex cursor-pointer flex-col items-start gap-1 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
+    <div className="text-darktext relative flex cursor-pointer flex-col items-start gap-2 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
       <Link to={`/product/${item.id}`} className="w-full">
         <img
           src={item.image[0]}
@@ -39,14 +39,15 @@ function Card({ item }: { item: Item }) {
       >
         <BsCartPlus size={25} />
       </button>
-      <Link to={`/product/${item.id}`} className="w-full">
+      <Link to={`/product/${item.id}`} className="flex gap-1 h-full w-full flex-col">
         <h3 className="font-medium">{item.name}</h3>
-        <span className="text-darktext/65 flex w-full items-center gap-1">
+        <span className="text-darktext/65 mt-auto flex w-full items-center gap-1">
           <p className="text-sm">
             Rating: {item.rating ? "⭐".repeat(item.rating) : "No rating yet"}
           </p>
           <p className="text-sm">| {item.sold} Sold</p>
         </span>
+        {/* Push this section to the bottom */}
         <span className="flex w-full items-center justify-between">
           <p className="text-xl font-bold">Price: ${item.price}</p>
           <p>{item.stock} left</p>

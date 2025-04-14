@@ -12,8 +12,8 @@ const PriceInput = () => {
     (state: RootState) => state.products,
   );
 
-  const [localMinPrice, setlocalMinPrice] = useState<string>("100");
-  const [localMaxPrice, setlocalMaxPrice] = useState<string>("200");
+  const [localMinPrice, setlocalMinPrice] = useState<string>("");
+  const [localMaxPrice, setlocalMaxPrice] = useState<string>("");
 
   const clearMin = () => setlocalMinPrice("");
   const clearMax = () => setlocalMaxPrice("");

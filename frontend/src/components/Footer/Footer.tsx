@@ -1,55 +1,34 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
+
+const routesMap = [
+  { name: "Home", path: "/" },
+  { name: "Profile", path: "/profile" },
+  { name: "Shopping Cart", path: "/shoppingCart" },
+  { name: "Sign in", path: "/signinpage" },
+  { name: "Create an account", path: "/createacc" },
+];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-customcolortwo py-10 mt-10 text-darktext">
+    <footer className="bg-customcolortwo text-darktext mt-10 py-10">
       <section className="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
-        {/* Navigation Section */}
         <div>
           <h3 className="mb-6 text-lg font-semibold">Navigation</h3>
-          <ul className="space-y-2">
-            <li>
-              <Link to="/" className="hover:underline">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/electronics" className="hover:underline">
-                Electronics
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/clothing" className="hover:underline">
-                Clothing
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/music" className="hover:underline">
-                Music
-              </Link>
-            </li>
-            <li>
-              <Link to="/profile" className="hover:underline">
-                Profile
-              </Link>
-            </li>
-            <li>
-              <Link to="/shoppingCart" className="hover:underline">
-                Shopping Cart
-              </Link>
-            </li>
-            <li>
-              <Link to="/signinpage" className="hover:underline">
-                Sign in
-              </Link>
-            </li>
-            <li>
-              <Link to="/createacc" className="hover:underline">
-                Create an account
-              </Link>
-            </li>
-          </ul>
+          <div className="space-y-2">
+            {routesMap.map((route) => (
+              <div className="flex">
+                <Link
+                  className="w-fit cursor-pointer no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
+                  to={route.path}
+                  key={route.name}
+                >
+                  {route.name}
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Team Section */}
@@ -58,16 +37,16 @@ const Footer: React.FC = () => {
           <ul className="space-y-2">
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
-                href="https://linkedin.com/in/damilola-oshinowo"
+                href="https://www.linkedin.com/in/damilola-oshinowo"
               >
                 Damilola Oshinowo - Scrum master
               </a>
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
                 href="https://www.linkedin.com/in/andresregaladobucheli/"
               >
@@ -76,16 +55,16 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
-                href="www.linkedin.com/in/chinedu-olekah"
+                href="https://www.linkedin.com/in/chinedu-olekah"
               >
                 Chinedu Olekah - Main product owner
               </a>
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
                 href="https://www.linkedin.com/in/ed-masawi-97345a29/"
               >
@@ -94,7 +73,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
                 href="https://www.linkedin.com/in/ismail-marghich-9174111aa/"
               >
@@ -103,7 +82,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
                 href="https://www.linkedin.com/in/toniagbuji/"
               >
@@ -112,7 +91,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
                 href="https://www.linkedin.com/in/predrag-jandric/"
               >
@@ -121,7 +100,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                className="w-fit no-underline transition-all hover:pl-2 hover:underline hover:underline-offset-2"
+                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
                 target="_blank"
                 href="https://www.linkedin.com/in/riry-nomenjanahary/"
               >
@@ -130,7 +109,6 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
-
         {/* contact info */}
         <div>
           <h3 className="mb-6 text-lg font-semibold">Organisation</h3>
@@ -148,7 +126,8 @@ const Footer: React.FC = () => {
               and April 2025.
             </p>
             <a
-              className=""
+              className="w-fit cursor-pointer no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
+              target="_blank"
               href="https://github.com/chingu-voyages/v54-tier3-team-33"
             >
               Github repo
@@ -157,7 +136,7 @@ const Footer: React.FC = () => {
         </div>
       </section>
 
-      <div className="mt-8 border-t border-customcolorone pt-4 text-center text-sm">
+      <div className="border-customcolorone mt-8 border-t pt-4 text-center text-sm">
         © {new Date().getFullYear()} Chingu. All rights reserved.
       </div>
     </footer>
