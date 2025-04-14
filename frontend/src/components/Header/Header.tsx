@@ -1,6 +1,11 @@
 import React, { Fragment } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { setSearchQuery, loadProducts } from "../../store/slices/productSlice";
+import {
+  setSearchQuery,
+  loadProducts,
+  setCategory,
+  setSubcategory,
+} from "../../store/slices/productSlice";
 import {
   Menu,
   Transition,
@@ -26,34 +31,86 @@ interface HeaderProps {
   showNav?: boolean;
 }
 
-const categories = [
+const categoriesMap = [
   {
     name: "Electronics",
-    subcategories: ["Smartphones", "Laptops", "Televisions"],
+    subcategoriesMap: ["Smartphones", "Laptops", "Televisions"],
   },
-  { name: "Clothing", subcategories: ["Jeans", "Sneakers", "Jackets"] },
-  { name: "Music", subcategories: ["Guitars", "Keyboards", "Drums"] },
+  { name: "Clothing", subcategoriesMap: ["Jeans", "Sneakers", "Jackets"] },
+  { name: "Music", subcategoriesMap: ["Guitars", "Keyboards", "Drums"] },
 ];
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
-  const searchQuery = useSelector(
-    (state: RootState) => state.products.searchQuery,
-  );
+
+  const { searchQuery, category, subcategory, minPrice, maxPrice } =
+    useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
 
   const handleSearch = () => {
-    if (searchQuery.trim() === "") {
-      console.log("Search query is empty");
-      return;
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+    };
+
+    if (category) {
+      params.category = category;
     }
-    setSearchParams({ search: searchQuery, page: "1", limit: "10" });
+    if (subcategory) {
+      params.subcategory = subcategory;
+    }
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+    if (minPrice) {
+      params.minPrice = minPrice.toString();
+    }
+    if (maxPrice) {
+      params.maxPrice = maxPrice.toString();
+    }
+
+    setSearchParams(params);
     dispatch(loadProducts({ page: 1, limit: 10 }));
+  };
+
+  const handleCategoryClick = (category: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(""));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
+  };
+
+  const handleSubcategoryClick = (category: string, subcategory: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(subcategory));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+      subcategory,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
   };
 
   const handleClearResults = () => {
     dispatch(setSearchQuery(""));
+    dispatch(setCategory(""));
+    dispatch(setSubcategory(""));
     setSearchParams({});
     console.log("Search query cleared");
   };
@@ -72,6 +129,10 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               src={logo}
               alt="Logo"
               className="h-10 w-auto sm:h-14 md:h-18 lg:h-22"
+              onClick={() => {
+                dispatch(setCategory(""));
+                dispatch(setSubcategory(""));
+              }}
             />
           </Link>
         </div>
@@ -92,40 +153,37 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             >
               <MenuItems className="ring-opacity-5 absolute left-0 z-50 mt-2 max-h-[80vh] w-full origin-top-left overflow-y-auto rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none md:w-[600px]">
                 <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
-                  {categories.map((category) => (
+                  {categoriesMap.map((category) => (
                     <div key={category.name} className="space-y-2">
                       <MenuItem>
                         {({ focus }) => (
-                          <Link
-                            to={`/category/${category.name
-                              .toLowerCase()
-                              .replace(/ & /g, "-")
-                              .replace(/\s+/g, "-")}`}
+                          <button
+                            onClick={() => handleCategoryClick(category.name)}
                             className={`${
                               focus ? "bg-customcolortwo" : ""
                             } block rounded-md px-4 py-2 text-sm font-semibold`}
                           >
                             {category.name}
-                          </Link>
+                          </button>
                         )}
                       </MenuItem>
                       <div className="space-y-1">
-                        {category.subcategories.map((subcategory) => (
+                        {category.subcategoriesMap.map((subcategory) => (
                           <MenuItem key={subcategory}>
                             {({ focus }) => (
-                              <Link
-                                to={`/category/${category.name
-                                  .toLowerCase()
-                                  .replace(/ & /g, "-")
-                                  .replace(/\s+/g, "-")}/${subcategory
-                                  .toLowerCase()
-                                  .replace(/\s+/g, "-")}`}
+                              <button
+                                onClick={() =>
+                                  handleSubcategoryClick(
+                                    category.name,
+                                    subcategory,
+                                  )
+                                }
                                 className={`${
                                   focus ? "bg-customcolortwo" : ""
                                 } block rounded-md px-6 py-2 text-sm`}
                               >
                                 {subcategory}
-                              </Link>
+                              </button>
                             )}
                           </MenuItem>
                         ))}

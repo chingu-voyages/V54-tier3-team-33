@@ -10,6 +10,10 @@ const initialState: ProductState = {
   loading: false,
   error: null,
   searchQuery: "",
+  category: "",
+  subcategory: "",
+  minPrice: 0,
+  maxPrice: 999999,
 };
 
 export const loadProducts = createAsyncThunk<
@@ -19,8 +23,22 @@ export const loadProducts = createAsyncThunk<
 >("products/loadProducts", async ({ page, limit }, { getState }) => {
   const state = getState();
   const search = state.products.searchQuery;
+  const category = state.products.category;
+  const subcategory = state.products.subcategory;
+  const minPrice = state.products.minPrice;
+  const maxPrice = state.products.maxPrice;
 
-  const data = await productService.fetchProducts(search, page, limit);
+  const data = await productService.fetchProducts(
+    search,
+    page,
+    limit,
+    category,
+    subcategory,
+    minPrice,
+    maxPrice,
+  );
+
+  console.log(category, subcategory);
   return data;
 });
 
@@ -31,7 +49,24 @@ const productSlice = createSlice({
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
     },
+    setCategory: (state, action) => {
+      state.category = action.payload;
+      console.log("Category set to:", action.payload);
+    },
+    setSubcategory: (state, action) => {
+      state.subcategory = action.payload;
+      console.log("Subcategory set to:", action.payload);
+    },
+    setMinPrice: (state, action) => {
+      state.minPrice = action.payload;
+      console.log("minprice set to:", action.payload);
+    },
+    setMaxPrice: (state, action) => {
+      state.maxPrice = action.payload;
+      console.log("maxprice set to:", action.payload);
+    },
   },
+
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
@@ -53,5 +88,11 @@ const productSlice = createSlice({
   },
 });
 
-export const { setSearchQuery } = productSlice.actions; //
+export const {
+  setSearchQuery,
+  setCategory,
+  setSubcategory,
+  setMinPrice,
+  setMaxPrice,
+} = productSlice.actions;
 export default productSlice.reducer;

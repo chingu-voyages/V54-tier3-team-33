@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { RootState } from "../../store/store";
 import Spinner from "../../utils/Spinner";
+import PriceInput from "../PriceInput.tsx";
 
 interface Product {
   id: number;
@@ -9,6 +10,11 @@ interface Product {
   image: string | string[];
   price: number;
   description: string;
+  category: string;
+  subcategory: string;
+  rating: number;
+  stock: number;
+  sold: number;
 }
 
 interface GridProps {
@@ -27,12 +33,18 @@ function Grid({
   currentPage,
   onPageChange,
 }: GridProps) {
-  const totalPages = useSelector(
-    (state: RootState) => state.products.totalPages,
+  const { totalPages, category, subcategory } = useSelector(
+    (state: RootState) => state.products,
   );
 
   return (
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
+      <div className="mr-auto flex items-center gap-4">
+        <p className="text-3xl font-semibold">{category}</p>
+        <p className="text-2xl font-semibold">{subcategory}</p>
+      </div>
+      <PriceInput />
+
       <section className="flex w-full flex-col items-center gap-6 px-6 md:max-w-[65rem]">
         {loading ? (
           <Spinner />

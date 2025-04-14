@@ -58,6 +58,7 @@ const ProfilePage: React.FC = () => {
 
 export default ProfilePage;
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function formatReadableDate(dateString: string): string {
   const date = new Date(dateString);
 

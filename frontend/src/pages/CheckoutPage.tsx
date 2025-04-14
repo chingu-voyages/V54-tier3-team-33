@@ -2,28 +2,34 @@ import { useSelector } from "react-redux";
 import ProductInCart from "../components/ProductList/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";
 import { RootState } from "../store/store";
-import {Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import {usePostOrder} from "../hooks/usePostOrder.ts";
-
+import { usePostOrder } from "../hooks/usePostOrder.ts";
+import { useEffect } from "react";
 
 //todo: show error or success toast && loading button
 export default function CheckoutPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const navigate = useNavigate()
-  const {
-      postOrder,
-      response,
-      loading: postOrderLoading,
-      error
-  } = usePostOrder();
+  const navigate = useNavigate();
+  const { postOrder, response, loading: postOrderLoading } = usePostOrder();
   const handleConfirmAndPay = async () => {
-      const orderPayload = cartItems.map(item =>({ id: item.id, price: item.price, quantity: 1}))
-      await postOrder(orderPayload);
-  }
-  if(response) {
-       return  navigate('/profile')
-  }
+    const orderPayload = cartItems.map((item) => ({
+      id: item.id.toString(),
+      price: item.price,
+      quantity: 1,
+    }));
+    await postOrder(orderPayload);
+  };
+  // creates an error in the App.tsx
+  // if (response) {
+  //   return navigate("/profile");
+  // }
+  
+  useEffect(() => {
+    if (response) {
+      navigate("/profile");
+    }
+  }, [response, navigate]);
 
   return (
     <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -45,28 +51,5 @@ export default function CheckoutPage() {
         />
       </div>
     </section>
-
-    // useEffect(() => {
-    //     const makeOrderCall = async () => {
-    //       try {
-    //         const response = await fetch('./routes/order.routes', {
-    //           method: "POST",
-    //           headers: {
-    //             "Content-Type": "application/json",
-    //           },
-    //           credentials: "include",
-    //         });
-
-    //         if (!response.ok) {
-    //           throw new Error("Failed");
-    //         }
-
-    //         // create slice for orders and use dispatch to update global state
-    //         const orders = await response.json();
-    //         setUser(data.data);
-    //       } catch (error) {
-    //         console.error("Error fetching user profile:", error);
-    //       }
-    //     };
   );
 }

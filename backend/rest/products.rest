@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/products?search=laptop
+GET http://localhost:3000/api/products
 ###
 GET http://localhost:3000/api/products/67e6b8cb208ec2c6fb7112d1
 ###

@@ -18,21 +18,6 @@ interface Order {
 export function OrderHistory() {
   const { data: orders, loading, error } = useFetch<Order[]>("/api/orders");
 
-
-
-console.log(orders);
-// result:
-// Array [ {…} ]
-// ​
-// 0: Object { _id: "67fa9f00dabf4fef813aab5b", customer: {…}, items: (2) […] }
-// ​
-// length: 1
-// ​
-// <prototype>: Array []
-// <anonymous code>:1:148389
-
-
-
   return loading ? (
     <Spinner />
   ) : error ? (
@@ -56,7 +41,10 @@ console.log(orders);
           </div>
           <ul className="mb-2 list-inside list-disc text-sm text-gray-700">
             {order.items.map((item: OrderItem, index: number) => (
-              <li key={`${order._id}-${item.id}-${index}`} className="flex justify-between">
+              <li
+                key={`${order._id}-${item.id}-${index}`}
+                className="flex justify-between"
+              >
                 <span>{item.product.name}</span>
                 <span>
                   ${(item.unitPriceAtOrder * item.quantity).toFixed(2)}
