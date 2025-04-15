@@ -2,6 +2,7 @@ import React from "react";
 import useFetch from "../hooks/useFetch.ts";
 import { OrderHistory } from "../components/Order/OrderHistory.tsx";
 import Spinner from "../utils/Spinner.tsx";
+import userNotFound from "../assets/user-not-found.svg"
 
 export interface User {
   id: string;
@@ -21,8 +22,9 @@ const ProfilePage: React.FC = () => {
   return userLoading ? (
     <Spinner />
   ) : userError ? (
-    <div className="flex h-[50vh] items-center justify-center">
-      <div className="text-2xl font-semibold">User not found</div>
+    <div className="flex h-[50vh] flex-col items-center justify-center">
+      <img src={userNotFound} alt="user not found" className="size-72 " />
+      <div className="text-2xl text-darktext font-semibold">User not found...</div>
     </div>
   ) : user ? (
     <div className="text-darktext mx-auto flex max-w-6xl flex-col items-start justify-center gap-6 px-4 lg:flex-row">
