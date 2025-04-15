@@ -52,34 +52,47 @@ const ProductDetailsPage = () => {
   }
 
   return (
-    <div className="container mx-auto p-6">
-      <div className="flex flex-col items-center gap-4 md:flex-row md:items-start">
-        <div className="flex flex-col gap-2">
-          {Array.isArray(product.image) &&
-            product.image.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`${product.name} ${index + 1}`}
-                className="h-16 w-16 cursor-pointer rounded-md border border-gray-300 object-cover"
-                onClick={() => handleImageClick(img)}
-              />
-            ))}
-        </div>
-        <div className="max-w-sm flex-1">
-          {mainImage && <ZoomImage src={mainImage} alt={product.name} />}
-        </div>
-        <div className="flex w-full flex-col gap-4 md:w-1/4">
+    <section className="container mx-auto p-6">
+      <div className="flex flex-col gap-4 md:flex-row">
+        {/* Left Section */}
+        <article className="flex w-full flex-col gap-4 md:w-1/2">
+          <div className="flex flex-col gap-4 sm:flex-row">
+            {/* Smaller Images */}
+            <div className="order-1 flex flex-row sm:flex-col gap-2">
+              {Array.isArray(product.image) &&
+                product.image.map((img, index) => (
+                  <div key={index} className="flex">
+                    <img
+                      src={img}
+                      alt={`${product.name} ${index + 1}`}
+                      className="size-18 cursor-pointer rounded-md border border-gray-300 object-cover"
+                      onClick={() => handleImageClick(img)}
+                    />
+                  </div>
+                ))}
+            </div>
+
+            {/* Main Image */}
+            <div className="flex-1 sm:order-2">
+              {mainImage && <ZoomImage src={mainImage} alt={product.name} />}
+            </div>
+          </div>
+        </article>
+
+        {/* Right Section */}
+        <article className="text-darktext flex w-full flex-col gap-4 md:w-1/2">
           <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-2xl text-gray-700">${product.price}</p>
-          <p className="text-gray-700">{product.description}</p>
-          <Button variant="secondary" onClick={handleAddToCart}>
-            Add to cart
+          <hr className="text-darktext/20" />
+          <p className="text-2xl">Price: ${product.price}</p>
+          <hr className="text-darktext/20" />
+          <p>{product.description}</p>
+          <Button onClick={handleAddToCart}>Add to cart</Button>
+          <Button variant="secondary" onClick={() => navigate("/")}>
+            Go back
           </Button>
-          <Button onClick={() => navigate("/")}>Go back</Button>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 
