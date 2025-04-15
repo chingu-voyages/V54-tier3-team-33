@@ -50,15 +50,15 @@ const ProductDetailsPage = () => {
   if (!product) {
     return <Spinner />;
   }
-
+  //
   return (
-    <section className="container mx-auto p-6">
-      <div className="flex flex-col gap-4 md:flex-row">
+    <section className="px-4">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row">
         {/* Left Section */}
         <article className="flex w-full flex-col gap-4 md:w-1/2">
           <div className="flex flex-col gap-4 sm:flex-row">
             {/* Smaller Images */}
-            <div className="order-1 flex flex-row sm:flex-col gap-2">
+            <div className="order-1 mr-auto flex flex-row gap-2 sm:flex-col">
               {Array.isArray(product.image) &&
                 product.image.map((img, index) => (
                   <div key={index} className="flex">
@@ -86,8 +86,14 @@ const ProductDetailsPage = () => {
           <p className="text-2xl">Price: ${product.price}</p>
           <hr className="text-darktext/20" />
           <p>{product.description}</p>
-          <Button onClick={handleAddToCart}>Add to cart</Button>
-          <Button variant="secondary" onClick={() => navigate("/")}>
+          <Button className="w-full sm:w-56" onClick={handleAddToCart}>
+            Add to cart
+          </Button>
+          <Button
+            className="w-full sm:w-56"
+            variant="secondary"
+            onClick={() => navigate("/")}
+          >
             Go back
           </Button>
         </article>

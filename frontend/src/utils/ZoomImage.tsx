@@ -57,7 +57,7 @@ function ZoomImage({ src, alt }: ZoomImageProps) {
   return (
     <div
       ref={zoomRef}
-      className="relative mx-auto mb-8 flex w-full cursor-move flex-col items-center overflow-hidden"
+      className="relative mx-auto  flex w-full cursor-move flex-col items-center overflow-hidden"
       onClick={handleTap}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setZoom(true)}
@@ -66,7 +66,7 @@ function ZoomImage({ src, alt }: ZoomImageProps) {
       <img
         src={src}
         alt={alt}
-        className="rounded-custom border-darktext/40 size-96 border object-contain p-5 transition-transform duration-300"
+        className="h-96 w-full rounded-custom border-darktext/40 size-96 border object-contain p-5 duration-300"
       />
       {zoom && (
         <div
