@@ -28,7 +28,7 @@ const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white">
+    <nav>
       <div className="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
         <div className="flex justify-end p-4 md:hidden">
           <button
@@ -48,7 +48,7 @@ const Nav = () => {
             isMobileMenuOpen ? "block" : "hidden"
           } relative justify-center py-1 md:flex`}
         >
-          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
+          <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
             <Link
               to="/"
               className="text-gray-700 transition-colors duration-200 hover:text-blue-600"

@@ -14,10 +14,13 @@
   /* --color-secondary: #ffcb47;
   --color-secondaryHover: #f5af00; */
 
-  --color-darktext: #333333; /* dark black, used for general font color. change to # to see the difference across the app */
+  --color-darktext: #474747;
+  /* test */
+  /* --color-darktext: #ff0000;  */
+
 
   --color-customcolorone: #a6a09b; /* border color stone-400 */
-  --color-customcolortwo: #f5f5f4; /* background color stone-100*/
+  --color-customcolortwo: #FAFAFA; /* background color stone-100*/
   --color-customcolorthree: ;
 
   /*Fontsize*/

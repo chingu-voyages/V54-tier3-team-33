@@ -58,9 +58,8 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="mb-4 pr-10 pl-10">
-        <AdvertisingCarousel />
-      </div>
+      <AdvertisingCarousel />
+
       <Grid
         products={products}
         currentPage={page}

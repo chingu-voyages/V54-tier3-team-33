@@ -22,36 +22,34 @@ const ProfilePage: React.FC = () => {
     <Spinner />
   ) : userError ? (
     <div className="flex h-[50vh] items-center justify-center">
-      <div className="text-2xl font-semibold text-red-500">User not found</div>
+      <div className="text-2xl font-semibold">User not found</div>
     </div>
   ) : user ? (
-    <div className="flex items-start justify-center gap-6 px-22 py-12">
-      <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+    <div className="text-darktext mx-auto flex max-w-6xl flex-col items-start justify-center gap-6 px-4 lg:flex-row">
+      <article className="bg-customcolortwo w-full rounded-2xl border border-gray-200 p-8 shadow-sm sm:w-sm lg:w-1/3 lg:min-w-96">
         <div className="flex flex-col items-center">
-          <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-2xl font-bold text-gray-500">
+          <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-2xl font-bold">
             {user.firstname[0]}
             {user.lastname[0]}
           </div>
-          <h1 className="mb-1 text-2xl font-bold text-gray-800">
+          <h1 className="mb-1 text-2xl font-bold">
             {user.firstname} {user.lastname}
           </h1>
-          <p className="text-sm text-gray-500">{user.email}</p>
+          <p className="text-sm">{user.email}</p>
 
           <div className="mt-6 w-full space-y-4">
-            <div className="flex items-center justify-between text-sm text-gray-600">
-              <span className="font-medium">Account Created:</span>
+            <div className="text-darktext/70 flex items-center justify-between text-sm">
+              <span className="">Account Created:</span>
               <span>{formatReadableDate(user.createdAt)}</span>
             </div>
           </div>
         </div>
-      </div>
+      </article>
       <OrderHistory />
     </div>
   ) : (
     <div className="flex h-[50vh] items-center justify-center">
-      <div className="text-2xl font-semibold text-gray-500">
-        No user data available.
-      </div>
+      <div className="text-2xl font-semibold">No user data available.</div>
     </div>
   );
 };

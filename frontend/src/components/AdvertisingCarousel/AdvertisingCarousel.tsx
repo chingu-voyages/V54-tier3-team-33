@@ -41,7 +41,7 @@ const AdvertisingCarousel: React.FC = () => {
   return (
     <div
       aria-live="polite"
-      className="relative h-64 w-full overflow-hidden rounded-lg py-4 md:h-96 md:py-8"
+      className="relative h-94 w-full overflow-hidden rounded-lg border-2 border-amber-800 mx-4 py-4 md:py-8"
     >
       {slides.map((slide, index) => (
         <Transition
@@ -57,7 +57,7 @@ const AdvertisingCarousel: React.FC = () => {
         >
           <section className="absolute inset-0 flex flex-col items-center justify-between bg-[#36486b] px-4 md:flex-row md:px-8">
             <article className="z-10 mb-4 flex w-full flex-col justify-center text-center text-white md:mb-0 md:w-1/2 md:text-left">
-              <h2 className="text-2xl font-bold md:ml-10 md:text-4xl">
+              <h2 className="mt-10 text-2xl font-bold md:mt-0 md:ml-10 md:text-4xl">
                 {slide.title}
               </h2>
               <p className="mt-2 text-lg md:mt-4 md:ml-10 md:text-xl">
@@ -69,7 +69,7 @@ const AdvertisingCarousel: React.FC = () => {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="h-48 w-full rounded-lg border-2 border-white object-cover shadow-lg md:h-64 md:w-3/4"
+                className="mb-10 h-48 w-full rounded-lg border-2 border-white object-cover shadow-lg md:mb-0 md:h-64 md:w-3/4"
                 loading="lazy"
                 onError={(e) => {
                   console.error("Image failed to load:", slide.image);
@@ -77,8 +77,6 @@ const AdvertisingCarousel: React.FC = () => {
                     "https://via.placeholder.com/800x400?text=Image+Not+Found";
                 }}
               />
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#36486b]/50 to-[#36486b]/0"></div>{" "}
-              {/* Gradient overlay */}
             </article>
             <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
               {slides.map((_, index) => (
