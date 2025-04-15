@@ -4,29 +4,39 @@ import Button from "../utils/Button";
 import { useNavigate } from "react-router-dom";
 import ProductInCart from "../components/ProductList/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";
+import useFetch from "../hooks/useFetch";
+import { User } from "./ProfilePage";
 
 export default function ShoppingCartPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const navigate = useNavigate();
+  const { data: user } = useFetch<User>("/api/auth/me");
 
   return (
-    <div className="flex flex-grow text-darktext flex-col items-center">
+    <div className="text-darktext flex flex-grow flex-col items-center">
       <p className="mr-auto px-3 text-3xl font-bold">Shopping cart</p>
       {cartItems.length === 0 ? (
         <div className="flex w-full flex-col items-center gap-4 py-20">
           <h5 className="text-2xl">You don't have any items in your cart.</h5>
-          <p>Have an account? Sign in to see your items.</p>
+          {!user && <p>Have an account? Sign in to see your items.</p>}
+
           <span className="flex gap-5">
             <Button variant="secondary" onClick={() => navigate("/")}>
               Start shopping
             </Button>
-            <Button onClick={() => navigate("/signinpage")}>Sign in</Button>
+            {!user && (
+              <Button onClick={() => navigate("/signinpage")}>Sign in</Button>
+            )}
           </span>
         </div>
       ) : (
         <div className="mt-10 flex gap-3">
           <ProductInCart cartItems={cartItems} />
-          <SummaryCard total={"Subtotal"} buttonText={"Go to checkout"} handleAction={ () => navigate('/checkout')} />
+          <SummaryCard
+            total={"Subtotal"}
+            buttonText={"Go to checkout"}
+            handleAction={() => navigate("/checkout")}
+          />
         </div>
       )}
     </div>

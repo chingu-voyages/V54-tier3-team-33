@@ -27,7 +27,7 @@ function Card({ item }: { item: Item }) {
         <img
           src={item.image[0]}
           alt="missing"
-          className="w-full rounded-md object-contain"
+          className="w-full h-46 rounded-md object-contain"
         />
       </Link>
       <button

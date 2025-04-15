@@ -72,7 +72,7 @@ export function OrderHistory() {
       ))}
     </div>
   ) : (
-    <div className="w-full flex-1 gap-5 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+    <div className="bg-customcolortwo w-full flex-1 gap-5 rounded-2xl border border-gray-200 p-8 shadow-sm">
       <h2 className="mb-4 text-xl font-bold">Order History</h2>
       <p className="text-darktext/70 text-center">You have no orders.</p>
     </div>
