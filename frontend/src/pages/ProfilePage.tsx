@@ -2,7 +2,9 @@ import React from "react";
 import useFetch from "../hooks/useFetch.ts";
 import { OrderHistory } from "../components/Order/OrderHistory.tsx";
 import Spinner from "../utils/Spinner.tsx";
-import userNotFound from "../assets/user-not-found.svg"
+import userNotFound from "../assets/user-not-found.svg";
+import { clearUser } from "../store/slices/userSlice.ts";
+import { useDispatch } from "react-redux";
 
 export interface User {
   id: string;
@@ -19,12 +21,16 @@ const ProfilePage: React.FC = () => {
     error: userError,
   } = useFetch<User>("/api/auth/me");
 
+  const dispatch = useDispatch();
+
   return userLoading ? (
     <Spinner />
   ) : userError ? (
     <div className="flex h-[50vh] flex-col items-center justify-center">
-      <img src={userNotFound} alt="user not found" className="size-72 " />
-      <div className="text-2xl text-darktext font-semibold">User not found...</div>
+      <img src={userNotFound} alt="user not found" className="size-72" />
+      <div className="text-darktext text-2xl font-semibold">
+        User not found...
+      </div>
     </div>
   ) : user ? (
     <div className="text-darktext mx-auto flex max-w-6xl flex-col items-start justify-center gap-6 px-4 lg:flex-row">
@@ -44,6 +50,15 @@ const ProfilePage: React.FC = () => {
               <span className="">Account Created:</span>
               <span>{formatReadableDate(user.createdAt)}</span>
             </div>
+            <button
+              className="border-darktext/30 cursor-pointer rounded-full border bg-white px-4 py-1 text-sm font-semibold text-red-500 shadow-sm transition-all hover:border-red-500 hover:bg-red-500 hover:text-white"
+              onClick={() => {
+                dispatch(clearUser());
+                console.log("User logged out");
+              }}
+            >
+              Sign out
+            </button>
           </div>
         </div>
       </article>

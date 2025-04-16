@@ -51,7 +51,7 @@ function Grid({
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : products.length > 0 ? (
-          <div className="grid w-full gap-3 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+          <div className="grid w-full gap-3 sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
             {products.map((item) => (
               <Card key={item.id} item={item} />
             ))}

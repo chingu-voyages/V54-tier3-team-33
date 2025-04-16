@@ -76,6 +76,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
 
     setSearchParams(params);
     dispatch(loadProducts({ page: 1, limit: 10 }));
+    dispatch(setSearchQuery(""));
   };
 
   const handleCategoryClick = (category: string) => {
@@ -235,6 +236,11 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               className="sm:placeholder:text-customcolorone min-w-0 flex-1 px-4 py-2 text-sm outline-none placeholder:text-transparent sm:text-base"
               value={searchQuery}
               onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch(); 
+                }
+              }}
             />
             {searchQuery && (
               <button
