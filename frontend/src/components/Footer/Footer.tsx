@@ -10,6 +10,49 @@ const routesMap = [
   { name: "Create an account", path: "/createacc" },
 ];
 
+const teamMembers = [
+  {
+    name: "Damilola Oshinowo",
+    role: "Scrum master",
+    linkedin: "https://www.linkedin.com/in/damilola-oshinowo",
+  },
+  {
+    name: "Andrés R. Bucheli",
+    role: "Developer",
+    linkedin: "https://www.linkedin.com/in/andresregaladobucheli/",
+  },
+  {
+    name: "Chinedu Olekah",
+    role: "Main product owner",
+    linkedin: "https://www.linkedin.com/in/chinedu-olekah",
+  },
+  {
+    name: "R. Ed Masawi",
+    role: "Developer",
+    linkedin: "https://www.linkedin.com/in/ed-masawi-97345a29/",
+  },
+  {
+    name: "Ismail Marghich",
+    role: "Developer",
+    linkedin: "https://www.linkedin.com/in/ismail-marghich-9174111aa/",
+  },
+  {
+    name: "Tonia Gbuji",
+    role: "Shadow product owner",
+    linkedin: "https://www.linkedin.com/in/toniagbuji/",
+  },
+  {
+    name: "Predrag Jandric",
+    role: "Developer",
+    linkedin: "https://www.linkedin.com/in/predrag-jandric/",
+  },
+  {
+    name: "Riry Nomenjanahary",
+    role: "Developer",
+    linkedin: "https://www.linkedin.com/in/riry-nomenjanahary/",
+  },
+];
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-customcolortwo text-darktext mt-10 py-10">
@@ -20,7 +63,7 @@ const Footer: React.FC = () => {
             {routesMap.map((route) => (
               <div className="flex">
                 <Link
-                  className="w-fit cursor-pointer no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
+                  className="text-darktext/85 w-fit cursor-pointer no-underline transition-all hover:text-black hover:underline hover:underline-offset-2"
                   to={route.path}
                   key={route.name}
                 >
@@ -35,78 +78,18 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="mb-6 text-lg font-semibold">Team</h3>
           <ul className="space-y-2">
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/damilola-oshinowo"
-              >
-                Damilola Oshinowo - Scrum master
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/andresregaladobucheli/"
-              >
-                Andrés R. Bucheli - Developer
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/chinedu-olekah"
-              >
-                Chinedu Olekah - Main product owner
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/ed-masawi-97345a29/"
-              >
-                R. Ed Masawi - Developer
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/ismail-marghich-9174111aa/"
-              >
-                Ismail Marghich - Developer
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/toniagbuji/"
-              >
-                Tonia Gbuji - Shadow product owner
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/predrag-jandric/"
-              >
-                Predrag Jandric - Developer
-              </a>
-            </li>
-            <li>
-              <a
-                className="w-fit no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
-                target="_blank"
-                href="https://www.linkedin.com/in/riry-nomenjanahary/"
-              >
-                Riry Nomenjanahary - Developer
-              </a>
-            </li>
+            {teamMembers.map((member) => (
+              <li key={member.name}>
+                <a
+                  className="text-darktext/85 w-fit no-underline transition-all hover:text-black hover:underline hover:underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={member.linkedin}
+                >
+                  {member.name} - {member.role}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         {/* contact info */}
@@ -126,7 +109,7 @@ const Footer: React.FC = () => {
               and April 2025.
             </p>
             <a
-              className="w-fit cursor-pointer no-underline transition-all hover:pl-1 hover:underline hover:underline-offset-2"
+              className="text-darktext/85 w-fit cursor-pointer no-underline transition-all hover:text-black hover:underline hover:underline-offset-2"
               target="_blank"
               href="https://github.com/chingu-voyages/v54-tier3-team-33"
             >

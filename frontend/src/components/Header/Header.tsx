@@ -153,6 +153,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
           <ShoppingCartIcon className="h-6 w-6" />
         </Link>
       </div>
+      <hr className="text-darktext/25" />
       <header className="flex flex-wrap items-center justify-between gap-4 p-4 shadow-sm md:flex-nowrap">
         <div className="flex-shrink-0 overflow-visible">
           <Link to="/">
