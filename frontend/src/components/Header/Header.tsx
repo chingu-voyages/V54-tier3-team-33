@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
   setSearchQuery,
@@ -27,6 +27,7 @@ import Button from "../../utils/Button";
 import { useDispatch, useSelector } from "react-redux";
 import useFetch from "../../hooks/useFetch";
 import { User } from "../../pages/ProfilePage";
+import { clearUser, setUser } from "../../store/slices/userSlice";
 
 interface HeaderProps {
   showAdvertising?: boolean;
@@ -44,8 +45,7 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
-
-  const { data: user } = useFetch<User>("/api/auth/me");
+  const user = useSelector((state: RootState) => state.user.user);
 
   const { searchQuery, category, subcategory, minPrice, maxPrice } =
     useSelector((state: RootState) => state.products);

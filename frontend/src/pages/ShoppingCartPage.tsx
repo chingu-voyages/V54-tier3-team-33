@@ -4,13 +4,11 @@ import Button from "../utils/Button";
 import { useNavigate } from "react-router-dom";
 import ProductInCart from "../components/ProductList/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";
-import useFetch from "../hooks/useFetch";
-import { User } from "./ProfilePage";
 
 export default function ShoppingCartPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const navigate = useNavigate();
-  const { data: user } = useFetch<User>("/api/auth/me");
+  const user = useSelector((state: RootState) => state.user.user);
 
   return (
     <div className="text-darktext flex flex-grow flex-col items-center">
