@@ -12,7 +12,7 @@ const CreateAccPage: React.FC = () => {
         </Link>
         <span className="flex gap-1">
           <p className="sm:block text-lg hidden">Already have an account? </p>
-          <Link to="/signinpage" className="font-semibold underline">
+          <Link to="/signinpage" className="text-primary font-semibold underline">
             {" "}
             Sign in
           </Link>

@@ -55,7 +55,7 @@ const SigninForm: React.FC = () => {
         </h2>
         <p className="mb-6 text-center">
           New to eBay?{" "}
-          <Link to="/createacc" className="underline">
+          <Link to="/createacc" className="text-primary underline">
             Create account
           </Link>{" "}
         </p>

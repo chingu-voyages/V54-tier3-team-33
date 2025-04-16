@@ -13,6 +13,7 @@ import {
 } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "../utils/ScrollToTop";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -70,6 +71,8 @@ const HomePage: React.FC = () => {
         loading={loading}
         error={error}
       />
+
+      <ScrollToTop/>
       <Toaster />
     </>
   );
