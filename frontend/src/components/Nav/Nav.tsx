@@ -48,7 +48,7 @@ const Nav = () => {
             isMobileMenuOpen ? "block" : "hidden"
           } relative justify-center py-1 md:flex`}
         >
-          <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
+          {/* <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
             <Link
               to="/"
               className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
@@ -73,7 +73,7 @@ const Nav = () => {
                 </button>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {hoveredCategory && (
             <div

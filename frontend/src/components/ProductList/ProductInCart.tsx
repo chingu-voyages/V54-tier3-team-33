@@ -1,6 +1,9 @@
 import { CartItem } from "../../store/slices/productTypes";
 import { useDispatch } from "react-redux";
-import { removeItemFromCart } from "../../store/slices/cartSlice";
+import {
+  removeItemFromCart,
+  updateItemQuantity,
+} from "../../store/slices/cartSlice";
 import React from "react";
 
 interface ProductInCartProps {
@@ -13,13 +16,18 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
   const handleRemoveItem = (id: number) => {
     dispatch(removeItemFromCart(id));
   };
+
+  const handleQuantityChange = (id: number, quantity: number) => {
+    dispatch(updateItemQuantity({ id, quantity }));
+  };
+
   return (
     <div className="rounded-custom order-1 w-full">
       <ul className="flex flex-col gap-4">
         {cartItems.map(({ product, quantity }) => (
           <li
             key={product.id}
-            className="flex flex-col justify-between rounded-lg border border-gray-300 px-4 py-2"
+            className="flex flex-col justify-between rounded-lg border border-gray-300 p-4"
           >
             <div className="flex w-full items-start gap-4">
               <img
@@ -36,19 +44,16 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
                 <p className="">Price: ${product.price}</p>
               </div>
 
-              {/* quantity dropdown */}
+              {/* Quantity Dropdown */}
               <div className="my-auto ml-auto flex items-center">
                 <p className="mr-2">Quantity</p>
                 <select
                   id={`quantity-${product.id}`}
                   className="focus:ring-customcolorone rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:ring-2 focus:outline-none"
-                  defaultValue={quantity}
-                  onChange={(e) => {
-                    // for now, nothing happens
-                    console.log(
-                      `Selected quantity for ${product.name}: ${e.target.value}`,
-                    );
-                  }}
+                  value={quantity} // Bind to Redux state
+                  onChange={(e) =>
+                    handleQuantityChange(product.id, parseInt(e.target.value))
+                  }
                 >
                   {Array.from({ length: product.stock }, (_, i) => i + 1).map(
                     (num) => (
@@ -63,7 +68,7 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
 
             <button
               onClick={() => handleRemoveItem(product.id)}
-              className="ml-auto cursor-pointer font-semibold"
+              className="hover:text-darktext/70 ml-auto cursor-pointer font-semibold underline transition-all"
             >
               Remove
             </button>

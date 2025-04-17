@@ -41,18 +41,18 @@ export function OrderHistory() {
           </div>
           <ul className="mb-2 flex list-inside list-disc flex-col gap-1 text-sm">
             {order.items.map((item: OrderItem, index: number) => (
-              <>
-                <li
-                  key={`${order._id}-${item.id}-${index}`}
-                  className="flex items-center justify-between"
-                >
-                  <span>{item.product.name}</span>
+              <div key={`${order._id}-${item.id}-${index}`}>
+                <li className="flex items-center justify-between">
+                  <span>
+                    {item.product.name}{" "}
+                    <span className="text-gray-500">(Quantity: {item.quantity})</span>
+                  </span>
                   <span>
                     ${(item.unitPriceAtOrder * item.quantity).toFixed(2)}
                   </span>
                 </li>
                 <hr className="w-full border border-gray-200" />
-              </>
+              </div>
             ))}
           </ul>
           <div className="flex justify-between text-sm font-semibold">
