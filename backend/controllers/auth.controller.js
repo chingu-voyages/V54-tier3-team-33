@@ -1,12 +1,6 @@
 const  User  =  require('../models/user.model');
-const   Otp   = require('../models/opt.model');
 const  CustomError= require("../utils/error");
 const jwt = require("jsonwebtoken");
-
-const { generateOtp,  verifyTotp} = require("../services/otp/opt.service");
-const {sendVerificationCode} = require("../services/nodemailer/mailing.service");
-const {verify} = require("jsonwebtoken");
-
 
 module.exports = {
     login: async (req, res, next) => {
@@ -73,22 +67,7 @@ module.exports = {
                 next(mongodbError)
             }
 
-            // const otp = await generateOtp()
-
-            // const newOtp = new Otp({
-            //     passcode: otp,
-            //     author:userDoc._id
-            // })
-
-            // const otpDoc = await newOtp.save()
-            // if(!otpDoc){
-            //     const mongodbError = new CustomError('Unexpected error occured from mongodb', 500)
-            //     next(mongodbError)
-            // }
-            // const userInfo = userDoc._doc;
-            // const code =  otpDoc.passcode;
-
-            // await sendVerificationCode(code,userInfo)
+    
             const token = jwt.sign(
                 {
                     userId: userDoc._id,
@@ -132,30 +111,6 @@ module.exports = {
             res.status(500).json({
                 status:'error',
                 message: err.message,
-            })
-        }
-    },
-    verifyOtp: async (res, req, next) => {
-        try{
-            const otp = await Otp.findOne({ author:req.userId })
-            if(!otp){
-                const error = new CustomError(`Otp with id : ${ req.userId }not found or expired`,404);
-                next(error)
-            }
-            const isValid = verifyTotp(otp)
-            if(!isValid){
-                const error = new CustomError(`Not valid Otp `,401);
-                next(error)
-            }
-            const user = await  User.findOneAndUpdate({_id:req.userId},{account_verify:true},{ new: true})
-            return res.status(201).json({
-                status:'succes',
-                message:'Account verified successfully'
-            })
-        }catch(err){
-            res.status(500).json({
-                status:'error',
-                message: err.message
             })
         }
     }
