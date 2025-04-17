@@ -102,7 +102,7 @@ module.exports = {
         const error = new CustomError('User not found', 404)
         next(error)
       }
-      const { password, ...userData } = foundUser.toJSON()
+      const { ...userData } = foundUser.toJSON()
       res.status(200).json({
         data: userData
       })

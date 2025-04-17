@@ -1,5 +1,4 @@
 const Order = require('../models/order.model')
-const CustomError = require('../utils/error')
 
 module.exports = {
   getOrders: async (req, res, next) => {
