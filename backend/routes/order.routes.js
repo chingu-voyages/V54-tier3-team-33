@@ -1,9 +1,9 @@
-const router = require('express').Router();
-const orderController = require('../controllers/orders.controller');
-const { authMiddleware } = require('../middlewares/auth.middleware');
+const router = require('express').Router()
+const orderController = require('../controllers/orders.controller')
+const { authMiddleware } = require('../middlewares/auth.middleware')
 
 
-router.get('/', authMiddleware, orderController.getOrders);  
-router.post('/', authMiddleware, orderController.createOrder);
+router.get('/', authMiddleware, orderController.getOrders)
+router.post('/', authMiddleware, orderController.createOrder)
 
-module.exports = router;
+module.exports = router
