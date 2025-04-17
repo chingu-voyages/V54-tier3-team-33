@@ -28,7 +28,7 @@ export default function ShoppingCartPage() {
           </span>
         </div>
       ) : (
-        <div className="mt-10 flex gap-3">
+        <div className="mx-4 mt-10 flex flex-col gap-3 lg:flex-row">
           <ProductInCart cartItems={cartItems} />
           <SummaryCard
             total={"Subtotal"}

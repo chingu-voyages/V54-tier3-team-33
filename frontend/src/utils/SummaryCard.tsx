@@ -10,7 +10,7 @@ interface SummaryCardProps {
   buttonText: string;
   showModal?: boolean;
   handleAction: () => void;
-  isLoading?: boolean
+  isLoading?: boolean;
 }
 
 export default function SummaryCard({
@@ -18,20 +18,23 @@ export default function SummaryCard({
   buttonText,
   showModal,
   handleAction,
-    isLoading = false
+  isLoading = false,
 }: SummaryCardProps) {
   const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const totalPrice = cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.product.price * item.quantity,
+    0,
+  );
 
   return (
-    <div className="rounded-custom flex h-fit w-96 flex-col gap-2 bg-stone-100 p-4">
+    <div className="rounded-custom lg:order-5 flex h-fit w-full sm:w-96 flex-col gap-2 bg-stone-100 p-4">
       <span className="flex items-center justify-between">
         <p>Item ({cartItems.length})</p>
         <p>US ${totalPrice}</p>
       </span>
-        <span className="flex items-center justify-between">
+      <span className="flex items-center justify-between">
         <p>Shipping</p>
         <p>US $ 0</p>
       </span>
