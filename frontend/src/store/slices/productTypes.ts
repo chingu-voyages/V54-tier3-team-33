@@ -11,6 +11,11 @@ export type Product = {
   sold: number;
 };
 
+export type CartItem  = {
+  product: Product,
+  quantity: number
+}
+
 export interface ProductState {
   products: Product[];
   searchResults: Product[];
