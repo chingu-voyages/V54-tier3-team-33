@@ -2,13 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const globalErrorHandler = require("./controllers/err.controller");
-const Product = require("./models/product.models");
+
 const path = require("path");
 
 const app = express();
 const cors = require("cors");
 const { connectToDatabase } = require("./config/db");
-const getProductsData = require("./utils/seed");
+
 const port = process.env.PORT || 3000;
 
 //midlleware
