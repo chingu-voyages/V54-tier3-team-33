@@ -1,10 +1,10 @@
-import { Product } from "../../store/slices/productTypes";
+import {CartItem , Product} from "../../store/slices/productTypes";
 import { useDispatch } from "react-redux";
 import { removeItemFromCart } from "../../store/slices/cartSlice";
 import React from "react";
 
 interface ProductInCartProps {
-  cartItems: Product[];
+  cartItems: CartItem[];
 }
 
 const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
@@ -16,21 +16,21 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
   return (
     <div className="rounded-custom w-full max-w-4xl bg-stone-100 p-4">
       <ul>
-        {cartItems.map((item) => (
-          <li key={item.id} className="mb-4 flex items-center justify-between">
+        {cartItems.map(({product}) => (
+          <li key={product.id} className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
               <img
-                src={Array.isArray(item.image) ? item.image[0] : item.image}
-                alt={item.name}
+                src={Array.isArray(product.image) ? product.image[0] : product.image}
+                alt={product.name}
                 className="mr-4 size-30 rounded-md object-cover"
               />
               <div>
-                <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-gray-700">${item.price}</p>
+                <h3 className="text-lg font-semibold">{product.name}</h3>
+                <p className="text-gray-700">${product.price}</p>
               </div>
             </div>
             <button
-              onClick={() => handleRemoveItem(item.id)}
+              onClick={() => handleRemoveItem(product.id)}
               className="ml-4 cursor-pointer"
             >
               Remove item
