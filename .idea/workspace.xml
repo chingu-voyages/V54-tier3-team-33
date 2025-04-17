@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="refactor profile page">
-      <change afterPath="$PROJECT_DIR$/backend/utils/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="add sorting by price and popularity on product">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/product.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/rest/products.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/products.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductInCart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductInCart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CheckoutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CheckoutPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/slices/cartSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/slices/cartSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/slices/productTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/slices/productTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/SummaryCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/SummaryCard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "riry/product__sorting",
     "javascript.nodejs.core.library.configured.version": "18.18.1",
     "javascript.nodejs.core.library.typings.version": "18.18.1",
     "last_opened_file_path": "/mnt/mydata/Archive/WebstormProjects/zara-blog/zara-blog-api",
@@ -95,7 +96,7 @@
       <workItem from="1742326357161" duration="3657000" />
       <workItem from="1742564021284" duration="6229000" />
       <workItem from="1743148767606" duration="1170000" />
-      <workItem from="1744891150781" duration="1303000" />
+      <workItem from="1744891150781" duration="4046000" />
     </task>
     <task id="LOCAL-00001" summary="docs(readme): Add add social links">
       <option name="closed" value="true" />
@@ -161,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742569895856</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add sorting by price and popularity on product">
+      <option name="closed" value="true" />
+      <created>1744892803240</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744892803241</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +185,7 @@
     <MESSAGE value="feat(auth): store token in response cookies" />
     <MESSAGE value="fix(auth): fix email sending error" />
     <MESSAGE value="chore(env): add ide env file" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(env): add ide env file" />
+    <MESSAGE value="add sorting by price and popularity on product" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sorting by price and popularity on product" />
   </component>
 </project>

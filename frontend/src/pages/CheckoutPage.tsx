@@ -14,9 +14,9 @@ export default function CheckoutPage() {
   const { postOrder, response, loading: postOrderLoading } = usePostOrder();
   const handleConfirmAndPay = async () => {
     const orderPayload = cartItems.map((item) => ({
-      id: item.id.toString(),
-      price: item.price,
-      quantity: 1,
+      id: item.product.id.toString(),
+      price: item.product.price,
+      quantity: item.quantity,
     }));
     await postOrder(orderPayload);
   };
