@@ -28,9 +28,12 @@ export default function SummaryCard({
     .toFixed(2);
 
   return (
-    <div className="rounded-custom flex h-fit w-full flex-col gap-2 bg-stone-100 p-4 sm:w-96 lg:order-5">
+    <div className="flex h-fit w-full flex-col gap-2 rounded-2xl bg-stone-100 p-4 sm:w-96 lg:order-5">
       <span className="flex items-center justify-between">
-        <p>Item ({cartItems.length})</p>
+        <p>
+          {" "}
+          {cartItems.length > 1 ? "Items" : "Item"} ({cartItems.length})
+        </p>
         <p>US ${totalPrice}</p>
       </span>
       <span className="flex items-center justify-between">

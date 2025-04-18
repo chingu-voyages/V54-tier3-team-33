@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import SummaryCard from "../utils/SummaryCard";
 import { RootState } from "../store/store";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -36,7 +35,7 @@ export default function CheckoutPage() {
     .toFixed(2);
 
   return (
-    <section className="mx-auto max-w-5xl px-4 sm:px-6 md:px-8">
+    <section className="mx-auto max-w-5xl px-4">
       <div className="mb-10 flex items-center justify-start gap-5 pt-5">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-30" />
@@ -76,16 +75,13 @@ export default function CheckoutPage() {
             </ul>
           </div>
 
-          {/* <SummaryCard
-            isLoading={postOrderLoading}
-            total={"Order total"}
-            buttonText={"Confirm and pay"}
-            showModal={false}
-            handleAction={handleConfirmAndPay}
-          /> */}
+          {/* summary card */}
           <div className="flex h-fit w-full flex-col gap-2 border border-gray-300 p-4 sm:w-96 md:order-5">
             <span className="flex items-center justify-between">
-              <p>Item ({cartItems.length})</p>
+              <p>
+                {" "}
+                {cartItems.length > 1 ? "Items" : "Item"} ({cartItems.length})
+              </p>
               <p>US ${totalPrice}</p>
             </span>
             <span className="flex items-center justify-between">

@@ -22,12 +22,12 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
   };
 
   return (
-    <div className="rounded-custom order-1 w-full">
+    <div className="order-1 w-full">
       <ul className="flex flex-col gap-4">
         {cartItems.map(({ product, quantity }) => (
           <li
             key={product.id}
-            className="flex flex-col justify-between rounded-lg border border-gray-300 p-4"
+            className="flex flex-col justify-between rounded-2xl border border-gray-300 p-4"
           >
             <div className="flex w-full items-start gap-4">
               <img
