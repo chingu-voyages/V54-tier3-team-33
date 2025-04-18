@@ -42,10 +42,12 @@ export function OrderHistory() {
           <ul className="mb-2 flex list-inside list-disc flex-col gap-1 text-sm">
             {order.items.map((item: OrderItem, index: number) => (
               <div key={`${order._id}-${item.id}-${index}`}>
-                <li className="flex items-center justify-between">
+                <li className="flex items-center justify-between gap-5">
                   <span>
                     {item.product.name}{" "}
-                    <span className="text-gray-500">(Quantity: {item.quantity})</span>
+                    <span className="text-gray-500">
+                      (Quantity: {item.quantity})
+                    </span>
                   </span>
                   <span>
                     ${(item.unitPriceAtOrder * item.quantity).toFixed(2)}

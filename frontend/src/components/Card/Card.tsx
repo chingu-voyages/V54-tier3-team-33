@@ -22,12 +22,12 @@ interface Item {
 function Card({ item }: { item: Item }) {
   const dispatch = useDispatch();
   return (
-    <div className="text-darktext relative flex cursor-pointer flex-col items-start gap-2 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:shadow-lg">
+    <div className="text-darktext relative flex cursor-pointer flex-col items-start gap-2 border border-transparent p-3 py-4 transition-all hover:border-gray-200 hover:bg-gray-50 hover:shadow-lg">
       <Link to={`/product/${item.id}`} className="w-full">
         <img
           src={item.image[0]}
           alt="missing"
-          className="w-full h-46 rounded-md object-contain"
+          className="h-46 w-full rounded-md object-contain"
         />
       </Link>
       <button
@@ -39,7 +39,10 @@ function Card({ item }: { item: Item }) {
       >
         <BsCartPlus size={25} />
       </button>
-      <Link to={`/product/${item.id}`} className="flex gap-1 h-full w-full flex-col">
+      <Link
+        to={`/product/${item.id}`}
+        className="flex h-full w-full flex-col gap-1"
+      >
         <h3 className="font-medium">{item.name}</h3>
         <span className="text-darktext/65 mt-auto flex w-full items-center gap-1">
           <p className="text-sm">

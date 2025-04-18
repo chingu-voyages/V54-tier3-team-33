@@ -39,18 +39,18 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
                 alt={product.name}
                 className="size-30 rounded-md object-contain"
               />
-              <div className="mt-3">
+              <div>
                 <h3 className="text-lg font-semibold">{product.name}</h3>
                 <p className="">Price: ${product.price}</p>
               </div>
 
-              {/* Quantity Dropdown */}
+              {/* quantity dropdown */}
               <div className="my-auto ml-auto flex items-center">
                 <p className="mr-2">Quantity</p>
                 <select
                   id={`quantity-${product.id}`}
                   className="focus:ring-customcolorone rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:ring-2 focus:outline-none"
-                  value={quantity} // Bind to Redux state
+                  value={quantity}
                   onChange={(e) =>
                     handleQuantityChange(product.id, parseInt(e.target.value))
                   }

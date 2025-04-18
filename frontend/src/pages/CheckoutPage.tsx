@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import ProductInCart from "../components/ProductList/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";
 import { RootState } from "../store/store";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { usePostOrder } from "../hooks/usePostOrder.ts";
 import { useEffect } from "react";
+import Button from "../utils/Button.tsx";
 
 //todo: show error or success toast && loading button
 export default function CheckoutPage() {
@@ -24,15 +24,19 @@ export default function CheckoutPage() {
   // if (response) {
   //   return navigate("/profile");
   // }
-  
+
   useEffect(() => {
     if (response) {
       navigate("/profile");
     }
   }, [response, navigate]);
 
+  const totalPrice = cartItems
+    .reduce((total, item) => total + item.product.price * item.quantity, 0)
+    .toFixed(2);
+
   return (
-    <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-5xl px-4 sm:px-6 md:px-8">
       <div className="mb-10 flex items-center justify-start gap-5 pt-5">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-30" />
@@ -40,16 +44,70 @@ export default function CheckoutPage() {
         <p className="text-3xl font-semibold">Checkout</p>
       </div>
 
-      <div className="flex gap-3">
-        {cartItems.length > 0 && <ProductInCart cartItems={cartItems} />}
-        <SummaryCard
-          isLoading={postOrderLoading}
-          total={"Order total"}
-          buttonText={"Confirm and pay"}
-          showModal={false}
-          handleAction={handleConfirmAndPay}
-        />
-      </div>
+      {cartItems.length === 0 ? (
+        <h1>no items in the cart</h1>
+      ) : (
+        <div className="mt-10 flex flex-col gap-3 md:flex-row">
+          <div className="rounded-custom order-1 mb-10 w-full">
+            <ul className="flex flex-col gap-4">
+              {cartItems.map(({ product, quantity }) => (
+                <li
+                  key={product.id}
+                  className="flex flex-col justify-between border border-gray-300 p-4"
+                >
+                  <div className="flex w-full items-start gap-4">
+                    <img
+                      src={
+                        Array.isArray(product.image)
+                          ? product.image[0]
+                          : product.image
+                      }
+                      alt={product.name}
+                      className="size-30 rounded-md object-contain"
+                    />
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-semibold">{product.name}</h3>
+                      <p className="">Price: ${product.price}</p>
+                      <p>Quantity {quantity}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* <SummaryCard
+            isLoading={postOrderLoading}
+            total={"Order total"}
+            buttonText={"Confirm and pay"}
+            showModal={false}
+            handleAction={handleConfirmAndPay}
+          /> */}
+          <div className="flex h-fit w-full flex-col gap-2 border border-gray-300 p-4 sm:w-96 md:order-5">
+            <span className="flex items-center justify-between">
+              <p>Item ({cartItems.length})</p>
+              <p>US ${totalPrice}</p>
+            </span>
+            <span className="flex items-center justify-between">
+              <p>Shipping</p>
+              <p>US $ 0</p>
+            </span>
+            <hr className="my-2 text-gray-300" />
+            <span className="mb-2 flex items-center justify-between text-xl font-semibold">
+              <p>Order Total</p>
+              <p>US ${totalPrice}</p>
+            </span>
+
+            <Button
+              className="w-full"
+              onClick={handleConfirmAndPay}
+              disabled={postOrderLoading}
+            >
+              Confirm and pay
+            </Button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

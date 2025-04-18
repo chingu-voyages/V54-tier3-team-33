@@ -23,13 +23,12 @@ export default function SummaryCard({
   const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + item.product.price * item.quantity,
-    0,
-  );
+  const totalPrice = cartItems
+    .reduce((total, item) => total + item.product.price * item.quantity, 0)
+    .toFixed(2);
 
   return (
-    <div className="rounded-custom lg:order-5 flex h-fit w-full sm:w-96 flex-col gap-2 bg-stone-100 p-4">
+    <div className="rounded-custom flex h-fit w-full flex-col gap-2 bg-stone-100 p-4 sm:w-96 lg:order-5">
       <span className="flex items-center justify-between">
         <p>Item ({cartItems.length})</p>
         <p>US ${totalPrice}</p>
