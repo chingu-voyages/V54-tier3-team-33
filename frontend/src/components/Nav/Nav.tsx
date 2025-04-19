@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import electronics from "../../assets/nav-images/electronics.jpg";
 import clothes from "../../assets/nav-images/clothes.jpg";
 import instruments from "../../assets/nav-images/instruments.jpg";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import {
+  loadProducts,
+  setCategory,
+  setSubcategory,
+} from "../../store/slices/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 const Nav = () => {
   const categories = [
@@ -27,6 +34,46 @@ const Nav = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const { searchQuery } = useSelector((state: RootState) => state.products);
+
+  const dispatch = useDispatch();
+  const [, setSearchParams] = useSearchParams();
+
+  const handleCategoryClick = (category: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(""));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
+    dispatch(loadProducts({ page: 1, limit: 10 })); // Trigger API call
+  };
+
+  const handleSubcategoryClick = (category: string, subcategory: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(subcategory));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+      subcategory,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
+    dispatch(loadProducts({ page: 1, limit: 10 })); // Trigger API call
+  };
+
   return (
     <nav>
       <div className="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
@@ -46,12 +93,12 @@ const Nav = () => {
         <div
           className={`${
             isMobileMenuOpen ? "block" : "hidden"
-          } relative justify-center py-1 md:flex`}
+          } relative justify-center md:flex`}
         >
-          {/* <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
+          <div className="mt-4 flex flex-col md:flex-row md:space-y-0">
             <Link
               to="/"
-              className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
+              className="cursor-pointer bg-red-50 px-10 py-2 transition-colors hover:text-blue-600"
             >
               Home
             </Link>
@@ -59,24 +106,27 @@ const Nav = () => {
               <div
                 key={category.name}
                 onMouseEnter={() => setHoveredCategory(category.name)}
+                onMouseLeave={() => setHoveredCategory(null)}
                 onClick={() =>
                   setHoveredCategory(
                     hoveredCategory === category.name ? null : category.name,
                   )
                 }
+                className="cursor-pointer bg-red-50 px-10 py-2"
               >
                 <button
-                  onClick={() => console.log(category.name)}
-                  className="bg-red-600 text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                  onClick={() => handleCategoryClick(category.name)}
+                  className="w-full cursor-pointer transition-colors hover:text-blue-600"
                 >
                   {category.name}
                 </button>
               </div>
             ))}
-          </div> */}
+          </div>
 
           {hoveredCategory && (
             <div
+              onMouseEnter={() => setHoveredCategory(hoveredCategory)}
               onMouseLeave={() => setHoveredCategory(null)}
               className="absolute top-full left-0 z-50 w-full rounded-md border border-gray-200 bg-white shadow-lg"
             >
@@ -86,23 +136,26 @@ const Nav = () => {
                     .filter((category) => category.name === hoveredCategory)
                     .map((category) => (
                       <div key={category.name} className="space-y-2">
-                        <button className="block rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">
+                        <button
+                          onClick={() => handleCategoryClick(category.name)}
+                          className="block rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100"
+                        >
                           {category.name}
                         </button>
                         <div className="space-y-1">
                           {category.subcategories.map((subcategory) => (
-                            <Link
+                            <button
                               key={subcategory}
-                              to={`/category/${category.name
-                                .toLowerCase()
-                                .replace(/ & /g, "-")
-                                .replace(/\s+/g, "-")}/${subcategory
-                                .toLowerCase()
-                                .replace(/\s+/g, "-")}`}
+                              onClick={() =>
+                                handleSubcategoryClick(
+                                  category.name,
+                                  subcategory,
+                                )
+                              }
                               className="block rounded-md px-6 py-2 text-sm text-gray-500 hover:bg-gray-100"
                             >
                               {subcategory}
-                            </Link>
+                            </button>
                           ))}
                         </div>
                       </div>
