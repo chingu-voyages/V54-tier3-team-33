@@ -65,7 +65,7 @@ const ProductDetailsPage = () => {
                     <img
                       src={img}
                       alt={`${product.name} ${index + 1}`}
-                      className="size-18 cursor-pointer rounded-md border border-gray-300 object-cover"
+                      className="size-18 cursor-pointer rounded-md border border-gray-300 object-contain"
                       onClick={() => handleImageClick(img)}
                     />
                   </div>
