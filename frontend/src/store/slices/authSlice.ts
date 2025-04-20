@@ -1,4 +1,9 @@
-import { ActionReducerMapBuilder, createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {
+  ActionReducerMapBuilder,
+  createAsyncThunk,
+  createSlice,
+  PayloadAction,
+} from "@reduxjs/toolkit";
 import { RootState } from "../store.ts";
 import toast from "react-hot-toast";
 
@@ -55,9 +60,9 @@ export const logOutUser = createAsyncThunk<
     if (!res.ok) {
       throw new Error("Failed to log out");
     }
-    dispatch(logout()); 
+    dispatch(logout());
     toast.success("Logged out successfully!");
-    navigate("/"); 
+    navigate("/");
   } catch (error) {
     console.error("Error logging out:", error);
     return rejectWithValue("Error logging out");
@@ -86,8 +91,8 @@ const authSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
     });
-    builder.addCase(logOutUser.rejected, (state) => {
-      toast.error("Failed to log out");
+    builder.addCase(logOutUser.rejected, () => {
+      toast.error("Error");
     });
   },
 });

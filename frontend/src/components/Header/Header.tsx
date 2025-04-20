@@ -43,14 +43,14 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.auth.user);
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const { searchQuery, category, subcategory, minPrice, maxPrice } =
     useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
-  const [hoveredCategory, setHoveredCategory] = useState<boolean | null>(true);
+  const [hoveredMyEbay, setHoveredMyEbay] = useState<boolean | null>(false);
 
   const handleSearch = () => {
     const params: Record<string, string> = {
@@ -58,21 +58,19 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       limit: "10",
     };
 
-    if (category) {
-      params.category = category;
-    }
-    if (subcategory) {
-      params.subcategory = subcategory;
-    }
-    if (searchQuery.trim()) {
-      params.search = searchQuery;
-    }
-    if (minPrice) {
-      params.minPrice = minPrice.toString();
-    }
-    if (maxPrice) {
-      params.maxPrice = maxPrice.toString();
-    }
+    const filters = {
+      category,
+      subcategory,
+      search: searchQuery.trim(),
+      minPrice,
+      maxPrice,
+    };
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) {
+        params[key] = value.toString();
+      }
+    });
 
     setSearchParams(params);
     dispatch(loadProducts({ page: 1, limit: 10 }));
@@ -136,62 +134,64 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                 </span>
               </p>
             ) : (
-              <>
+              <div className="flex items-center gap-1">
                 <Link
-                  className="text-primary underline hover:no-underline"
+                  className="text-primary text-sm font-semibold underline hover:no-underline"
                   to={"/createacc"}
                 >
                   Create an Account
                 </Link>
                 or
                 <Link
-                  className="text-primary underline hover:no-underline"
+                  className="text-primary text-sm font-semibold underline hover:no-underline"
                   to={"/signinpage"}
                 >
                   Sign in
                 </Link>
-              </>
+              </div>
             )}
           </span>
 
-          <div className="flex items-center gap-5">
-            <div
-              onMouseEnter={() => setHoveredCategory(true)}
-              onMouseLeave={() => setHoveredCategory(false)}
-              className="relative"
-            >
-              <Link
-                to="/profile"
-                className="flex cursor-pointer items-center gap-1.5 px-4 py-2"
+          <div className="flex items-center gap-4">
+            {user && (
+              <div
+                onMouseEnter={() => setHoveredMyEbay(true)}
+                onMouseLeave={() => setHoveredMyEbay(false)}
+                className="relative"
               >
-                My eBay
-                <ChevronDownIcon className="h-4.5 w-4.5" />
-              </Link>
-
-              {hoveredCategory && (
-                <div
-                  onMouseEnter={() => setHoveredCategory(true)}
-                  onMouseLeave={() => setHoveredCategory(false)}
-                  className="absolute top-full left-0 z-50 flex w-96 flex-col items-start rounded-xl border border-gray-200 bg-white shadow-lg"
+                <Link
+                  to="/profile"
+                  className="flex cursor-pointer items-center gap-1 px-4 text-sm font-semibold"
                 >
-                  <Link
-                    to={"/profile"}
-                    className="w-full px-4 py-2 text-start hover:bg-gray-100"
+                  My eBay
+                  <ChevronDownIcon className="h-4.5 w-4.5" />
+                </Link>
+
+                {hoveredMyEbay && (
+                  <div
+                    onMouseEnter={() => setHoveredMyEbay(true)}
+                    onMouseLeave={() => setHoveredMyEbay(false)}
+                    className="absolute top-full left-1/2 z-50 flex w-56 -translate-x-1/2 flex-col items-start rounded-xl border border-gray-200 bg-white p-1 shadow-lg"
                   >
-                    Profile
-                  </Link>
-                  <button
-                    onClick={() => {
-                      dispatch(logOutUser({ navigate }));
-                      console.log("User logged out");
-                    }}
-                    className="w-full cursor-pointer px-4 py-2 text-start hover:bg-gray-100"
-                  >
-                    Sign out
-                  </button>
-                </div>
-              )}
-            </div>
+                    <Link
+                      to={"/profile"}
+                      className="w-full rounded-lg p-2 text-start hover:bg-gray-100"
+                    >
+                      Profile
+                    </Link>
+                    <button
+                      onClick={() => {
+                        dispatch(logOutUser({ navigate }));
+                        console.log("User logged out");
+                      }}
+                      className="w-full cursor-pointer rounded-lg p-2 text-start text-red-600 hover:bg-gray-100"
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
 
             <Link
               to="/shoppingCart"
