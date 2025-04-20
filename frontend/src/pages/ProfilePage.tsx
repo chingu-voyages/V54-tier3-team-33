@@ -13,7 +13,17 @@ const ProfilePage: React.FC = () => {
     loading: userLoading,
     error: userError,
   } = useFetch<User>("/api/auth/me");
-
+  const logOutUser = async () => {
+    try {
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+    })
+    dispatch(logout());
+  } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  }
   const dispatch = useDispatch();
 
   return userLoading ? (
@@ -46,7 +56,7 @@ const ProfilePage: React.FC = () => {
             <button
               className="border-darktext/30 cursor-pointer rounded-full border bg-white px-4 py-1 text-sm font-semibold text-red-500 shadow-sm transition-all hover:border-red-500 hover:bg-red-500 hover:text-white"
               onClick={() => {
-                dispatch(logout());
+                logOutUser();
                 console.log("User logged out");
               }}
             >
