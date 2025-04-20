@@ -8,7 +8,7 @@ import SummaryCard from "../utils/SummaryCard";
 export default function ShoppingCartPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const navigate = useNavigate();
-  const user = useSelector((state: RootState) => state.user.user);
+  const user = useSelector((state: RootState) => state.auth.user);
 
   return (
     <div className="text-darktext flex flex-grow flex-col items-center">

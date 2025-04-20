@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React , {Fragment } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
   setSearchQuery,
@@ -25,9 +25,6 @@ import { AppDispatch, RootState } from "../../store/store";
 import Nav from "../Nav/Nav";
 import Button from "../../utils/Button";
 import { useDispatch, useSelector } from "react-redux";
-import useFetch from "../../hooks/useFetch";
-import { User } from "../../pages/ProfilePage";
-import { clearUser, setUser } from "../../store/slices/userSlice";
 
 interface HeaderProps {
   showAdvertising?: boolean;
@@ -45,7 +42,8 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.user.user);
+
+  const user = useSelector((state: RootState) => state.auth.user);
 
   const { searchQuery, category, subcategory, minPrice, maxPrice } =
     useSelector((state: RootState) => state.products);
@@ -120,6 +118,8 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     console.log("Search query cleared");
   };
 
+  console.log(user)
+
   return (
     <div className="text-darktext">
       <div className="flex items-center justify-between px-5 py-2">
@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             <p>
               Welcome{" "}
               <span className="font-semibold">
-                {user?.firstname} {user?.lastname}
+                {user.firstname} {user.lastname}
               </span>
             </p>
           ) : (

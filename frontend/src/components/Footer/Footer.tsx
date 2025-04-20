@@ -55,7 +55,7 @@ const teamMembers = [
 ];
 
 const Footer: React.FC = () => {
-  const user = useSelector((state: RootState) => state.user.user);
+  const user = useSelector((state: RootState) => state.auth.user);
 
   const conditionalRoutes = user
     ? routesMap.filter((route) => route.name === "Profile")

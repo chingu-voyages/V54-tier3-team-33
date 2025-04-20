@@ -3,17 +3,10 @@ import useFetch from "../hooks/useFetch.ts";
 import { OrderHistory } from "../components/Order/OrderHistory.tsx";
 import Spinner from "../utils/Spinner.tsx";
 import userNotFound from "../assets/user-not-found.svg";
-import { clearUser } from "../store/slices/userSlice.ts";
 import { useDispatch } from "react-redux";
+import {logout , User} from "../store/slices/authSlice.ts";
 
-export interface User {
-  id: string;
-  firstname: string;
-  lastname: string;
-  email: string;
-  createdAt: string;
-  updatedAt: string;
-}
+
 const ProfilePage: React.FC = () => {
   const {
     data: user,
@@ -53,7 +46,7 @@ const ProfilePage: React.FC = () => {
             <button
               className="border-darktext/30 cursor-pointer rounded-full border bg-white px-4 py-1 text-sm font-semibold text-red-500 shadow-sm transition-all hover:border-red-500 hover:bg-red-500 hover:text-white"
               onClick={() => {
-                dispatch(clearUser());
+                dispatch(logout());
                 console.log("User logged out");
               }}
             >
