@@ -39,6 +39,7 @@ export default function ShoppingCartPage() {
           <div className="mx-4 mt-10 flex flex-col gap-3 lg:flex-row">
             <ProductInCart cartItems={cartItems} />
             <SummaryCard
+              showModal={!user}
               total={"Subtotal"}
               buttonText={"Go to checkout"}
               handleAction={() => navigate("/checkout")}
