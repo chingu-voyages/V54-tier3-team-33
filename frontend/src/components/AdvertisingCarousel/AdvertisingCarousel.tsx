@@ -41,7 +41,7 @@ const AdvertisingCarousel: React.FC = () => {
   return (
     <div
       aria-live="polite"
-      className="relative h-94 w-full overflow-hidden rounded-lg py-4 md:py-8"
+      className="relative h-94 w-full overflow-hidden max-w-7xl xl:rounded-lg py-4 md:py-8"
     >
       {slides.map((slide, index) => (
         <Transition

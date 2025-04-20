@@ -77,12 +77,12 @@ const Nav = () => {
 
   return (
     <nav className="text-darktext">
-      <div className="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl py-1 sm:px-6 lg:px-8">
         <div className="relative block justify-center md:flex">
-          <div className="mt-4 flex w-full flex-col justify-center sm:flex-row">
+          <div className="flex w-full flex-col justify-center sm:flex-row">
             <Link
               to="/"
-              className="md hover:text-primary cursor-pointer px-10 py-2 text-center text-lg font-semibold transition-colors hover:underline"
+              className="md hover:text-primary cursor-pointer px-10 py-2 text-center  transition-colors hover:underline"
             >
               Home
             </Link>
@@ -90,17 +90,17 @@ const Nav = () => {
               <div
                 key={category.name}
                 onMouseEnter={() => setHoveredCategory(category.name)}
-                // onMouseLeave={() => setHoveredCategory(null)}
+                onMouseLeave={() => setHoveredCategory(null)}
                 onClick={() =>
                   setHoveredCategory(
                     hoveredCategory === category.name ? null : category.name,
                   )
                 }
-                className="cursor-pointer px-10 py-2 font-semibold"
+                className="cursor-pointer px-10 py-2 "
               >
                 <button
                   onClick={() => handleCategoryClick(category.name)}
-                  className="hover:text-primary w-full cursor-pointer text-lg transition-colors hover:underline"
+                  className="hover:text-primary w-full cursor-pointer transition-colors hover:underline"
                 >
                   {category.name}
                 </button>
@@ -122,7 +122,7 @@ const Nav = () => {
                       <div key={category.name} className="space-y-2">
                         <button
                           onClick={() => handleCategoryClick(category.name)}
-                          className="block cursor-pointer px-6 py-2 text-xl font-semibold hover:underline"
+                          className="block cursor-pointer px-6 py-2  font-semibold hover:underline"
                         >
                           {category.name}
                         </button>
@@ -136,7 +136,7 @@ const Nav = () => {
                                   subcategory,
                                 )
                               }
-                              className="block cursor-pointer px-6 py-2 text-lg hover:underline"
+                              className="block cursor-pointer px-6 py-1  hover:underline"
                             >
                               {subcategory}
                             </button>
