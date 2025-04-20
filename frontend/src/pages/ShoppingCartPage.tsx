@@ -21,7 +21,6 @@ export default function ShoppingCartPage() {
           <div className="flex flex-col items-center gap-4 py-20">
             <h5 className="text-2xl">You don't have any items in your cart.</h5>
             {!user && <p>Have an account? Sign in to see your items.</p>}
-
             <span className="flex gap-5">
               <Button variant="secondary" onClick={() => navigate("/")}>
                 Start shopping

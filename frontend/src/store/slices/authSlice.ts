@@ -1,4 +1,4 @@
-import {createSlice , PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk , createSlice , PayloadAction} from "@reduxjs/toolkit";
 
 
 export interface User {
@@ -21,6 +21,28 @@ const initialState: AuthState = {
     isAuthenticated: false,
 }
 
+export const fetchAuthenticatedUser = createAsyncThunk<
+    User,
+    void,
+    { state: AuthState}
+>(
+    'auth/fetchAuthUserStatus',
+    async (_,{rejectWithValue }) => {
+        try {
+            const res = await fetch("/api/auth/me", {
+                credentials: "include",
+            });
+            if (!res.ok) {
+                return rejectWithValue("Invalid or expired token");
+            }
+            const data = await res.json();
+            return data.data;
+        } catch (error) {
+            return rejectWithValue("Error when fetching user ");
+        }
+    }
+)
+
  const authSlice = createSlice({
     name: 'auth',
     initialState,
@@ -33,7 +55,17 @@ const initialState: AuthState = {
             state.user = null
             state.isAuthenticated = false
         },
-    }
+    },
+     extraReducers: (builder) => {
+         builder.addCase(fetchAuthenticatedUser.fulfilled, (state, action) => {
+             state.user = action.payload;
+             state.isAuthenticated = true;
+         });
+         builder.addCase(fetchAuthenticatedUser.rejected, (state) => {
+             state.user = null;
+             state.isAuthenticated = false;
+         });
+     }
 })
 
 export  const {login, logout} = authSlice.actions;
