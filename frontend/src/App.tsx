@@ -10,14 +10,15 @@ import CreateAccPage from "./pages/CreateAccPage";
 import { useEffect } from "react";
 import { fetchAuthenticatedUser } from "./store/slices/authSlice.ts";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "./store/store"; 
+import {ThunkDispatch} from "@reduxjs/toolkit";
 
 const App = () => {
-  const dispatch: AppDispatch = useDispatch()
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+
 
   useEffect(() => {
-    dispatch(() => fetchAuthenticatedUser()); 
-  }, [dispatch]);
+    dispatch(fetchAuthenticatedUser());
+  }, []);
   
   return (
     <Router>

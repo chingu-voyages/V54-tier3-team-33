@@ -3,7 +3,9 @@ import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {fetchAuthenticatedUser} from "../store/slices/authSlice.ts";
+import {fetchAuthenticatedUser} from "../store/slices/authSlice.ts"
+import {ThunkDispatch} from "@reduxjs/toolkit";
+
 
 const SigninForm: React.FC = () => {
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ const SigninForm: React.FC = () => {
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

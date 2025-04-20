@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {ActionReducerMapBuilder , createAsyncThunk , createSlice , PayloadAction} from "@reduxjs/toolkit";
+import {RootState} from "../store.ts";
 
 export interface User {
   id: string;
@@ -22,7 +23,7 @@ const initialState: AuthState = {
 export const fetchAuthenticatedUser = createAsyncThunk<
   User,
   void,
-  { state: AuthState }
+  { state:RootState }
 >("auth/fetchAuthUserStatus", async (_, { rejectWithValue }) => {
   try {
     const res = await fetch("/api/auth/me", {
@@ -34,7 +35,7 @@ export const fetchAuthenticatedUser = createAsyncThunk<
     const data = await res.json();
     return data.data;
   } catch {
-    return rejectWithValue("Error when fetching user ");
+     return rejectWithValue("Error when fetching user ");
   }
 });
 
@@ -51,7 +52,7 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: (builder: ActionReducerMapBuilder<AuthState>) => {
     builder.addCase(fetchAuthenticatedUser.fulfilled, (state, action) => {
       state.user = action.payload;
       state.isAuthenticated = true;
