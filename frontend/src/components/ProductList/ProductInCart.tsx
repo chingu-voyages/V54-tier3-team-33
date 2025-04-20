@@ -1,6 +1,9 @@
-import {CartItem , Product} from "../../store/slices/productTypes";
+import { CartItem } from "../../store/slices/productTypes";
 import { useDispatch } from "react-redux";
-import { removeItemFromCart } from "../../store/slices/cartSlice";
+import {
+  removeItemFromCart,
+  updateItemQuantity,
+} from "../../store/slices/cartSlice";
 import React from "react";
 
 interface ProductInCartProps {
@@ -13,27 +16,61 @@ const ProductInCart: React.FC<ProductInCartProps> = ({ cartItems }) => {
   const handleRemoveItem = (id: number) => {
     dispatch(removeItemFromCart(id));
   };
+
+  const handleQuantityChange = (id: number, quantity: number) => {
+    dispatch(updateItemQuantity({ id, quantity }));
+  };
+
   return (
-    <div className="rounded-custom w-full max-w-4xl bg-stone-100 p-4">
-      <ul>
-        {cartItems.map(({product}) => (
-          <li key={product.id} className="mb-4 flex items-center justify-between">
-            <div className="flex items-center">
+    <div className="order-1 w-full">
+      <ul className="flex flex-col gap-4">
+        {cartItems.map(({ product, quantity }) => (
+          <li
+            key={product.id}
+            className="flex flex-col justify-between rounded-2xl border border-gray-300 p-4"
+          >
+            <div className="flex w-full items-start gap-4">
               <img
-                src={Array.isArray(product.image) ? product.image[0] : product.image}
+                src={
+                  Array.isArray(product.image)
+                    ? product.image[0]
+                    : product.image
+                }
                 alt={product.name}
-                className="mr-4 size-30 rounded-md object-cover"
+                className="size-30 rounded-md object-contain"
               />
               <div>
                 <h3 className="text-lg font-semibold">{product.name}</h3>
-                <p className="text-gray-700">${product.price}</p>
+                <p className="">Price: ${product.price}</p>
+              </div>
+
+              {/* quantity dropdown */}
+              <div className="my-auto ml-auto flex items-center">
+                <p className="mr-2">Quantity</p>
+                <select
+                  id={`quantity-${product.id}`}
+                  className="focus:ring-customcolorone rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:ring-2 focus:outline-none"
+                  value={quantity}
+                  onChange={(e) =>
+                    handleQuantityChange(product.id, parseInt(e.target.value))
+                  }
+                >
+                  {Array.from({ length: product.stock }, (_, i) => i + 1).map(
+                    (num) => (
+                      <option key={num} value={num}>
+                        {num}
+                      </option>
+                    ),
+                  )}
+                </select>
               </div>
             </div>
+
             <button
               onClick={() => handleRemoveItem(product.id)}
-              className="ml-4 cursor-pointer"
+              className="hover:text-darktext/70 ml-auto cursor-pointer font-semibold underline transition-all"
             >
-              Remove item
+              Remove
             </button>
           </li>
         ))}

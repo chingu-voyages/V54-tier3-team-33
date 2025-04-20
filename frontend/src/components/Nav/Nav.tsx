@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import electronics from "../../assets/nav-images/electronics.jpg";
 import clothes from "../../assets/nav-images/clothes.jpg";
 import instruments from "../../assets/nav-images/instruments.jpg";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+
+import {
+  loadProducts,
+  setCategory,
+  setSubcategory,
+} from "../../store/slices/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store/store";
 
 const Nav = () => {
   const categories = [
@@ -25,33 +32,57 @@ const Nav = () => {
   ];
 
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const { searchQuery } = useSelector((state: RootState) => state.products);
+
+  const dispatch: AppDispatch = useDispatch();
+  const [, setSearchParams] = useSearchParams();
+
+  const handleCategoryClick = (category: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(""));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
+    dispatch(loadProducts({ page: 1, limit: 10 }));
+    setHoveredCategory(null);
+  };
+
+  const handleSubcategoryClick = (category: string, subcategory: string) => {
+    dispatch(setCategory(category));
+    dispatch(setSubcategory(subcategory));
+    const params: Record<string, string> = {
+      page: "1",
+      limit: "10",
+      category,
+      subcategory,
+    };
+
+    if (searchQuery.trim()) {
+      params.search = searchQuery;
+    }
+
+    setSearchParams(params);
+    dispatch(loadProducts({ page: 1, limit: 10 }));
+    setHoveredCategory(null);
+  };
 
   return (
-    <nav className="bg-white">
+    <nav className="text-darktext">
       <div className="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex justify-end p-4 md:hidden">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-700 hover:text-blue-600 focus:outline-none"
-          >
-            {isMobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" />
-            ) : (
-              <Bars3Icon className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-
-        <div
-          className={`${
-            isMobileMenuOpen ? "block" : "hidden"
-          } relative justify-center py-1 md:flex`}
-        >
-          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-18">
+        <div className="relative block justify-center md:flex">
+          <div className="mt-4 flex w-full flex-col justify-center sm:flex-row">
             <Link
               to="/"
-              className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
+              className="md hover:text-primary cursor-pointer px-10 py-2 text-center text-lg font-semibold transition-colors hover:underline"
             >
               Home
             </Link>
@@ -59,15 +90,17 @@ const Nav = () => {
               <div
                 key={category.name}
                 onMouseEnter={() => setHoveredCategory(category.name)}
+                // onMouseLeave={() => setHoveredCategory(null)}
                 onClick={() =>
                   setHoveredCategory(
                     hoveredCategory === category.name ? null : category.name,
                   )
                 }
+                className="cursor-pointer px-10 py-2 font-semibold"
               >
                 <button
-                  onClick={() => console.log(category.name)}
-                  className="bg-red-600 text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                  onClick={() => handleCategoryClick(category.name)}
+                  className="hover:text-primary w-full cursor-pointer text-lg transition-colors hover:underline"
                 >
                   {category.name}
                 </button>
@@ -77,32 +110,36 @@ const Nav = () => {
 
           {hoveredCategory && (
             <div
+              onMouseEnter={() => setHoveredCategory(hoveredCategory)}
               onMouseLeave={() => setHoveredCategory(null)}
-              className="absolute top-full left-0 z-50 w-full rounded-md border border-gray-200 bg-white shadow-lg"
+              className="absolute top-full left-0 z-50 hidden w-full rounded-xl border border-gray-300 bg-white shadow-lg sm:block"
             >
-              <div className="grid h-full grid-cols-1 gap-4 p-4 md:grid-cols-4">
+              <div className="grid h-full grid-cols-4 gap-4 p-4">
                 <div className="col-span-3 grid grid-cols-1 gap-4 md:grid-cols-3">
                   {categories
                     .filter((category) => category.name === hoveredCategory)
                     .map((category) => (
                       <div key={category.name} className="space-y-2">
-                        <button className="block rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">
+                        <button
+                          onClick={() => handleCategoryClick(category.name)}
+                          className="block cursor-pointer px-6 py-2 text-xl font-semibold hover:underline"
+                        >
                           {category.name}
                         </button>
-                        <div className="space-y-1">
+                        <div>
                           {category.subcategories.map((subcategory) => (
-                            <Link
+                            <button
                               key={subcategory}
-                              to={`/category/${category.name
-                                .toLowerCase()
-                                .replace(/ & /g, "-")
-                                .replace(/\s+/g, "-")}/${subcategory
-                                .toLowerCase()
-                                .replace(/\s+/g, "-")}`}
-                              className="block rounded-md px-6 py-2 text-sm text-gray-500 hover:bg-gray-100"
+                              onClick={() =>
+                                handleSubcategoryClick(
+                                  category.name,
+                                  subcategory,
+                                )
+                              }
+                              className="block cursor-pointer px-6 py-2 text-lg hover:underline"
                             >
                               {subcategory}
-                            </Link>
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -116,7 +153,7 @@ const Nav = () => {
                         key={category.name}
                         src={category.image}
                         alt={category.name}
-                        className="h-auto w-94 rounded-md"
+                        className="h-auto w-94 rounded-md object-contain"
                       />
                     ))}
                 </div>

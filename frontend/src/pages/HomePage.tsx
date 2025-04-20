@@ -13,6 +13,7 @@ import {
 } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "../utils/ScrollToTop";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -58,9 +59,10 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="mb-4 pr-10 pl-10">
+      <div className="mx-4">
         <AdvertisingCarousel />
       </div>
+
       <Grid
         products={products}
         currentPage={page}
@@ -69,6 +71,8 @@ const HomePage: React.FC = () => {
         loading={loading}
         error={error}
       />
+
+      <ScrollToTop/>
       <Toaster />
     </>
   );

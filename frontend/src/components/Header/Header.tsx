@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
   setSearchQuery,
@@ -25,6 +25,9 @@ import { AppDispatch, RootState } from "../../store/store";
 import Nav from "../Nav/Nav";
 import Button from "../../utils/Button";
 import { useDispatch, useSelector } from "react-redux";
+import useFetch from "../../hooks/useFetch";
+import { User } from "../../pages/ProfilePage";
+import { clearUser, setUser } from "../../store/slices/userSlice";
 
 interface HeaderProps {
   showAdvertising?: boolean;
@@ -42,6 +45,7 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user.user);
 
   const { searchQuery, category, subcategory, minPrice, maxPrice } =
     useSelector((state: RootState) => state.products);
@@ -72,6 +76,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
 
     setSearchParams(params);
     dispatch(loadProducts({ page: 1, limit: 10 }));
+    dispatch(setSearchQuery(""));
   };
 
   const handleCategoryClick = (category: string) => {
@@ -117,11 +122,39 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
 
   return (
     <div className="text-darktext">
-      <div className="flex items-center justify-end px-5 py-2">
+      <div className="flex items-center justify-between px-5 py-2">
+        <span className="flex gap-2">
+          {user ? (
+            <p>
+              Welcome{" "}
+              <span className="font-semibold">
+                {user?.firstname} {user?.lastname}
+              </span>
+            </p>
+          ) : (
+            <>
+              <Link
+                className="text-primary underline hover:no-underline"
+                to={"/createacc"}
+              >
+                Create an Account
+              </Link>
+              or
+              <Link
+                className="text-primary underline hover:no-underline"
+                to={"/signinpage"}
+              >
+                Sign in
+              </Link>
+            </>
+          )}
+        </span>
+
         <Link to="/shoppingCart" className="flex items-center gap-2">
           <ShoppingCartIcon className="h-6 w-6" />
         </Link>
       </div>
+      <hr className="text-darktext/25" />
       <header className="flex flex-wrap items-center justify-between gap-4 p-4 shadow-sm md:flex-nowrap">
         <div className="flex-shrink-0 overflow-visible">
           <Link to="/">
@@ -203,6 +236,11 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               className="sm:placeholder:text-customcolorone min-w-0 flex-1 px-4 py-2 text-sm outline-none placeholder:text-transparent sm:text-base"
               value={searchQuery}
               onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch(); 
+                }
+              }}
             />
             {searchQuery && (
               <button
@@ -224,11 +262,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
         </Button>
       </header>
 
-      {showNav && (
-        <div className="mt-2 pt-1 pr-10 pl-10">
-          <Nav />
-        </div>
-      )}
+      {showNav && <Nav />}
     </div>
   );
 };

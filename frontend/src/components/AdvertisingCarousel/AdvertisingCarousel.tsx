@@ -1,56 +1,48 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
-import { ChevronLeftIcon, ChevronRightIcon, PauseIcon, PlayIcon } from "@heroicons/react/20/solid";
-import sneakers from '../../assets/advertising/sneakers.jpg';
-import electronicDevices from '../../assets/advertising/electronicDevices.jpg';
-import vintageGuitars from '../../assets/advertising/vintageGuitars.jpg';
+
+import sneakers from "../../assets/advertising/sneakers.jpg";
+import electronicDevices from "../../assets/advertising/electronicDevices.jpg";
+import vintageGuitars from "../../assets/advertising/vintageGuitars.jpg";
 
 const AdvertisingCarousel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   const slides = [
     {
       id: 1,
-      title: "Vintage Electric Guitars",
-      description: "Discover rare and collectible electric guitars!",
+      title: "Music for Everyone",
+      description:
+        "Explore the latest and greatest keyboards, drums and guitars",
       image: vintageGuitars,
     },
     {
       id: 2,
       title: "Electronic Devices",
-      description: "Explore the latest and greatest electronic devices for all ages!",
+      description: "Discover the latest smartphones, laptops and televisions",
       image: electronicDevices,
     },
     {
       id: 3,
-      title: "Sneakers",
-      description: "Classic and cools sneakers for all ages!",
+      title: "Fashionable Clothing",
+      description: "Classic jeans, cool sneakers and jackets for all ages!",
       image: sneakers,
     },
   ];
 
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, [slides.length]);
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const togglePause = () => {
-    setIsPaused((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(nextSlide, 6000);
-      return () => clearInterval(interval);
-    }
-  }, [isPaused, nextSlide]);
-
   return (
-    <div className="relative w-full h-64 md:h-96 overflow-hidden rounded-lg py-4 md:py-8">
+    <div
+      aria-live="polite"
+      className="relative h-94 w-full overflow-hidden rounded-lg py-4 md:py-8"
+    >
       {slides.map((slide, index) => (
         <Transition
           key={slide.id}
@@ -61,52 +53,45 @@ const AdvertisingCarousel: React.FC = () => {
           leave="transition-opacity duration-1000"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
+          aria-hidden={index !== currentSlide}
         >
-          <div className="absolute inset-0 flex flex-col md:flex-row items-center bg-[#36486b] justify-between px-4 md:px-8">
-            <div className="w-full md:w-1/2 flex flex-col justify-center text-white z-10 text-center md:text-left mb-4 md:mb-0">
-              <h2 className="text-2xl md:text-4xl font-bold md:ml-10">{slide.title}</h2>
-              <p className="text-lg md:text-xl mt-2 md:mt-4 md:ml-10">{slide.description}</p>
-            </div>
+          <section className="absolute inset-0 flex flex-col items-center justify-between bg-[#36486b] px-4 md:flex-row md:px-8">
+            <article className="z-10 mb-4 flex w-full flex-col justify-center text-center text-white md:mb-0 md:w-1/2 md:text-left">
+              <h2 className="mt-10 text-2xl font-bold md:mt-0 md:ml-10 md:text-4xl">
+                {slide.title}
+              </h2>
+              <p className="mt-2 text-lg md:mt-4 md:ml-10 md:text-xl">
+                {slide.description}
+              </p>
+            </article>
 
-            <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end h-48 md:h-64 relative">
+            <article className="relative flex h-48 w-full items-center justify-center md:h-64 md:w-1/2 md:justify-end">
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full md:w-3/4 h-48 md:h-64 object-cover rounded-lg shadow-lg border-2 border-white"
+                className="mb-10 h-48 w-full rounded-lg border-2 border-white object-cover shadow-lg md:mb-0 md:h-64 md:w-3/4"
+                loading="lazy"
                 onError={(e) => {
                   console.error("Image failed to load:", slide.image);
-                  e.currentTarget.src = "https://via.placeholder.com/800x400?text=Image+Not+Found";
+                  e.currentTarget.src =
+                    "https://via.placeholder.com/800x400?text=Image+Not+Found";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#36486b]/50 to-[#36486b]/0 rounded-lg"></div> {/* Gradient overlay */}
+            </article>
+            <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  className={`size-3 cursor-pointer rounded-full ${
+                    index === currentSlide ? "bg-white" : "bg-gray-400"
+                  }`}
+                  onClick={() => setCurrentSlide(index)}
+                ></button>
+              ))}
             </div>
-          </div>
+          </section>
         </Transition>
       ))}
-
-      <button
-        onClick={prevSlide}
-        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
-      >
-        <ChevronLeftIcon className="h-6 w-6 text-gray-800" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
-      >
-        <ChevronRightIcon className="h-6 w-6 text-gray-800" />
-      </button>
-
-      <button
-        onClick={togglePause}
-        className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
-      >
-        {isPaused ? (
-          <PlayIcon className="h-6 w-6 text-gray-800" />
-        ) : (
-          <PauseIcon className="h-6 w-6 text-gray-800" />
-        )}
-      </button>
     </div>
   );
 };
