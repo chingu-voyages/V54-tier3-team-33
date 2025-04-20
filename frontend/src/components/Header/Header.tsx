@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import React, { Fragment, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import {
   setSearchQuery,
   loadProducts,
@@ -25,6 +25,7 @@ import { AppDispatch, RootState } from "../../store/store";
 import Nav from "../Nav/Nav";
 import Button from "../../utils/Button";
 import { useDispatch, useSelector } from "react-redux";
+import { logOutUser } from "../../store/slices/authSlice";
 
 interface HeaderProps {
   showAdvertising?: boolean;
@@ -42,13 +43,14 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
-
+  const navigate = useNavigate()
   const user = useSelector((state: RootState) => state.auth.user);
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const { searchQuery, category, subcategory, minPrice, maxPrice } =
     useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
+  const [hoveredCategory, setHoveredCategory] = useState<boolean | null>(true);
 
   const handleSearch = () => {
     const params: Record<string, string> = {
@@ -124,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     <div className="text-darktext flex flex-col items-center">
       {/* Centered Article */}
       <div className="flex w-full justify-center px-5 py-2">
-        <article className="flex w-full max-w-7xl items-center justify-between">
+        <article className="relative flex w-full max-w-7xl items-center justify-between">
           <span className="flex gap-2">
             {user ? (
               <p>
@@ -152,23 +154,65 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             )}
           </span>
 
-          <Link to="/shoppingCart" className="relative flex items-center gap-2">
-            <ShoppingCartIcon className="h-6 w-6" />
-            {cartItems.length > 0 && (
-              <span className="absolute -top-1 left-4 flex size-4 items-center justify-center rounded-full bg-red-600 text-xs text-white">
-                {cartItems.length}
-              </span>
-            )}
-          </Link>
+          <div className="flex items-center gap-5">
+            <div
+              onMouseEnter={() => setHoveredCategory(true)}
+              onMouseLeave={() => setHoveredCategory(false)}
+              className="relative"
+            >
+              <Link
+                to="/profile"
+                className="flex cursor-pointer items-center gap-1.5 px-4 py-2"
+              >
+                My eBay
+                <ChevronDownIcon className="h-4.5 w-4.5" />
+              </Link>
+
+              {hoveredCategory && (
+                <div
+                  onMouseEnter={() => setHoveredCategory(true)}
+                  onMouseLeave={() => setHoveredCategory(false)}
+                  className="absolute top-full left-0 z-50 flex w-96 flex-col items-start rounded-xl border border-gray-200 bg-white shadow-lg"
+                >
+                  <Link
+                    to={"/profile"}
+                    className="w-full px-4 py-2 text-start hover:bg-gray-100"
+                  >
+                    Profile
+                  </Link>
+                  <button
+                    onClick={() => {
+                      dispatch(logOutUser({ navigate }));
+                      console.log("User logged out");
+                    }}
+                    className="w-full cursor-pointer px-4 py-2 text-start hover:bg-gray-100"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              )}
+            </div>
+
+            <Link
+              to="/shoppingCart"
+              className="relative flex items-center gap-2"
+            >
+              <ShoppingCartIcon className="h-6 w-6" />
+              {cartItems.length > 0 && (
+                <span className="absolute -top-1 left-4 flex size-4 items-center justify-center rounded-full bg-red-600 text-xs text-white">
+                  {cartItems.length}
+                </span>
+              )}
+            </Link>
+          </div>
         </article>
       </div>
 
       <hr className="text-darktext/25 w-full" />
 
-      <div className="w-full border-b border-gray-300 bg-amber-100">
-        {/* Centered Content with Margin */}
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:flex-nowrap">
-          {/* Logo */}
+      <div className="w-full border-b border-gray-300">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 py-2 md:flex-nowrap">
+          {/* logo */}
           <div className="flex-shrink-0">
             <Link to="/">
               <img
@@ -183,7 +227,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             </Link>
           </div>
 
-          {/* Shop by Categories Dropdown */}
+          {/* shop by categories dropdown */}
           <div className="flex flex-1 items-center gap-4">
             <Menu as="div" className="relative">
               <MenuButton className="flex cursor-pointer items-center space-x-2 px-2 py-1 text-sm transition-colors sm:px-4 sm:py-2 sm:text-base">
@@ -243,7 +287,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
               </Transition>
             </Menu>
 
-            {/* Search Bar */}
+            {/* search bar */}
             <div className="flex flex-1 items-center overflow-hidden rounded-full border-2 border-gray-700">
               <MagnifyingGlassIcon className="ml-3 h-5 w-5" />
               <input
@@ -269,7 +313,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             </div>
           </div>
 
-          {/* Search Button */}
+          {/* search button */}
           <Button
             variant="primary"
             className="hidden !w-46 sm:block"
