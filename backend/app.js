@@ -1,10 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const morgan = require('morgan')
 const globalErrorHandler = require('./controllers/err.controller')
+const loggerMiddleware = require('./middlewares/logger.middleware')
 const path = require('path')
 const app = express()
 const cors = require('cors')
+
 const { connectToDatabase } = require('./config/db')
 connectToDatabase()
 
@@ -17,7 +20,7 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use(express.static('dist'))
-
+app.use(loggerMiddleware)
 app.use(globalErrorHandler)
 
 

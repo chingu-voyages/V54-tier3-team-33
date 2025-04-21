@@ -1,4 +1,4 @@
-const Product = require('../models/product.models')
+const Product = require('../models/product.model')
 const sortKeys = {
   'price_asc': { price: 'asc' },
   'price_desc': { price: -1 },

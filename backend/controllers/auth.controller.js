@@ -34,10 +34,8 @@ module.exports = {
         sameSite: 'Lax',
         maxAge: 7 * 24 * 60 * 60 * 1000
       })
-      console.log('Cookie set:')
-      console.log('Headers:', res.getHeaders())
-      return res.status(201).json({
-        status: 'sucess',
+      return res.status(200).json({
+        status: 'success',
         message: 'logged in successfully'
       })
     } catch (e) {
@@ -84,7 +82,7 @@ module.exports = {
         maxAge: 7 * 24 * 60 * 60 * 1000
       })
       res.status(201).json({
-        status: 'succes',
+        status: 'success',
         message: 'Account created sucessfully'
       })
     } catch (err) {
@@ -112,14 +110,17 @@ module.exports = {
         message: err.message,
       })
     }
-    },
-    logout: async (req, res, next) => {
-        res.clearCookie('token', {
-            httpOnly: true,
-            secure: false,
-            sameSite: 'Lax',
-          });
-          res.sendStatus(200)
-          
+  },
+  logout: async (req, res, next) => {
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: false,
+      sameSite: 'Lax',
+    })
+    res.status(200).json({
+      status: 'success',
+      message: 'logged out successfully'
+    })
+
   }
 }

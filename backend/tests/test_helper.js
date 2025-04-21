@@ -1,4 +1,6 @@
 const Product = require('../models/product.model')
+const User = require('../models/user.model')
+const Order = require('../models/order.model')
 const initialProducts = [
   {
     'name': 'Vizio MQX Series 4K TV (70-inch)',
@@ -35,4 +37,19 @@ const productsInDb = async () => {
   const products  = await Product.find({})
   return products.map(product => product.toJSON())
 }
-module.exports = { initialProducts, productsInDb }
+const user = {
+  'firstname': 'bob',
+  'lastname': 'beb',
+  'email': 'test@gmail.com',
+  'password': 'test'
+}
+const usersInDb = async () => {
+  const users = await User.find({})
+  return users.map(u => u.toJSON())
+}
+
+const ordersInDb = async () => {
+  const orders = await Order.find({})
+  return orders.map(o => o.toJSON())
+}
+module.exports = { initialProducts, productsInDb, user, usersInDb, ordersInDb }
