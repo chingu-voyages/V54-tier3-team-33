@@ -80,10 +80,7 @@ module.exports = {
         })
       }
 
-      return res.status(200).json({
-        status: 'success',
-        data: product,
-      })
+      return res.send(product)
     } catch (err) {
       return res.status(500).json({
         status: 'error',
