@@ -1,6 +1,9 @@
 require("dotenv").config();
 const express = require("express");
+const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const {authMiddleware} = require("./middlewares/auth.middleware");
+const loggerMiddleware = require("./middlewares/logger.middleware")
 const globalErrorHandler = require("./controllers/err.controller");
 
 const path = require("path");
@@ -20,7 +23,8 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.static("dist"));
-
+app.use(loggerMiddleware);
+app.use(authMiddleware);
 app.use(globalErrorHandler);
 
 connectToDatabase();
