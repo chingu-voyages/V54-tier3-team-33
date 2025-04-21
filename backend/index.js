@@ -11,7 +11,6 @@ const path = require("path");
 const app = express();
 const cors = require("cors");
 const { connectToDatabase } = require("./config/db");
-const { log } = require("console");
 const port = process.env.PORT || 3000;
 
 //midlleware
