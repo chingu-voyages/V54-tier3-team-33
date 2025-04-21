@@ -5,14 +5,17 @@ import CreateForm from "../utils/CreateForm";
 
 const CreateAccPage: React.FC = () => {
   return (
-    <div className="flex h-screen flex-col text-darktext">
+    <div className="text-darktext flex h-screen flex-col">
       <div className="flex w-full items-start justify-between px-6 pt-5">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-36" />
         </Link>
-        <span className="flex gap-1">
-          <p className="sm:block text-lg hidden">Already have an account? </p>
-          <Link to="/signinpage" className="font-semibold underline">
+        <span className="text-md flex gap-1">
+          <p className="hidden sm:block">Already have an account? </p>
+          <Link
+            to="/signinpage"
+            className="text-primary font-semibold underline"
+          >
             {" "}
             Sign in
           </Link>

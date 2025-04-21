@@ -112,5 +112,14 @@ module.exports = {
         message: err.message,
       })
     }
+    },
+    logout: async (req, res, next) => {
+        res.clearCookie('token', {
+            httpOnly: true,
+            secure: false,
+            sameSite: 'Lax',
+          });
+          res.sendStatus(200)
+          
   }
 }

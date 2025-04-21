@@ -1,5 +1,9 @@
-const Product = require('../models/product.model')
-
+const Product = require('../models/product.models')
+const sortKeys = {
+  'price_asc': { price: 'asc' },
+  'price_desc': { price: -1 },
+  'popular': { sold: -1 }
+}
 module.exports = {
   getAll: async (req, res, next) => {
     const {
@@ -10,9 +14,10 @@ module.exports = {
       subcategory,
       page = 1,
       limit = 20,
+      sort= 'price_asc'
     } = req.query
 
-    let filter = {}
+    const filter = {}
     if (search) {
       filter.$or = [
         { name: { $regex: search, $options: 'i' } },
@@ -32,7 +37,7 @@ module.exports = {
       if (maxPrice) filter.price.$lte = parseFloat(maxPrice)
     }
     const skip = (parseInt(page) - 1) * parseInt(limit)
-    const products = await Product.find(filter)
+    const products = await Product.find(filter).sort(sortKeys[sort])
       .skip(skip)
       .limit(parseInt(limit))
 
@@ -88,3 +93,5 @@ module.exports = {
     }
   },
 }
+
+

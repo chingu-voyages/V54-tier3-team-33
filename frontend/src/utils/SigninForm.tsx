@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {fetchAuthenticatedUser} from "../store/slices/authSlice.ts"
+import { AppDispatch } from "../store/store.ts";
+
 
 const SigninForm: React.FC = () => {
   const navigate = useNavigate();
@@ -10,6 +14,7 @@ const SigninForm: React.FC = () => {
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -35,7 +40,7 @@ const SigninForm: React.FC = () => {
 
       const data = await response.json();
       console.log("Login successful", data);
-
+      dispatch(fetchAuthenticatedUser())
       // Navigate to profile page
       navigate("/profile");
     } catch (error) {
@@ -55,7 +60,7 @@ const SigninForm: React.FC = () => {
         </h2>
         <p className="mb-6 text-center">
           New to eBay?{" "}
-          <Link to="/createacc" className="underline">
+          <Link to="/createacc" className="text-primary font-semibold underline">
             Create account
           </Link>{" "}
         </p>
