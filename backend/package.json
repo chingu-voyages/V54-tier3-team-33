@@ -7,15 +7,17 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -L index.js",
+    "test": "cross-env  NODE_ENV=test node --test",
+    "dev": "cross-env NODE_ENV=development nodemon -L index.js",
     "build:ui": "rm -rf dist && cd ../frontend/ && npm run build && cp -r dist ../backend",
-    "deploy": "npm run build:ui && fly deploy"
+    "deploy": "npm run build:ui && fly deploy",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
@@ -26,7 +28,12 @@
     "speakeasy": "^2.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
     "@flydotio/dockerfile": "^0.7.8",
-    "nodemon": "^3.1.9"
+    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.1.0"
   }
 }
