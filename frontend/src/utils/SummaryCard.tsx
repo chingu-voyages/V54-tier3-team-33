@@ -62,10 +62,11 @@ export default function SummaryCard({
                 onClick={() => navigate("/signinpage")}
                 className="w-full"
               >
-                Continue to sign in
+                Sign in to continue
               </Button>
+
               <Button onClick={() => navigate("/checkout")} className="w-full">
-                Continue as guest
+                Create an account
               </Button>
             </div>
           </Modal>

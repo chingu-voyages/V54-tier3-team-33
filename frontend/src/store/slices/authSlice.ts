@@ -61,7 +61,7 @@ export const logOutUser = createAsyncThunk<
       throw new Error("Failed to log out");
     }
     dispatch(logout());
-    toast.success("Logged out successfully!");
+    toast.success("Signed out successfully!");
     navigate("/");
   } catch (error) {
     console.error("Error logging out:", error);

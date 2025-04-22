@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {fetchAuthenticatedUser} from "../store/slices/authSlice.ts"
+import { useDispatch } from "react-redux";
+import { fetchAuthenticatedUser } from "../store/slices/authSlice.ts";
 import { AppDispatch } from "../store/store.ts";
-
 
 const SigninForm: React.FC = () => {
   const navigate = useNavigate();
@@ -40,9 +39,9 @@ const SigninForm: React.FC = () => {
 
       const data = await response.json();
       console.log("Login successful", data);
-      dispatch(fetchAuthenticatedUser())
+      dispatch(fetchAuthenticatedUser());
       // Navigate to profile page
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       console.log((error as Error).message);
     }
@@ -52,15 +51,25 @@ const SigninForm: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
+  const autoFillTestAccount = () => {
+    setFormData({
+      email: "predragjan944@gmail.com",
+      password: "987654321111",
+    });
+  };
+
   return (
-    <div className="mt-20 flex items-center justify-center">
+    <div className="mt-20 flex flex-col items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full px-3">
         <h2 className="mb-6 text-center text-3xl font-semibold">
           Sign in to your account
         </h2>
         <p className="mb-6 text-center">
           New to eBay?{" "}
-          <Link to="/createacc" className="text-primary font-semibold underline">
+          <Link
+            to="/createacc"
+            className="text-primary font-semibold underline"
+          >
             Create account
           </Link>{" "}
         </p>
@@ -106,6 +115,12 @@ const SigninForm: React.FC = () => {
           Sign In
         </Button>
       </form>
+      <div className="text-darktext/70 gap-4 mt-5 flex flex-col items-center rounded-xl bg-gray-200/40 p-4">
+        <p>You can also use our account for testing purposes</p>
+        <Button variant="secondary" className="border-primary/40 text-sm !font-medium" onClick={autoFillTestAccount}>
+          Use test account
+        </Button>
+      </div>
     </div>
   );
 };

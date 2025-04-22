@@ -27,7 +27,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
           <h2 className="text-xl font-semibold">{title}</h2>
           <button
             onClick={onClose}
-            className="size-8 rounded-full bg-gray-100 font-extrabold hover:text-gray-700"
+            className="size-8 cursor-pointer rounded-full hover:bg-gray-200 transition-all bg-gray-100 font-extrabold "
           >
             ✕
           </button>

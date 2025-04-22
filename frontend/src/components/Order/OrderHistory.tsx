@@ -29,49 +29,57 @@ export function OrderHistory() {
   ) : orders && orders.length > 0 ? (
     <div className="bg-customcolortwo text-darktext w-full flex-1 gap-5 rounded-2xl border border-gray-200 p-8 shadow-sm lg:w-2/3 lg:min-w-[30rem]">
       <h2 className="mb-4 text-xl font-bold">Order History</h2>
-      {orders.map((order: Order) => (
-        <div
-          key={order._id}
-          className="mb-4 rounded-xl border border-gray-200 bg-white p-4"
-        >
-          <div className="mb-1 flex items-center justify-between gap-12">
-            <span className="mb-3 font-semibold">
-              Order: <span className="text-sm font-normal">#{order._id}</span>
-            </span>
-          </div>
-          <ul className="mb-2 flex list-inside list-disc flex-col gap-1 text-sm">
-            {order.items.map((item: OrderItem, index: number) => (
-              <div key={`${order._id}-${item.id}-${index}`}>
-                <li className="flex items-center justify-between gap-5">
-                  <span>
-                    {item.product.name}{" "}
-                    <span className="text-gray-500">
-                      (Quantity: {item.quantity})
+      {orders
+        .slice()
+        .reverse()
+        .map((order: Order, index: number) => (
+          <div
+            key={order._id}
+            className="mb-4 rounded-xl border border-gray-200 bg-white p-4"
+          >
+            <div className="mb-1 flex items-center justify-between gap-12">
+              <span className="mb-3 font-semibold">
+                Order: <span className="text-sm font-normal">#{order._id}</span>
+              </span>
+              {index === 0 && (
+                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-600">
+                  Latest Order
+                </span>
+              )}
+            </div>
+            <ul className="mb-2 flex list-inside list-disc flex-col gap-1 text-sm">
+              {order.items.map((item: OrderItem, index: number) => (
+                <div key={`${order._id}-${item.id}-${index}`}>
+                  <li className="flex items-center justify-between gap-5">
+                    <span>
+                      {item.product.name}{" "}
+                      <span className="text-gray-500">
+                        (Quantity: {item.quantity})
+                      </span>
                     </span>
-                  </span>
-                  <span>
-                    ${(item.unitPriceAtOrder * item.quantity).toFixed(2)}
-                  </span>
-                </li>
-                <hr className="w-full border border-gray-200" />
-              </div>
-            ))}
-          </ul>
-          <div className="flex justify-between text-sm font-semibold">
-            <span>Total:</span>
-            <span>
-              $
-              {order.items
-                .reduce(
-                  (sum: number, item: OrderItem) =>
-                    sum + item.unitPriceAtOrder * item.quantity,
-                  0,
-                )
-                .toFixed(2)}
-            </span>
+                    <span>
+                      ${(item.unitPriceAtOrder * item.quantity).toFixed(2)}
+                    </span>
+                  </li>
+                  <hr className="w-full border border-gray-200" />
+                </div>
+              ))}
+            </ul>
+            <div className="flex justify-between text-sm font-semibold">
+              <span>Total:</span>
+              <span>
+                $
+                {order.items
+                  .reduce(
+                    (sum: number, item: OrderItem) =>
+                      sum + item.unitPriceAtOrder * item.quantity,
+                    0,
+                  )
+                  .toFixed(2)}
+              </span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   ) : (
     <div className="bg-customcolortwo w-full flex-1 gap-5 rounded-2xl border border-gray-200 p-8 shadow-sm">

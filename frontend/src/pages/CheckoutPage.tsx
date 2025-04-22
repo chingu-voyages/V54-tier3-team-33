@@ -1,13 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { usePostOrder } from "../hooks/usePostOrder.ts";
 import { useEffect } from "react";
 import Button from "../utils/Button.tsx";
+import { clearCart } from "../store/slices/cartSlice.ts";
 
 //todo: show error or success toast && loading button
 export default function CheckoutPage() {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const navigate = useNavigate();
   const { postOrder, response, loading: postOrderLoading } = usePostOrder();
@@ -18,6 +20,7 @@ export default function CheckoutPage() {
       quantity: item.quantity,
     }));
     await postOrder(orderPayload);
+    dispatch(clearCart())
   };
   // creates an error in the App.tsx
   // if (response) {
