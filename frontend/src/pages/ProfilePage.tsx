@@ -4,27 +4,18 @@ import { OrderHistory } from "../components/Order/OrderHistory.tsx";
 import Spinner from "../utils/Spinner.tsx";
 import userNotFound from "../assets/user-not-found.svg";
 import { useDispatch } from "react-redux";
-import {logout , User} from "../store/slices/authSlice.ts";
-
+import { logOutUser, User } from "../store/slices/authSlice.ts";
+import { AppDispatch } from "../store/store.ts";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage: React.FC = () => {
+  const dispatch: AppDispatch = useDispatch()
+  const navigate = useNavigate()
   const {
     data: user,
     loading: userLoading,
     error: userError,
   } = useFetch<User>("/api/auth/me");
-  const logOutUser = async () => {
-    try {
-      await fetch("/api/auth/logout", {
-        method: "POST",
-        credentials: "include",
-    })
-    dispatch(logout());
-  } catch (error) {
-      console.error("Error logging out:", error);
-    }
-  }
-  const dispatch = useDispatch();
 
   return userLoading ? (
     <Spinner />
@@ -56,7 +47,7 @@ const ProfilePage: React.FC = () => {
             <button
               className="border-darktext/30 cursor-pointer rounded-full border bg-white px-4 py-1 text-sm font-semibold text-red-500 shadow-sm transition-all hover:border-red-500 hover:bg-red-500 hover:text-white"
               onClick={() => {
-                logOutUser();
+                dispatch(logOutUser({ navigate }))
                 console.log("User logged out");
               }}
             >

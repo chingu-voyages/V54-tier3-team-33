@@ -1,7 +1,5 @@
 import React , {Fragment } from "react";
-import {Link , useNavigate , useNavigation , useSearchParams} from "react-router-dom";
-
-
+import { Link, useSearchParams } from "react-router-dom";
 import {
   setSearchQuery,
   loadProducts,
@@ -44,13 +42,13 @@ const categoriesMap = [
 
 const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const dispatch: AppDispatch = useDispatch();
+
   const user = useSelector((state: RootState) => state.auth.user);
 
   const { searchQuery, category, subcategory, minPrice, maxPrice } =
     useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
-  const navigate = useNavigate()
 
   const handleSearch = () => {
     const params: Record<string, string> = {
@@ -73,10 +71,8 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     if (maxPrice) {
       params.maxPrice = maxPrice.toString();
     }
-    navigate({
-      pathname: "/",
-      search: `?${new URLSearchParams(params).toString()}`,
-    });
+
+    setSearchParams(params);
     dispatch(loadProducts({ page: 1, limit: 10 }));
     dispatch(setSearchQuery(""));
   };
@@ -93,10 +89,8 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     if (searchQuery.trim()) {
       params.search = searchQuery;
     }
-    navigate({
-      pathname: "/",
-      search: `?${new URLSearchParams(params).toString()}`,
-    });
+
+    setSearchParams(params);
   };
 
   const handleSubcategoryClick = (category: string, subcategory: string) => {
@@ -112,10 +106,8 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     if (searchQuery.trim()) {
       params.search = searchQuery;
     }
-    navigate({
-      pathname: "/",
-      search: `?${new URLSearchParams(params).toString()}`,
-    });
+
+    setSearchParams(params);
   };
 
   const handleClearResults = () => {

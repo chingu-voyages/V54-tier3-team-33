@@ -4,7 +4,7 @@ import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {fetchAuthenticatedUser} from "../store/slices/authSlice.ts"
-import {ThunkDispatch} from "@reduxjs/toolkit";
+import { AppDispatch } from "../store/store.ts";
 
 
 const SigninForm: React.FC = () => {
@@ -14,7 +14,7 @@ const SigninForm: React.FC = () => {
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -60,7 +60,7 @@ const SigninForm: React.FC = () => {
         </h2>
         <p className="mb-6 text-center">
           New to eBay?{" "}
-          <Link to="/createacc" className="text-primary underline">
+          <Link to="/createacc" className="text-primary font-semibold underline">
             Create account
           </Link>{" "}
         </p>

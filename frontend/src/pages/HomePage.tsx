@@ -59,7 +59,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="mx-4">
+      <div className="flex items-center justify-center">
         <AdvertisingCarousel />
       </div>
 

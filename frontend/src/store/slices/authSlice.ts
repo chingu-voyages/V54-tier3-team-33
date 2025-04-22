@@ -1,5 +1,11 @@
-import {ActionReducerMapBuilder , createAsyncThunk , createSlice , PayloadAction} from "@reduxjs/toolkit";
-import {RootState} from "../store.ts";
+import {
+  ActionReducerMapBuilder,
+  createAsyncThunk,
+  createSlice,
+  PayloadAction,
+} from "@reduxjs/toolkit";
+import { RootState } from "../store.ts";
+import toast from "react-hot-toast";
 
 export interface User {
   id: string;
@@ -20,10 +26,11 @@ const initialState: AuthState = {
   isAuthenticated: false,
 };
 
+// Fetch authenticated user
 export const fetchAuthenticatedUser = createAsyncThunk<
   User,
   void,
-  { state:RootState }
+  { state: RootState }
 >("auth/fetchAuthUserStatus", async (_, { rejectWithValue }) => {
   try {
     const res = await fetch("/api/auth/me", {
@@ -35,7 +42,30 @@ export const fetchAuthenticatedUser = createAsyncThunk<
     const data = await res.json();
     return data.data;
   } catch {
-     return rejectWithValue("Error when fetching user ");
+    return rejectWithValue("Error when fetching user");
+  }
+});
+
+// Logout user
+export const logOutUser = createAsyncThunk<
+  void,
+  { navigate: (path: string) => void }, // Accept navigate as an argument
+  { state: RootState }
+>("auth/logoutUser", async ({ navigate }, { dispatch, rejectWithValue }) => {
+  try {
+    const res = await fetch("/api/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+    if (!res.ok) {
+      throw new Error("Failed to log out");
+    }
+    dispatch(logout());
+    toast.success("Logged out successfully!");
+    navigate("/");
+  } catch (error) {
+    console.error("Error logging out:", error);
+    return rejectWithValue("Error logging out");
   }
 });
 
@@ -60,6 +90,9 @@ const authSlice = createSlice({
     builder.addCase(fetchAuthenticatedUser.rejected, (state) => {
       state.user = null;
       state.isAuthenticated = false;
+    });
+    builder.addCase(logOutUser.rejected, () => {
+      toast.error("Error");
     });
   },
 });
