@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import {Link , useNavigate , useSearchParams} from "react-router-dom";
 import electronics from "../../assets/nav-images/electronics.jpg";
 import clothes from "../../assets/nav-images/clothes.jpg";
 import instruments from "../../assets/nav-images/instruments.jpg";
@@ -34,6 +34,7 @@ const Nav = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   const { searchQuery } = useSelector((state: RootState) => state.products);
+  const navigate = useNavigate()
 
   const dispatch: AppDispatch = useDispatch();
   const [, setSearchParams] = useSearchParams();
@@ -51,7 +52,10 @@ const Nav = () => {
       params.search = searchQuery;
     }
 
-    setSearchParams(params);
+    navigate({
+      pathname: "/",
+      search: `?${new URLSearchParams(params).toString()}`,
+    });
     dispatch(loadProducts({ page: 1, limit: 10 }));
     setHoveredCategory(null);
   };
@@ -70,7 +74,10 @@ const Nav = () => {
       params.search = searchQuery;
     }
 
-    setSearchParams(params);
+    navigate({
+      pathname: "/",
+      search: `?${new URLSearchParams(params).toString()}`,
+    });
     dispatch(loadProducts({ page: 1, limit: 10 }));
     setHoveredCategory(null);
   };
