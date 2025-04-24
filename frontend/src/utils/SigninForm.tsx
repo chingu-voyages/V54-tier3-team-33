@@ -65,7 +65,7 @@ const SigninForm: React.FC = () => {
           Sign in to your account
         </h2>
         <p className="mb-6 text-center">
-          New to eBay?{" "}
+          New to eBuy?{" "}
           <Link
             to="/createacc"
             className="text-primary font-semibold underline"
@@ -115,9 +115,13 @@ const SigninForm: React.FC = () => {
           Sign In
         </Button>
       </form>
-      <div className="text-darktext/70 gap-4 mt-5 flex flex-col items-center rounded-xl bg-gray-200/40 p-4">
+      <div className="text-darktext/70 mt-5 flex flex-col items-center gap-4 rounded-xl bg-gray-200/40 p-4">
         <p>You can also use our account for testing purposes</p>
-        <Button variant="secondary" className="border-primary/40 text-sm !font-medium" onClick={autoFillTestAccount}>
+        <Button
+          variant="secondary"
+          className="border-primary/40 text-sm !font-medium"
+          onClick={autoFillTestAccount}
+        >
           Use test account
         </Button>
       </div>

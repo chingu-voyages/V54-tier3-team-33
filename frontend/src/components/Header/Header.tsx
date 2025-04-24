@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
-  const [hoveredMyEbay, setHoveredMyEbay] = useState<boolean | null>(false);
+  const [hoveredMyEbuy, setHoveredMyEbuy] = useState<boolean | null>(false);
 
   const handleSearch = () => {
     const params: Record<string, string> = {
@@ -164,29 +164,29 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
           <div className="flex items-center gap-4">
             {user && (
               <div
-                onMouseEnter={() => setHoveredMyEbay(true)}
-                onMouseLeave={() => setHoveredMyEbay(false)}
+                onMouseEnter={() => setHoveredMyEbuy(true)}
+                onMouseLeave={() => setHoveredMyEbuy(false)}
                 className="relative"
               >
                 <Link
-                  onMouseEnter={() => setHoveredMyEbay(true)}
+                  onMouseEnter={() => setHoveredMyEbuy(true)}
                   to="/profile"
                   className="flex cursor-pointer items-center gap-1 px-4 text-sm font-semibold"
                 >
-                  My eBay
+                  My Ebuy
                   <ChevronDownIcon className="h-4.5 w-4.5" />
                 </Link>
 
-                {hoveredMyEbay && (
+                {hoveredMyEbuy && (
                   <div
-                    onMouseEnter={() => setHoveredMyEbay(true)}
-                    onMouseLeave={() => setHoveredMyEbay(false)}
+                    onMouseEnter={() => setHoveredMyEbuy(true)}
+                    onMouseLeave={() => setHoveredMyEbuy(false)}
                     className="absolute top-full left-1/2 z-50 flex w-56 -translate-x-1/2 flex-col items-start rounded-xl border border-gray-200 bg-white p-1 shadow-lg"
                   >
                     <Link
                       to={"/profile"}
                       className="w-full rounded-lg p-2 text-start hover:bg-gray-100"
-                      onClick={() => setHoveredMyEbay(false)}
+                      onClick={() => setHoveredMyEbuy(false)}
                     >
                       Profile
                     </Link>

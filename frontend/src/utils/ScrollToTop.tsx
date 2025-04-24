@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function ScrollToTop() {
-  // const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [pathname]);
 
   useEffect(() => {
     const toggleVisibility = () => {
