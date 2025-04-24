@@ -19,8 +19,8 @@ const PriceInput = () => {
   const clearMax = () => setlocalMaxPrice("");
 
   const handlePriceSubmit = () => {
-    console.log("Min Price:", localMinPrice);
-    console.log("Max Price:", localMaxPrice);
+    // console.log("Min Price:", localMinPrice);
+    // console.log("Max Price:", localMaxPrice);
 
     dispatch(setMinPrice(localMinPrice));
     dispatch(setMaxPrice(localMaxPrice));

@@ -14,7 +14,7 @@ export default function ShoppingCartPage() {
     <div className="text-darktext flex flex-grow flex-col items-center">
       {cartItems.length === 0 ? (
         <div className="w-full">
-          <p className="mx-auto w-full max-w-6xl px-3 text-3xl font-bold">
+          <p className="mx-auto w-full max-w-7xl px-3 text-3xl font-bold">
             Shopping cart
           </p>
 
@@ -32,8 +32,8 @@ export default function ShoppingCartPage() {
           </div>
         </div>
       ) : (
-        <div className="w-full max-w-6xl">
-          <p className="mx-auto w-full max-w-6xl px-3 text-3xl font-bold">
+        <div className="w-full max-w-7xl">
+          <p className="mx-auto w-full max-w-7xl px-3 text-3xl font-bold">
             Shopping cart
           </p>
           <div className="mx-4 mt-10 flex flex-col gap-3 lg:flex-row">

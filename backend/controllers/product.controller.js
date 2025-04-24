@@ -42,7 +42,7 @@ module.exports = {
       .limit(parseInt(limit))
 
     const totalProducts = await Product.countDocuments(filter)
-    console.log(products.length)
+    // console.log(products.length)
     res.send({
       totalPages: Math.ceil(totalProducts / parseInt(limit)),
       page,

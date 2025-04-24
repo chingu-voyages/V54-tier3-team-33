@@ -38,14 +38,14 @@ function Grid({
   );
 
   return (
-    <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
+    <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-10 ">
       <div className="flex w-full items-center gap-4 px-6 md:max-w-7xl">
         <p className="text-3xl font-semibold">{category}</p>
         <p className="text-2xl font-semibold">{subcategory}</p>
       </div>
       <PriceInput />
 
-      <section className="my-6 flex w-full flex-col items-center gap-6 px-6 md:max-w-7xl">
+      <section className="my-6 flex w-full flex-col items-center gap-6 px-4 md:max-w-7xl">
         {loading ? (
           <Spinner />
         ) : error ? (
@@ -62,7 +62,7 @@ function Grid({
       </section>
 
       {/* pagination */}
-      <section className="flex w-full max-w-6xl items-center justify-center px-6 text-gray-500">
+      <section className="flex w-full max-w-7xl items-center justify-center px-6 text-gray-500">
         <div className="flex items-center gap-2">
           {Array.from({ length: totalPages }, (_, index) => (
             <button

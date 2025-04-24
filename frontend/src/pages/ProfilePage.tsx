@@ -27,7 +27,7 @@ const ProfilePage: React.FC = () => {
       </div>
     </div>
   ) : user ? (
-    <div className="text-darktext mx-auto flex max-w-6xl flex-col items-start justify-center gap-6 px-4 lg:flex-row">
+    <div className="text-darktext mx-auto flex max-w-7xl flex-col items-start justify-center gap-6 px-4 lg:flex-row">
       <article className="bg-customcolortwo w-full rounded-2xl border border-gray-200 p-8 shadow-sm sm:w-sm lg:w-1/3 lg:min-w-96">
         <div className="flex flex-col items-center">
           <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-2xl font-bold">

@@ -37,10 +37,7 @@ const SigninForm: React.FC = () => {
         throw new Error("Login failed");
       }
 
-      const data = await response.json();
-      console.log("Login successful", data);
       dispatch(fetchAuthenticatedUser());
-      // Navigate to profile page
       navigate("/");
     } catch (error) {
       console.log((error as Error).message);
@@ -59,8 +56,8 @@ const SigninForm: React.FC = () => {
   };
 
   return (
-    <div className="mt-20 flex flex-col items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full px-3">
+    <div className="mt-10 flex items-center justify-center">
+      <form onSubmit={handleSubmit} className="w-full px-4 xs:w-[450px]">
         <h2 className="mb-6 text-center text-3xl font-semibold">
           Sign in to your account
         </h2>
@@ -71,9 +68,9 @@ const SigninForm: React.FC = () => {
             className="text-primary font-semibold underline"
           >
             Create account
-          </Link>{" "}
+          </Link>
         </p>
-        <div className="flex w-96 flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <div className="relative flex items-center">
             <input
               type="email"
@@ -82,49 +79,51 @@ const SigninForm: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email"
-              className="formInput"
+              className="formInput w-full" // ✅ added w-full just like in create page
               required
             />
           </div>
           <div className="relative flex items-center">
-            <div className="relative w-full">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="Password"
-                className="formInput"
-                required
-              />
-              <div
-                className="absolute top-1/2 right-1 -translate-y-1/2 transform cursor-pointer text-gray-400"
-                onClick={togglePasswordVisibility}
-              >
-                {showPassword ? (
-                  <EyeSlashIcon className="size-9 p-2" />
-                ) : (
-                  <EyeIcon className="size-9 p-2" />
-                )}
-              </div>
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="formInput w-full" // ✅ added w-full
+              required
+            />
+            <div
+              className="absolute top-1/2 right-3 -translate-y-1/2 transform cursor-pointer" // ✅ matched icon placement
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? (
+                <EyeSlashIcon className="h-5 w-5" />
+              ) : (
+                <EyeIcon className="h-5 w-5" />
+              )}
             </div>
           </div>
         </div>
         <Button type="submit" className="mt-5 w-full">
+          {" "}
+          {/* ✅ consistent button styling */}
           Sign In
         </Button>
+        <div className="text-darktext/70 mt-5 flex flex-col items-center gap-4 rounded-xl bg-gray-200/40 p-4 text-center">
+          {" "}
+          {/* ✅ matched info section style */}
+          <p>You can also use our account for testing purposes</p>
+          <Button
+            variant="secondary"
+            className="border-primary/40 w-full text-sm !font-medium" // ✅ full width button
+            onClick={autoFillTestAccount}
+          >
+            Use test account
+          </Button>
+        </div>
       </form>
-      <div className="text-darktext/70 mt-5 flex flex-col items-center gap-4 rounded-xl bg-gray-200/40 p-4">
-        <p>You can also use our account for testing purposes</p>
-        <Button
-          variant="secondary"
-          className="border-primary/40 text-sm !font-medium"
-          onClick={autoFillTestAccount}
-        >
-          Use test account
-        </Button>
-      </div>
     </div>
   );
 };

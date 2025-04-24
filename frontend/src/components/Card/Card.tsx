@@ -46,7 +46,7 @@ function Card({ item }: { item: Item }) {
           <p className="text-xs">
             Rating: {item.rating ? "⭐".repeat(item.rating) : "No rating yet"}
           </p>
-          <span className="flex items-center justify-between w-full">
+          <span className="flex w-full items-center justify-between">
             <p className="text-sm">{item.sold} Sold</p>
             <p>{item.stock} left</p>
           </span>

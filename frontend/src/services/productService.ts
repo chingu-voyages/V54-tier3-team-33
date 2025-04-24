@@ -8,7 +8,7 @@ const fetchProducts = async (
   maxPrice: number,
 ) => {
   try {
-    console.log(category, subcategory);
+    // console.log(category, subcategory);
 
     const response = await fetch(
       `/api/products?search=${search}&page=${page}&limit=${limit}&category=${category}&subcategory=${subcategory}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
@@ -40,7 +40,7 @@ const fetchProductDetails = async (productId: string) => {
     }
 
     const singleItemdata = await response.json();
-    console.log("API Response:", singleItemdata);
+    // console.log("API Response:", singleItemdata);
     return singleItemdata;
   } catch (error) {
     console.error("Error fetching products:", error);

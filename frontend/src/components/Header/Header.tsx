@@ -127,7 +127,6 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     console.log("Search query cleared");
   };
 
-  console.log(user);
 
   return (
     <div className="text-darktext flex flex-col items-center">

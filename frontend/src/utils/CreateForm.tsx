@@ -42,8 +42,6 @@ const CreateForm: React.FC = () => {
         throw new Error("Registration failed");
       }
 
-      const data = await response.json();
-      console.log("Registration successful", data);
       navigate("/profile");
     } catch (error) {
       console.log((error as Error).message);
@@ -60,12 +58,12 @@ const CreateForm: React.FC = () => {
 
   return (
     <div className="mt-10 flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full px-3">
+      <form onSubmit={handleSubmit} className="w-full xs:w-[450px] px-4">
         <h2 className="mb-6 text-3xl font-semibold">Create an Account</h2>
-        <div className="flex w-96 flex-col gap-4">
+        <div className="flex flex-col gap-4">
           {/* first name */}
           <div className="flex gap-4">
-            <div className="relative flex items-center">
+            <div className="relative flex w-1/2 items-center">
               <input
                 type="text"
                 id="firstname"
@@ -78,7 +76,7 @@ const CreateForm: React.FC = () => {
               />
             </div>
             {/* last name */}
-            <div className="relative flex items-center">
+            <div className="relative flex w-1/2 items-center">
               <input
                 type="text"
                 id="lastname"
@@ -165,6 +163,12 @@ const CreateForm: React.FC = () => {
         <Button type="submit" className="mt-5 w-full">
           Create an Account
         </Button>
+        <div className="text-darktext/70 mt-5 flex flex-col items-center gap-4 rounded-xl bg-gray-200/40 p-4 text-center">
+          <p>
+            Don't want to create new account? No problem, go to Sign in page and
+            use our test account
+          </p>
+        </div>
       </form>
     </div>
   );

@@ -53,7 +53,7 @@ const ProductDetailsPage = () => {
   //
   return (
     <section className="px-4">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row">
         {/* Left Section */}
         <article className="flex w-full flex-col gap-4 md:w-1/2">
           <div className="flex flex-col gap-4 sm:flex-row">

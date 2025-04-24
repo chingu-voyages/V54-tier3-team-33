@@ -37,8 +37,6 @@ export const loadProducts = createAsyncThunk<
     minPrice,
     maxPrice,
   );
-
-  console.log(category, subcategory);
   return data;
 });
 
@@ -51,37 +49,30 @@ const productSlice = createSlice({
     },
     setCategory: (state, action) => {
       state.category = action.payload;
-      console.log("Category set to:", action.payload);
     },
     setSubcategory: (state, action) => {
       state.subcategory = action.payload;
-      console.log("Subcategory set to:", action.payload);
     },
     setMinPrice: (state, action) => {
       state.minPrice = action.payload;
-      console.log("minprice set to:", action.payload);
     },
     setMaxPrice: (state, action) => {
       state.maxPrice = action.payload;
-      console.log("maxprice set to:", action.payload);
     },
   },
 
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
-        // console.log("Reducer: loadProducts.pending");
         state.loading = true;
         state.error = null;
       })
       .addCase(loadProducts.fulfilled, (state, action) => {
-        // console.log("Reducer: loadProducts.fulfilled", action.payload);
         state.products = action.payload.products;
         state.totalPages = action.payload.totalPages;
         state.loading = false;
       })
       .addCase(loadProducts.rejected, (state, action) => {
-        // console.log("Reducer: loadProducts.rejected", action.error.message);
         state.loading = false;
         state.error = action.error.message || "Failed to load products";
       });
