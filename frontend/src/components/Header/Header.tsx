@@ -132,8 +132,8 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   return (
     <div className="text-darktext flex flex-col items-center">
       {/* Centered Article */}
-      <div className="flex w-full justify-center px-5 py-2">
-        <article className="relative flex w-full max-w-7xl items-center justify-between">
+      <div className="flex w-full justify-center py-2">
+        <article className="relative flex w-full max-w-7xl items-center justify-between px-4">
           <span className="flex gap-2">
             {user ? (
               <p>
@@ -174,7 +174,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                   className="flex cursor-pointer items-center gap-1 px-4 text-sm font-semibold"
                 >
                   My Ebuy
-                  <ChevronDownIcon className="h-4.5 w-4.5" />
+                  <ChevronDownIcon className="size-4 text-black" />
                 </Link>
 
                 {hoveredMyEbuy && (
@@ -222,7 +222,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       <hr className="text-darktext/25 w-full" />
 
       <div className="w-full border-b border-gray-300">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 py-2 md:flex-nowrap">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:flex-nowrap">
           {/* logo */}
           <div className="flex-shrink-0">
             <Link to="/">
@@ -240,12 +240,10 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
 
           {/* shop by categories dropdown */}
           <div className="flex flex-1 items-center gap-4">
-            <Menu as="div" className="relative">
-              <MenuButton className="flex cursor-pointer items-center px-2 py-2 transition-colors">
-                <span className="w-20 text-sm font-semibold">
-                  Shop by Category
-                </span>
-                <ChevronDownIcon className="size-5" />
+            <Menu as="div" className="relative hidden md:block">
+              <MenuButton className="flex w-28 cursor-pointer items-center p-2 transition-colors md:w-full md:gap-2">
+                <span className="text-sm font-semibold">Shop by Category</span>
+                <ChevronDownIcon className="size-6 text-black md:size-5" />
               </MenuButton>
               <Transition
                 as={Fragment}
@@ -301,12 +299,12 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
             </Menu>
 
             {/* search bar */}
-            <div className="flex flex-1 items-center overflow-hidden rounded-full border-2 border-gray-700">
-              <MagnifyingGlassIcon className="ml-3 h-5 w-5" />
+            <div className="mr-3 flex flex-1 items-center overflow-hidden rounded-full border-2 border-gray-700 sm:mr-0">
+              <MagnifyingGlassIcon className="ml-3 hidden h-5 w-5 sm:block" />
               <input
                 type="text"
                 placeholder="Search for anything"
-                className="sm:placeholder:text-customcolorone min-w-0 flex-1 px-4 py-2 text-sm outline-none placeholder:text-transparent sm:text-base"
+                className="sm:placeholder:text-customcolorone min-w-0 flex-1 px-4 py-2 outline-none sm:text-base"
                 value={searchQuery}
                 onChange={(e) => dispatch(setSearchQuery(e.target.value))}
                 onKeyDown={(e) => {
@@ -315,9 +313,14 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                   }
                 }}
               />
+              <MagnifyingGlassIcon
+                onClick={handleSearch}
+                className="bg-primary mr-1.5 size-8 cursor-pointer rounded-full p-1.5 text-white sm:hidden"
+              />
+
               {searchQuery && (
                 <button
-                  className="p-2 transition-colors"
+                  className="hidden p-2 transition-colors sm:block"
                   onClick={handleClearResults}
                 >
                   <XMarkIcon className="h-5 w-5" />
