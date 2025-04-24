@@ -1,5 +1,3 @@
-// import { Link } from "react-router-dom";
-// import Button from "../../utils/Button";
 import { BsCartPlus } from "react-icons/bs";
 import { addItemToCart } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
@@ -27,7 +25,7 @@ function Card({ item }: { item: Item }) {
         <img
           src={item.image[0]}
           alt="missing"
-          className="h-46 w-full rounded-md object-contain"
+          className="h-40 w-full rounded-md object-contain"
         />
       </Link>
       <button
@@ -44,17 +42,18 @@ function Card({ item }: { item: Item }) {
         className="flex h-full w-full flex-col gap-1"
       >
         <h3 className="font-medium">{item.name}</h3>
-        <span className="text-darktext/65 mt-auto flex w-full items-center gap-1">
-          <p className="text-sm">
+        <span className="text-darktext/65 flex w-full flex-col items-start gap-1">
+          <p className="text-xs">
             Rating: {item.rating ? "⭐".repeat(item.rating) : "No rating yet"}
           </p>
-          <p className="text-sm">| {item.sold} Sold</p>
+          <span className="flex items-center justify-between w-full">
+            <p className="text-sm">{item.sold} Sold</p>
+            <p>{item.stock} left</p>
+          </span>
         </span>
         {/* Push this section to the bottom */}
-        <span className="flex w-full items-center justify-between">
-          <p className="text-xl font-bold">Price: ${item.price}</p>
-          <p>{item.stock} left</p>
-        </span>
+
+        <p className="mt-auto text-xl font-bold">Price: ${item.price}</p>
       </Link>
     </div>
   );

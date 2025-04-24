@@ -241,9 +241,11 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
           {/* shop by categories dropdown */}
           <div className="flex flex-1 items-center gap-4">
             <Menu as="div" className="relative">
-              <MenuButton className="flex cursor-pointer items-center space-x-2 px-2 py-1 text-sm transition-colors sm:px-4 sm:py-2 sm:text-base">
-                <span>Shop by Category</span>
-                <ChevronDownIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              <MenuButton className="flex cursor-pointer items-center px-2 py-2 transition-colors">
+                <span className="w-20 text-sm font-semibold">
+                  Shop by Category
+                </span>
+                <ChevronDownIcon className="size-5" />
               </MenuButton>
               <Transition
                 as={Fragment}

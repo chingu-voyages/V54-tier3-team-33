@@ -39,19 +39,19 @@ function Grid({
 
   return (
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-16">
-      <div className="mr-auto flex items-center gap-4">
+      <div className="flex w-full items-center gap-4 px-6 md:max-w-7xl">
         <p className="text-3xl font-semibold">{category}</p>
         <p className="text-2xl font-semibold">{subcategory}</p>
       </div>
       <PriceInput />
 
-      <section className="my-6 flex w-full flex-col items-center gap-6 px-6 md:max-w-6xl">
+      <section className="my-6 flex w-full flex-col items-center gap-6 px-6 md:max-w-7xl">
         {loading ? (
           <Spinner />
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : products.length > 0 ? (
-          <div className="grid w-full gap-3 sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
+          <div className="grid w-full gap-3 sm:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]">
             {products.map((item) => (
               <Card key={item.id} item={item} />
             ))}

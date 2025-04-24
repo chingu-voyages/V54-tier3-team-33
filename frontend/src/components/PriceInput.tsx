@@ -41,7 +41,7 @@ const PriceInput = () => {
   };
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 mt-2">
       <p className="text-lg">Filter by Price:</p>
       <div className="text-darktext/70 flex gap-2">
         <div className="relative">
