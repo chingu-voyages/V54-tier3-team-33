@@ -14,6 +14,9 @@ import {
 import { useSearchParams } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import ScrollToTop from "../utils/ScrollToTop";
+import {ProductsSkeletonLoader} from "../components/ProductSkeleton.tsx";
+import {SortDropdown} from "../components/Sorting.tsx";
+import PriceInput from "../components/PriceInput.tsx";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -71,14 +74,28 @@ const HomePage: React.FC = () => {
       <div className="flex items-center justify-center">
         <AdvertisingCarousel />
       </div>
-      <Grid
-        products={products}
-        currentPage={page}
-        limit={limit}
-        onPageChange={handlePageChange}
-        loading={loading}
-        error={error}
-      />
+      <div className="my-6 flex mx-auto  flex-col items-center justify-center gap-6 px-4 md:max-w-7xl">
+        <div className="flex w-full justify-between items-center ">
+          <div className="flex items-end gap-4">
+            <p className="text-3xl font-semibold">{category}</p>
+            <p className="text-2xl font-medium">{subcategory}</p>
+          </div>
+          <SortDropdown />
+        </div>
+        <PriceInput />
+      </div>
+      {
+        loading ? <ProductsSkeletonLoader /> :
+            <Grid
+                products={products}
+                currentPage={page}
+                limit={limit}
+                onPageChange={handlePageChange}
+                loading={loading}
+                error={error}
+            />
+      }
+
 
       <ScrollToTop/>
       <Toaster />

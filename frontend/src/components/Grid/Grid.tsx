@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { RootState } from "../../store/store";
-import Spinner from "../../utils/Spinner";
-import PriceInput from "../PriceInput.tsx";
-import {SortDropdown} from "../Sorting.tsx";
+import {ProductsSkeletonLoader} from "../ProductSkeleton.tsx";
+import Spinner from "../../utils/Spinner.tsx";
 
 interface Product {
   id: number;
@@ -34,25 +33,16 @@ function Grid({
   currentPage,
   onPageChange,
 }: GridProps) {
-  const { totalPages, category, subcategory } = useSelector(
+  const { totalPages} = useSelector(
     (state: RootState) => state.products,
   );
 
   return (
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-10 ">
-      <div className="flex w-full justify-between items-center gap-4 px-6 md:max-w-7xl">
-        <div className="flex items-end gap-4">
-          <p className="text-3xl font-semibold">{category}</p>
-          <p className="text-2xl font-medium">{subcategory}</p>
-        </div>
-        <SortDropdown />
-      </div>
-      <PriceInput />
-
       <section className="my-6 flex w-full flex-col items-center gap-6 px-4 md:max-w-7xl">
         {loading ? (
-          <Spinner />
-        ) : error ? (
+            <Spinner />
+        ) :error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : products.length > 0 ? (
           <div className="grid w-full gap-3 sm:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]">
