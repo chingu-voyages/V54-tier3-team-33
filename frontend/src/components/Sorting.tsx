@@ -3,22 +3,20 @@ import React, { useEffect, useState } from "react";
 import { ArrowsUpDownIcon } from "@heroicons/react/24/outline";
 import { useSearchParamUpdater } from "../hooks/useSearchParamsUpdater.ts";
 
-export type SortKey = "price_asc" | "price_desc" | "popular" | "default" ;
+export type SortKey = "price_asc" | "price_desc" | "popular" | "default";
 
 const sortKeys: Record<SortKey, string> = {
   default: "",
   price_asc: "price_asc",
   price_desc: "price_desc",
   popular: "popular",
-
 };
 
 const sortLabels: Record<SortKey, string> = {
   default: "Sort by: Default",
   price_asc: "Price: Low to High",
   price_desc: "Price: High to Low",
-  popular: "Most Popular",
-
+  popular: "Most Sold",
 };
 
 export const SortDropdown = () => {
@@ -44,18 +42,18 @@ export const SortDropdown = () => {
   }, [location.search]);
 
   return (
-    <div className="text-darktext flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-3 py-2 transition duration-200">
-      <ArrowsUpDownIcon className="size-5" />
+    <div className="text-darktext border-darktext/50 flex items-center gap-2 rounded-full border-2 sm:w-fit w-full bg-white px-3 transition duration-200 hover:bg-gray-100">
+      <ArrowsUpDownIcon className="size-5 " />
       <select
         value={sortKey}
         onChange={handleChange}
-        className="cursor-pointer bg-transparent font-medium outline-none"
+        className="cursor-pointer grow py-2 font-medium outline-none"
       >
         {(Object.keys(sortKeys) as SortKey[]).map((key) => (
           <option
             key={key}
             value={key}
-            className="bg-white p-2 text-sm font-medium"
+            className="cursor-pointer bg-white p-2 py-10"
           >
             {sortLabels[key]}
           </option>

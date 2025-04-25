@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setMaxPrice, setMinPrice } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
 import { RootState } from "../store/store";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+
+import { FunnelIcon } from "@heroicons/react/24/outline";
+import Button from "../utils/Button";
 
 const PriceInput = () => {
   const dispatch = useDispatch();
@@ -17,9 +19,6 @@ const PriceInput = () => {
 
   const [isOpen, setIsOpen] = useState(false); // ✅ dropdown state
   const dropdownRef = useRef<HTMLDivElement>(null); // ✅ for outside click detection
-
-  const clearMin = () => setlocalMinPrice("");
-  const clearMax = () => setlocalMaxPrice("");
 
   const handlePriceSubmit = () => {
     dispatch(setMinPrice(localMinPrice));
@@ -69,66 +68,57 @@ const PriceInput = () => {
   }
 
   return (
-    <div className="relative flex gap-3" ref={dropdownRef}>
-      {/* ✅ Toggle Button */}
+    <div className="text-darktext relative w-full sm:w-fit flex sm:flex-row flex-col gap-3" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="text-darktext rounded-xl border border-gray-300 bg-white px-4 py-2 font-medium hover:bg-gray-100"
+        className="border-darktext/50 flex cursor-pointer items-center gap-2 rounded-full border-2 px-3 py-[6.5px] font-medium hover:bg-gray-100"
       >
+        <FunnelIcon className="size-5" />
         Filter by Price Range
       </button>
 
-      <button onClick={handleResetFilters}>Reset all filters</button>
+      <Button
+        onClick={handleResetFilters}
+        variant="primary"
+        className="!border-4 !border-primary text-sm w-full sm:w-30"
+      >
+        Reset filter
+      </Button>
 
       {/* ✅ Dropdown Panel */}
       {isOpen && (
-        <div className="absolute top-10 z-50 mt-2 w-[250px] rounded-xl border bg-white p-4 shadow-lg">
-          <div className="text-darktext/70 flex flex-col gap-3">
-            <div className="relative">
+        <div className="border-darktext/40 absolute top-10 z-50 mt-2 w-[250px] rounded-xl border bg-white p-4 shadow-lg">
+          <div className="flex flex-col gap-3">
+            <div className="relative flex flex-col items-center gap-2">
               <input
                 type="number"
                 inputMode="numeric"
                 pattern="[0-9]*"
-                className="bg-customcolortwo w-full rounded-full border px-4 py-1.5 focus:outline-none"
+                className="bg-customcolortwo border-darktext/60 w-full rounded-full border px-4 py-1.5 focus:outline-none"
                 placeholder="Min Price"
                 value={localMinPrice}
                 onChange={(e) => setlocalMinPrice(e.target.value)}
               />
-              {localMinPrice && (
-                <XMarkIcon
-                  className="absolute top-1.5 right-1.5 size-7 cursor-pointer rounded-full p-1 hover:bg-gray-200"
-                  onClick={clearMin}
-                  type="button"
-                />
-              )}
-            </div>
 
-            <div className="relative">
               <input
                 type="number"
                 inputMode="numeric"
                 pattern="[0-9]*"
-                className="bg-customcolortwo w-full rounded-full border px-4 py-1.5 focus:outline-none"
+                className="bg-customcolortwo border-darktext/60 w-full rounded-full border px-4 py-1.5 focus:outline-none"
                 placeholder="Max Price"
                 value={localMaxPrice}
                 onChange={(e) => setlocalMaxPrice(e.target.value)}
               />
-              {localMaxPrice && (
-                <XMarkIcon
-                  className="absolute top-1.5 right-1.5 size-7 cursor-pointer rounded-full p-1 hover:bg-gray-200"
-                  onClick={clearMax}
-                  type="button"
-                />
-              )}
             </div>
 
             {/* ✅ Apply Button */}
-            <button
+            <Button
               onClick={handlePriceSubmit}
-              className="bg-primary hover:bg-primaryHover w-full cursor-pointer rounded-full px-4 py-2 text-sm text-white transition-all focus:outline-none"
+              variant="primary"
+              className="w-full text-sm"
             >
               Apply
-            </button>
+            </Button>
           </div>
         </div>
       )}

@@ -23,7 +23,7 @@ interface GridProps {
 
 function Grid({ products = [], loading, error }: GridProps) {
   return (
-    <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-10">
+    <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center ">
       <section className="my-6 flex w-full flex-col items-center gap-6 px-4 md:max-w-7xl">
         {loading ? (
           <Spinner />

@@ -75,13 +75,13 @@ const HomePage: React.FC = () => {
       <div className="flex items-center justify-center">
         <AdvertisingCarousel />
       </div>
-      <div className="mx-auto my-6 flex flex-col items-center justify-center gap-6 bg-amber-400 px-4 md:max-w-7xl">
+      <div className="mx-auto my-6 flex flex-col items-center justify-center gap-6 px-4 md:max-w-7xl">
         <div className="flex w-full items-center">
           <p className="text-3xl font-semibold">{category}</p>
           <p className="text-2xl font-medium">{subcategory}</p>
         </div>
 
-        <div className="flex w-full items-center justify-between gap-3">
+        <div className="flex sm:flex-row flex-col w-full items-center justify-between gap-3">
           <PriceInput />
           <SortDropdown />
         </div>
