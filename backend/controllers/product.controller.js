@@ -14,7 +14,7 @@ module.exports = {
       subcategory,
       page = 1,
       limit = 20,
-      sort= 'price_asc'
+      sort
     } = req.query
 
     const filter = {}
@@ -36,10 +36,15 @@ module.exports = {
       if (minPrice) filter.price.$gte = parseFloat(minPrice)
       if (maxPrice) filter.price.$lte = parseFloat(maxPrice)
     }
-    const skip = (parseInt(page) - 1) * parseInt(limit)
-    const products = await Product.find(filter).sort(sortKeys[sort])
-      .skip(skip)
-      .limit(parseInt(limit))
+    const skip = (parseInt(page) - 1) * parseInt(limit);
+
+    let queryBuilder = Product.find(filter);
+
+
+    if(sort) {
+      queryBuilder.sort(sortKeys[sort])
+    }
+    const products = await  queryBuilder.exec();
 
     const totalProducts = await Product.countDocuments(filter)
     // console.log(products.length)

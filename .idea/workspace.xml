@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="add sorting feature by ascending &amp; descending price ,and popularity by sold">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProductSkeleton.tsx" afterDir="false" />
+    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="refactor product grid page &amp; extract pagination into separate component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Grid/Grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/product.controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +98,7 @@
       <workItem from="1745343684602" duration="144000" />
       <workItem from="1745343943866" duration="2512000" />
       <workItem from="1745580240932" duration="496000" />
+      <workItem from="1745601717133" duration="527000" />
     </task>
     <task id="LOCAL-00001" summary="docs(readme): Add add social links">
       <option name="closed" value="true" />
@@ -213,7 +212,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745585234296</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add product list skeleton loading">
+      <option name="closed" value="true" />
+      <created>1745586550772</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745586550772</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix build error by removing unused import">
+      <option name="closed" value="true" />
+      <created>1745586642685</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745586642685</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor product grid page &amp; extract pagination into separate component">
+      <option name="closed" value="true" />
+      <created>1745587440019</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745587440019</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +257,9 @@
     <MESSAGE value="fix navigation when user is into another page other than product list page" />
     <MESSAGE value="fix navigation when user is in another page other than product list page" />
     <MESSAGE value="add sorting feature by ascending &amp; descending price ,and popularity by sold" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sorting feature by ascending &amp; descending price ,and popularity by sold" />
+    <MESSAGE value="add product list skeleton loading" />
+    <MESSAGE value="fix build error by removing unused import" />
+    <MESSAGE value="refactor product grid page &amp; extract pagination into separate component" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor product grid page &amp; extract pagination into separate component" />
   </component>
 </project>
