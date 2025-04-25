@@ -17,10 +17,11 @@ import ScrollToTop from "../utils/ScrollToTop";
 import {ProductsSkeletonLoader} from "../components/ProductSkeleton.tsx";
 import {SortDropdown} from "../components/Sorting.tsx";
 import PriceInput from "../components/PriceInput.tsx";
+import {Pagination} from "../components/Pagination.tsx";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { products, loading, error } = useSelector(
+  const { products, loading, error, totalPages } = useSelector(
     (state: RootState) => state.products,
   );
 
@@ -88,15 +89,12 @@ const HomePage: React.FC = () => {
         loading ? <ProductsSkeletonLoader /> :
             <Grid
                 products={products}
-                currentPage={page}
                 limit={limit}
-                onPageChange={handlePageChange}
                 loading={loading}
                 error={error}
             />
       }
-
-
+      <Pagination totalPage={totalPages} onPageChange={handlePageChange} currentPage={page} />
       <ScrollToTop/>
       <Toaster />
     </>
