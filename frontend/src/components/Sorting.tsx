@@ -3,18 +3,22 @@ import React, { useEffect, useState } from "react";
 import { ArrowsUpDownIcon } from "@heroicons/react/24/outline";
 import { useSearchParamUpdater } from "../hooks/useSearchParamsUpdater.ts";
 
-export type SortKey = "price_asc" | "price_desc" | "popular";
+export type SortKey = "price_asc" | "price_desc" | "popular" | "default" ;
 
 const sortKeys: Record<SortKey, string> = {
+  default: "",
   price_asc: "price_asc",
   price_desc: "price_desc",
   popular: "popular",
+
 };
 
 const sortLabels: Record<SortKey, string> = {
+  default: "Sort by: Default",
   price_asc: "Price: Low to High",
   price_desc: "Price: High to Low",
   popular: "Most Popular",
+
 };
 
 export const SortDropdown = () => {
@@ -22,7 +26,7 @@ export const SortDropdown = () => {
   const { updateSearchParam } = useSearchParamUpdater();
 
   const queryParams = new URLSearchParams(location.search);
-  const initialSort = queryParams.get("sort") || "";
+  const initialSort = queryParams.get("sort") || "default";
 
   const [sortKey, setSortKey] = useState(initialSort);
 
@@ -47,9 +51,6 @@ export const SortDropdown = () => {
         onChange={handleChange}
         className="cursor-pointer bg-transparent font-medium outline-none"
       >
-        <option value="" disabled>
-          Sort by
-        </option>
         {(Object.keys(sortKeys) as SortKey[]).map((key) => (
           <option
             key={key}

@@ -14,7 +14,7 @@ const initialState: ProductState = {
   subcategory: "",
   minPrice: 0,
   maxPrice: 999999,
-  sort: "popular"
+  sort: "default"
 };
 
 export const loadProducts = createAsyncThunk<
@@ -29,7 +29,7 @@ export const loadProducts = createAsyncThunk<
   const minPrice = state.products.minPrice;
   const maxPrice = state.products.maxPrice;
   const sort = state.products.sort;
-
+  const sortKey = sort == "default" ? "" : sort
   const data = await productService.fetchProducts(
     search,
     page,
@@ -37,7 +37,7 @@ export const loadProducts = createAsyncThunk<
     category,
     subcategory,
     minPrice,
-    maxPrice, sort
+    maxPrice, sortKey
   );
   return data;
 });

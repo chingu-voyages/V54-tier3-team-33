@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="refactor product grid page &amp; extract pagination into separate component">
+    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="make sorting optional on getAll product">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/product.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rest/products.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/products.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sorting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sorting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/slices/productSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/slices/productSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +101,7 @@
       <workItem from="1745343684602" duration="144000" />
       <workItem from="1745343943866" duration="2512000" />
       <workItem from="1745580240932" duration="496000" />
-      <workItem from="1745601717133" duration="527000" />
+      <workItem from="1745601717133" duration="1695000" />
     </task>
     <task id="LOCAL-00001" summary="docs(readme): Add add social links">
       <option name="closed" value="true" />
@@ -236,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745587440019</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="make sorting optional on getAll product">
+      <option name="closed" value="true" />
+      <created>1745602524540</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745602524541</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +271,7 @@
     <MESSAGE value="add product list skeleton loading" />
     <MESSAGE value="fix build error by removing unused import" />
     <MESSAGE value="refactor product grid page &amp; extract pagination into separate component" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor product grid page &amp; extract pagination into separate component" />
+    <MESSAGE value="make sorting optional on getAll product" />
+    <option name="LAST_COMMIT_MESSAGE" value="make sorting optional on getAll product" />
   </component>
 </project>

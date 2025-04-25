@@ -1,3 +1,13 @@
+GET http://localhost:3000/api/products?sort=price_asc
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RkN2UzMzE3NmQ1NDM1Yzc4NzM5YzciLCJpYXQiOjE3NDI1NjkwMTIsImV4cCI6MTc0MjU2OTA5OH0.g4mESjPVjvjIS8E12hs6PGowXW3jhR2R2JKVugPOlmo
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-04-25T203612.200.json
+
+###
+
 GET http://localhost:3000/api/products
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
