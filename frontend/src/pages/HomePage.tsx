@@ -2,7 +2,7 @@ import AdvertisingCarousel from "../../src/components/AdvertisingCarousel/Advert
 import Grid from "../components/Grid/Grid";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../src/store/store";
-import { useEffect } from "react";
+import React , { useEffect } from "react";
 import {
   loadProducts,
   setCategory,
@@ -52,6 +52,10 @@ const HomePage: React.FC = () => {
   const handlePageChange = (newPage: number) => {
     setSearchParams({
       search,
+      category,
+      subcategory,
+      maxPrice,
+      minPrice,
       page: newPage.toString(),
       limit: limit.toString(),
     });
