@@ -60,7 +60,7 @@ const PriceInput = () => {
     };
   }, [isOpen]);
 
-  function handleResetFilters(){
+  function handleResetFilters() {
     setlocalMinPrice("");
     setlocalMaxPrice("");
     dispatch(setMinPrice(""));
