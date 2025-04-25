@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import { RootState } from "../../store/store";
 import Spinner from "../../utils/Spinner";
 import PriceInput from "../PriceInput.tsx";
+import {SortDropdown} from "../Sorting.tsx";
 
 interface Product {
   id: number;
@@ -39,9 +40,12 @@ function Grid({
 
   return (
     <div className="bg-bgcolortwo text-dark container mx-auto flex flex-col items-center justify-center py-10 ">
-      <div className="flex w-full items-center gap-4 px-6 md:max-w-7xl">
-        <p className="text-3xl font-semibold">{category}</p>
-        <p className="text-2xl font-semibold">{subcategory}</p>
+      <div className="flex w-full justify-between items-center gap-4 px-6 md:max-w-7xl">
+        <div className="flex items-end gap-4">
+          <p className="text-3xl font-semibold">{category}</p>
+          <p className="text-2xl font-medium">{subcategory}</p>
+        </div>
+        <SortDropdown />
       </div>
       <PriceInput />
 

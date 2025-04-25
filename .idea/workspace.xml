@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="fix navigation when user is in another page other than product list page">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Sorting.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useSearchParamsUpdater.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Grid/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/productService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/productService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/slices/productSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/slices/productSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/slices/productTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/slices/productTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +32,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="fix/pagination-bug" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

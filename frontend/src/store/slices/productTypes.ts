@@ -1,3 +1,5 @@
+import {SortKey} from "../../components/Sorting.tsx";
+
 export type Product = {
   id: number;
   name: string;
@@ -27,6 +29,7 @@ export interface ProductState {
   subcategory: string;
   minPrice: number;
   maxPrice: number;
+  sort: SortKey
 }
 
 export interface ProductListProps {

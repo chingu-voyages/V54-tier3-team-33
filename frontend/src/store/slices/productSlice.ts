@@ -14,6 +14,7 @@ const initialState: ProductState = {
   subcategory: "",
   minPrice: 0,
   maxPrice: 999999,
+  sort: "popular"
 };
 
 export const loadProducts = createAsyncThunk<
@@ -27,6 +28,7 @@ export const loadProducts = createAsyncThunk<
   const subcategory = state.products.subcategory;
   const minPrice = state.products.minPrice;
   const maxPrice = state.products.maxPrice;
+  const sort = state.products.sort;
 
   const data = await productService.fetchProducts(
     search,
@@ -35,7 +37,7 @@ export const loadProducts = createAsyncThunk<
     category,
     subcategory,
     minPrice,
-    maxPrice,
+    maxPrice, sort
   );
   return data;
 });
@@ -58,6 +60,9 @@ const productSlice = createSlice({
     },
     setMaxPrice: (state, action) => {
       state.maxPrice = action.payload;
+    },
+    setSort: (state, action) => {
+      state.sort = action.payload;
     },
   },
 
@@ -85,5 +90,6 @@ export const {
   setSubcategory,
   setMinPrice,
   setMaxPrice,
+    setSort
 } = productSlice.actions;
 export default productSlice.reducer;

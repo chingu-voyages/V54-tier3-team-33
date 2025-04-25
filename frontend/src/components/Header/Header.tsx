@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.auth.user);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const { searchQuery, category, subcategory, minPrice, maxPrice } =
+  const { searchQuery, category, subcategory, minPrice, maxPrice , sort} =
     useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
@@ -64,6 +64,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       search: searchQuery.trim(),
       minPrice,
       maxPrice,
+      sort,
     };
 
     Object.entries(filters).forEach(([key, value]) => {
@@ -87,6 +88,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       page: "1",
       limit: "10",
       category,
+      sort,
     };
 
     if (searchQuery.trim()) {
@@ -107,6 +109,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       limit: "10",
       category,
       subcategory,
+      sort,
     };
 
     if (searchQuery.trim()) {
