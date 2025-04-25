@@ -2,22 +2,23 @@ import AdvertisingCarousel from "../../src/components/AdvertisingCarousel/Advert
 import Grid from "../components/Grid/Grid";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../src/store/store";
-import React , { useEffect } from "react";
+import React, { useEffect } from "react";
 import {
-  loadProducts ,
-  setCategory ,
-  setMaxPrice ,
-  setMinPrice ,
-  setSearchQuery , setSort ,
-  setSubcategory ,
+  loadProducts,
+  setCategory,
+  setMaxPrice,
+  setMinPrice,
+  setSearchQuery,
+  setSort,
+  setSubcategory,
 } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import ScrollToTop from "../utils/ScrollToTop";
-import {ProductsSkeletonLoader} from "../components/ProductSkeleton.tsx";
-import {SortDropdown} from "../components/Sorting.tsx";
+import { ProductsSkeletonLoader } from "../components/ProductSkeleton.tsx";
+import { SortDropdown } from "../components/Sorting.tsx";
 import PriceInput from "../components/PriceInput.tsx";
-import {Pagination} from "../components/Pagination.tsx";
+import { Pagination } from "../components/Pagination.tsx";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -42,9 +43,8 @@ const HomePage: React.FC = () => {
     dispatch(setSubcategory(subcategory));
     dispatch(setMinPrice(minPrice));
     dispatch(setMaxPrice(maxPrice));
-    dispatch(setSort(sort))
+    dispatch(setSort(sort));
     dispatch(loadProducts({ page, limit }));
-
   }, [
     dispatch,
     search,
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
     subcategory,
     minPrice,
     maxPrice,
-    sort
+    sort,
   ]);
 
   const handlePageChange = (newPage: number) => {
@@ -75,27 +75,33 @@ const HomePage: React.FC = () => {
       <div className="flex items-center justify-center">
         <AdvertisingCarousel />
       </div>
-      <div className="my-6 flex mx-auto  flex-col items-center justify-center gap-6 px-4 md:max-w-7xl">
-        <div className="flex w-full justify-between items-center ">
-          <div className="flex items-end gap-4">
-            <p className="text-3xl font-semibold">{category}</p>
-            <p className="text-2xl font-medium">{subcategory}</p>
-          </div>
+      <div className="mx-auto my-6 flex flex-col items-center justify-center gap-6 bg-amber-400 px-4 md:max-w-7xl">
+        <div className="flex w-full items-center">
+          <p className="text-3xl font-semibold">{category}</p>
+          <p className="text-2xl font-medium">{subcategory}</p>
+        </div>
+
+        <div className="flex w-full items-center justify-between gap-3">
+          <PriceInput />
           <SortDropdown />
         </div>
-        <PriceInput />
       </div>
-      {
-        loading ? <ProductsSkeletonLoader /> :
-            <Grid
-                products={products}
-                limit={limit}
-                loading={loading}
-                error={error}
-            />
-      }
-      <Pagination totalPage={totalPages} onPageChange={handlePageChange} currentPage={page} />
-      <ScrollToTop/>
+      {loading ? (
+        <ProductsSkeletonLoader />
+      ) : (
+        <Grid
+          products={products}
+          limit={limit}
+          loading={loading}
+          error={error}
+        />
+      )}
+      <Pagination
+        totalPage={totalPages}
+        onPageChange={handlePageChange}
+        currentPage={page}
+      />
+      <ScrollToTop />
       <Toaster />
     </>
   );

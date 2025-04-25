@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setMaxPrice, setMinPrice } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
@@ -15,17 +15,16 @@ const PriceInput = () => {
   const [localMinPrice, setlocalMinPrice] = useState<string>("");
   const [localMaxPrice, setlocalMaxPrice] = useState<string>("");
 
+  const [isOpen, setIsOpen] = useState(false); // ✅ dropdown state
+  const dropdownRef = useRef<HTMLDivElement>(null); // ✅ for outside click detection
+
   const clearMin = () => setlocalMinPrice("");
   const clearMax = () => setlocalMaxPrice("");
 
   const handlePriceSubmit = () => {
-    // console.log("Min Price:", localMinPrice);
-    // console.log("Max Price:", localMaxPrice);
-
     dispatch(setMinPrice(localMinPrice));
     dispatch(setMaxPrice(localMaxPrice));
 
-    // build updated search parameters
     const params: Record<string, string> = {
       page: "1",
       limit: "10",
@@ -38,57 +37,101 @@ const PriceInput = () => {
     if (localMaxPrice) params.maxPrice = localMaxPrice;
 
     setSearchParams(params);
+    setIsOpen(false); // ✅ close dropdown after apply
   };
 
+  // ✅ close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  function handleResetFilters(){
+    setlocalMinPrice("");
+    setlocalMaxPrice("");
+    dispatch(setMinPrice(""));
+    dispatch(setMaxPrice(""));
+    setSearchParams({ page: "1", limit: "10" });
+  }
+
   return (
-    <div className="flex items-center gap-3 mt-2">
-      <p className="text-lg">Filter by Price:</p>
-      <div className="text-darktext/70 flex gap-2">
-        <div className="relative">
-          <input
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            className="bg-customcolortwo w-40 rounded-full border px-4 py-1 focus:outline-none"
-            placeholder="Min Price"
-            value={localMinPrice}
-            onChange={(e) => setlocalMinPrice(e.target.value)}
-          />
-          {localMinPrice && (
-            <XMarkIcon
-              className="absolute top-0.5 right-0.5 size-8 cursor-pointer rounded-full p-1.5 transition-all"
-              onClick={clearMin}
-              type="button"
-            />
-          )}
-        </div>
-
-        <div className="relative">
-          <input
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            className="bg-customcolortwo w-40 rounded-full border px-4 py-1 focus:outline-none"
-            placeholder="Max Price"
-            value={localMaxPrice}
-            onChange={(e) => setlocalMaxPrice(e.target.value)}
-          />
-          {localMaxPrice && (
-            <XMarkIcon
-              className="absolute top-0.5 right-0.5 size-8 cursor-pointer rounded-full p-1.5 transition-all"
-              onClick={clearMax}
-              type="button"
-            />
-          )}
-        </div>
-      </div>
-
+    <div className="relative flex gap-3" ref={dropdownRef}>
+      {/* ✅ Toggle Button */}
       <button
-        onClick={handlePriceSubmit}
-        className="bg-primary hover:bg-primaryHover w-fit cursor-pointer rounded-full px-4 py-2 text-sm text-white transition-all focus:outline-none"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="text-darktext rounded-xl border border-gray-300 bg-white px-4 py-2 font-medium hover:bg-gray-100"
       >
-        Apply
+        Filter by Price Range
       </button>
+
+      <button onClick={handleResetFilters}>Reset all filters</button>
+
+      {/* ✅ Dropdown Panel */}
+      {isOpen && (
+        <div className="absolute top-10 z-50 mt-2 w-[250px] rounded-xl border bg-white p-4 shadow-lg">
+          <div className="text-darktext/70 flex flex-col gap-3">
+            <div className="relative">
+              <input
+                type="number"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                className="bg-customcolortwo w-full rounded-full border px-4 py-1.5 focus:outline-none"
+                placeholder="Min Price"
+                value={localMinPrice}
+                onChange={(e) => setlocalMinPrice(e.target.value)}
+              />
+              {localMinPrice && (
+                <XMarkIcon
+                  className="absolute top-1.5 right-1.5 size-7 cursor-pointer rounded-full p-1 hover:bg-gray-200"
+                  onClick={clearMin}
+                  type="button"
+                />
+              )}
+            </div>
+
+            <div className="relative">
+              <input
+                type="number"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                className="bg-customcolortwo w-full rounded-full border px-4 py-1.5 focus:outline-none"
+                placeholder="Max Price"
+                value={localMaxPrice}
+                onChange={(e) => setlocalMaxPrice(e.target.value)}
+              />
+              {localMaxPrice && (
+                <XMarkIcon
+                  className="absolute top-1.5 right-1.5 size-7 cursor-pointer rounded-full p-1 hover:bg-gray-200"
+                  onClick={clearMax}
+                  type="button"
+                />
+              )}
+            </div>
+
+            {/* ✅ Apply Button */}
+            <button
+              onClick={handlePriceSubmit}
+              className="bg-primary hover:bg-primaryHover w-full cursor-pointer rounded-full px-4 py-2 text-sm text-white transition-all focus:outline-none"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
