@@ -8,6 +8,7 @@ import { AppDispatch } from "../store/store.ts";
 
 const SigninForm: React.FC = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -22,7 +23,7 @@ const SigninForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setIsLoading(true)
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
@@ -41,6 +42,8 @@ const SigninForm: React.FC = () => {
       navigate("/");
     } catch (error) {
       console.log((error as Error).message);
+    }finally {
+      setIsLoading(false)
     }
   };
 
@@ -106,7 +109,12 @@ const SigninForm: React.FC = () => {
             </div>
           </div>
         </div>
-        <Button type="submit" className="mt-5 w-full">
+        <Button
+            isLoading={isLoading}
+            disabled={isLoading}
+            type="submit"
+            className="mt-5 w-full"
+        >
           {" "}
           {/* ✅ consistent button styling */}
           Sign In

@@ -98,6 +98,7 @@ export default function CheckoutPage() {
             </span>
 
             <Button
+              isLoading={postOrderLoading}
               className="w-full"
               onClick={handleConfirmAndPay}
               disabled={postOrderLoading}
