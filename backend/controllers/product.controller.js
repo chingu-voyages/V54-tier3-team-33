@@ -38,13 +38,13 @@ module.exports = {
     }
     const skip = (parseInt(page) - 1) * parseInt(limit);
 
-    let queryBuilder = Product.find(filter);
+    let queryBuilder = Product.find(filter).skip(skip);
 
 
     if(sort) {
       queryBuilder.sort(sortKeys[sort])
     }
-    const products = await  queryBuilder.exec();
+    const products = await  queryBuilder.limit(limit).exec();
 
     const totalProducts = await Product.countDocuments(filter)
     // console.log(products.length)
