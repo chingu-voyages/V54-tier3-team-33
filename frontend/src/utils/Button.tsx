@@ -1,10 +1,12 @@
 import React from "react";
+import ProgressBarCircleIndicator from "../components/ProgressbarCircleIndicator.tsx";
 
 interface ButtonProps {
   onClick?: () => void;
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
+  isLoading?: boolean;
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary"; 
 }
@@ -15,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   disabled = false,
   type = "button",
+    isLoading,
   variant = "primary", // primary as default
 }) => {
   
@@ -32,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       type={type}
     >
-      {children}
+      { isLoading ? <ProgressBarCircleIndicator /> : children}
     </button>
   );
 };
