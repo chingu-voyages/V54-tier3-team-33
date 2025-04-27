@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { ArrowsUpDownIcon } from "@heroicons/react/24/outline";
-import { useSearchParamUpdater } from "../hooks/useSearchParamsUpdater.ts";
+import { useSearchParamUpdater } from "../../hooks/useSearchParamsUpdater.ts";
 
 export type SortKey = "price_asc" | "price_desc" | "popular" | "default";
 
@@ -42,12 +42,12 @@ export const SortDropdown = () => {
   }, [location.search]);
 
   return (
-    <div className="text-darktext border-darktext/50 flex items-center gap-2 rounded-full border-2 sm:w-fit w-full bg-white px-3 transition duration-200 hover:bg-gray-100">
-      <ArrowsUpDownIcon className="size-5 " />
+    <div className="text-darktext border-darktext/50 flex w-full items-center gap-2 rounded-full border-2 bg-white px-3 transition duration-200 hover:bg-gray-100 sm:w-fit">
+      <ArrowsUpDownIcon className="size-5" />
       <select
         value={sortKey}
         onChange={handleChange}
-        className="cursor-pointer grow py-2 font-medium outline-none"
+        className="grow cursor-pointer py-2 font-medium outline-none"
       >
         {(Object.keys(sortKeys) as SortKey[]).map((key) => (
           <option

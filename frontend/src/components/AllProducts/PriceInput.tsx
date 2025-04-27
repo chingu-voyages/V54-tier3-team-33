@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setMaxPrice, setMinPrice } from "../store/slices/productSlice";
+import { setMaxPrice, setMinPrice } from "../../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
-import { RootState } from "../store/store";
+import { RootState } from "../../store/store";
 
 import { FunnelIcon } from "@heroicons/react/24/outline";
-import Button from "../utils/Button";
+import Button from "../../utils/Button";
 
 const PriceInput = () => {
   const dispatch = useDispatch();
@@ -68,7 +68,10 @@ const PriceInput = () => {
   }
 
   return (
-    <div className="text-darktext relative w-full sm:w-fit flex sm:flex-row flex-col gap-3" ref={dropdownRef}>
+    <div
+      className="text-darktext relative flex w-full flex-col gap-3 sm:w-fit sm:flex-row"
+      ref={dropdownRef}
+    >
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="border-darktext/50 flex cursor-pointer items-center gap-2 rounded-full border-2 px-3 py-[6.5px] font-medium hover:bg-gray-100"
@@ -80,7 +83,7 @@ const PriceInput = () => {
       <Button
         onClick={handleResetFilters}
         variant="primary"
-        className="!border-4 !border-primary text-sm w-full sm:w-30"
+        className="!border-primary w-full !border-4 text-sm sm:w-30"
       >
         Reset filter
       </Button>

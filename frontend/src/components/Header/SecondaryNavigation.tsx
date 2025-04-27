@@ -12,7 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 
-const Nav = () => {
+const SecondaryNavigation = () => {
   const categories = [
     {
       name: "Electronics",
@@ -171,4 +171,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default SecondaryNavigation;

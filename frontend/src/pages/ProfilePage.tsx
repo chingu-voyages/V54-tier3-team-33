@@ -9,8 +9,8 @@ import { AppDispatch } from "../store/store.ts";
 import { useNavigate } from "react-router-dom";
 
 const ProfilePage: React.FC = () => {
-  const dispatch: AppDispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch: AppDispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     data: user,
     loading: userLoading,
@@ -47,8 +47,7 @@ const ProfilePage: React.FC = () => {
             <button
               className="border-darktext/30 cursor-pointer rounded-full border bg-white px-4 py-1 text-sm font-semibold text-red-500 shadow-sm transition-all hover:border-red-500 hover:bg-red-500 hover:text-white"
               onClick={() => {
-                dispatch(logOutUser({ navigate }))
-                console.log("User logged out");
+                dispatch(logOutUser({ navigate }));
               }}
             >
               Sign out

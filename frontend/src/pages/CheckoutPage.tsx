@@ -6,6 +6,7 @@ import { usePostOrder } from "../hooks/usePostOrder.ts";
 import { useEffect } from "react";
 import Button from "../utils/Button.tsx";
 import { clearCart } from "../store/slices/cartSlice.ts";
+import toast from "react-hot-toast";
 
 //todo: show error or success toast && loading button
 export default function CheckoutPage() {
@@ -13,15 +14,24 @@ export default function CheckoutPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const navigate = useNavigate();
   const { postOrder, response, loading: postOrderLoading } = usePostOrder();
+
   const handleConfirmAndPay = async () => {
+  try {
     const orderPayload = cartItems.map((item) => ({
       id: item.product.id.toString(),
       price: item.product.price,
       quantity: item.quantity,
     }));
+
     await postOrder(orderPayload);
-    dispatch(clearCart())
-  };
+    dispatch(clearCart());
+    toast.success("Order placed successfully!");
+  } catch (error) {
+    console.error(error);
+    toast.error("Something went wrong! Please try again.");
+  }
+};
+
   // creates an error in the App.tsx
   // if (response) {
   //   return navigate("/profile");

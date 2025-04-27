@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchAuthenticatedUser } from "../store/slices/authSlice.ts";
 import { AppDispatch } from "../store/store.ts";
+import toast from "react-hot-toast";
 
 const SigninForm: React.FC = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const SigninForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
@@ -40,10 +41,12 @@ const SigninForm: React.FC = () => {
 
       dispatch(fetchAuthenticatedUser());
       navigate("/");
+      toast.success("Logged in successfully!");
     } catch (error) {
       console.log((error as Error).message);
-    }finally {
-      setIsLoading(false)
+      toast.error("Login failed. Please check your credentials.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -60,7 +63,7 @@ const SigninForm: React.FC = () => {
 
   return (
     <div className="mt-10 flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full px-4 xs:w-[450px]">
+      <form onSubmit={handleSubmit} className="xs:w-[450px] w-full px-4">
         <h2 className="mb-6 text-center text-3xl font-semibold">
           Sign in to your account
         </h2>
@@ -110,10 +113,10 @@ const SigninForm: React.FC = () => {
           </div>
         </div>
         <Button
-            isLoading={isLoading}
-            disabled={isLoading}
-            type="submit"
-            className="mt-5 w-full"
+          isLoading={isLoading}
+          disabled={isLoading}
+          type="submit"
+          className="mt-5 w-full"
         >
           {" "}
           {/* ✅ consistent button styling */}

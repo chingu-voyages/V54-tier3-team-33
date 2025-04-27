@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressBarCircleIndicator from "../components/ProgressbarCircleIndicator.tsx";
+import ProgressBarCircleIndicator from "./ProgressbarCircleIndicator.tsx";
 
 interface ButtonProps {
   onClick?: () => void;

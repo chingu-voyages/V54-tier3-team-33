@@ -1,4 +1,4 @@
-import {SortKey} from "../../components/Sorting.tsx";
+import { SortKey } from "../../components/AllProducts/Sorting.tsx";
 
 export type Product = {
   id: number;
@@ -13,10 +13,10 @@ export type Product = {
   sold: number;
 };
 
-export type CartItem  = {
-  product: Product,
-  quantity: number
-}
+export type CartItem = {
+  product: Product;
+  quantity: number;
+};
 
 export interface ProductState {
   products: Product[];
@@ -29,11 +29,5 @@ export interface ProductState {
   subcategory: string;
   minPrice: number;
   maxPrice: number;
-  sort: SortKey
-}
-
-export interface ProductListProps {
-  loading: boolean;
-  error: string | null;
-  searchResults: Product[];
+  sort: SortKey;
 }

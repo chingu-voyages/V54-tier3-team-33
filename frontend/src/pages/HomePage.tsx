@@ -1,5 +1,5 @@
 import AdvertisingCarousel from "../../src/components/AdvertisingCarousel/AdvertisingCarousel";
-import Grid from "../components/Grid/Grid";
+import Grid from "../components/AllProducts/Grid.tsx";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../src/store/store";
 import React, { useEffect } from "react";
@@ -13,12 +13,12 @@ import {
   setSubcategory,
 } from "../store/slices/productSlice";
 import { useSearchParams } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+
 import ScrollToTop from "../utils/ScrollToTop";
-import { ProductsSkeletonLoader } from "../components/ProductSkeleton.tsx";
-import { SortDropdown } from "../components/Sorting.tsx";
-import PriceInput from "../components/PriceInput.tsx";
-import { Pagination } from "../components/Pagination.tsx";
+import { ProductsSkeletonLoader } from "../components/AllProducts/ProductSkeleton.tsx";
+import { SortDropdown } from "../components/AllProducts/Sorting.tsx";
+import PriceInput from "../components/AllProducts/PriceInput.tsx";
+import { Pagination } from "../components/AllProducts/Pagination.tsx";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -109,7 +109,7 @@ const HomePage: React.FC = () => {
         currentPage={page}
       />
       <ScrollToTop />
-      <Toaster />
+     
     </>
   );
 };

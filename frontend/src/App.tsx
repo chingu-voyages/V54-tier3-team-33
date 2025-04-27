@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { fetchAuthenticatedUser } from "./store/slices/authSlice.ts";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "./store/store.ts";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/signinpage" element={<SignInPage />} />
         <Route path="/createacc" element={<CreateAccPage />} />
       </Routes>
+      <Toaster/>
     </Router>
   );
 };

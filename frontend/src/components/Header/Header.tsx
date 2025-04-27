@@ -22,7 +22,7 @@ import {
 import logo from "../../assets/logo.png";
 
 import { AppDispatch, RootState } from "../../store/store";
-import Nav from "../Nav/Nav";
+import Nav from "./SecondaryNavigation";
 import Button from "../../utils/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../store/slices/authSlice";
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.auth.user);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const { searchQuery, category, subcategory, minPrice, maxPrice , sort} =
+  const { searchQuery, category, subcategory, minPrice, maxPrice, sort } =
     useSelector((state: RootState) => state.products);
   // destructure only setter function
   const [, setSearchParams] = useSearchParams();
@@ -130,7 +130,6 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
     console.log("Search query cleared");
   };
 
-
   return (
     <div className="text-darktext flex flex-col items-center">
       {/* Centered Article */}
@@ -195,7 +194,6 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
                     <button
                       onClick={() => {
                         dispatch(logOutUser({ navigate }));
-                        console.log("User logged out");
                       }}
                       className="w-full cursor-pointer rounded-lg p-2 text-start text-red-600 hover:bg-gray-100"
                     >

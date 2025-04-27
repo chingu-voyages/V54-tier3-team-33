@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import Button from "../utils/Button";
 import { useNavigate } from "react-router-dom";
-import ProductInCart from "../components/ProductList/ProductInCart";
+import ProductInCart from "../components/ShoppingCart/ProductInCart";
 import SummaryCard from "../utils/SummaryCard";
 
 export default function ShoppingCartPage() {

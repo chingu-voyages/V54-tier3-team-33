@@ -1,4 +1,4 @@
-import Card from "../Card/Card";
+import Card from "./Card.tsx";
 import Spinner from "../../utils/Spinner.tsx";
 
 interface Product {
