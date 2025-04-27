@@ -11,33 +11,36 @@
   /*colors*/
   --color-primary: #3461e9;
   --color-primaryHover: #2354e7;
+
+  /* not used */
   /* --color-secondary: #ffcb47;
   --color-secondaryHover: #f5af00; */
 
   --color-darktext: #474747;
-  /* test */
+  /* for test */
   /* --color-darktext: #ff0000;  */
 
   --color-customcolorone: #a6a09b; /* border color stone-400 */
   --color-customcolortwo: #fafafa; /* background color stone-100*/
-  --color-customcolorthree: ;
 
-  /*Fontsize*/
-  --text-sizeprimary: 6rem;
-  --text-sizesecondary: 2rem;
+  /*custom fontsize - not used */
+  /* --text-sizeprimary: 0rem;
+  --text-sizesecondary: 0rem; */
 
-  /* font same name classes for the purpose of commenting out a set of them for consistency testing */
-  --font-primary: Poppins, sans-serif;
-  --font-secondary: Poppins, sans-serif;
+  /* font same name classes for the purpose of commenting out a set of them for consistency testing - not used */
+  /* --font-primary: Poppins, sans-serif; */
+  /* --font-secondary: Poppins, sans-serif; */
+
   /* fonts for testing */
   /* --font-primary: Comic Sans MS, serif; */
   /* --font-secondary: Papyrus, serif; */
 
-  --shadow-custom: 0 0 10px rgba(0, 0, 0, 1);
+  /* custom shadow - not used */
+  /* --shadow-custom: 0 0 10px rgba(0, 0, 0, 1); */
 
   /*Breakpoint*/
   --breakpoint-xs: 480px;
 
-  /*BorderRadius*/
+  /*custom border radius*/
   --radius-custom: 8px;
 }
