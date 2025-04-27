@@ -201,7 +201,7 @@ Voyage 54 - Team 33. March 2025 - May 2025. (8 weeks)
 
 ---
 
-### Special Thanks
+## Special Thanks
 
 We as a whole team would like to thank Chingu platform and community for this opportunity to learn, improve and collaborate. Thank you Chingu !
 
