@@ -19,6 +19,7 @@ import { ProductsSkeletonLoader } from "../components/AllProducts/ProductSkeleto
 import { SortDropdown } from "../components/AllProducts/Sorting.tsx";
 import PriceInput from "../components/AllProducts/PriceInput.tsx";
 import { Pagination } from "../components/AllProducts/Pagination.tsx";
+import ScrollToSection from "../utils/ScrollToSection.tsx";
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -72,6 +73,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+      <ScrollToSection />
       <div className="flex items-center justify-center">
         <AdvertisingCarousel />
       </div>
@@ -88,7 +90,10 @@ const HomePage: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex w-full flex-col items-center justify-between gap-3 sm:flex-row">
+        <div
+          id="productsSection"
+          className="flex w-full flex-col items-center justify-between gap-3 sm:flex-row"
+        >
           <PriceInput />
           <SortDropdown />
         </div>
@@ -109,7 +114,6 @@ const HomePage: React.FC = () => {
         currentPage={page}
       />
       <ScrollToTop />
-     
     </>
   );
 };

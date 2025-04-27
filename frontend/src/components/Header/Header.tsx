@@ -73,10 +73,13 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       }
     });
 
-    navigate({
-      pathname: "/",
-      search: `?${new URLSearchParams(params).toString()}`,
-    });
+    navigate(
+      {
+        pathname: "/",
+        search: `?${new URLSearchParams(params).toString()}`,
+      },
+      { state: { scrollToId: "productsSection" } },
+    );
     dispatch(loadProducts({ page: 1, limit: 10 }));
     dispatch(setSearchQuery(""));
   };
@@ -95,10 +98,13 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       params.search = searchQuery;
     }
 
-    navigate({
-      pathname: "/",
-      search: `?${new URLSearchParams(params).toString()}`,
-    });
+    navigate(
+      {
+        pathname: "/",
+        search: `?${new URLSearchParams(params).toString()}`,
+      },
+      { state: { scrollToId: "productsSection" } },
+    );
   };
 
   const handleSubcategoryClick = (category: string, subcategory: string) => {
@@ -116,10 +122,13 @@ const Header: React.FC<HeaderProps> = ({ showNav = true }) => {
       params.search = searchQuery;
     }
 
-    navigate({
-      pathname: "/",
-      search: `?${new URLSearchParams(params).toString()}`,
-    });
+    navigate(
+      {
+        pathname: "/",
+        search: `?${new URLSearchParams(params).toString()}`,
+      },
+      { state: { scrollToId: "productsSection" } },
+    );
   };
 
   const handleClearResults = () => {

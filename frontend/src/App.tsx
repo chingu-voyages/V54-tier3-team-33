@@ -21,6 +21,8 @@ const App = () => {
     dispatch(fetchAuthenticatedUser());
   }, [dispatch, isAuthenticated]);
 
+  
+
   return (
     <Router>
       <Routes>
