@@ -59,7 +59,7 @@ describe('Product tests',() => {
       .get(`/api/products/${product.id}`)
       .expect(200)
       .expect('Content-Type', /application\/json/)
-    assert.strictEqual(response.body.data.name, product.name)
+    assert.strictEqual(response.body.name, product.name)
   } )
   test('product is created successfully', async () => {
     const newProduct = {

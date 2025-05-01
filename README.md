@@ -16,6 +16,7 @@
 - [Technologies & Dependencies used](#technologies--dependencies-used)
 - [Prerequisites](#prerequisites)
 - [Clone & Run locally](#clone--run-locally)
+- [Deploy the Project to Fly.io](#deploying-with-flyio)
 - [Team](#team)
 - [Special Thanks](#special-thanks)
 - [Contributing](#contributing)
@@ -62,6 +63,16 @@
 
 - Styling: Tailwind CSS is used for styling
 
+- Backend Framework: The backend is built with Express.js and uses MongoDB (via Mongoose) for database interactions.
+
+- Authentication: JSON Web Tokens (JWT) and bcrypt are used to securely register and log in users.
+
+- Environment Configuration: dotenv is used to manage environment variables (e.g., database URI, secret keys).
+
+- CORS & Cookies: Configured using cors and cookie-parser to support secure frontend-backend communication.
+
+- Deployment: Both frontend and backend are deployed together on Fly.io with a build script that packages the frontend UI into the backend before deployment.
+
 **Logic:**
 
 - Redux is used to manage the state of products, categories, user authentication, and the shopping cart.
@@ -69,7 +80,7 @@
 - Actions such as setCategory, setSearchQuery, and loadProducts are dispatched to update the state.
 
 - The app uses fetch to make calls to the backend API for operations like fetching products, submitting orders, and user authentication.
-
+- Backend Routes: The backend exposes RESTful endpoints for /api/products, /api/users, and /api/orders, with middleware for authentication and error handling.
 - The app uses dynamic query parameter **useSearchParams** to manage query parameters for filters, search, and pagination.
 
 - Components like OrderHistory and Grid display error messages if API calls fail.
@@ -77,47 +88,25 @@
 ---
 
 ## Technologies & Dependencies used
-
+### Frontend:
 - **React:** for all the logic, many React features were used: conditionals, components, useState, useEffect, functions...
 
 - **Redux Toolkit:** for global state management.
 
 - **React Router:** for all routing needs.
 
-- **Tailwind:** for all styling, dark mode, custom classes...
+- **Tailwind:** for all styling, dark mode, custom classes.
 
 - **Typescript** for making sure we have no errors and bugs in development
 
-**dependencies:**
+### Backend:
+- **Express**: Core Node.js web framework used to build the RESTful API.
 
-- @headlessui/react": "^2.2.0",
-- @heroicons/react": "^2.2.0",
-- @reduxjs/toolkit": "^2.6.1",
-- @tailwindcss/vite": "^4.0.17",
-- framer-motion": "^12.9.1",
-- react": "^19.0.0",
-- react-dom": "^19.0.0",
-- react-hot-toast": "^2.5.2",
-- react-icons": "^5.5.0",
-- react-redux": "^9.2.0",
-- react-router-dom": "^7.3.0",
-- tailwindcss": "^4.0.17"
+- **MongoDB** & **Mongoose**: For data storage and modeling of users, products, and orders.
 
-**devDependencies:**
+- **JWT** & **bcrypt**: For secure authentication and password hashing.
 
-- @eslint/js": "^9.21.0",
-- @types/react": "^19.0.10",
-- @types/react-dom": "^19.0.4",
-- @vitejs/plugin-react": "^4.3.4",
-- eslint": "^9.21.0",
-- eslint-plugin-react-hooks": "^5.1.0",
-- eslint-plugin-react-refresh": "^0.4.19",
-- globals": "^15.15.0",
-- prettier": "^3.5.3",
-- prettier-plugin-tailwindcss": "^0.6.11",
-- typescript": "~5.7.2",
-- typescript-eslint": "^8.24.1",
-- vite": "^6.2.0"
+- **morgan**: For logging HTTP requests during development.
 
 ---
 
@@ -131,7 +120,11 @@ Ensure you have the following installed on your system:
 ---
 
 ## Clone & Run locally
+To be able to run the project you will need to create a `.env` file which contain the following 2 variables:
+- `JWT_STRONG_SECRET`, the secret used to generate JWT tokens
+- `MONGODB_URI`, the connection string of your MongoDB database
 
+To be able to run tests you also want to define `TEST_MONGODB_URI` with the connections tring of your MongoDB test database
 1. **Clone the Repository:**
 
    - On the GitHub repo page, click the green "Code" button.
@@ -167,7 +160,21 @@ Ensure you have the following installed on your system:
    - Run the command: `npm run dev` in the frontend terminal and `npm run dev` in the backend terminal as well. You have now started the frontend side of the project and the backend side. You will need to manually open the browser address at [localhost:5173/](http://localhost:5173/)
 
 ---
+ ## Deploying with Fly.io
+ After installing the dependencies in the previous section you can deploy the ap using [Fly.io](https://fly.io/) with the following steps:
 
+1. **Sign Up or Log In to Fly.io**:
+   - Run the command `flyctl auth login` and login to your Fly.io account
+2. **Navigate to the Backend Folder**:
+   - In your terminal, make sure you're inside the backend folder of the project. If not, use: `cd backend`
+3. **Initialize Fly Project**:
+   - Run the command: `flyctl launch` . When prompted pick a unique app name, a region close to your name and select No when asking to create a Postgres database
+4. **Set Environment Variables (Secrets)**:
+   - Run the following command in the backend terminal (replace the values with your own): `flyctl secrets set MONGO_URI=your_mongodb_uri JWT_SECRET=your_jwt_secret
+5. **Build the Frontend into the Backend**:
+   - Run the following command in the backend folder to bundle the frontend and copy it into the backend `dist` folder: `npm run build:ui`
+6. **Deploy to Fly.io**:
+   - Run the final deploy command: `flyctl deploy`
 ## Team
 
 Voyage 54 - Team 33. March 2025 - May 2025. (8 weeks)
