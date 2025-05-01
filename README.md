@@ -124,6 +124,8 @@ To be able to run the project you will need to create a `.env` file which contai
 - `JWT_STRONG_SECRET`, the secret used to generate JWT tokens
 - `MONGODB_URI`, the connection string of your MongoDB database
 
+To get a connection string you want to create a [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) account, create a cluster and copy your connection string.
+
 To be able to run tests you also want to define `TEST_MONGODB_URI` with the connections tring of your MongoDB test database
 1. **Clone the Repository:**
 
