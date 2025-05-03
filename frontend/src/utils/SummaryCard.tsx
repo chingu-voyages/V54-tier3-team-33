@@ -1,0 +1,81 @@
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import Modal from "../utils/Modal";
+import { useState } from "react";
+
+interface SummaryCardProps {
+  total: string;
+  buttonText: string;
+  showModal?: boolean;
+  handleAction: () => void;
+  isLoading?: boolean;
+}
+
+export default function SummaryCard({
+  total,
+  buttonText,
+  showModal,
+  handleAction,
+  isLoading = false,
+}: SummaryCardProps) {
+  const navigate = useNavigate();
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const totalPrice = cartItems
+    .reduce((total, item) => total + item.product.price * item.quantity, 0)
+    .toFixed(2);
+
+  return (
+    <div className="flex h-fit w-full flex-col gap-2 rounded-2xl bg-stone-100 p-4 sm:w-96 lg:order-5">
+      <span className="flex items-center justify-between">
+        <p>
+          {" "}
+          {cartItems.length > 1 ? "Items" : "Item"} ({cartItems.length})
+        </p>
+        <p>US ${totalPrice}</p>
+      </span>
+      <span className="flex items-center justify-between">
+        <p>Shipping</p>
+        <p>US $ 0</p>
+      </span>
+      <hr className="my-2" />
+      <span className="mb-2 flex items-center justify-between text-xl font-semibold">
+        <p>{total}</p>
+        <p>US ${totalPrice}</p>
+      </span>
+
+      {showModal ? (
+        <>
+          <Button className="w-full" onClick={() => setIsModalOpen(true)}>
+            {buttonText}
+          </Button>
+
+          <Modal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            title=""
+          >
+            <div className="flex flex-col items-center justify-center gap-4">
+              <Button
+                onClick={() => navigate("/signinpage")}
+                className="w-full"
+              >
+                Sign in to continue
+              </Button>
+
+              <Button onClick={() => navigate("/checkout")} className="w-full">
+                Create an account
+              </Button>
+            </div>
+          </Modal>
+        </>
+      ) : (
+        <Button className="w-full" onClick={handleAction} disabled={isLoading}>
+          {buttonText}
+        </Button>
+      )}
+    </div>
+  );
+}

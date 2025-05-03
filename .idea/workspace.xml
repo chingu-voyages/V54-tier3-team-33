@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="fix(auth): fix email sending error" />
+    <list default="true" id="6fd0d96f-f139-4d16-adc5-31a2fb2a530d" name="Changes" comment="change sort by default to default">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/product.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rest/products.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/products.rest" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +26,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="fix/pagination-bug" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,24 +47,32 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;riry/auth&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/mydata/Archive/WebstormProjects/zara-blog/zara-blog-api&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.18.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.18.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/mydata/Archive/WebstormProjects/WORK/PERSONAL&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/mnt/mydata/Archive/Software/WebStorm-2023.2.3/WebStorm-232.10072.28/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/mnt/mydata/Archive/WebstormProjects/V54-tier3-team-33/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="HTTP Request.products | #1">
     <configuration name="auth | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/rest/auth.rest" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="products | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/rest/products.rest" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.products | #1" />
         <item itemvalue="HTTP Request.auth | #1" />
       </list>
     </recent_temporary>
@@ -79,6 +92,16 @@
       <workItem from="1742238407150" duration="5398000" />
       <workItem from="1742326357161" duration="3657000" />
       <workItem from="1742564021284" duration="6229000" />
+      <workItem from="1743148767606" duration="1170000" />
+      <workItem from="1744891150781" duration="5275000" />
+      <workItem from="1744903819132" duration="642000" />
+      <workItem from="1745342431720" duration="713000" />
+      <workItem from="1745343373833" duration="117000" />
+      <workItem from="1745343684602" duration="144000" />
+      <workItem from="1745343943866" duration="2512000" />
+      <workItem from="1745580240932" duration="496000" />
+      <workItem from="1745601717133" duration="1935000" />
+      <workItem from="1745679326699" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="docs(readme): Add add social links">
       <option name="closed" value="true" />
@@ -144,7 +167,95 @@
       <option name="project" value="LOCAL" />
       <updated>1742569895856</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add sorting by price and popularity on product">
+      <option name="closed" value="true" />
+      <created>1744892803240</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744892803241</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add quantity field to cart item type and make shopping cart persistent">
+      <option name="closed" value="true" />
+      <created>1744895536280</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744895536280</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix redux thunk typo error by specifying ThunkDispatch as the dispatch type">
+      <option name="closed" value="true" />
+      <created>1745163520182</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745163520182</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix navigation when user is into another page other than product list page">
+      <option name="closed" value="true" />
+      <created>1745344486096</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745344486096</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix navigation when user is in another page other than product list page">
+      <option name="closed" value="true" />
+      <created>1745345734675</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745345734675</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add sorting feature by ascending &amp; descending price ,and popularity by sold">
+      <option name="closed" value="true" />
+      <created>1745585234296</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745585234296</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add product list skeleton loading">
+      <option name="closed" value="true" />
+      <created>1745586550772</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745586550772</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix build error by removing unused import">
+      <option name="closed" value="true" />
+      <created>1745586642685</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745586642685</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor product grid page &amp; extract pagination into separate component">
+      <option name="closed" value="true" />
+      <created>1745587440019</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745587440019</updated>
+    </task>
+    <task id="LOCAL-00018" summary="make sorting optional on getAll product">
+      <option name="closed" value="true" />
+      <created>1745602524540</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745602524541</updated>
+    </task>
+    <task id="LOCAL-00019" summary="change sort by default to default">
+      <option name="closed" value="true" />
+      <created>1745603434091</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745603434091</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +269,18 @@
     <MESSAGE value="feat(auth): implement verfication code email sending" />
     <MESSAGE value="feat(auth): store token in response cookies" />
     <MESSAGE value="fix(auth): fix email sending error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(auth): fix email sending error" />
+    <MESSAGE value="chore(env): add ide env file" />
+    <MESSAGE value="add sorting by price and popularity on product" />
+    <MESSAGE value="add quantity field to cart item type and make shopping cart persistent" />
+    <MESSAGE value="fix redux thunk typo error by specifying ThunkDispatch as the dispatch type" />
+    <MESSAGE value="fix navigation when user is into another page other than product list page" />
+    <MESSAGE value="fix navigation when user is in another page other than product list page" />
+    <MESSAGE value="add sorting feature by ascending &amp; descending price ,and popularity by sold" />
+    <MESSAGE value="add product list skeleton loading" />
+    <MESSAGE value="fix build error by removing unused import" />
+    <MESSAGE value="refactor product grid page &amp; extract pagination into separate component" />
+    <MESSAGE value="make sorting optional on getAll product" />
+    <MESSAGE value="change sort by default to default" />
+    <option name="LAST_COMMIT_MESSAGE" value="change sort by default to default" />
   </component>
 </project>

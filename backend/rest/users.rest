@@ -1,10 +1,12 @@
 
-@auth_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q5ZDJhZmQzMTE2ZjZlNTA2NGVlZWMiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQyMzI4Njg4LCJleHAiOjE3NDIzMjg2ODh9.t0J94VvKlMrPIoza-Pcj1wm237r5YTiv2Q0LxuykFoU
+@cookie = token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2RmMjQ0ZmY4N2I0NjJkNjA3ZTUxNDIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzQ0NDc4NDYzLCJleHAiOjE3NDUwODMyNjN9.ZrKGB5MJRvdwDD2XYLdiN5OKeIuK7hrTVSjotUPyaVc; Max-Age=604800; Path=/; Expires=Sat, 19 Apr 2025 17:21:03 GMT; HttpOnly; SameSite=Lax
 POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-    "email": "example@gmail.com",
+    "firstname": "bob",
+    "lastname": "beb",
+    "email": "test@gmail.com",
     "password": "test"
 }
 ###
@@ -13,7 +15,15 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "example@gmail.com",
+    "email": "lol@gmail.com",
     "password": "test"
 }
 
+###
+GET http://localhost:3000/api/auth/me
+Content-Type: application/json
+Cookie: {{cookie}}
+###
+POST http://localhost:3000/api/auth/logout
+Content-Type: application/json
+Cookie: {{cookie}}
